@@ -1,0 +1,16 @@
+{
+    "appId": "com.healing.kidsapp",
+    "appName": "阳光小屋",
+    "webDir": "dist",
+    "bundledWebRuntime": false,
+    "plugins": {
+      "SplashScreen": {
+        "launchShowDuration": 2000,
+        "backgroundColor": "#FEF3C7",
+        "showSpinner": false
+      }
+    },
+    "android": {
+      "allowMixedContent": true
+    }
+  }
