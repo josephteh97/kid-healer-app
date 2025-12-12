@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">阳光小屋</string>
+    <string name="title_activity_main">阳光小屋</string>
+    <string name="package_name">com.healing.kidsapp</string>
+    <string name="custom_url_scheme">com.healing.kidsapp</string>
+</resources>
