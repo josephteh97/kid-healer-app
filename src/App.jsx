@@ -449,6 +449,56 @@ const DETECTIVE_SCENARIOS = [
   { situation: '爸妈说今天不能出去玩', thoughts: ['他们不爱我', '他们可能有原因', '也许明天可以'], bodyFeelings: ['很生气', '眼睛酸酸的', '全身没力气'] }
 ];
 
+// ─── Batch 5 Constants ──────────────────────────────────────────────────────
+
+const DRAWING_COLORS = [
+  { color: '#ef4444', label: '生气', emoji: '😡' },
+  { color: '#3b82f6', label: '难过', emoji: '😢' },
+  { color: '#eab308', label: '开心', emoji: '😊' },
+  { color: '#22c55e', label: '平静', emoji: '😌' },
+  { color: '#a855f7', label: '害怕', emoji: '😨' },
+  { color: '#f97316', label: '焦虑', emoji: '😰' },
+  { color: '#ec4899', label: '爱', emoji: '💗' },
+  { color: '#000000', label: '其他', emoji: '✏️' }
+];
+
+const BODY_EMOTION_ZONES = [
+  { id: 'head', name: '头部', top: '5%', left: '38%', w: '24%', h: '15%' },
+  { id: 'chest', name: '胸口', top: '25%', left: '33%', w: '34%', h: '15%' },
+  { id: 'stomach', name: '肚子', top: '42%', left: '35%', w: '30%', h: '13%' },
+  { id: 'hands', name: '手', top: '45%', left: '15%', w: '15%', h: '10%' },
+  { id: 'hands2', name: '手', top: '45%', left: '70%', w: '15%', h: '10%' },
+  { id: 'legs', name: '腿', top: '60%', left: '33%', w: '34%', h: '20%' },
+  { id: 'throat', name: '喉咙', top: '20%', left: '40%', w: '20%', h: '6%' }
+];
+
+const BODY_SENSATIONS = ['紧绷', '发热', '发冷', '刺痛', '沉重', '空洞', '颤抖', '麻木', '蝴蝶飞', '打结'];
+
+const THINKING_TRAPS = [
+  { name: '全有全无怪', emoji: '⚫⚪', desc: '只看到黑和白，没有中间地带', example: '"我考了95分，不是100分，所以我失败了"', fix: '想想中间的灰色地带' },
+  { name: '读心术', emoji: '🔮', desc: '以为自己知道别人在想什么', example: '"他没跟我说话，一定是讨厌我"', fix: '你不是真的能读心，问问对方' },
+  { name: '预言家', emoji: '🎱', desc: '预测最坏的结果一定会发生', example: '"明天的演讲我一定会出丑"', fix: '最坏的结果很少会发生' },
+  { name: '怪罪磁铁', emoji: '🧲', desc: '把所有坏事都怪在自己身上', example: '"爸妈吵架一定是因为我不好"', fix: '很多事不是你的错' },
+  { name: '放大镜', emoji: '🔍', desc: '把坏事放大，把好事缩小', example: '"一个人不喜欢我=没人喜欢我"', fix: '坏事只是一小部分' },
+  { name: '应该怪', emoji: '📏', desc: '对自己有太多"应该"', example: '"我应该永远开心，不应该难过"', fix: '没有人能做到所有的"应该"' }
+];
+
+const FEAR_LEVELS = ['一点点害怕 😟', '有点害怕 😰', '比较害怕 😨', '很害怕 😱', '非常害怕 🫣'];
+
+const SAFE_PLACE_LOCATIONS = [
+  { emoji: '🏖️', name: '温暖的沙滩' }, { emoji: '🏡', name: '树屋' },
+  { emoji: '☁️', name: '柔软的云朵' }, { emoji: '🌲', name: '安静的森林' },
+  { emoji: '🏔️', name: '山顶' }, { emoji: '🌌', name: '星空下' }
+];
+
+const SAFE_PLACE_ELEMENTS = [
+  { emoji: '🐶', name: '小狗陪伴' }, { emoji: '🧸', name: '毛绒玩具' },
+  { emoji: '🎵', name: '轻柔音乐' }, { emoji: '🕯️', name: '温暖的光' },
+  { emoji: '🌺', name: '花的香气' }, { emoji: '☕', name: '热巧克力' },
+  { emoji: '📚', name: '喜欢的书' }, { emoji: '🤗', name: '好朋友' },
+  { emoji: '🧣', name: '柔软毯子' }, { emoji: '🌈', name: '彩虹' }
+];
+
 const TABS = [
   { id: 'home', icon: Sun, label: '首页', activeClass: 'text-purple-600 bg-purple-50' },
   { id: 'breathing', icon: Heart, label: '呼吸', activeClass: 'text-pink-600 bg-pink-50' },
@@ -498,7 +548,17 @@ const TOOL_PAGES = [
   { id: 'worrysorter', emoji: '🗂️', title: '烦恼分类', color: 'from-green-100 to-blue-100', desc: '能改变vs放下' },
   { id: 'movement', emoji: '🧘', title: '正念运动', color: 'from-green-100 to-teal-100', desc: '瑜伽放松' },
   { id: 'detective', emoji: '🔍', title: '情绪侦探', color: 'from-yellow-100 to-orange-100', desc: '想法→感受' },
-  { id: 'celebration', emoji: '🎊', title: '庆祝墙', color: 'from-pink-100 to-purple-100', desc: '骄傲时刻' }
+  { id: 'celebration', emoji: '🎊', title: '庆祝墙', color: 'from-pink-100 to-purple-100', desc: '骄傲时刻' },
+  { id: 'drawboard', emoji: '🎨', title: '情绪画板', color: 'from-purple-100 to-pink-100', desc: '画出感受' },
+  { id: 'bodymap', emoji: '🫀', title: '身体地图', color: 'from-pink-100 to-red-100', desc: '感受在哪' },
+  { id: 'traps', emoji: '🪤', title: '思维陷阱', color: 'from-yellow-100 to-orange-100', desc: '认知偏差' },
+  { id: 'fearladder', emoji: '🪜', title: '勇气阶梯', color: 'from-yellow-100 to-amber-100', desc: '克服害怕' },
+  { id: 'gratitudeletter', emoji: '💌', title: '感恩信', color: 'from-amber-100 to-yellow-100', desc: '写封感谢' },
+  { id: 'firstaid', emoji: '🧰', title: '急救箱', color: 'from-red-100 to-pink-100', desc: '专属工具' },
+  { id: 'dreamjournal', emoji: '🌙', title: '梦境日记', color: 'from-indigo-100 to-blue-100', desc: '记录梦境' },
+  { id: 'mindfuleat', emoji: '🍎', title: '正念进食', color: 'from-green-100 to-lime-100', desc: '用心感受' },
+  { id: 'compliments', emoji: '🔗', title: '夸夸链', color: 'from-pink-100 to-yellow-100', desc: '互相夸奖' },
+  { id: 'safeplace', emoji: '🏠', title: '安全基地', color: 'from-blue-100 to-purple-100', desc: '想象安全' }
 ];
 
 const fmtTime = (s) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
@@ -3355,6 +3415,694 @@ function CelebrationWallPage({ wall, onSave, onBack }) {
   );
 }
 
+// ─── Batch 5 Components ─────────────────────────────────────────────────────
+
+function DrawingBoardPage({ gallery, onSave, onBack }) {
+  const canvasRef = useRef(null);
+  const [drawing, setDrawing] = useState(false);
+  const [color, setColor] = useState('#000000');
+  const [brushSize, setBrushSize] = useState(4);
+  const lastPos = useRef(null);
+
+  const getPos = (e) => {
+    const canvas = canvasRef.current;
+    const rect = canvas.getBoundingClientRect();
+    const touch = e.touches ? e.touches[0] : e;
+    return { x: (touch.clientX - rect.left) * (canvas.width / rect.width), y: (touch.clientY - rect.top) * (canvas.height / rect.height) };
+  };
+
+  const startDraw = (e) => { e.preventDefault(); setDrawing(true); lastPos.current = getPos(e); };
+  const endDraw = () => { setDrawing(false); lastPos.current = null; };
+  const draw = (e) => {
+    if (!drawing) return;
+    e.preventDefault();
+    const ctx = canvasRef.current.getContext('2d');
+    const pos = getPos(e);
+    ctx.beginPath();
+    ctx.strokeStyle = color;
+    ctx.lineWidth = brushSize;
+    ctx.lineCap = 'round';
+    ctx.moveTo(lastPos.current.x, lastPos.current.y);
+    ctx.lineTo(pos.x, pos.y);
+    ctx.stroke();
+    lastPos.current = pos;
+  };
+
+  const clearCanvas = () => {
+    const ctx = canvasRef.current.getContext('2d');
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+  };
+
+  const saveDrawing = () => {
+    const data = canvasRef.current.toDataURL('image/png', 0.5);
+    onSave([...gallery, { date: todayDate(), image: data, color }]);
+    clearCanvas();
+  };
+
+  useEffect(() => {
+    if (canvasRef.current) clearCanvas();
+  }, []);
+
+  return (
+    <div className="p-6 space-y-4">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🎨" title="情绪画板" subtitle="用颜色和线条表达你的感受" />
+
+      <div className="flex gap-1 flex-wrap justify-center">
+        {DRAWING_COLORS.map((c, i) => (
+          <button key={i} onClick={() => setColor(c.color)}
+            className={`w-8 h-8 rounded-full border-2 transition ${color === c.color ? 'border-gray-800 scale-125' : 'border-gray-300'}`}
+            style={{ backgroundColor: c.color }} title={c.label} />
+        ))}
+      </div>
+
+      <div className="bg-white rounded-2xl shadow-lg overflow-hidden touch-none">
+        <canvas ref={canvasRef} width={320} height={320}
+          className="w-full cursor-crosshair"
+          onMouseDown={startDraw} onMouseMove={draw} onMouseUp={endDraw} onMouseLeave={endDraw}
+          onTouchStart={startDraw} onTouchMove={draw} onTouchEnd={endDraw} />
+      </div>
+
+      <div className="flex items-center gap-3">
+        <span className="text-xs text-gray-500">细</span>
+        <input type="range" min="2" max="20" value={brushSize} onChange={e => setBrushSize(Number(e.target.value))} className="flex-1" />
+        <span className="text-xs text-gray-500">粗</span>
+      </div>
+
+      <div className="flex gap-3">
+        <button onClick={clearCanvas} className="flex-1 bg-gray-200 text-gray-700 py-3 rounded-xl font-semibold">清空</button>
+        <button onClick={saveDrawing} className="flex-1 bg-purple-500 text-white py-3 rounded-xl font-semibold">保存到画廊</button>
+      </div>
+
+      {gallery.length > 0 && (
+        <div className="space-y-2">
+          <h3 className="font-bold text-gray-800">🖼️ 我的画廊 ({gallery.length})</h3>
+          <div className="grid grid-cols-3 gap-2">
+            {gallery.slice(-6).reverse().map((g, i) => (
+              <div key={i} className="bg-white rounded-lg shadow overflow-hidden">
+                <img src={g.image} alt="drawing" className="w-full h-20 object-cover" />
+                <p className="text-xs text-gray-500 text-center py-1">{g.date}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function BodyEmotionMapPage({ maps, onSave, onBack }) {
+  const [selectedZone, setSelectedZone] = useState(null);
+  const [emotion, setEmotion] = useState('');
+  const [sensation, setSensation] = useState('');
+  const [todayMap, setTodayMap] = useState({});
+
+  const saveZone = () => {
+    if (!selectedZone || !emotion.trim()) return;
+    const updated = { ...todayMap, [selectedZone]: { emotion, sensation } };
+    setTodayMap(updated);
+    onSave([...maps.filter(m => m.date !== todayDate()), { date: todayDate(), zones: updated }]);
+    setSelectedZone(null); setEmotion(''); setSensation('');
+  };
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🫀" title="身体情绪地图" subtitle="感受在身体的哪里？" />
+
+      <div className="bg-white rounded-2xl p-4 shadow-lg relative" style={{ height: '300px' }}>
+        <div className="absolute inset-0 flex items-center justify-center text-8xl opacity-20">🧍</div>
+        {BODY_EMOTION_ZONES.map((zone) => {
+          const data = todayMap[zone.id];
+          return (
+            <button key={zone.id} onClick={() => setSelectedZone(zone.id)}
+              className={`absolute rounded-xl border-2 transition hover:bg-opacity-50 ${data ? 'bg-red-200 border-red-400' : selectedZone === zone.id ? 'bg-blue-200 border-blue-400' : 'bg-gray-100 border-gray-200 bg-opacity-50'}`}
+              style={{ top: zone.top, left: zone.left, width: zone.w, height: zone.h }}>
+              <span className="text-xs font-semibold">{data ? data.emotion : zone.name}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      {selectedZone && (
+        <div className="bg-white rounded-2xl p-5 shadow-lg space-y-3">
+          <p className="font-semibold text-gray-800">在{BODY_EMOTION_ZONES.find(z => z.id === selectedZone)?.name}感受到什么？</p>
+          <input value={emotion} onChange={e => setEmotion(e.target.value)} placeholder="什么情绪？比如：紧张、难过..."
+            className="w-full p-3 border-2 border-pink-200 rounded-xl focus:border-pink-500 focus:outline-none" />
+          <p className="text-sm text-gray-600">什么感觉？</p>
+          <div className="flex gap-1 flex-wrap">
+            {BODY_SENSATIONS.map((s, i) => (
+              <button key={i} onClick={() => setSensation(s)}
+                className={`text-xs px-2 py-1 rounded-full border ${sensation === s ? 'bg-pink-500 text-white' : 'border-pink-200 text-gray-700'}`}>{s}</button>
+            ))}
+          </div>
+          <button onClick={saveZone} disabled={!emotion.trim()} className="w-full bg-pink-500 disabled:bg-gray-300 text-white py-3 rounded-xl font-semibold">标记</button>
+        </div>
+      )}
+
+      <div className="bg-pink-50 rounded-xl p-4">
+        <p className="text-sm text-gray-700">💡 每种情绪都会在身体的某个地方出现。紧张时肚子可能打结，生气时头可能发热。认识这些信号，能帮你更早发现自己的感受。</p>
+      </div>
+    </div>
+  );
+}
+
+function ThinkingTrapsPage({ caught, onSave, onBack }) {
+  const [open, setOpen] = useState(null);
+  const [myThought, setMyThought] = useState('');
+  const [selectedTrap, setSelectedTrap] = useState(null);
+
+  const catchTrap = () => {
+    if (!myThought.trim() || selectedTrap === null) return;
+    onSave([...caught, { date: todayDate(), thought: myThought, trap: THINKING_TRAPS[selectedTrap].name }]);
+    setMyThought(''); setSelectedTrap(null);
+  };
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🪤" title="思维陷阱" subtitle="学会发现脑海里的小怪兽" />
+
+      <div className="space-y-2">
+        {THINKING_TRAPS.map((trap, idx) => (
+          <div key={idx} className="bg-white rounded-2xl shadow overflow-hidden">
+            <button onClick={() => setOpen(open === idx ? null : idx)} className="w-full p-4 text-left flex items-center gap-3">
+              <span className="text-2xl">{trap.emoji}</span>
+              <div className="flex-1">
+                <p className="font-semibold text-gray-800">{trap.name}</p>
+                <p className="text-xs text-gray-500">{trap.desc}</p>
+              </div>
+              <span className="text-gray-400">{open === idx ? '▲' : '▼'}</span>
+            </button>
+            {open === idx && (
+              <div className="px-4 pb-4 space-y-2">
+                <div className="bg-red-50 rounded-lg p-3">
+                  <p className="text-xs text-red-700"><span className="font-bold">例子：</span>{trap.example}</p>
+                </div>
+                <div className="bg-green-50 rounded-lg p-3">
+                  <p className="text-xs text-green-700"><span className="font-bold">破解：</span>{trap.fix}</p>
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <div className="bg-white rounded-2xl p-5 shadow-lg space-y-3">
+        <p className="font-semibold text-gray-800">🪤 抓住一个思维陷阱</p>
+        <input value={myThought} onChange={e => setMyThought(e.target.value)} placeholder="你脑海里的想法..."
+          className="w-full p-3 border-2 border-yellow-200 rounded-xl focus:border-yellow-500 focus:outline-none" />
+        <div className="flex gap-1 flex-wrap">
+          {THINKING_TRAPS.map((t, i) => (
+            <button key={i} onClick={() => setSelectedTrap(i)}
+              className={`text-xs px-2 py-1 rounded-full border ${selectedTrap === i ? 'bg-yellow-500 text-white' : 'border-yellow-200 text-gray-700'}`}>{t.name}</button>
+          ))}
+        </div>
+        <button onClick={catchTrap} disabled={!myThought.trim() || selectedTrap === null}
+          className="w-full bg-yellow-500 disabled:bg-gray-300 text-white py-3 rounded-xl font-semibold">抓住它！</button>
+      </div>
+
+      {caught.length > 0 && (
+        <div className="space-y-2">
+          <h3 className="font-bold text-gray-800">抓到的陷阱 ({caught.length})</h3>
+          {caught.slice(-5).reverse().map((c, i) => (
+            <div key={i} className="bg-yellow-50 rounded-xl p-3">
+              <p className="text-xs text-gray-500">{c.date} — 🪤 {c.trap}</p>
+              <p className="text-sm text-gray-800">{c.thought}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function FearLadderPage({ ladders, onSave, onBack }) {
+  const [fear, setFear] = useState('');
+  const [rungs, setRungs] = useState(['', '', '', '', '']);
+  const currentLadder = ladders.length > 0 ? ladders[ladders.length - 1] : null;
+  const showForm = !currentLadder || currentLadder.completed;
+
+  const create = () => {
+    if (!fear.trim() || !rungs.some(r => r.trim())) return;
+    onSave([...ladders, { fear, rungs: rungs.filter(r => r.trim()), climbed: [], completed: false, date: todayDate() }]);
+    setFear(''); setRungs(['', '', '', '', '']);
+  };
+
+  const climb = (idx) => {
+    const updated = [...ladders];
+    const l = { ...updated[updated.length - 1] };
+    if (!l.climbed.includes(idx)) {
+      l.climbed = [...l.climbed, idx];
+      if (l.climbed.length === l.rungs.length) l.completed = true;
+      updated[updated.length - 1] = l;
+      onSave(updated);
+    }
+  };
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🪜" title="勇气阶梯" subtitle="一步一步，慢慢克服害怕" />
+
+      {!showForm && currentLadder && (
+        <>
+          <div className="bg-gradient-to-r from-yellow-100 to-orange-100 rounded-2xl p-4 text-center">
+            <p className="text-sm text-gray-600">我要克服的</p>
+            <p className="text-lg font-bold text-gray-800">😨 {currentLadder.fear}</p>
+          </div>
+          <div className="bg-white rounded-2xl p-5 shadow-lg space-y-2">
+            {currentLadder.rungs.slice().reverse().map((rung, displayIdx) => {
+              const realIdx = currentLadder.rungs.length - 1 - displayIdx;
+              const done = currentLadder.climbed.includes(realIdx);
+              const canClimb = realIdx === 0 || currentLadder.climbed.includes(realIdx - 1);
+              return (
+                <button key={realIdx} onClick={() => canClimb && climb(realIdx)}
+                  className={`w-full p-3 rounded-xl border-2 text-left flex items-center gap-3 transition ${done ? 'bg-green-100 border-green-300' : canClimb ? 'border-yellow-300 hover:bg-yellow-50' : 'border-gray-200 opacity-50'}`}>
+                  <span className="text-sm">{FEAR_LEVELS[Math.min(realIdx, FEAR_LEVELS.length - 1)]}</span>
+                  <span className="text-sm font-semibold text-gray-800 flex-1">{rung}</span>
+                  {done && <span>✅</span>}
+                </button>
+              );
+            })}
+          </div>
+          {currentLadder.completed && (
+            <div className="bg-gradient-to-r from-green-100 to-emerald-100 rounded-2xl p-5 text-center">
+              <div className="text-4xl mb-2">🏆</div>
+              <p className="font-bold text-gray-800">你征服了害怕！太勇敢了！</p>
+            </div>
+          )}
+        </>
+      )}
+
+      {showForm && (
+        <div className="bg-white rounded-2xl p-5 shadow-lg space-y-4">
+          <p className="font-semibold text-gray-800">你害怕什么？</p>
+          <input value={fear} onChange={e => setFear(e.target.value)} placeholder="比如：在全班面前说话..."
+            className="w-full p-3 border-2 border-yellow-200 rounded-xl focus:border-yellow-500 focus:outline-none" />
+          <p className="font-semibold text-gray-800">从最不害怕到最害怕，写出步骤：</p>
+          {rungs.map((r, i) => (
+            <div key={i} className="flex items-center gap-2">
+              <span className="text-xs text-gray-500 w-16">{FEAR_LEVELS[i]?.split(' ')[0]}</span>
+              <input value={r} onChange={e => { const n = [...rungs]; n[i] = e.target.value; setRungs(n); }}
+                placeholder={`第${i + 1}步...`} className="flex-1 p-2 border-2 border-yellow-200 rounded-lg focus:border-yellow-500 focus:outline-none text-sm" />
+            </div>
+          ))}
+          <button onClick={create} disabled={!fear.trim() || !rungs.some(r => r.trim())}
+            className="w-full bg-yellow-500 disabled:bg-gray-300 text-white py-3 rounded-xl font-semibold">开始爬梯子</button>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function GratitudeLetterPage({ letters, onSave, onBack }) {
+  const [to, setTo] = useState('');
+  const [content, setContent] = useState('');
+  const [saved, setSaved] = useState(false);
+
+  const save = () => {
+    if (!to.trim() || !content.trim()) return;
+    onSave([...letters, { date: todayDate(), to: to.trim(), content: content.trim() }]);
+    setSaved(true);
+  };
+
+  if (saved) {
+    return (
+      <div className="p-6 space-y-5">
+        <BackButton onClick={onBack} />
+        <div className="bg-gradient-to-br from-amber-100 to-pink-100 rounded-3xl p-8 text-center border-2 border-amber-200">
+          <div className="text-5xl mb-3">💌</div>
+          <p className="text-xl font-bold text-gray-800">信写好了！</p>
+          <p className="text-gray-600 mt-2">如果可以的话，把这封信读给{to}听，效果会更好哦！</p>
+          <button onClick={() => { setSaved(false); setTo(''); setContent(''); }}
+            className="mt-4 bg-amber-500 text-white px-6 py-3 rounded-full font-semibold">再写一封</button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="💌" title="感恩信" subtitle="给重要的人写一封感谢信" />
+
+      <div className="bg-amber-50 rounded-xl p-4">
+        <p className="text-sm text-gray-700">💡 研究发现，写一封感恩的信并读给对方听，是提升幸福感最有效的方法之一。效果可以持续好几周！</p>
+      </div>
+
+      <div className="bg-white rounded-2xl p-5 shadow-lg space-y-4" style={{ backgroundImage: 'repeating-linear-gradient(transparent, transparent 27px, #e5e7eb 28px)', backgroundPosition: '0 40px' }}>
+        <div>
+          <p className="font-semibold text-gray-800">写给谁？</p>
+          <input value={to} onChange={e => setTo(e.target.value)} placeholder="爸爸/妈妈/老师/朋友..."
+            className="w-full p-3 border-2 border-amber-200 rounded-xl focus:border-amber-500 focus:outline-none mt-1" />
+        </div>
+        <div>
+          <p className="font-semibold text-gray-800">你想对他/她说什么？</p>
+          <textarea value={content} onChange={e => setContent(e.target.value)}
+            placeholder="亲爱的____，我想谢谢你..."
+            className="w-full h-40 p-3 border-2 border-amber-200 rounded-xl focus:border-amber-500 focus:outline-none resize-none mt-1" />
+        </div>
+        <button onClick={save} disabled={!to.trim() || !content.trim()}
+          className="w-full bg-amber-500 disabled:bg-gray-300 text-white py-3 rounded-xl font-semibold">完成 💌</button>
+      </div>
+
+      {letters.length > 0 && (
+        <div className="space-y-2">
+          <h3 className="font-bold text-gray-800">写过的信 ({letters.length})</h3>
+          {letters.slice(-3).reverse().map((l, i) => (
+            <div key={i} className="bg-amber-50 rounded-xl p-3">
+              <p className="text-sm font-semibold text-gray-800">给{l.to}的信</p>
+              <p className="text-xs text-gray-500">{l.date}</p>
+              <p className="text-xs text-gray-700 mt-1">{l.content.slice(0, 60)}...</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function FirstAidKitPage({ kit, onSave, allTools, onBack, onNavigate }) {
+  const [editing, setEditing] = useState(false);
+  const [selected, setSelected] = useState(kit || []);
+  const availableTools = allTools.filter(t => !['parent', 'firstaid'].includes(t.id));
+
+  const save = () => { onSave(selected); setEditing(false); };
+  const toggle = (id) => {
+    setSelected(prev => prev.includes(id) ? prev.filter(i => i !== id) : prev.length < 6 ? [...prev, id] : prev);
+  };
+
+  if (editing || kit.length === 0) {
+    return (
+      <div className="p-6 space-y-5">
+        <BackButton onClick={onBack} />
+        <PageHeader emoji="🧰" title="情绪急救箱" subtitle="选择最适合你的工具（最多6个）" />
+        <div className="bg-red-50 rounded-xl p-4">
+          <p className="text-sm text-gray-700">💡 选择在你难受时最有用的工具。当你需要帮助时，打开急救箱就能快速找到它们。</p>
+        </div>
+        <div className="grid grid-cols-2 gap-2">
+          {availableTools.map(tool => (
+            <button key={tool.id} onClick={() => toggle(tool.id)}
+              className={`rounded-xl p-3 text-left transition border-2 ${selected.includes(tool.id) ? 'border-red-500 bg-red-50' : 'border-gray-200 bg-white'}`}>
+              <span className="text-2xl">{tool.emoji}</span>
+              <p className="text-xs font-semibold text-gray-800 mt-1">{tool.title}</p>
+            </button>
+          ))}
+        </div>
+        {selected.length > 0 && (
+          <button onClick={save} className="w-full bg-red-500 text-white py-3 rounded-xl font-semibold">
+            保存急救箱 ({selected.length}/6)
+          </button>
+        )}
+      </div>
+    );
+  }
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🧰" title="情绪急救箱" subtitle="你的专属应急工具" />
+      <div className="bg-gradient-to-br from-red-100 to-pink-100 rounded-3xl p-6 text-center">
+        <div className="text-5xl mb-2">🧰</div>
+        <p className="text-gray-700">难受的时候，打开急救箱</p>
+      </div>
+      <div className="grid grid-cols-2 gap-3">
+        {kit.map(id => {
+          const tool = allTools.find(t => t.id === id);
+          if (!tool) return null;
+          return (
+            <button key={id} onClick={() => onNavigate(id)}
+              className={`bg-gradient-to-br ${tool.color} rounded-xl p-4 text-left hover:scale-105 transition shadow`}>
+              <div className="text-3xl mb-2">{tool.emoji}</div>
+              <p className="font-semibold text-sm text-gray-800">{tool.title}</p>
+            </button>
+          );
+        })}
+      </div>
+      <button onClick={() => setEditing(true)} className="w-full bg-white border-2 border-red-300 text-red-600 py-3 rounded-xl font-semibold">
+        编辑急救箱
+      </button>
+    </div>
+  );
+}
+
+function DreamJournalPage({ dreams, onSave, onBack }) {
+  const [content, setContent] = useState('');
+  const [mood, setMood] = useState('');
+  const moods = ['😊 愉快', '😨 害怕', '😢 难过', '😵 奇怪', '😌 平静'];
+
+  const save = () => {
+    if (!content.trim()) return;
+    onSave([...dreams, { date: todayDate(), content: content.trim(), mood }]);
+    setContent(''); setMood('');
+  };
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🌙" title="梦境日记" subtitle="记录你的梦，了解你的内心" />
+
+      <div className="bg-indigo-50 rounded-xl p-4">
+        <p className="text-sm text-gray-700">💡 梦常常反映我们白天的感受。记录梦境可以帮助你更好地了解自己的内心世界。醒来后马上记录，否则很快就会忘记！</p>
+      </div>
+
+      <div className="bg-white rounded-2xl p-5 shadow-lg space-y-4">
+        <p className="font-semibold text-gray-800">昨晚做了什么梦？</p>
+        <textarea value={content} onChange={e => setContent(e.target.value)}
+          placeholder="我梦见了..."
+          className="w-full h-28 p-3 border-2 border-indigo-200 rounded-xl focus:border-indigo-500 focus:outline-none resize-none" />
+        <p className="font-semibold text-gray-800">梦里的感觉</p>
+        <div className="flex gap-2 flex-wrap">
+          {moods.map((m, i) => (
+            <button key={i} onClick={() => setMood(m)}
+              className={`text-xs px-3 py-1.5 rounded-full border ${mood === m ? 'bg-indigo-500 text-white' : 'border-indigo-200 text-gray-700'}`}>{m}</button>
+          ))}
+        </div>
+        <button onClick={save} disabled={!content.trim()} className="w-full bg-indigo-500 disabled:bg-gray-300 text-white py-3 rounded-xl font-semibold">记录梦境</button>
+      </div>
+
+      {dreams.length > 0 && (
+        <div className="space-y-2">
+          <h3 className="font-bold text-gray-800">梦境记录 ({dreams.length})</h3>
+          {dreams.slice(-5).reverse().map((d, i) => (
+            <div key={i} className="bg-indigo-50 rounded-xl p-3">
+              <div className="flex justify-between items-center">
+                <p className="text-xs text-gray-500">{d.date}</p>
+                {d.mood && <span className="text-xs">{d.mood}</span>}
+              </div>
+              <p className="text-sm text-gray-800 mt-1">{d.content.slice(0, 80)}{d.content.length > 80 ? '...' : ''}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function MindfulEatingPage({ log, onSave, onBack }) {
+  const [step, setStep] = useState(0);
+  const [notes, setNotes] = useState({ see: '', smell: '', touch: '', taste: '', feel: '' });
+
+  const steps = [
+    { key: 'see', emoji: '👀', title: '看一看', instruction: '仔细看看你面前的食物。它是什么颜色？什么形状？有没有什么你以前没注意到的？', placeholder: '我看到...' },
+    { key: 'smell', emoji: '👃', title: '闻一闻', instruction: '把食物拿到鼻子前，慢慢闻一闻。你闻到了什么气味？', placeholder: '我闻到...' },
+    { key: 'touch', emoji: '✋', title: '摸一摸', instruction: '用手指轻轻触碰食物。它是什么感觉？滑的？粗的？软的？硬的？', placeholder: '我摸到...' },
+    { key: 'taste', emoji: '👅', title: '尝一尝', instruction: '放一小口到嘴里，先不要嚼。感受它在舌头上的味道。然后慢慢嚼，注意味道的变化。', placeholder: '我尝到...' },
+    { key: 'feel', emoji: '💗', title: '感受', instruction: '吃完后，感受一下身体。你的肚子感觉怎样？心情有变化吗？', placeholder: '我感受到...' }
+  ];
+
+  const save = () => {
+    onSave([...log, { date: todayDate(), notes }]);
+    setStep(0); setNotes({ see: '', smell: '', touch: '', taste: '', feel: '' });
+  };
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🍎" title="正念进食" subtitle="慢慢吃，用心感受" />
+
+      {step < 5 ? (
+        <div className="bg-white rounded-2xl p-5 shadow-lg space-y-4">
+          <div className="flex gap-1">{steps.map((_, i) => <div key={i} className={`h-2 flex-1 rounded-full ${i <= step ? 'bg-green-500' : 'bg-gray-200'}`} />)}</div>
+          <div className="text-center">
+            <div className="text-5xl mb-2">{steps[step].emoji}</div>
+            <h3 className="text-xl font-bold text-gray-800">{steps[step].title}</h3>
+          </div>
+          <p className="text-sm text-gray-700">{steps[step].instruction}</p>
+          <textarea value={notes[steps[step].key]} onChange={e => setNotes({ ...notes, [steps[step].key]: e.target.value })}
+            placeholder={steps[step].placeholder}
+            className="w-full h-20 p-3 border-2 border-green-200 rounded-xl focus:border-green-500 focus:outline-none resize-none" />
+          <div className="flex gap-3">
+            {step > 0 && <button onClick={() => setStep(step - 1)} className="flex-1 bg-gray-200 text-gray-700 py-3 rounded-xl font-semibold">上一步</button>}
+            {step < 4 ? (
+              <button onClick={() => setStep(step + 1)} className="flex-1 bg-green-500 text-white py-3 rounded-xl font-semibold">下一步</button>
+            ) : (
+              <button onClick={save} className="flex-1 bg-green-500 text-white py-3 rounded-xl font-semibold">完成</button>
+            )}
+          </div>
+        </div>
+      ) : null}
+
+      <div className="bg-green-50 rounded-xl p-4">
+        <p className="text-sm text-gray-700">🍎 正念进食可以用任何食物来练习——一颗葡萄干、一块巧克力、一口米饭。关键是慢慢来，用心感受。</p>
+      </div>
+
+      {log.length > 0 && (
+        <div className="space-y-2">
+          <h3 className="font-bold text-gray-800">练习记录 ({log.length})</h3>
+          {log.slice(-3).reverse().map((l, i) => (
+            <div key={i} className="bg-green-50 rounded-xl p-3">
+              <p className="text-xs text-gray-500">{l.date}</p>
+              {Object.entries(l.notes).filter(([_, v]) => v).map(([k, v]) => (
+                <p key={k} className="text-xs text-gray-700">• {v}</p>
+              ))}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function ComplimentChainPage({ chain, onSave, onBack }) {
+  const [text, setText] = useState('');
+  const isForSelf = chain.length % 2 === 0;
+
+  const add = () => {
+    if (!text.trim()) return;
+    onSave([...chain, { text: text.trim(), type: isForSelf ? 'self' : 'other', date: todayDate() }]);
+    setText('');
+  };
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🔗" title="夸夸链" subtitle="夸自己一句，再夸别人一句" />
+
+      <div className="bg-gradient-to-r from-pink-100 to-purple-100 rounded-2xl p-4 text-center">
+        <p className="text-sm text-gray-600">夸夸链长度</p>
+        <p className="text-3xl font-bold text-purple-600">{chain.length} 🔗</p>
+      </div>
+
+      <div className="bg-white rounded-2xl p-5 shadow-lg space-y-4">
+        <p className="font-semibold text-gray-800">{isForSelf ? '🌟 夸夸自己' : '💗 夸夸别人'}</p>
+        <p className="text-sm text-gray-600">{isForSelf ? '写一句你喜欢自己的地方' : '写一句你想对别人说的好话'}</p>
+        <textarea value={text} onChange={e => setText(e.target.value)}
+          placeholder={isForSelf ? '我很棒因为...' : '我想对____说...'}
+          className="w-full h-20 p-3 border-2 border-purple-200 rounded-xl focus:border-purple-500 focus:outline-none resize-none" />
+        <button onClick={add} disabled={!text.trim()} className="w-full bg-purple-500 disabled:bg-gray-300 text-white py-3 rounded-xl font-semibold">
+          添加一环 🔗
+        </button>
+      </div>
+
+      {chain.length > 0 && (
+        <div className="space-y-1">
+          <h3 className="font-bold text-gray-800">我的夸夸链</h3>
+          {chain.slice(-10).reverse().map((c, i) => (
+            <div key={i} className={`rounded-xl p-3 flex items-center gap-2 ${c.type === 'self' ? 'bg-yellow-50 border-l-4 border-yellow-400' : 'bg-pink-50 border-l-4 border-pink-400'}`}>
+              <span className="text-lg">{c.type === 'self' ? '🌟' : '💗'}</span>
+              <p className="text-sm text-gray-800 flex-1">{c.text}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function SafePlacePage({ place, onSave, onBack }) {
+  const [step, setStep] = useState(place ? 3 : 0);
+  const [location, setLocation] = useState(place?.location || null);
+  const [elements, setElements] = useState(place?.elements || []);
+  const [description, setDescription] = useState(place?.description || '');
+
+  const save = () => {
+    onSave({ location, elements, description });
+    setStep(3);
+  };
+
+  const toggleElement = (el) => {
+    setElements(prev => prev.includes(el.name) ? prev.filter(e => e !== el.name) : prev.length < 5 ? [...prev, el.name] : prev);
+  };
+
+  if (step === 3 && (place || location)) {
+    const p = place || { location, elements, description };
+    return (
+      <div className="p-6 space-y-5">
+        <BackButton onClick={onBack} />
+        <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl p-6 text-center space-y-3">
+          <div className="text-6xl">{p.location?.emoji || '🏠'}</div>
+          <h2 className="text-2xl font-bold text-gray-800">我的安全基地</h2>
+          <p className="text-lg text-gray-700">{p.location?.name || '我的安全地方'}</p>
+          <div className="flex gap-2 justify-center flex-wrap">
+            {(p.elements || []).map((el, i) => {
+              const item = SAFE_PLACE_ELEMENTS.find(e => e.name === el);
+              return <span key={i} className="bg-white px-3 py-1 rounded-full text-sm shadow">{item?.emoji} {el}</span>;
+            })}
+          </div>
+          {p.description && <p className="text-sm text-gray-600 italic mt-2">"{p.description}"</p>}
+          <p className="text-xs text-gray-500 mt-3">闭上眼睛，深呼吸，想象自己就在这里。你是安全的。💗</p>
+        </div>
+        <button onClick={() => { setStep(0); setLocation(null); setElements([]); setDescription(''); }}
+          className="w-full bg-white border-2 border-purple-300 text-purple-600 py-3 rounded-xl font-semibold">重新设计安全基地</button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🏠" title="安全基地" subtitle="设计一个只属于你的安全地方" />
+
+      <div className="flex gap-1">{[0,1,2].map(i => <div key={i} className={`h-2 flex-1 rounded-full ${i <= step ? 'bg-purple-500' : 'bg-gray-200'}`} />)}</div>
+
+      {step === 0 && (
+        <div className="bg-white rounded-2xl p-5 shadow-lg space-y-4">
+          <p className="font-semibold text-gray-800">选一个地方</p>
+          <div className="grid grid-cols-3 gap-3">
+            {SAFE_PLACE_LOCATIONS.map((loc, i) => (
+              <button key={i} onClick={() => { setLocation(loc); setStep(1); }}
+                className="bg-purple-50 border-2 border-purple-200 rounded-xl p-4 text-center hover:scale-105 transition">
+                <div className="text-3xl">{loc.emoji}</div>
+                <p className="text-xs mt-1 font-semibold">{loc.name}</p>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {step === 1 && (
+        <div className="bg-white rounded-2xl p-5 shadow-lg space-y-4">
+          <p className="font-semibold text-gray-800">在你的{location?.name}里加些什么？（最多5个）</p>
+          <div className="grid grid-cols-2 gap-2">
+            {SAFE_PLACE_ELEMENTS.map((el, i) => (
+              <button key={i} onClick={() => toggleElement(el)}
+                className={`rounded-xl p-3 text-left border-2 transition ${elements.includes(el.name) ? 'border-purple-500 bg-purple-50' : 'border-gray-200'}`}>
+                <span className="text-xl">{el.emoji}</span>
+                <p className="text-xs font-semibold mt-1">{el.name}</p>
+              </button>
+            ))}
+          </div>
+          <button onClick={() => setStep(2)} disabled={elements.length === 0}
+            className="w-full bg-purple-500 disabled:bg-gray-300 text-white py-3 rounded-xl font-semibold">下一步</button>
+        </div>
+      )}
+
+      {step === 2 && (
+        <div className="bg-white rounded-2xl p-5 shadow-lg space-y-4">
+          <p className="font-semibold text-gray-800">描述一下你的安全基地</p>
+          <textarea value={description} onChange={e => setDescription(e.target.value)}
+            placeholder="在这里，我可以看到...听到...感觉到..."
+            className="w-full h-28 p-3 border-2 border-purple-200 rounded-xl focus:border-purple-500 focus:outline-none resize-none" />
+          <button onClick={save} className="w-full bg-purple-500 text-white py-3 rounded-xl font-semibold">完成 ✨</button>
+        </div>
+      )}
+    </div>
+  );
+}
+
 // ─── Main App ────────────────────────────────────────────────────────────────
 
 export default function HealingKidsApp() {
@@ -3400,6 +4148,17 @@ export default function HealingKidsApp() {
   const [worrySorted, setWorrySorted] = useState([]);
   const [detectiveCases, setDetectiveCases] = useState([]);
   const [celebrationWall, setCelebrationWall] = useState([]);
+  // Batch 5 state
+  const [drawingGallery, setDrawingGallery] = useState([]);
+  const [bodyEmotionMaps, setBodyEmotionMaps] = useState([]);
+  const [thinkingTrapsCaught, setThinkingTrapsCaught] = useState([]);
+  const [fearLadders, setFearLadders] = useState([]);
+  const [gratitudeLetters, setGratitudeLetters] = useState([]);
+  const [firstAidKit, setFirstAidKit] = useState([]);
+  const [dreamJournal, setDreamJournal] = useState([]);
+  const [mindfulEatingLog, setMindfulEatingLog] = useState([]);
+  const [complimentChain, setComplimentChain] = useState([]);
+  const [safePlace, setSafePlace] = useState(null);
 
   useEffect(() => {
     const saved = loadState();
@@ -3438,6 +4197,16 @@ export default function HealingKidsApp() {
       setWorrySorted(saved.worrySorted || []);
       setDetectiveCases(saved.detectiveCases || []);
       setCelebrationWall(saved.celebrationWall || []);
+      setDrawingGallery(saved.drawingGallery || []);
+      setBodyEmotionMaps(saved.bodyEmotionMaps || []);
+      setThinkingTrapsCaught(saved.thinkingTrapsCaught || []);
+      setFearLadders(saved.fearLadders || []);
+      setGratitudeLetters(saved.gratitudeLetters || []);
+      setFirstAidKit(saved.firstAidKit || []);
+      setDreamJournal(saved.dreamJournal || []);
+      setMindfulEatingLog(saved.mindfulEatingLog || []);
+      setComplimentChain(saved.complimentChain || []);
+      setSafePlace(saved.safePlace || null);
     }
     setHydrated(true);
   }, []);
@@ -3450,13 +4219,15 @@ export default function HealingKidsApp() {
       worryEntries, strengths, emotionLog, purchasedRewards, problemEntries, natureLog,
       routineData, thermometerLog, achievements, goalData, moodPredictions, kindnessLog, weeklyReviews,
       storyEntries, playlistData, petData, valuesData, capsules, worrySorted, detectiveCases, celebrationWall,
+      drawingGallery, bodyEmotionMaps, thinkingTrapsCaught, fearLadders, gratitudeLetters, firstAidKit, dreamJournal, mindfulEatingLog, complimentChain, safePlace,
       lastDate: todayStr()
     });
   }, [mood, dailyProgress, points, streak, journalEntries, moodHistory,
       thoughtEntries, gratitudeEntries, activationLog, safetyPlan, socialLog, sleepLog, affirmationFavs,
       worryEntries, strengths, emotionLog, purchasedRewards, problemEntries, natureLog,
       routineData, thermometerLog, achievements, goalData, moodPredictions, kindnessLog, weeklyReviews,
-      storyEntries, playlistData, petData, valuesData, capsules, worrySorted, detectiveCases, celebrationWall, hydrated]);
+      storyEntries, playlistData, petData, valuesData, capsules, worrySorted, detectiveCases, celebrationWall,
+      drawingGallery, bodyEmotionMaps, thinkingTrapsCaught, fearLadders, gratitudeLetters, firstAidKit, dreamJournal, mindfulEatingLog, complimentChain, safePlace, hydrated]);
 
   const completeActivity = useCallback((activityId) => {
     setDailyProgress(prev => {
@@ -3757,6 +4528,32 @@ export default function HealingKidsApp() {
           <EmotionDetectivePage cases={detectiveCases} onSave={c => { setDetectiveCases(c); if (c.length > detectiveCases.length) setPoints(p => p + 10); }} onBack={goTools} />
         )}
         {currentPage === 'celebration' && <CelebrationWallPage wall={celebrationWall} onSave={setCelebrationWall} onBack={goTools} />}
+        {currentPage === 'drawboard' && (
+          <DrawingBoardPage gallery={drawingGallery} onSave={g => { setDrawingGallery(g); if (g.length > drawingGallery.length) setPoints(p => p + 10); }} onBack={goTools} />
+        )}
+        {currentPage === 'bodymap' && (
+          <BodyEmotionMapPage maps={bodyEmotionMaps} onSave={setBodyEmotionMaps} onBack={goTools} />
+        )}
+        {currentPage === 'traps' && (
+          <ThinkingTrapsPage caught={thinkingTrapsCaught} onSave={c => { setThinkingTrapsCaught(c); if (c.length > thinkingTrapsCaught.length) setPoints(p => p + 10); }} onBack={goTools} />
+        )}
+        {currentPage === 'fearladder' && <FearLadderPage ladders={fearLadders} onSave={setFearLadders} onBack={goTools} />}
+        {currentPage === 'gratitudeletter' && (
+          <GratitudeLetterPage letters={gratitudeLetters} onSave={l => { setGratitudeLetters(l); if (l.length > gratitudeLetters.length) setPoints(p => p + 15); }} onBack={goTools} />
+        )}
+        {currentPage === 'firstaid' && (
+          <FirstAidKitPage kit={firstAidKit} onSave={setFirstAidKit} allTools={TOOL_PAGES} onBack={goTools} onNavigate={setCurrentPage} />
+        )}
+        {currentPage === 'dreamjournal' && (
+          <DreamJournalPage dreams={dreamJournal} onSave={d => { setDreamJournal(d); if (d.length > dreamJournal.length) setPoints(p => p + 5); }} onBack={goTools} />
+        )}
+        {currentPage === 'mindfuleat' && (
+          <MindfulEatingPage log={mindfulEatingLog} onSave={l => { setMindfulEatingLog(l); if (l.length > mindfulEatingLog.length) setPoints(p => p + 10); }} onBack={goTools} />
+        )}
+        {currentPage === 'compliments' && (
+          <ComplimentChainPage chain={complimentChain} onSave={c => { setComplimentChain(c); if (c.length > complimentChain.length) setPoints(p => p + 5); }} onBack={goTools} />
+        )}
+        {currentPage === 'safeplace' && <SafePlacePage place={safePlace} onSave={setSafePlace} onBack={goTools} />}
 
         {/* ── Help ── */}
         {currentPage === 'help' && (
