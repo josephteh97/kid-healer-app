@@ -542,14 +542,14 @@ const GUIDED_PATHWAYS = {
 };
 
 const TOOL_CATEGORIES = [
-  { name: '放松与正念', emoji: '🧘', ids: ['bodyscan', 'grounding', 'movement', 'safeplace', 'mindfuleat'] },
-  { name: '情绪认知', emoji: '🎭', ids: ['emotions', 'thermometer', 'bodymap', 'detective', 'moodchart'] },
-  { name: '思维训练', emoji: '🧠', ids: ['thought', 'traps', 'worrybox', 'worrysorter', 'predict'] },
-  { name: '积极行动', emoji: '🌟', ids: ['activation', 'activity', 'kindness', 'goals', 'routine'] },
-  { name: '自我成长', emoji: '🌱', ids: ['strengths', 'values', 'fearladder', 'problemsolve', 'psychoedu'] },
-  { name: '创意表达', emoji: '🎨', ids: ['drawboard', 'storycreator', 'playlist', 'dreamjournal', 'timecapsule'] },
+  { name: '放松与正念', emoji: '🧘', ids: ['bodyscan', 'grounding', 'movement', 'safeplace', 'mindfuleat', 'musclerelax', 'mindfulmovement'] },
+  { name: '情绪认知', emoji: '🎭', ids: ['emotions', 'thermometer', 'bodymap', 'detective', 'moodchart', 'emotioncharades'] },
+  { name: '思维训练', emoji: '🧠', ids: ['thought', 'traps', 'worrybox', 'worrysorter', 'predict', 'worrytime', 'growthmindset'] },
+  { name: '积极行动', emoji: '🌟', ids: ['activation', 'activity', 'kindness', 'goals', 'routine', 'couragetracker'] },
+  { name: '自我成长', emoji: '🌱', ids: ['strengths', 'values', 'fearladder', 'problemsolve', 'psychoedu', 'memoryvault'] },
+  { name: '创意表达', emoji: '🎨', ids: ['drawboard', 'storycreator', 'playlist', 'dreamjournal', 'timecapsule', 'futureletter'] },
   { name: '感恩与关爱', emoji: '💖', ids: ['gratitude', 'gratitudeletter', 'compassion', 'compliments', 'affirmation'] },
-  { name: '社交与支持', emoji: '👫', ids: ['social', 'peerstories', 'parentchild', 'pet', 'nature'] },
+  { name: '社交与支持', emoji: '👫', ids: ['social', 'peerstories', 'parentchild', 'pet', 'nature', 'socialroleplay', 'sensorytoolkit'] },
   { name: '每日仪式', emoji: '☀️', ids: ['morningroutine', 'eveningroutine', 'routine', 'sleepcoach', 'moodinsights'] },
   { name: '成长计划', emoji: '📅', ids: ['program', 'storyjourney', 'dailychallenge', 'streakrewards', 'milestones', 'screening'] },
   { name: '应急与安全', emoji: '🛡️', ids: ['coping', 'firstaid', 'safety', 'volcano', 'sleep', 'offlinecard'] },
@@ -894,7 +894,148 @@ const TOOL_PAGES = [
   { id: 'dailychallenge', emoji: '🎯', title: '每日挑战', color: 'from-orange-100 to-yellow-100', desc: '一个小任务' },
   { id: 'timeline', emoji: '📈', title: '成长时间线', color: 'from-green-100 to-emerald-100', desc: '看到变化' },
   { id: 'counselor', emoji: '🏫', title: '咨询师看板', color: 'from-blue-100 to-cyan-100', desc: '专业报告' },
-  { id: 'offlinecard', emoji: '🪪', title: '紧急卡片', color: 'from-red-100 to-pink-100', desc: '随身携带' }
+  { id: 'offlinecard', emoji: '🪪', title: '紧急卡片', color: 'from-red-100 to-pink-100', desc: '随身携带' },
+  { id: 'socialroleplay', emoji: '🎭', title: '社交练习', color: 'from-purple-100 to-pink-100', desc: '角色扮演' },
+  { id: 'growthmindset', emoji: '🌱', title: '成长思维', color: 'from-green-100 to-emerald-100', desc: '大脑成长' },
+  { id: 'memoryvault', emoji: '💎', title: '快乐记忆', color: 'from-yellow-100 to-amber-100', desc: '收藏美好' },
+  { id: 'sensorytoolkit', emoji: '🧸', title: '感官安慰', color: 'from-pink-100 to-rose-100', desc: '五感舒缓' },
+  { id: 'emotioncharades', emoji: '🎮', title: '情绪猜猜', color: 'from-violet-100 to-purple-100', desc: '游戏学习' },
+  { id: 'futureletter', emoji: '💌', title: '给未来的信', color: 'from-indigo-100 to-blue-100', desc: '寄给未来' },
+  { id: 'mindfulmovement', emoji: '💃', title: '快乐律动', color: 'from-green-100 to-teal-100', desc: '动起来' },
+  { id: 'worrytime', emoji: '🕐', title: '烦恼时间', color: 'from-blue-100 to-indigo-100', desc: '定时处理' },
+  { id: 'couragetracker', emoji: '🦁', title: '勇气追踪', color: 'from-orange-100 to-yellow-100', desc: '记录勇敢' },
+  { id: 'musclerelax', emoji: '🧘', title: '全身放松', color: 'from-blue-100 to-green-100', desc: '渐进放松' }
+];
+
+// ─── Social Skills Role-Play ────────────────────────────────────────────────
+const SOCIAL_SCENARIOS = [
+  { id: 'newfriend', emoji: '👋', title: '认识新朋友', scene: '你在公园看到一个小朋友独自坐在秋千旁边。',
+    choices: [
+      { text: '走过去说"你好，我能和你一起玩吗？"', score: 3, feedback: '太棒了！主动友好地打招呼是交朋友的好方法。' },
+      { text: '站在远处看着，希望对方先来找你', score: 1, feedback: '等待也可以，但主动一点能更快交到朋友哦。' },
+      { text: '和旁边的大人说你想交朋友', score: 2, feedback: '寻求帮助也是一种方法，下次可以试试自己走过去。' }
+    ] },
+  { id: 'teasing', emoji: '😤', title: '被嘲笑了', scene: '有同学嘲笑你画的画不好看。',
+    choices: [
+      { text: '深呼吸，说"每个人画画风格不同，我喜欢我的画"', score: 3, feedback: '非常自信！表达自己的想法同时保持冷静，太厉害了。' },
+      { text: '也嘲笑回去', score: 0, feedback: '嘲笑回去可能会让情况更糟。试试冷静地表达你的感受。' },
+      { text: '告诉老师', score: 2, feedback: '如果持续被嘲笑，告诉大人是正确的做法。' }
+    ] },
+  { id: 'sharing', emoji: '🤝', title: '学会分享', scene: '你带了一盒好吃的零食，旁边的同学看起来很想吃。',
+    choices: [
+      { text: '问"你要不要也尝一个？"', score: 3, feedback: '主动分享会让大家都开心！你很慷慨。' },
+      { text: '假装没看到', score: 1, feedback: '不想分享也没关系，但分享能带来快乐哦。' },
+      { text: '等对方开口再说', score: 2, feedback: '也可以，不过主动分享会让对方觉得你很友善。' }
+    ] },
+  { id: 'conflict', emoji: '⚡', title: '朋友吵架了', scene: '你的两个好朋友吵架了，都想让你站在自己这边。',
+    choices: [
+      { text: '告诉他们"你们都是我的好朋友，我们一起想办法解决"', score: 3, feedback: '太有智慧了！不选边站，帮助他们和好是最好的方法。' },
+      { text: '选一个你更好的朋友那边', score: 0, feedback: '选边站可能会伤害另一个朋友。试试帮他们和好。' },
+      { text: '暂时不参与，让他们自己冷静', score: 2, feedback: '给他们空间也是一种方法，等他们冷静了再帮忙。' }
+    ] },
+  { id: 'askhelp', emoji: '🙋', title: '寻求帮助', scene: '数学作业有一道题你怎么都不会做。',
+    choices: [
+      { text: '举手问老师"这道题我不太懂，能帮我讲一下吗？"', score: 3, feedback: '寻求帮助是勇敢的表现！每个人都有不会的时候。' },
+      { text: '一直自己想，想不出来就算了', score: 1, feedback: '坚持思考很好，但适时寻求帮助效率更高。' },
+      { text: '偷看同桌的答案', score: 0, feedback: '抄答案学不到东西。勇敢地问老师或同学讲解吧。' }
+    ] },
+  { id: 'reject', emoji: '🚫', title: '被拒绝了', scene: '你邀请同学放学后一起玩，但他说没空。',
+    choices: [
+      { text: '说"没关系，下次有空再一起玩吧"', score: 3, feedback: '很成熟的反应！理解别人也有安排，改天再约。' },
+      { text: '很难过，觉得他不喜欢你', score: 1, feedback: '被拒绝难过是正常的，但没空不代表不喜欢你哦。' },
+      { text: '问问其他朋友有没有空', score: 2, feedback: '好主意！多交几个朋友，选择更多。' }
+    ] }
+];
+
+// ─── Growth Mindset ─────────────────────────────────────────────────────────
+const GROWTH_LESSONS = [
+  { id: 'brain', emoji: '🧠', title: '大脑会长大', content: '你的大脑就像肌肉一样，越练习越强大！每次你学新东西，大脑里就会长出新的"连接线"。', exercise: '想一件你以前不会、现在学会了的事情。', affirmation: '我的大脑每天都在成长！' },
+  { id: 'yet', emoji: '✨', title: '还没有≠不会', content: '"我不会"其实是"我还没学会"。加上一个"还"字，意思就完全不同了！', exercise: '把"我不会骑自行车"改成"我还不会骑自行车，但我正在学"。', affirmation: '我现在不会，但我可以学！' },
+  { id: 'mistakes', emoji: '💡', title: '错误是好老师', content: '每个发明家在成功之前都失败了很多次。爱迪生试了1000多次才发明了灯泡！', exercise: '想一个你最近犯的错误，从中你学到了什么？', affirmation: '犯错让我变得更聪明！' },
+  { id: 'effort', emoji: '💪', title: '努力比天赋重要', content: '研究发现，相信努力的孩子比相信天赋的孩子进步更大。因为他们更愿意尝试难的事情！', exercise: '今天做一件有点难但你想学会的事情。', affirmation: '我努力的过程比结果更重要！' },
+  { id: 'feedback', emoji: '🎯', title: '建议帮我变更好', content: '当别人给你建议时，不是在说你不好，而是在帮你变得更好。就像教练帮运动员进步一样。', exercise: '今天认真听一个建议，然后试试看。', affirmation: '我欢迎建议，它帮助我成长！' }
+];
+
+// ─── Positive Memory Vault ──────────────────────────────────────────────────
+const MEMORY_TAGS = [
+  { emoji: '👨‍👩‍👧', label: '家人' }, { emoji: '👫', label: '朋友' }, { emoji: '🎮', label: '玩耍' },
+  { emoji: '🏆', label: '成就' }, { emoji: '🌈', label: '惊喜' }, { emoji: '🎂', label: '节日' },
+  { emoji: '🐾', label: '动物' }, { emoji: '🌸', label: '自然' }
+];
+
+// ─── Sensory Comfort Toolkit ────────────────────────────────────────────────
+const SENSORY_ITEMS = [
+  { sense: '看', emoji: '👀', items: ['看窗外的云☁️', '看喜欢的照片📸', '看鱼缸里的鱼🐠', '看彩虹🌈', '看烛光摇曳🕯️'] },
+  { sense: '听', emoji: '👂', items: ['听鸟叫声🐦', '听雨声🌧️', '听喜欢的歌🎵', '听风铃🎐', '听猫咪呼噜🐱'] },
+  { sense: '摸', emoji: '✋', items: ['抱软软的毛绒玩具🧸', '摸光滑的石头🪨', '揉面团或橡皮泥🎨', '泡温水🛁', '摸丝绒布料🧣'] },
+  { sense: '闻', emoji: '👃', items: ['闻花香🌺', '闻刚烤好的面包🍞', '闻妈妈的香水💐', '闻新书的味道📚', '闻薰衣草🪻'] },
+  { sense: '尝', emoji: '👅', items: ['喝温热的牛奶🥛', '吃巧克力🍫', '嚼薄荷糖🍬', '吃喜欢的水果🍓', '喝蜂蜜水🍯'] }
+];
+
+// ─── Emotion Charades ───────────────────────────────────────────────────────
+const CHARADE_ROUNDS = [
+  { type: 'guess', scenario: '小明考试得了100分，他高兴地跳了起来。', answer: '开心', options: ['开心', '难过', '害怕', '生气'] },
+  { type: 'guess', scenario: '小红的冰淇淋掉在了地上。', answer: '难过', options: ['开心', '难过', '兴奋', '平静'] },
+  { type: 'guess', scenario: '小刚在黑暗的房间里听到奇怪的声音。', answer: '害怕', options: ['开心', '害怕', '生气', '惊讶'] },
+  { type: 'guess', scenario: '小丽的弟弟把她画了很久的画撕了。', answer: '生气', options: ['开心', '平静', '生气', '害羞'] },
+  { type: 'guess', scenario: '妈妈突然出现在学校，给小明一个大大的拥抱。', answer: '惊喜', options: ['害怕', '惊喜', '难过', '无聊'] },
+  { type: 'guess', scenario: '小红被选为班长，所有同学都在看她。', answer: '紧张', options: ['紧张', '生气', '难过', '无聊'] },
+  { type: 'recall', prompt: '你上一次感到特别开心是什么时候？发生了什么事？', emotion: '开心' },
+  { type: 'recall', prompt: '你有没有帮助过别人？那时候你是什么感觉？', emotion: '自豪' },
+  { type: 'recall', prompt: '你有没有做过一件很勇敢的事？', emotion: '勇敢' },
+  { type: 'recall', prompt: '上次你感到害怕是什么时候？后来怎么样了？', emotion: '害怕' }
+];
+
+// ─── Future Self Letters ────────────────────────────────────────────────────
+const LETTER_PROMPTS = [
+  { delay: 7, label: '一周后', emoji: '📅', hint: '一周后的你会在做什么呢？给TA写一封鼓励的信吧。' },
+  { delay: 30, label: '一个月后', emoji: '🌙', hint: '一个月后的你会有什么变化？想对TA说什么？' },
+  { delay: 90, label: '三个月后', emoji: '🌟', hint: '三个月后的你一定成长了很多！写下你的期待。' }
+];
+
+const FUTURE_SELF_PROMPTS = [
+  '亲爱的未来的我，我想告诉你...',
+  '我希望你记住，你已经...',
+  '不管怎样，我相信你能...',
+  '我现在最想对你说的是...'
+];
+
+// ─── Mindful Movement & Dance ───────────────────────────────────────────────
+const MOVEMENT_EXERCISES = [
+  { id: 'shakeoff', emoji: '🫨', title: '甩掉烦恼', duration: 60, steps: ['站起来，双脚分开', '用力甩动双手，像要把水甩干一样', '甩动双脚，跳一跳', '全身都动起来，甩掉所有烦恼！', '慢慢停下来，感受身体的轻松'] },
+  { id: 'animal', emoji: '🐻', title: '动物模仿', duration: 90, steps: ['像大熊一样慢慢走路🐻', '像兔子一样跳跳跳🐰', '像蛇一样扭动身体🐍', '像大鸟一样展开翅膀🦅', '像猫咪一样伸懒腰🐱'] },
+  { id: 'freeze', emoji: '🧊', title: '音乐冻结', duration: 120, steps: ['想象音乐响起，自由跳舞！', '音乐停了——定住不动！', '保持这个姿势5秒钟...', '音乐又响了，继续跳！', '再次定住！感受身体的感觉'] },
+  { id: 'stretch', emoji: '🌈', title: '彩虹伸展', duration: 90, steps: ['双手慢慢举过头顶，伸向天空', '身体向左弯，像彩虹的左边', '回到中间，深呼吸', '身体向右弯，像彩虹的右边', '双手慢慢放下，感觉身体暖暖的'] },
+  { id: 'tree', emoji: '🌲', title: '大树站立', duration: 60, steps: ['双脚稳稳站在地上，像树根', '慢慢举起双手，像树枝向上生长', '微微摇摆，像风吹过树梢', '想象树叶在阳光下闪闪发光', '你是一棵坚强又美丽的大树'] }
+];
+
+// ─── Worry Time Scheduler ───────────────────────────────────────────────────
+const WORRY_PROCESS_OPTIONS = [
+  { emoji: '🔍', label: '这个烦恼是真的吗？有证据吗？' },
+  { emoji: '🛠️', label: '我能做些什么来解决它？' },
+  { emoji: '🎈', label: '这个烦恼其实不太重要，可以放下' },
+  { emoji: '🤝', label: '我需要找人聊聊这件事' },
+  { emoji: '⏰', label: '以后再想，现在先做别的' }
+];
+
+// ─── Acts of Courage ────────────────────────────────────────────────────────
+const COURAGE_CATEGORIES = [
+  { emoji: '🗣️', label: '表达自己', examples: ['在课上举手发言', '告诉朋友你的想法', '说出自己的感受'] },
+  { emoji: '🆕', label: '尝试新事物', examples: ['尝试一种新食物', '学一个新技能', '去一个没去过的地方'] },
+  { emoji: '💪', label: '面对困难', examples: ['做一道很难的题目', '坚持练习不放弃', '独立完成一件事'] },
+  { emoji: '🤝', label: '社交勇气', examples: ['主动和新同学打招呼', '邀请别人一起玩', '在别人面前表演'] },
+  { emoji: '❤️', label: '情感勇气', examples: ['承认自己犯了错', '说"对不起"', '说"我需要帮助"'] }
+];
+
+// ─── Progressive Muscle Relaxation ──────────────────────────────────────────
+const MUSCLE_GROUPS = [
+  { id: 'hands', emoji: '✊', name: '双手', tense: '用力握拳，像在挤柠檬汁一样！使劲握...', relax: '松开！感觉手指变得软软的、暖暖的。', duration: 8 },
+  { id: 'arms', emoji: '💪', name: '手臂', tense: '用力弯曲手臂，像在展示你的肌肉！使劲！', relax: '放下来，让手臂软软地垂在身体两边。', duration: 8 },
+  { id: 'shoulders', emoji: '🤷', name: '肩膀', tense: '把肩膀使劲抬到耳朵旁边，缩起来！', relax: '让肩膀慢慢放下来，感觉好轻松。', duration: 8 },
+  { id: 'face', emoji: '😣', name: '脸', tense: '皱起整张脸，闭紧眼睛、皱鼻子、咬牙！像吃了很酸的柠檬！', relax: '放松！让脸变得平平的、舒服的。', duration: 8 },
+  { id: 'tummy', emoji: '🫃', name: '肚子', tense: '收紧肚子，像有人要碰你的肚子一样！使劲！', relax: '松开，让肚子自然地上下起伏。', duration: 8 },
+  { id: 'legs', emoji: '🦵', name: '腿', tense: '把腿伸直，脚趾使劲往前勾！感觉小腿紧紧的！', relax: '放下来，让腿变得软软的，很舒服。', duration: 8 },
+  { id: 'toes', emoji: '🦶', name: '脚趾', tense: '使劲卷起脚趾头，像在沙滩上抓沙子一样！', relax: '松开，感觉脚趾暖暖的、轻轻的。', duration: 8 }
 ];
 
 const fmtTime = (s) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
@@ -5612,6 +5753,716 @@ function SafePlacePage({ place, onSave, onBack }) {
   );
 }
 
+// ─── Social Skills Role-Play ────────────────────────────────────────────────
+function SocialRolePlayPage({ history, onComplete, onBack }) {
+  const [current, setCurrent] = useState(0);
+  const [chosen, setChosen] = useState(null);
+  const [score, setScore] = useState(0);
+  const available = SOCIAL_SCENARIOS.filter(s => !(history || []).includes(s.id));
+  const scenarios = available.length > 0 ? available : SOCIAL_SCENARIOS;
+  const scenario = scenarios[current % scenarios.length];
+
+  const handleChoice = (choice) => {
+    setChosen(choice);
+    setScore(prev => prev + choice.score);
+  };
+
+  const handleNext = () => {
+    if (current + 1 >= scenarios.length) {
+      onComplete({ id: scenario.id, score, date: new Date().toLocaleDateString('zh-CN') });
+      setCurrent(0); setChosen(null); setScore(0);
+    } else {
+      setCurrent(prev => prev + 1); setChosen(null);
+    }
+  };
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🎭" title="社交练习场" subtitle="在安全的环境里练习社交技巧" />
+      <div className="bg-white rounded-2xl p-5 shadow-lg">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-2xl">{scenario.emoji}</span>
+          <h3 className="font-bold text-gray-800">{scenario.title}</h3>
+          <span className="ml-auto text-xs text-gray-400">{current + 1}/{scenarios.length}</span>
+        </div>
+        <div className="bg-blue-50 rounded-xl p-4 mb-4">
+          <p className="text-gray-700">{scenario.scene}</p>
+        </div>
+        <p className="text-sm font-semibold text-gray-600 mb-3">你会怎么做？</p>
+        <div className="space-y-2">
+          {scenario.choices.map((c, i) => (
+            <button key={i} onClick={() => !chosen && handleChoice(c)}
+              className={`w-full text-left rounded-xl p-4 transition ${chosen === c ? (c.score >= 2 ? 'bg-green-100 border-2 border-green-400' : 'bg-orange-100 border-2 border-orange-400') : chosen ? 'bg-gray-50 opacity-50' : 'bg-gray-50 hover:bg-gray-100'}`}>
+              <p className="text-sm text-gray-800">{c.text}</p>
+              {chosen === c && <p className="text-xs mt-2 text-gray-600">{c.feedback}</p>}
+            </button>
+          ))}
+        </div>
+        {chosen && (
+          <button onClick={handleNext} className="w-full mt-4 bg-purple-500 text-white rounded-xl py-3 font-bold hover:bg-purple-600">
+            {current + 1 >= scenarios.length ? '完成练习 🎉' : '下一题 →'}
+          </button>
+        )}
+      </div>
+      <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-4 text-center">
+        <p className="text-sm text-gray-600">当前得分：<span className="font-bold text-purple-600">{score}</span> 分</p>
+      </div>
+    </div>
+  );
+}
+
+// ─── Growth Mindset Lessons ─────────────────────────────────────────────────
+function GrowthMindsetPage({ completed, onComplete, onBack }) {
+  const [activeLesson, setActiveLesson] = useState(null);
+  const [exerciseDone, setExerciseDone] = useState(false);
+
+  if (activeLesson) {
+    const lesson = GROWTH_LESSONS.find(l => l.id === activeLesson);
+    return (
+      <div className="p-6 space-y-5">
+        <BackButton onClick={() => { setActiveLesson(null); setExerciseDone(false); }} />
+        <div className="text-center">
+          <div className="text-5xl mb-3">{lesson.emoji}</div>
+          <h2 className="text-2xl font-bold text-gray-800">{lesson.title}</h2>
+        </div>
+        <div className="bg-white rounded-2xl p-5 shadow-lg">
+          <p className="text-gray-700 leading-relaxed mb-4">{lesson.content}</p>
+          <div className="bg-yellow-50 rounded-xl p-4 mb-4">
+            <p className="text-sm font-bold text-yellow-800 mb-1">🎯 小练习</p>
+            <p className="text-sm text-gray-700">{lesson.exercise}</p>
+          </div>
+          {!exerciseDone ? (
+            <button onClick={() => setExerciseDone(true)} className="w-full bg-green-500 text-white rounded-xl py-3 font-bold hover:bg-green-600">我做到了！ ✅</button>
+          ) : (
+            <div className="space-y-3">
+              <div className="bg-green-50 rounded-xl p-4 text-center">
+                <p className="text-lg font-bold text-green-700">今日肯定</p>
+                <p className="text-green-600 mt-1">{lesson.affirmation}</p>
+              </div>
+              <button onClick={() => { onComplete(lesson.id); setActiveLesson(null); setExerciseDone(false); }}
+                className="w-full bg-purple-500 text-white rounded-xl py-3 font-bold hover:bg-purple-600">完成课程 🎉</button>
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🌱" title="成长思维" subtitle="学习让大脑越来越强大的秘密" />
+      <div className="space-y-3">
+        {GROWTH_LESSONS.map(lesson => {
+          const done = (completed || []).includes(lesson.id);
+          return (
+            <button key={lesson.id} onClick={() => setActiveLesson(lesson.id)}
+              className={`w-full flex items-center gap-4 bg-white rounded-2xl p-4 shadow hover:shadow-md transition ${done ? 'opacity-70' : ''}`}>
+              <span className="text-3xl">{lesson.emoji}</span>
+              <div className="text-left flex-1">
+                <p className="font-bold text-gray-800">{lesson.title}</p>
+                <p className="text-xs text-gray-500">{lesson.content.slice(0, 30)}...</p>
+              </div>
+              {done && <span className="text-green-500 text-lg">✅</span>}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// ─── Positive Memory Vault ──────────────────────────────────────────────────
+function MemoryVaultPage({ memories, onSave, onBack }) {
+  const [adding, setAdding] = useState(false);
+  const [title, setTitle] = useState('');
+  const [detail, setDetail] = useState('');
+  const [tag, setTag] = useState(MEMORY_TAGS[0].label);
+
+  const handleSave = () => {
+    if (!title.trim()) return;
+    onSave({ title: title.trim(), detail: detail.trim(), tag, date: new Date().toLocaleDateString('zh-CN') });
+    setTitle(''); setDetail(''); setTag(MEMORY_TAGS[0].label); setAdding(false);
+  };
+
+  const randomMemory = memories.length > 0 ? memories[Math.floor(Math.random() * memories.length)] : null;
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="💎" title="快乐记忆库" subtitle="收藏你最珍贵的快乐回忆" />
+      {randomMemory && !adding && (
+        <div className="bg-gradient-to-r from-yellow-100 to-orange-100 rounded-2xl p-5 shadow-lg">
+          <p className="text-xs text-orange-600 mb-1">✨ 随机美好记忆</p>
+          <p className="font-bold text-gray-800">{randomMemory.title}</p>
+          {randomMemory.detail && <p className="text-sm text-gray-600 mt-1">{randomMemory.detail}</p>}
+          <p className="text-xs text-gray-400 mt-2">{randomMemory.date} · {randomMemory.tag}</p>
+        </div>
+      )}
+      {adding ? (
+        <div className="bg-white rounded-2xl p-5 shadow-lg space-y-4">
+          <input value={title} onChange={e => setTitle(e.target.value)} placeholder="这个快乐记忆叫什么？"
+            className="w-full border-2 border-purple-200 rounded-xl p-3 focus:border-purple-400 outline-none" />
+          <textarea value={detail} onChange={e => setDetail(e.target.value)} placeholder="描述一下这个美好的瞬间..."
+            className="w-full border-2 border-purple-200 rounded-xl p-3 h-24 focus:border-purple-400 outline-none" />
+          <div className="flex flex-wrap gap-2">
+            {MEMORY_TAGS.map(t => (
+              <button key={t.label} onClick={() => setTag(t.label)}
+                className={`px-3 py-1 rounded-full text-sm ${tag === t.label ? 'bg-purple-500 text-white' : 'bg-gray-100 text-gray-600'}`}>
+                {t.emoji} {t.label}
+              </button>
+            ))}
+          </div>
+          <div className="flex gap-2">
+            <button onClick={() => setAdding(false)} className="flex-1 bg-gray-200 rounded-xl py-3 font-bold text-gray-700">取消</button>
+            <button onClick={handleSave} className="flex-1 bg-purple-500 text-white rounded-xl py-3 font-bold hover:bg-purple-600">保存 💎</button>
+          </div>
+        </div>
+      ) : (
+        <button onClick={() => setAdding(true)} className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-2xl py-4 font-bold text-lg shadow-lg hover:shadow-xl transition">+ 添加新记忆</button>
+      )}
+      {memories.length > 0 && (
+        <div className="space-y-2">
+          <h3 className="font-bold text-gray-700">我的记忆库 ({memories.length})</h3>
+          {memories.slice().reverse().map((m, i) => (
+            <div key={i} className="bg-white rounded-xl p-4 shadow flex items-start gap-3">
+              <span className="text-xl">{MEMORY_TAGS.find(t => t.label === m.tag)?.emoji || '💎'}</span>
+              <div className="flex-1">
+                <p className="font-semibold text-gray-800">{m.title}</p>
+                {m.detail && <p className="text-xs text-gray-500 mt-1">{m.detail}</p>}
+                <p className="text-xs text-gray-400 mt-1">{m.date}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Sensory Comfort Toolkit ────────────────────────────────────────────────
+function SensoryToolkitPage({ myKit, onSave, onBack }) {
+  const [kit, setKit] = useState(myKit || {});
+
+  const toggle = (sense, item) => {
+    setKit(prev => {
+      const items = prev[sense] || [];
+      const updated = items.includes(item) ? items.filter(i => i !== item) : [...items, item];
+      return { ...prev, [sense]: updated };
+    });
+  };
+
+  const totalItems = Object.values(kit).reduce((sum, arr) => sum + arr.length, 0);
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🧸" title="感官安慰包" subtitle="选择让你感到舒服的东西" />
+      <div className="space-y-4">
+        {SENSORY_ITEMS.map(sense => (
+          <div key={sense.sense} className="bg-white rounded-2xl p-4 shadow">
+            <h3 className="font-bold text-gray-800 mb-2">{sense.emoji} {sense.sense}觉</h3>
+            <div className="flex flex-wrap gap-2">
+              {sense.items.map(item => {
+                const selected = (kit[sense.sense] || []).includes(item);
+                return (
+                  <button key={item} onClick={() => toggle(sense.sense, item)}
+                    className={`text-xs px-3 py-2 rounded-full transition ${selected ? 'bg-purple-500 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}>
+                    {item}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
+      {totalItems > 0 && (
+        <button onClick={() => onSave(kit)} className="w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-2xl py-4 font-bold text-lg shadow-lg">
+          保存我的安慰包 ({totalItems}个) 🧸
+        </button>
+      )}
+    </div>
+  );
+}
+
+// ─── Emotion Charades Game ──────────────────────────────────────────────────
+function EmotionCharadesPage({ score: savedScore, onComplete, onBack }) {
+  const [round, setRound] = useState(0);
+  const [answer, setAnswer] = useState(null);
+  const [recallText, setRecallText] = useState('');
+  const [points, setPoints] = useState(0);
+  const charade = CHARADE_ROUNDS[round % CHARADE_ROUNDS.length];
+
+  const handleGuess = (option) => {
+    setAnswer(option);
+    if (option === charade.answer) setPoints(prev => prev + 10);
+  };
+
+  const handleRecallSubmit = () => {
+    if (!recallText.trim()) return;
+    setPoints(prev => prev + 15);
+    setAnswer('done');
+  };
+
+  const handleNext = () => {
+    if (round + 1 >= CHARADE_ROUNDS.length) {
+      onComplete(points);
+      setRound(0); setAnswer(null); setRecallText(''); setPoints(0);
+    } else {
+      setRound(prev => prev + 1); setAnswer(null); setRecallText('');
+    }
+  };
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🎮" title="情绪猜猜猜" subtitle="通过游戏认识更多情绪" />
+      <div className="flex justify-between items-center">
+        <span className="text-sm text-gray-500">第 {round + 1}/{CHARADE_ROUNDS.length} 轮</span>
+        <span className="bg-yellow-100 px-3 py-1 rounded-full text-sm font-bold text-yellow-700">⭐ {points}分</span>
+      </div>
+      <div className="bg-white rounded-2xl p-5 shadow-lg">
+        {charade.type === 'guess' ? (
+          <>
+            <div className="bg-blue-50 rounded-xl p-4 mb-4">
+              <p className="text-gray-700">{charade.scenario}</p>
+              <p className="text-sm font-bold text-blue-600 mt-2">这个人感觉怎么样？</p>
+            </div>
+            <div className="grid grid-cols-2 gap-2">
+              {charade.options.map(opt => (
+                <button key={opt} onClick={() => !answer && handleGuess(opt)}
+                  className={`rounded-xl py-3 font-bold transition ${answer ? (opt === charade.answer ? 'bg-green-400 text-white' : opt === answer ? 'bg-red-300 text-white' : 'bg-gray-100') : 'bg-gray-100 hover:bg-purple-100'}`}>
+                  {opt}
+                </button>
+              ))}
+            </div>
+            {answer && (
+              <p className={`text-center mt-3 font-bold ${answer === charade.answer ? 'text-green-600' : 'text-orange-600'}`}>
+                {answer === charade.answer ? '答对了！🎉' : `正确答案是"${charade.answer}"，下次你一定能猜对！`}
+              </p>
+            )}
+          </>
+        ) : (
+          <>
+            <div className="bg-purple-50 rounded-xl p-4 mb-4">
+              <p className="text-sm text-purple-600 font-bold mb-1">🤔 回忆时间 · {charade.emotion}</p>
+              <p className="text-gray-700">{charade.prompt}</p>
+            </div>
+            {answer !== 'done' ? (
+              <div className="space-y-3">
+                <textarea value={recallText} onChange={e => setRecallText(e.target.value)} placeholder="写下你的回忆..."
+                  className="w-full border-2 border-purple-200 rounded-xl p-3 h-20 outline-none focus:border-purple-400" />
+                <button onClick={handleRecallSubmit} className="w-full bg-purple-500 text-white rounded-xl py-3 font-bold">提交回忆</button>
+              </div>
+            ) : (
+              <p className="text-center text-green-600 font-bold">谢谢你的分享！🌟</p>
+            )}
+          </>
+        )}
+        {answer && (
+          <button onClick={handleNext} className="w-full mt-4 bg-indigo-500 text-white rounded-xl py-3 font-bold hover:bg-indigo-600">
+            {round + 1 >= CHARADE_ROUNDS.length ? '结束游戏 🏆' : '下一轮 →'}
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// ─── Future Self Letter ─────────────────────────────────────────────────────
+function FutureLetterPage({ letters, onSend, onBack }) {
+  const [writing, setWriting] = useState(null);
+  const [content, setContent] = useState('');
+  const today = new Date();
+
+  const deliveredLetters = (letters || []).filter(l => new Date(l.deliverDate) <= today);
+  const pendingLetters = (letters || []).filter(l => new Date(l.deliverDate) > today);
+
+  const handleSend = () => {
+    if (!content.trim() || !writing) return;
+    const deliverDate = new Date(today);
+    deliverDate.setDate(deliverDate.getDate() + writing.delay);
+    onSend({ content: content.trim(), delay: writing.label, sentDate: today.toLocaleDateString('zh-CN'), deliverDate: deliverDate.toISOString() });
+    setContent(''); setWriting(null);
+  };
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="💌" title="给未来的信" subtitle="写一封信，未来的自己会收到" />
+      {deliveredLetters.length > 0 && (
+        <div className="space-y-2">
+          <h3 className="font-bold text-green-700">📬 已送达的信 ({deliveredLetters.length})</h3>
+          {deliveredLetters.slice().reverse().map((l, i) => (
+            <div key={i} className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-4 shadow">
+              <p className="text-xs text-green-600 mb-1">寄出于 {l.sentDate} · {l.delay}后送达</p>
+              <p className="text-gray-800">{l.content}</p>
+            </div>
+          ))}
+        </div>
+      )}
+      {writing ? (
+        <div className="bg-white rounded-2xl p-5 shadow-lg space-y-4">
+          <div className="text-center">
+            <span className="text-3xl">{writing.emoji}</span>
+            <p className="font-bold text-gray-800 mt-1">写给{writing.label}的自己</p>
+            <p className="text-xs text-gray-500">{writing.hint}</p>
+          </div>
+          <div className="bg-yellow-50 rounded-xl p-3">
+            <p className="text-xs text-gray-500 mb-1">💡 写作提示：</p>
+            {FUTURE_SELF_PROMPTS.map((p, i) => (
+              <p key={i} className="text-xs text-gray-600">• {p}</p>
+            ))}
+          </div>
+          <textarea value={content} onChange={e => setContent(e.target.value)}
+            placeholder="亲爱的未来的我..." className="w-full border-2 border-indigo-200 rounded-xl p-3 h-32 outline-none focus:border-indigo-400" />
+          <div className="flex gap-2">
+            <button onClick={() => { setWriting(null); setContent(''); }} className="flex-1 bg-gray-200 rounded-xl py-3 font-bold text-gray-700">取消</button>
+            <button onClick={handleSend} className="flex-1 bg-indigo-500 text-white rounded-xl py-3 font-bold hover:bg-indigo-600">寄出 📮</button>
+          </div>
+        </div>
+      ) : (
+        <div className="space-y-3">
+          <p className="text-sm text-gray-600 text-center">选择你想写信给什么时候的自己：</p>
+          {LETTER_PROMPTS.map(lp => (
+            <button key={lp.delay} onClick={() => setWriting(lp)}
+              className="w-full flex items-center gap-4 bg-white rounded-2xl p-4 shadow hover:shadow-md transition">
+              <span className="text-3xl">{lp.emoji}</span>
+              <div className="text-left">
+                <p className="font-bold text-gray-800">{lp.label}后的我</p>
+                <p className="text-xs text-gray-500">{lp.hint}</p>
+              </div>
+            </button>
+          ))}
+        </div>
+      )}
+      {pendingLetters.length > 0 && (
+        <div className="space-y-2">
+          <h3 className="font-bold text-indigo-700">📨 等待送达 ({pendingLetters.length})</h3>
+          {pendingLetters.map((l, i) => (
+            <div key={i} className="bg-indigo-50 rounded-xl p-3">
+              <p className="text-xs text-indigo-600">寄出于 {l.sentDate} · {l.delay}后送达</p>
+              <p className="text-xs text-gray-400">信件内容保密中... 🔒</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Mindful Movement & Dance ───────────────────────────────────────────────
+function DanceMovementPage({ onComplete, onBack }) {
+  const [active, setActive] = useState(null);
+  const [step, setStep] = useState(0);
+  const [timer, setTimer] = useState(0);
+
+  useEffect(() => {
+    if (active === null) return;
+    if (timer <= 0) return;
+    const id = setInterval(() => setTimer(prev => prev - 1), 1000);
+    return () => clearInterval(id);
+  }, [active, timer]);
+
+  if (active !== null) {
+    const exercise = MOVEMENT_EXERCISES[active];
+    const currentStep = exercise.steps[step];
+    const isLast = step >= exercise.steps.length - 1;
+
+    return (
+      <div className="p-6 space-y-5">
+        <BackButton onClick={() => { setActive(null); setStep(0); setTimer(0); }} />
+        <div className="text-center">
+          <div className="text-5xl mb-3">{exercise.emoji}</div>
+          <h2 className="text-2xl font-bold text-gray-800">{exercise.title}</h2>
+        </div>
+        <div className="bg-white rounded-2xl p-6 shadow-lg text-center">
+          <div className="text-6xl font-mono text-purple-600 mb-4">{fmtTime(timer)}</div>
+          <div className="bg-purple-50 rounded-xl p-5 mb-4">
+            <p className="text-sm text-gray-500 mb-1">第 {step + 1}/{exercise.steps.length} 步</p>
+            <p className="text-lg font-bold text-gray-800">{currentStep}</p>
+          </div>
+          <button onClick={() => {
+            if (isLast) { onComplete(exercise.id); setActive(null); setStep(0); setTimer(0); }
+            else setStep(prev => prev + 1);
+          }} className="w-full bg-green-500 text-white rounded-xl py-3 font-bold hover:bg-green-600">
+            {isLast ? '完成！🎉' : '下一步 →'}
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="💃" title="快乐律动" subtitle="用身体动一动，赶走不开心" />
+      <div className="space-y-3">
+        {MOVEMENT_EXERCISES.map((ex, i) => (
+          <button key={ex.id} onClick={() => { setActive(i); setStep(0); setTimer(ex.duration); }}
+            className="w-full flex items-center gap-4 bg-white rounded-2xl p-4 shadow hover:shadow-md transition">
+            <span className="text-3xl">{ex.emoji}</span>
+            <div className="text-left flex-1">
+              <p className="font-bold text-gray-800">{ex.title}</p>
+              <p className="text-xs text-gray-500">{ex.steps.length}步 · {Math.floor(ex.duration / 60)}分钟</p>
+            </div>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ─── Worry Time Scheduler ───────────────────────────────────────────────────
+function WorryTimePage({ parkedWorries, processedWorries, onPark, onProcess, onBack }) {
+  const [newWorry, setNewWorry] = useState('');
+  const [processing, setProcessing] = useState(null);
+  const [processChoice, setProcessChoice] = useState(null);
+
+  const handlePark = () => {
+    if (!newWorry.trim()) return;
+    onPark({ text: newWorry.trim(), date: new Date().toLocaleDateString('zh-CN'), time: new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' }) });
+    setNewWorry('');
+  };
+
+  const handleProcess = () => {
+    if (!processChoice) return;
+    onProcess({ ...processing, resolution: processChoice.label });
+    setProcessing(null); setProcessChoice(null);
+  };
+
+  const unprocessed = (parkedWorries || []).filter(w => !(processedWorries || []).some(p => p.text === w.text && p.date === w.date));
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🕐" title="烦恼时间" subtitle="把烦恼放到专门的时间再想" />
+      <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-4">
+        <p className="text-sm text-gray-600">💡 遇到烦恼？先"停一下"，把它记下来，到烦恼时间再处理。这样一天中其他时间就可以安心做别的事情。</p>
+      </div>
+      <div className="bg-white rounded-2xl p-5 shadow-lg">
+        <h3 className="font-bold text-gray-800 mb-3">📥 停一下，先记下来</h3>
+        <div className="flex gap-2">
+          <input value={newWorry} onChange={e => setNewWorry(e.target.value)} placeholder="写下你的烦恼..."
+            className="flex-1 border-2 border-blue-200 rounded-xl p-3 outline-none focus:border-blue-400" />
+          <button onClick={handlePark} className="bg-blue-500 text-white px-4 rounded-xl font-bold hover:bg-blue-600">记下</button>
+        </div>
+      </div>
+      {unprocessed.length > 0 && (
+        <div className="bg-white rounded-2xl p-5 shadow-lg">
+          <h3 className="font-bold text-gray-800 mb-3">🕐 烦恼时间到了（{unprocessed.length}个待处理）</h3>
+          {processing ? (
+            <div className="space-y-3">
+              <div className="bg-orange-50 rounded-xl p-3">
+                <p className="text-sm text-gray-700">"{processing.text}"</p>
+              </div>
+              <p className="text-sm font-bold text-gray-600">想想看，你想怎么处理它？</p>
+              {WORRY_PROCESS_OPTIONS.map((opt, i) => (
+                <button key={i} onClick={() => setProcessChoice(opt)}
+                  className={`w-full text-left rounded-xl p-3 text-sm transition ${processChoice === opt ? 'bg-purple-100 border-2 border-purple-400' : 'bg-gray-50 hover:bg-gray-100'}`}>
+                  {opt.emoji} {opt.label}
+                </button>
+              ))}
+              {processChoice && (
+                <button onClick={handleProcess} className="w-full bg-green-500 text-white rounded-xl py-3 font-bold">处理完毕 ✅</button>
+              )}
+            </div>
+          ) : (
+            <div className="space-y-2">
+              {unprocessed.map((w, i) => (
+                <button key={i} onClick={() => setProcessing(w)}
+                  className="w-full flex items-center gap-3 bg-orange-50 rounded-xl p-3 text-left hover:bg-orange-100 transition">
+                  <span className="text-lg">😟</span>
+                  <div className="flex-1">
+                    <p className="text-sm text-gray-700">{w.text}</p>
+                    <p className="text-xs text-gray-400">{w.date} {w.time}</p>
+                  </div>
+                  <span className="text-xs text-purple-500 font-bold">处理</span>
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+      {(processedWorries || []).length > 0 && (
+        <div className="bg-green-50 rounded-2xl p-4">
+          <h3 className="font-bold text-green-700 mb-2">✅ 已处理 ({processedWorries.length})</h3>
+          {(processedWorries || []).slice(-5).reverse().map((w, i) => (
+            <div key={i} className="flex items-center gap-2 py-1">
+              <span className="text-xs text-green-600">✓</span>
+              <span className="text-xs text-gray-600">{w.text}</span>
+              <span className="text-xs text-gray-400 ml-auto">{w.resolution}</span>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Acts of Courage Tracker ────────────────────────────────────────────────
+function CourageTrackerPage({ courageLog, onAdd, onBack }) {
+  const [category, setCategory] = useState(null);
+  const [custom, setCustom] = useState('');
+
+  const handleAdd = (text) => {
+    onAdd({ text, category: category.label, date: new Date().toLocaleDateString('zh-CN') });
+    setCategory(null); setCustom('');
+  };
+
+  const treeStage = (courageLog || []).length;
+  const treeEmoji = treeStage >= 20 ? '🌳' : treeStage >= 10 ? '🌲' : treeStage >= 5 ? '🌿' : treeStage >= 1 ? '🌱' : '🫘';
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🦁" title="勇气追踪器" subtitle="记录每一个勇敢的时刻" />
+      <div className="bg-gradient-to-r from-yellow-100 to-orange-100 rounded-2xl p-5 text-center shadow-lg">
+        <div className="text-5xl mb-2">{treeEmoji}</div>
+        <p className="font-bold text-gray-800">我的勇气树</p>
+        <p className="text-sm text-gray-600">{treeStage}个勇敢时刻</p>
+        <div className="w-full bg-white rounded-full h-3 mt-3">
+          <div className="bg-gradient-to-r from-yellow-400 to-orange-500 h-3 rounded-full transition-all" style={{ width: `${Math.min(100, treeStage * 5)}%` }}></div>
+        </div>
+      </div>
+      {category ? (
+        <div className="bg-white rounded-2xl p-5 shadow-lg space-y-3">
+          <h3 className="font-bold text-gray-800">{category.emoji} {category.label}</h3>
+          <div className="space-y-2">
+            {category.examples.map((ex, i) => (
+              <button key={i} onClick={() => handleAdd(ex)}
+                className="w-full text-left bg-yellow-50 rounded-xl p-3 text-sm text-gray-700 hover:bg-yellow-100 transition">{ex}</button>
+            ))}
+          </div>
+          <div className="flex gap-2">
+            <input value={custom} onChange={e => setCustom(e.target.value)} placeholder="或者写自己的勇敢时刻..."
+              className="flex-1 border-2 border-yellow-200 rounded-xl p-3 outline-none text-sm focus:border-yellow-400" />
+            <button onClick={() => custom.trim() && handleAdd(custom.trim())} className="bg-orange-500 text-white px-4 rounded-xl font-bold hover:bg-orange-600">记录</button>
+          </div>
+          <button onClick={() => setCategory(null)} className="w-full text-gray-500 text-sm">← 返回选择</button>
+        </div>
+      ) : (
+        <div className="space-y-3">
+          <p className="text-sm text-gray-600 text-center">选择一种勇气类型：</p>
+          {COURAGE_CATEGORIES.map(cat => (
+            <button key={cat.label} onClick={() => setCategory(cat)}
+              className="w-full flex items-center gap-4 bg-white rounded-2xl p-4 shadow hover:shadow-md transition">
+              <span className="text-3xl">{cat.emoji}</span>
+              <div className="text-left">
+                <p className="font-bold text-gray-800">{cat.label}</p>
+                <p className="text-xs text-gray-500">{cat.examples[0]}...</p>
+              </div>
+            </button>
+          ))}
+        </div>
+      )}
+      {(courageLog || []).length > 0 && (
+        <div className="space-y-2">
+          <h3 className="font-bold text-gray-700">勇气记录</h3>
+          {(courageLog || []).slice().reverse().slice(0, 10).map((c, i) => (
+            <div key={i} className="flex items-center gap-3 bg-white rounded-xl p-3 shadow-sm">
+              <span className="text-lg">{COURAGE_CATEGORIES.find(cat => cat.label === c.category)?.emoji || '🦁'}</span>
+              <div className="flex-1">
+                <p className="text-sm text-gray-800">{c.text}</p>
+                <p className="text-xs text-gray-400">{c.date}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Progressive Muscle Relaxation ──────────────────────────────────────────
+function MuscleRelaxPage({ onComplete, onBack }) {
+  const [step, setStep] = useState(-1);
+  const [phase, setPhase] = useState('ready');
+  const [timer, setTimer] = useState(0);
+
+  useEffect(() => {
+    if (timer <= 0 || phase === 'ready') return;
+    const id = setInterval(() => {
+      setTimer(prev => {
+        if (prev <= 1) {
+          if (phase === 'tense') { setPhase('relax'); return MUSCLE_GROUPS[step].duration; }
+          if (phase === 'relax') {
+            if (step + 1 < MUSCLE_GROUPS.length) { setStep(s => s + 1); setPhase('tense'); return MUSCLE_GROUPS[step + 1].duration; }
+            else { setPhase('done'); return 0; }
+          }
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    return () => clearInterval(id);
+  }, [timer, phase, step]);
+
+  const startSession = () => {
+    setStep(0); setPhase('tense'); setTimer(MUSCLE_GROUPS[0].duration);
+  };
+
+  if (phase === 'done') {
+    return (
+      <div className="p-6 space-y-5">
+        <BackButton onClick={onBack} />
+        <div className="text-center py-8">
+          <div className="text-6xl mb-4">🌟</div>
+          <h2 className="text-2xl font-bold text-gray-800 mb-2">放松完成！</h2>
+          <p className="text-gray-600 mb-6">你的全身现在应该感觉暖暖的、软软的、很轻松。</p>
+          <button onClick={() => { onComplete(); setStep(-1); setPhase('ready'); }}
+            className="bg-green-500 text-white rounded-2xl px-8 py-4 font-bold text-lg hover:bg-green-600">太棒了！ 🎉</button>
+        </div>
+      </div>
+    );
+  }
+
+  if (step >= 0 && phase !== 'ready') {
+    const group = MUSCLE_GROUPS[step];
+    return (
+      <div className="p-6 space-y-5">
+        <BackButton onClick={() => { setStep(-1); setPhase('ready'); setTimer(0); }} />
+        <div className="text-center">
+          <p className="text-sm text-gray-500">第 {step + 1}/{MUSCLE_GROUPS.length} 个部位</p>
+          <div className="text-5xl my-3">{group.emoji}</div>
+          <h2 className="text-2xl font-bold text-gray-800">{group.name}</h2>
+        </div>
+        <div className={`rounded-2xl p-6 text-center shadow-lg ${phase === 'tense' ? 'bg-gradient-to-b from-orange-100 to-red-100' : 'bg-gradient-to-b from-blue-100 to-green-100'}`}>
+          <p className="text-4xl font-mono font-bold mb-4">{timer}</p>
+          <p className="text-lg font-bold mb-2">{phase === 'tense' ? '用力！💪' : '放松... 😌'}</p>
+          <p className="text-gray-700">{phase === 'tense' ? group.tense : group.relax}</p>
+        </div>
+        <div className="w-full bg-gray-200 rounded-full h-2">
+          <div className="bg-purple-500 h-2 rounded-full transition-all" style={{ width: `${((step + (phase === 'relax' ? 0.5 : 0)) / MUSCLE_GROUPS.length) * 100}%` }}></div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🧘" title="全身放松操" subtitle="一个一个部位，慢慢放松" />
+      <div className="bg-white rounded-2xl p-5 shadow-lg">
+        <p className="text-gray-600 mb-4">我们会练习7个身体部位：先用力绷紧，然后突然放松。你会感受到紧张和放松的区别！</p>
+        <div className="grid grid-cols-4 gap-2 mb-4">
+          {MUSCLE_GROUPS.map(g => (
+            <div key={g.id} className="text-center">
+              <div className="text-2xl">{g.emoji}</div>
+              <p className="text-xs text-gray-500">{g.name}</p>
+            </div>
+          ))}
+        </div>
+        <button onClick={startSession} className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl py-4 font-bold text-lg hover:shadow-lg transition">开始放松 🌈</button>
+      </div>
+      <div className="bg-blue-50 rounded-2xl p-4">
+        <p className="text-sm text-gray-600">💡 小贴士：找一个安静舒服的地方坐下或躺下。可以闭上眼睛，跟着指示一步一步做。</p>
+      </div>
+    </div>
+  );
+}
+
 // ─── Main App ────────────────────────────────────────────────────────────────
 
 export default function HealingKidsApp() {
@@ -5695,6 +6546,17 @@ export default function HealingKidsApp() {
   const [selectedSeason, setSelectedSeason] = useState(null);
   const [voiceEnabled, setVoiceEnabled] = useState(false);
   const [counselorNotes, setCounselorNotes] = useState([]);
+  const [socialRolePlayHistory, setSocialRolePlayHistory] = useState([]);
+  const [growthMindsetDone, setGrowthMindsetDone] = useState([]);
+  const [memoryVault, setMemoryVault] = useState([]);
+  const [sensoryKit, setSensoryKit] = useState({});
+  const [charadesScore, setCharadesScore] = useState(0);
+  const [futureLetters, setFutureLetters] = useState([]);
+  const [movementLog, setMovementLog] = useState([]);
+  const [parkedWorries, setParkedWorries] = useState([]);
+  const [processedWorries, setProcessedWorries] = useState([]);
+  const [courageLog, setCourageLog] = useState([]);
+  const [muscleRelaxCount, setMuscleRelaxCount] = useState(0);
 
   useEffect(() => {
     const saved = loadState();
@@ -5768,6 +6630,17 @@ export default function HealingKidsApp() {
       setSelectedSeason(saved.selectedSeason || null);
       setVoiceEnabled(saved.voiceEnabled || false);
       setCounselorNotes(saved.counselorNotes || []);
+      setSocialRolePlayHistory(saved.socialRolePlayHistory || []);
+      setGrowthMindsetDone(saved.growthMindsetDone || []);
+      setMemoryVault(saved.memoryVault || []);
+      setSensoryKit(saved.sensoryKit || {});
+      setCharadesScore(saved.charadesScore || 0);
+      setFutureLetters(saved.futureLetters || []);
+      setMovementLog(saved.movementLog || []);
+      setParkedWorries(saved.parkedWorries || []);
+      setProcessedWorries(saved.processedWorries || []);
+      setCourageLog(saved.courageLog || []);
+      setMuscleRelaxCount(saved.muscleRelaxCount || 0);
     }
     setHydrated(true);
   }, []);
@@ -5787,6 +6660,8 @@ export default function HealingKidsApp() {
       programWeek, programProgress, screeningHistory,
       sleepCoachLog, storyProgress, microMomentLog, familyBoard, earnedMilestones,
       simplifiedMode, dailyChallengesDone, selectedSeason, voiceEnabled, counselorNotes,
+      socialRolePlayHistory, growthMindsetDone, memoryVault, sensoryKit, charadesScore,
+      futureLetters, movementLog, parkedWorries, processedWorries, courageLog, muscleRelaxCount,
       lastDate: todayStr()
     });
   }, [mood, dailyProgress, points, streak, journalEntries, moodHistory,
@@ -5800,7 +6675,9 @@ export default function HealingKidsApp() {
       unlockedEmotionLevel, parentNudges, sharedAchievements,
       programWeek, programProgress, screeningHistory,
       sleepCoachLog, storyProgress, microMomentLog, familyBoard, earnedMilestones,
-      simplifiedMode, dailyChallengesDone, selectedSeason, voiceEnabled, counselorNotes, hydrated]);
+      simplifiedMode, dailyChallengesDone, selectedSeason, voiceEnabled, counselorNotes,
+      socialRolePlayHistory, growthMindsetDone, memoryVault, sensoryKit, charadesScore,
+      futureLetters, movementLog, parkedWorries, processedWorries, courageLog, muscleRelaxCount, hydrated]);
 
   const completeActivity = useCallback((activityId) => {
     setDailyProgress(prev => {
@@ -6300,6 +7177,53 @@ export default function HealingKidsApp() {
         )}
         {currentPage === 'offlinecard' && (
           <OfflineCardPage safetyPlan={safetyPlan} userName={userName} onBack={goTools} />
+        )}
+        {currentPage === 'socialroleplay' && (
+          <SocialRolePlayPage history={socialRolePlayHistory}
+            onComplete={r => { setSocialRolePlayHistory(prev => [...prev.slice(-30), r]); setPoints(p => p + 20); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'growthmindset' && (
+          <GrowthMindsetPage completed={growthMindsetDone}
+            onComplete={id => { setGrowthMindsetDone(prev => prev.includes(id) ? prev : [...prev, id]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'memoryvault' && (
+          <MemoryVaultPage memories={memoryVault}
+            onSave={m => { setMemoryVault(prev => [...prev.slice(-50), m]); setPoints(p => p + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'sensorytoolkit' && (
+          <SensoryToolkitPage myKit={sensoryKit} onSave={kit => { setSensoryKit(kit); setPoints(p => p + 10); }} onBack={goTools} />
+        )}
+        {currentPage === 'emotioncharades' && (
+          <EmotionCharadesPage score={charadesScore}
+            onComplete={pts => { setCharadesScore(prev => prev + pts); setPoints(p => p + pts); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'futureletter' && (
+          <FutureLetterPage letters={futureLetters}
+            onSend={l => { setFutureLetters(prev => [...prev.slice(-20), l]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'mindfulmovement' && (
+          <DanceMovementPage
+            onComplete={id => { setMovementLog(prev => [...prev.slice(-50), { id, date: todayDate() }]); setPoints(p => p + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'worrytime' && (
+          <WorryTimePage parkedWorries={parkedWorries} processedWorries={processedWorries}
+            onPark={w => setParkedWorries(prev => [...prev.slice(-30), w])}
+            onProcess={w => { setProcessedWorries(prev => [...prev.slice(-30), w]); setPoints(p => p + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'couragetracker' && (
+          <CourageTrackerPage courageLog={courageLog}
+            onAdd={c => { setCourageLog(prev => [...prev.slice(-50), c]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'musclerelax' && (
+          <MuscleRelaxPage onComplete={() => { setMuscleRelaxCount(prev => prev + 1); setPoints(p => p + 15); }} onBack={goTools} />
         )}
 
         {/* ── Tool Pages ── */}
