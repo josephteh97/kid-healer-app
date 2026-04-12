@@ -543,18 +543,18 @@ const GUIDED_PATHWAYS = {
 };
 
 const TOOL_CATEGORIES = [
-  { name: '放松与正念', emoji: '🧘', ids: ['bodyscan', 'grounding', 'movement', 'safeplace', 'mindfuleat', 'musclerelax', 'mindfulmovement', 'calmdownmenu'] },
-  { name: '情绪认知', emoji: '🎭', ids: ['emotions', 'thermometer', 'bodymap', 'detective', 'moodchart', 'emotioncharades', 'emotionforecast'] },
-  { name: '思维训练', emoji: '🧠', ids: ['thought', 'traps', 'worrybox', 'worrysorter', 'predict', 'worrytime', 'growthmindset', 'selftalk', 'responsibilitypie'] },
-  { name: '积极行动', emoji: '🌟', ids: ['activation', 'activity', 'kindness', 'goals', 'routine', 'couragetracker', 'habitstack', 'scavengerhunt'] },
-  { name: '自我成长', emoji: '🌱', ids: ['strengths', 'values', 'fearladder', 'problemsolve', 'psychoedu', 'memoryvault', 'skilltree'] },
-  { name: '创意表达', emoji: '🎨', ids: ['drawboard', 'storycreator', 'playlist', 'dreamjournal', 'timecapsule', 'futureletter'] },
-  { name: '感恩与关爱', emoji: '💖', ids: ['gratitude', 'gratitudeletter', 'compassion', 'compliments', 'affirmation'] },
-  { name: '社交与支持', emoji: '👫', ids: ['social', 'peerstories', 'parentchild', 'pet', 'nature', 'socialroleplay', 'sensorytoolkit', 'supportnetwork', 'boundaries', 'conflictresolve'] },
-  { name: '每日仪式', emoji: '☀️', ids: ['morningroutine', 'eveningroutine', 'routine', 'sleepcoach', 'moodinsights'] },
+  { name: '放松与正念', emoji: '🧘', ids: ['bodyscan', 'grounding', 'movement', 'safeplace', 'mindfuleat', 'musclerelax', 'mindfulmovement', 'calmdownmenu', 'bodycoping', 'observer', 'breathinggame', 'mindfullistening', 'calmbuddy', 'sensorycountdown', 'emotionjar', 'worryballoon'] },
+  { name: '情绪认知', emoji: '🎭', ids: ['emotions', 'thermometer', 'bodymap', 'detective', 'moodchart', 'emotioncharades', 'emotionforecast', 'archaeology', 'feelingsforecast', 'vocabstory', 'emotionmapquest', 'feelingstranslator', 'mooddj', 'emotionvolume', 'feelingsmask', 'orchestra', 'abcdiary'] },
+  { name: '思维训练', emoji: '🧠', ids: ['thought', 'traps', 'worrybox', 'worrysorter', 'predict', 'worrytime', 'growthmindset', 'selftalk', 'responsibilitypie', 'decisioncompass', 'thoughtbubbles', 'vendingmachine', 'shrinkray'] },
+  { name: '积极行动', emoji: '🌟', ids: ['activation', 'activity', 'kindness', 'goals', 'routine', 'couragetracker', 'habitstack', 'scavengerhunt', 'microkindness', 'awe', 'couragecoin', 'dailywins', 'feelingsbingo', 'kindnessripple'] },
+  { name: '自我成长', emoji: '🌱', ids: ['strengths', 'values', 'fearladder', 'problemsolve', 'psychoedu', 'memoryvault', 'skilltree', 'strengthshield', 'permissionslip', 'tradingcards', 'mirrorchallenge'] },
+  { name: '创意表达', emoji: '🎨', ids: ['drawboard', 'storycreator', 'playlist', 'dreamjournal', 'timecapsule', 'futureletter', 'moodcollage'] },
+  { name: '感恩与关爱', emoji: '💖', ids: ['gratitude', 'gratitudeletter', 'compassion', 'compliments', 'affirmation', 'hopejar', 'gratitudechain', 'praisejar', 'boomerang', 'gratitudeglasses'] },
+  { name: '社交与支持', emoji: '👫', ids: ['social', 'peerstories', 'parentchild', 'pet', 'nature', 'socialroleplay', 'sensorytoolkit', 'supportnetwork', 'boundaries', 'conflictresolve', 'empathyglasses', 'connectioncards', 'friendshiprecipe', 'solarsystem'] },
+  { name: '每日仪式', emoji: '☀️', ids: ['morningroutine', 'eveningroutine', 'routine', 'sleepcoach', 'moodinsights', 'morningcompass', 'dailyanchor'] },
   { name: '成长计划', emoji: '📅', ids: ['program', 'storyjourney', 'dailychallenge', 'streakrewards', 'milestones', 'screening'] },
-  { name: '应急与安全', emoji: '🛡️', ids: ['coping', 'firstaid', 'safety', 'volcano', 'sleep', 'offlinecard'] },
-  { name: '记录与回顾', emoji: '📊', ids: ['jar', 'celebration', 'weekreview', 'rewards', 'achievementshare', 'timeline'] },
+  { name: '应急与安全', emoji: '🛡️', ids: ['coping', 'firstaid', 'safety', 'volcano', 'sleep', 'offlinecard', 'emotionalcpr', 'safepersoncards', 'comfortmenu', 'safesignals'] },
+  { name: '记录与回顾', emoji: '📊', ids: ['jar', 'celebration', 'weekreview', 'rewards', 'achievementshare', 'timeline', 'copingreport', 'accomplishments', 'emotiontimecapsule'] },
   { name: '家长与支持', emoji: '👨‍👩‍👧', ids: ['parent', 'parentnudge', 'parentedu', 'familyboard', 'therapistreport', 'counselor', 'emotionvocab'] }
 ];
 
@@ -915,7 +915,58 @@ const TOOL_PAGES = [
   { id: 'emotionforecast', emoji: '🔮', title: '情绪预报', color: 'from-violet-100 to-purple-100', desc: '预测vs现实' },
   { id: 'habitstack', emoji: '🧱', title: '习惯叠加', color: 'from-amber-100 to-yellow-100', desc: '小习惯' },
   { id: 'conflictresolve', emoji: '🕊️', title: '化解冲突', color: 'from-blue-100 to-cyan-100', desc: '5步和平' },
-  { id: 'scavengerhunt', emoji: '🔍', title: '感恩寻宝', color: 'from-yellow-100 to-orange-100', desc: '发现美好' }
+  { id: 'scavengerhunt', emoji: '🔍', title: '感恩寻宝', color: 'from-yellow-100 to-orange-100', desc: '发现美好' },
+  { id: 'archaeology', emoji: '⛏️', title: '情绪考古', color: 'from-amber-100 to-yellow-100', desc: '挖掘深层' },
+  { id: 'bodycoping', emoji: '🦋', title: '身体安抚', color: 'from-purple-100 to-pink-100', desc: '蝴蝶拥抱' },
+  { id: 'permissionslip', emoji: '📜', title: '许可小条', color: 'from-pink-100 to-rose-100', desc: '允许自己' },
+  { id: 'awe', emoji: '🤩', title: '每日惊叹', color: 'from-indigo-100 to-purple-100', desc: '发现神奇' },
+  { id: 'observer', emoji: '☁️', title: '安静观察', color: 'from-blue-100 to-cyan-100', desc: '正念练习' },
+  { id: 'emotionalcpr', emoji: '🚨', title: '情绪急救', color: 'from-red-100 to-pink-100', desc: 'CPR三步' },
+  { id: 'strengthshield', emoji: '🛡️', title: '力量盾牌', color: 'from-green-100 to-emerald-100', desc: '心灵防护' },
+  { id: 'microkindness', emoji: '🌸', title: '微小善意', color: 'from-pink-100 to-purple-100', desc: '善待自己' },
+  { id: 'feelingsforecast', emoji: '🌤️', title: '心情天气', color: 'from-blue-100 to-yellow-100', desc: '预报心情' },
+  { id: 'hopejar', emoji: '🫙', title: '希望罐子', color: 'from-yellow-100 to-amber-100', desc: '收集希望' },
+  { id: 'breathinggame', emoji: '🎮', title: '呼吸游戏', color: 'from-cyan-100 to-blue-100', desc: '趣味呼吸' },
+  { id: 'decisioncompass', emoji: '🧭', title: '决策指南针', color: 'from-indigo-100 to-purple-100', desc: '做好选择' },
+  { id: 'empathyglasses', emoji: '👓', title: '共情眼镜', color: 'from-pink-100 to-rose-100', desc: '换位思考' },
+  { id: 'moodcollage', emoji: '🎨', title: '心情拼贴', color: 'from-yellow-100 to-pink-100', desc: '拼出心情' },
+  { id: 'vocabstory', emoji: '📖', title: '情绪词汇', color: 'from-purple-100 to-indigo-100', desc: '学新词汇' },
+  { id: 'gratitudechain', emoji: '🔗', title: '感恩链条', color: 'from-green-100 to-emerald-100', desc: '串起感恩' },
+  { id: 'safepersoncards', emoji: '🃏', title: '安全人物卡', color: 'from-blue-100 to-indigo-100', desc: '信任的人' },
+  { id: 'morningcompass', emoji: '🌅', title: '晨间罗盘', color: 'from-orange-100 to-yellow-100', desc: '开启新天' },
+  { id: 'copingreport', emoji: '📋', title: '应对报告', color: 'from-teal-100 to-cyan-100', desc: '总结应对' },
+  { id: 'connectioncards', emoji: '💬', title: '连接卡片', color: 'from-rose-100 to-pink-100', desc: '聊天话题' },
+  { id: 'emotionmapquest', emoji: '🗺️', title: '情绪地图', color: 'from-blue-100 to-purple-100', desc: '一天心情' },
+  { id: 'comfortmenu', emoji: '🍽️', title: '安慰菜单', color: 'from-pink-100 to-orange-100', desc: '安慰自己' },
+  { id: 'praisejar', emoji: '🏺', title: '表扬罐', color: 'from-yellow-100 to-amber-100', desc: '收集赞美' },
+  { id: 'feelingstranslator', emoji: '🔄', title: '情绪翻译器', color: 'from-purple-100 to-pink-100', desc: '翻译行为' },
+  { id: 'mindfullistening', emoji: '👂', title: '静心聆听', color: 'from-teal-100 to-cyan-100', desc: '用耳朵感受' },
+  { id: 'couragecoin', emoji: '🪙', title: '勇气金币', color: 'from-amber-100 to-yellow-100', desc: '收集勇气' },
+  { id: 'friendshiprecipe', emoji: '👨‍🍳', title: '友谊配方', color: 'from-green-100 to-emerald-100', desc: '交友秘方' },
+  { id: 'thoughtbubbles', emoji: '💭', title: '想法气泡', color: 'from-blue-100 to-purple-100', desc: '换位思考' },
+  { id: 'calmbuddy', emoji: '🧸', title: '呼吸伙伴', color: 'from-purple-100 to-pink-100', desc: '陪伴呼吸' },
+  { id: 'accomplishments', emoji: '🏆', title: '成就时间线', color: 'from-indigo-100 to-purple-100', desc: '记录成就' },
+  { id: 'dailywins', emoji: '🏅', title: '每日小胜利', color: 'from-yellow-100 to-amber-100', desc: '3个小赢' },
+  { id: 'sensorycountdown', emoji: '5️⃣', title: '感官倒数', color: 'from-green-100 to-emerald-100', desc: '5-4-3-2-1' },
+  { id: 'emotionjar', emoji: '🫧', title: '情绪瓶实验', color: 'from-purple-100 to-pink-100', desc: '摇一摇沉淀' },
+  { id: 'tradingcards', emoji: '🃏', title: '优势卡牌', color: 'from-yellow-100 to-amber-100', desc: '收集力量' },
+  { id: 'mooddj', emoji: '🎧', title: '心情DJ', color: 'from-purple-100 to-pink-100', desc: '混音心情' },
+  { id: 'vendingmachine', emoji: '🏭', title: '想法贩卖机', color: 'from-green-100 to-emerald-100', desc: '转换想法' },
+  { id: 'feelingsmask', emoji: '🎭', title: '面具画廊', color: 'from-blue-100 to-purple-100', desc: '外表与内心' },
+  { id: 'dailyanchor', emoji: '⚓', title: '每日锚点', color: 'from-blue-100 to-cyan-100', desc: '今日期待' },
+  { id: 'boomerang', emoji: '🪃', title: '赞美回旋', color: 'from-pink-100 to-rose-100', desc: '赞美回弹' },
+  { id: 'emotionvolume', emoji: '🔊', title: '情绪音量', color: 'from-orange-100 to-red-100', desc: '调节音量' },
+  { id: 'safesignals', emoji: '🤫', title: '安全暗号', color: 'from-indigo-100 to-purple-100', desc: '秘密信号' },
+  { id: 'abcdiary', emoji: '📝', title: 'ABC日记', color: 'from-purple-100 to-blue-100', desc: '事件→想法→感受' },
+  { id: 'worryballoon', emoji: '🎈', title: '烦恼气球', color: 'from-blue-100 to-purple-100', desc: '放飞烦恼' },
+  { id: 'feelingsbingo', emoji: '🎯', title: '情绪宾果', color: 'from-green-100 to-emerald-100', desc: '一行就赢' },
+  { id: 'mirrorchallenge', emoji: '🪞', title: '镜子挑战', color: 'from-yellow-100 to-amber-100', desc: '7天自信' },
+  { id: 'orchestra', emoji: '🎼', title: '情绪交响乐', color: 'from-pink-100 to-purple-100', desc: '调节乐器' },
+  { id: 'shrinkray', emoji: '🔫', title: '问题缩小器', color: 'from-orange-100 to-red-100', desc: '缩小问题' },
+  { id: 'gratitudeglasses', emoji: '👓', title: '感恩眼镜', color: 'from-green-100 to-emerald-100', desc: '换个角度' },
+  { id: 'emotiontimecapsule', emoji: '💊', title: '情绪时光机', color: 'from-indigo-100 to-purple-100', desc: '7天后打开' },
+  { id: 'kindnessripple', emoji: '🌊', title: '善良涟漪', color: 'from-blue-100 to-cyan-100', desc: '善意传递' },
+  { id: 'solarsystem', emoji: '☀️', title: '支持太阳系', color: 'from-indigo-100 to-purple-100', desc: '你的星球' }
 ];
 
 // ─── Social Skills Role-Play ────────────────────────────────────────────────
@@ -1201,6 +1252,584 @@ const SCAVENGER_HUNTS = [
   { id: 'learn', emoji: '📚', title: '学习发现', tasks: ['发现一个你今天学到的新知识', '找到一个你觉得有趣的问题', '注意一件让你好奇的事'] },
   { id: 'home', emoji: '🏠', title: '家的温暖', tasks: ['找到家里一个让你觉得安心的角落', '发现一个家人为你做的小事', '找到一个充满回忆的物品'] }
 ];
+
+// ─── Emotion Archaeology ────────────────────────────────────────────────────
+const EMOTION_LAYERS = [
+  { surface: '生气', emoji: '😡', beneath: [
+    { emotion: '受伤', emoji: '💔', desc: '有人做了让你难受的事' },
+    { emotion: '害怕', emoji: '😨', desc: '担心失去什么或被伤害' },
+    { emotion: '失望', emoji: '😞', desc: '事情没有按你希望的发展' },
+    { emotion: '不公平', emoji: '😤', desc: '觉得被不公平对待了' }
+  ]},
+  { surface: '不想做事', emoji: '😑', beneath: [
+    { emotion: '害怕失败', emoji: '😰', desc: '担心做不好' },
+    { emotion: '疲惫', emoji: '😩', desc: '身体或心理太累了' },
+    { emotion: '无意义感', emoji: '😶', desc: '觉得做了也没用' },
+    { emotion: '压力', emoji: '🤯', desc: '要做的事情太多了' }
+  ]},
+  { surface: '烦躁', emoji: '😤', beneath: [
+    { emotion: '孤独', emoji: '🥺', desc: '觉得没人理解你' },
+    { emotion: '焦虑', emoji: '😟', desc: '心里有担心的事' },
+    { emotion: '委屈', emoji: '😢', desc: '觉得自己被忽视了' },
+    { emotion: '疲倦', emoji: '😪', desc: '需要休息了' }
+  ]},
+  { surface: '哭泣', emoji: '😭', beneath: [
+    { emotion: '想念', emoji: '💭', desc: '想念某个人或某段时光' },
+    { emotion: '无助', emoji: '🫥', desc: '觉得自己没有办法' },
+    { emotion: '感动', emoji: '🥹', desc: '被某件事触动了' },
+    { emotion: '释放', emoji: '💧', desc: '哭泣是在释放压力，这没关系' }
+  ]}
+];
+
+// ─── Butterfly Hug & Body-Based Coping ──────────────────────────────────────
+const BODY_COPING = [
+  { id: 'butterfly', emoji: '🦋', title: '蝴蝶拥抱', duration: 60,
+    steps: ['双手交叉放在胸前，像蝴蝶的翅膀', '左手轻轻拍右肩', '右手轻轻拍左肩', '交替拍打，像蝴蝶扇动翅膀', '慢慢地，一下一下地拍', '感受双手带来的温暖和安全'],
+    desc: '这是心理医生常用的方法，轻轻拍打能帮助大脑平静下来。' },
+  { id: 'tapping', emoji: '👆', title: '轻拍放松', duration: 90,
+    steps: ['用两根手指轻轻拍额头中间', '拍眉毛旁边（眼角外侧）', '拍眼睛下方的颧骨', '拍下巴', '拍锁骨下方', '每个位置拍5-7下，慢慢来'],
+    desc: '穴位轻拍能帮助释放身体的紧张感。' },
+  { id: 'figure8', emoji: '♾️', title: '8字呼吸', duration: 60,
+    steps: ['伸出一根手指', '在空中画一个躺着的8（∞）', '画上半圈时慢慢吸气', '画下半圈时慢慢呼气', '跟着手指的移动呼吸', '重复5-8次'],
+    desc: '8字运动帮助左右大脑协调工作，让你更平静。' },
+  { id: 'hug', emoji: '🤗', title: '自我拥抱', duration: 45,
+    steps: ['双手抱住自己的肩膀', '轻轻收紧，给自己一个温暖的拥抱', '闭上眼睛，慢慢呼吸', '对自己说"我很安全，我很好"', '保持20秒，感受温暖'],
+    desc: '拥抱能刺激催产素分泌，让你感觉被爱和安全。' },
+  { id: 'grounding54321', emoji: '🖐️', title: '54321着陆加强版', duration: 90,
+    steps: ['找到5样你能看到的东西，说出它们的颜色', '摸4样东西，感受它们的质地', '听3种声音，辨别它们是什么', '闻2种气味', '尝1种味道（比如喝口水）', '现在，你回到了当下'],
+    desc: '通过感官把注意力拉回现在，不被担忧带走。' }
+];
+
+// ─── Permission Slips ───────────────────────────────────────────────────────
+const PERMISSION_TEMPLATES = [
+  { emoji: '😢', text: '允许自己难过，难过是正常的感受' },
+  { emoji: '😴', text: '允许自己休息，不必每分钟都在努力' },
+  { emoji: '❌', text: '允许自己犯错，犯错是学习的一部分' },
+  { emoji: '🙋', text: '允许自己求助，寻求帮助是勇敢的' },
+  { emoji: '🐢', text: '允许自己慢慢来，不用和别人比速度' },
+  { emoji: '😊', text: '允许自己开心，即使别人不开心' },
+  { emoji: '🚫', text: '允许自己说"不"，你不必讨好每个人' },
+  { emoji: '💤', text: '允许自己不完美，完美不存在' },
+  { emoji: '🗣️', text: '允许自己表达感受，你的感受很重要' },
+  { emoji: '🎮', text: '允许自己玩耍，玩耍不是浪费时间' }
+];
+
+// ─── Daily Dose of Awe ─────────────────────────────────────────────────────
+const AWE_PROMPTS = [
+  { emoji: '🐜', prompt: '找一只小虫子，仔细观察它有多少只脚，它在做什么？' },
+  { emoji: '☁️', prompt: '抬头看看云，你能找到一朵像动物的云吗？' },
+  { emoji: '🌳', prompt: '摸一摸树的树皮，感受上面的纹路，想想这棵树有多大年纪？' },
+  { emoji: '✋', prompt: '仔细看看你的手掌纹路，世界上没有一模一样的掌纹！' },
+  { emoji: '💧', prompt: '观察一滴水珠，它是怎么从天上落下来又蒸发回去的？' },
+  { emoji: '🌅', prompt: '看看今天的天空是什么颜色，日出日落的颜色永远不会重复。' },
+  { emoji: '🎵', prompt: '安静一分钟，你能听到几种不同的声音？' },
+  { emoji: '🌸', prompt: '找一朵花或一片叶子，看看它的形状有多精致！' },
+  { emoji: '⭐', prompt: '想一想，光从太阳到地球需要8分钟，你现在看到的阳光是8分钟前发出的！' },
+  { emoji: '🫀', prompt: '把手放在心口，感受你的心跳。它从你出生起就一刻不停地工作！' }
+];
+
+// ─── Compassionate Observer ─────────────────────────────────────────────────
+const OBSERVER_EXERCISES = [
+  { id: 'clouds', emoji: '☁️', title: '想法云朵', duration: 120,
+    guide: ['闭上眼睛，想象你躺在草地上看天空', '天空就是你的心，很大很宽广', '想法就像云朵，飘过来又飘走', '不管是什么想法，只是看着它飘过', '不需要抓住它，也不需要推开它', '就像看云一样，看着就好'] },
+  { id: 'waves', emoji: '🌊', title: '感受浪花', duration: 120,
+    guide: ['想象你坐在海边的岩石上', '每一个感受就像一朵浪花', '有的浪大，有的浪小', '浪花冲上来，又退回去', '不管多大的浪，最终都会退去', '你只需要安全地坐在岩石上观察'] },
+  { id: 'train', emoji: '🚂', title: '思维列车', duration: 90,
+    guide: ['想象你站在火车站台上', '每个想法是一节经过的车厢', '你可以看着它经过，但不用上车', '如果不小心上车了，在下一站下来就好', '回到站台，继续观察', '你不是你的想法，你是观察想法的人'] }
+];
+
+// ─── Emotional CPR ──────────────────────────────────────────────────────────
+const CPR_STEPS = [
+  { letter: 'C', title: '连接 Connect', emoji: '🤝', color: 'bg-blue-400',
+    actions: ['找到一个你信任的人', '告诉TA"我需要有人陪"', '或者抱抱自己、抱抱毛绒玩具'],
+    quick: '找人陪' },
+  { letter: 'P', title: '保护 Protect', emoji: '🛡️', color: 'bg-green-400',
+    actions: ['离开让你难受的地方或情况', '去一个安全的角落', '把可能伤害自己的东西移走'],
+    quick: '去安全的地方' },
+  { letter: 'R', title: '恢复 Restore', emoji: '💚', color: 'bg-purple-400',
+    actions: ['做3次深呼吸', '用蝴蝶拥抱安慰自己', '喝一杯水，感受它的温度'],
+    quick: '深呼吸+蝴蝶拥抱' }
+];
+
+// ─── Strengths Shield ───────────────────────────────────────────────────────
+const SHIELD_QUADRANTS = [
+  { id: 'good', emoji: '⭐', title: '我擅长的', prompt: '你做什么事情做得好？', color: 'from-yellow-200 to-amber-200' },
+  { id: 'love', emoji: '❤️', title: '我热爱的', prompt: '什么事情让你充满热情？', color: 'from-pink-200 to-rose-200' },
+  { id: 'others', emoji: '👏', title: '别人欣赏我的', prompt: '别人说过你什么优点？', color: 'from-blue-200 to-cyan-200' },
+  { id: 'overcome', emoji: '💪', title: '我克服过的', prompt: '你战胜过什么困难？', color: 'from-green-200 to-emerald-200' }
+];
+
+// ─── Micro-Kindness Missions ────────────────────────────────────────────────
+const MICRO_KINDNESS = [
+  { emoji: '💧', text: '喝一杯水' }, { emoji: '🌬️', text: '做3次深呼吸' },
+  { emoji: '🪟', text: '看看窗外5秒钟' }, { emoji: '🤲', text: '搓搓双手，暖暖手心' },
+  { emoji: '😊', text: '对自己微笑一下' }, { emoji: '🧣', text: '穿上舒服的衣服' },
+  { emoji: '🎵', text: '哼一首喜欢的歌' }, { emoji: '✍️', text: '写下此刻的一个好事' },
+  { emoji: '🤗', text: '给自己一个拥抱' }, { emoji: '👀', text: '闭眼休息10秒钟' },
+  { emoji: '🍎', text: '吃一口健康的食物' }, { emoji: '🌸', text: '闻一闻好闻的东西' }
+];
+
+// ─── Feelings Forecast Journal ──────────────────────────────────────────────
+const WEATHER_EMOJI = [
+  { emoji: '☀️', label: '晴天', desc: '心情很好' },
+  { emoji: '⛅', label: '多云', desc: '还可以' },
+  { emoji: '☁️', label: '阴天', desc: '有点低落' },
+  { emoji: '🌧️', label: '下雨', desc: '比较难过' },
+  { emoji: '⛈️', label: '暴风雨', desc: '非常难受' }
+];
+
+// ─── Hope Jar ───────────────────────────────────────────────────────────────
+const HOPE_CATEGORIES = [
+  { emoji: '🎯', label: '期待的事', hint: '你有什么期待的事情？（生日、旅行、见朋友...）' },
+  { emoji: '💗', label: '爱我的人', hint: '谁关心你？（家人、朋友、老师、宠物...）' },
+  { emoji: '🏆', label: '度过的难关', hint: '你曾经克服过什么困难？' },
+  { emoji: '🌈', label: '美好的梦想', hint: '长大后你想做什么？想去哪里？' },
+  { emoji: '😊', label: '开心的回忆', hint: '最近让你开心的事情是什么？' }
+];
+
+// ─── Breathing Games ────────────────────────────────────────────────────────
+const BREATHING_GAMES = [
+  { id: 'candles', emoji: '🕯️', title: '吹蜡烛', desc: '想象面前有生日蛋糕，深吸一口气，慢慢把蜡烛吹灭',
+    rounds: 5, inhale: 3, exhale: 5, instruction: '深吸气...慢慢吹灭蜡烛...', successMsg: '蜡烛灭了！🎂' },
+  { id: 'balloon', emoji: '🎈', title: '吹气球', desc: '用肚子呼吸，慢慢把气球吹大',
+    rounds: 4, inhale: 4, exhale: 6, instruction: '吸满气...慢慢吹进气球...', successMsg: '气球好大！🎈' },
+  { id: 'sailboat', emoji: '⛵', title: '吹帆船', desc: '吹一口长长的气，让帆船飘过水面',
+    rounds: 4, inhale: 3, exhale: 7, instruction: '深吸气...轻轻吹动帆船...', successMsg: '帆船过去了！⛵' },
+  { id: 'dandelion', emoji: '🌬️', title: '吹蒲公英', desc: '轻轻吹，让蒲公英种子飞向天空',
+    rounds: 5, inhale: 3, exhale: 4, instruction: '吸气...轻轻吹散蒲公英...', successMsg: '种子飞起来了！🌬️' },
+  { id: 'hotcocoa', emoji: '☕', title: '热可可', desc: '闻一闻热可可的香味，再轻轻吹凉它',
+    rounds: 4, inhale: 4, exhale: 5, instruction: '闻一闻香味...轻轻吹凉...', successMsg: '可以喝啦！☕' }
+];
+
+// ─── Decision Compass ───────────────────────────────────────────────────────
+const DECISION_QUESTIONS = [
+  { emoji: '🤔', question: '我有哪些选择？' },
+  { emoji: '❤️', question: '每个选择让我有什么感觉？' },
+  { emoji: '👫', question: '我的好朋友会怎么建议我？' },
+  { emoji: '🧭', question: '哪个选择最符合我看重的事情？' },
+  { emoji: '🔮', question: '一周后的我会希望自己怎么选？' }
+];
+
+// ─── Empathy Glasses ────────────────────────────────────────────────────────
+const EMPATHY_SCENARIOS = [
+  { situation: '好朋友突然取消了和你的约定', perspectives: [
+    { role: '你自己', emoji: '😔', thought: '我很失望，觉得朋友不在乎我' },
+    { role: '朋友', emoji: '😰', thought: '也许TA家里有急事，或者身体不舒服' },
+    { role: '旁观者', emoji: '🧐', thought: '取消约定不一定是因为不在乎，可能有很多原因' }
+  ]},
+  { situation: '老师批评了你的作业', perspectives: [
+    { role: '你自己', emoji: '😢', thought: '我很难过，觉得自己做得不好' },
+    { role: '老师', emoji: '👩‍🏫', thought: '我希望这个学生能做得更好，我相信TA有能力' },
+    { role: '旁观者', emoji: '🧐', thought: '批评是为了帮助进步，不是否定这个人' }
+  ]},
+  { situation: '新同学加入了你最好朋友的小组', perspectives: [
+    { role: '你自己', emoji: '😟', thought: '我怕好朋友不要我了' },
+    { role: '好朋友', emoji: '😊', thought: '多一个朋友很开心，我依然喜欢原来的朋友' },
+    { role: '新同学', emoji: '😳', thought: '我很紧张，希望大家能接受我' }
+  ]},
+  { situation: '妈妈对你发了脾气', perspectives: [
+    { role: '你自己', emoji: '😢', thought: '妈妈是不是不爱我了？' },
+    { role: '妈妈', emoji: '😫', thought: '今天工作压力好大，对孩子发脾气我也很后悔' },
+    { role: '旁观者', emoji: '🧐', thought: '大人有时候也控制不好情绪，发脾气不代表不爱' }
+  ]}
+];
+
+// ─── Mood Collage ───────────────────────────────────────────────────────────
+const COLLAGE_EMOJIS = ['😊','😢','😡','😰','😌','🥰','😤','🤔','😴','🥺','💪','🌈','⛈️','☀️','🌊','🔥','❄️','🌸','💔','✨'];
+const COLLAGE_WORDS = ['开心','难过','害怕','生气','平静','孤独','希望','疲惫','感恩','勇敢','迷茫','自由','压力','温暖','失望'];
+const COLLAGE_COLORS = ['bg-red-300','bg-blue-300','bg-green-300','bg-yellow-300','bg-purple-300','bg-pink-300','bg-orange-300','bg-teal-300','bg-indigo-300','bg-gray-300'];
+
+// ─── Emotion Vocabulary Stories ─────────────────────────────────────────────
+const VOCAB_STORIES = [
+  { word: '怅然若失', emoji: '💭', story: '小雨搬家了，到了新城市。虽然新家很好，但她总觉得少了什么。每次看到旧照片，就有一种说不出的空荡感——这就是"怅然若失"。', question: '你有没有过这种感觉？' },
+  { word: '忐忑不安', emoji: '💗', story: '明天就是演讲比赛了。小明准备得很充分，但心里还是像有只小兔子在跳。手心出汗，一会儿觉得自己能行，一会儿又害怕。这种又紧张又期待的感觉，叫"忐忑不安"。', question: '你什么时候会忐忑不安？' },
+  { word: '五味杂陈', emoji: '🎭', story: '小红的好朋友转学了。她既为朋友去了更好的学校开心，又为自己失去伙伴难过，还有点嫉妒，也有点不舍。这么多感觉混在一起，就叫"五味杂陈"。', question: '你有过这样复杂的感受吗？' },
+  { word: '如释重负', emoji: '😮‍💨', story: '考试成绩出来了，小刚一直担心考得不好。看到及格的那一刻，感觉像放下了一块大石头，整个人轻松了。这种感觉叫"如释重负"。', question: '你最近什么时候感到如释重负？' },
+  { word: '感同身受', emoji: '🤝', story: '小美看到同学摔倒哭了，虽然自己没有摔，但心里也觉得疼疼的，很想去安慰TA。能感受到别人的痛苦或快乐，就叫"感同身受"。', question: '你有过感同身受的经历吗？' },
+  { word: '患得患失', emoji: '😰', story: '小华交了一个新朋友，特别开心。但每次朋友和别人玩，她就担心朋友不要她了。这种既怕失去又拼命抓住的感觉，叫"患得患失"。', question: '你理解这种感受吗？' }
+];
+
+// ─── Gratitude Chain ────────────────────────────────────────────────────────
+const CHAIN_COLORS = ['bg-red-400', 'bg-orange-400', 'bg-yellow-400', 'bg-green-400', 'bg-blue-400', 'bg-purple-400', 'bg-pink-400'];
+
+// ─── Safe Person Quick-Cards ────────────────────────────────────────────────
+const HELP_SCRIPTS = [
+  { emoji: '💬', label: '想聊聊', script: '我今天心情不太好，你有时间听我说说吗？' },
+  { emoji: '🤗', label: '需要陪伴', script: '我现在有点难受，你能陪陪我吗？不用说什么，在旁边就好。' },
+  { emoji: '😢', label: '很难过', script: '我很难过，不知道该怎么办。你能帮帮我吗？' },
+  { emoji: '👂', label: '只想倾诉', script: '我想说说心里话。你不需要帮我解决，只是听我说就好。' },
+  { emoji: '🆘', label: '紧急求助', script: '我现在很不好，我需要帮助。请来找我。' },
+  { emoji: '🤔', label: '需要建议', script: '我遇到一个问题，不知道怎么选择。你能给我一些建议吗？' }
+];
+
+// ─── Morning Compass ────────────────────────────────────────────────────────
+const COMPASS_FEELINGS = [
+  { emoji: '😊', label: '开心' }, { emoji: '😌', label: '平静' }, { emoji: '💪', label: '自信' },
+  { emoji: '🥰', label: '被爱' }, { emoji: '🌟', label: '充满希望' }, { emoji: '🧘', label: '放松' }
+];
+
+const COMPASS_ACTIONS = [
+  '做3次深呼吸', '对自己说一句鼓励的话', '帮助一个人', '认真听一节课',
+  '和朋友聊天', '运动10分钟', '写一件感恩的事', '尝试一件新事情'
+];
+
+// ─── Coping Report Card ────────────────────────────────────────────────────
+const COPING_STRATEGIES_LIST = [
+  { emoji: '🌬️', label: '深呼吸' }, { emoji: '🦋', label: '蝴蝶拥抱' },
+  { emoji: '🗣️', label: '找人聊天' }, { emoji: '✍️', label: '写日记' },
+  { emoji: '🎵', label: '听音乐' }, { emoji: '🏃', label: '运动' },
+  { emoji: '🧘', label: '冥想' }, { emoji: '🌍', label: '感官着陆' },
+  { emoji: '🤗', label: '自我拥抱' }, { emoji: '💧', label: '喝水休息' }
+];
+
+// ─── Connection Cards ───────────────────────────────────────────────────────
+const CONVERSATION_CARDS = [
+  { category: '有趣', emoji: '🎮', cards: ['如果你有超能力，你想要什么？', '你最想去世界的哪个地方？', '如果你是一种动物，你想当什么？', '你觉得最搞笑的事情是什么？'] },
+  { category: '感受', emoji: '❤️', cards: ['今天让你微笑的事情是什么？', '你最近学会了什么新东西？', '什么事情让你觉得骄傲？', '你最喜欢和谁在一起？为什么？'] },
+  { category: '深入', emoji: '🌊', cards: ['你希望别人了解你什么？', '什么事情你想做但还没勇气？', '你觉得什么是真正的勇敢？', '如果可以改变一件事，你会改变什么？'] }
+];
+
+// ─── Emotion Map Quest ──────────────────────────────────────────────────────
+const TIME_SLOTS = [
+  { id: 'morning', emoji: '🌅', label: '早上', hint: '起床到上学' },
+  { id: 'school', emoji: '🏫', label: '上学', hint: '在学校的时候' },
+  { id: 'afternoon', emoji: '☀️', label: '下午', hint: '放学后' },
+  { id: 'evening', emoji: '🌙', label: '晚上', hint: '回家到睡前' }
+];
+const MAP_EMOTIONS = [
+  { emoji: '😊', label: '开心', color: 'bg-yellow-200' },
+  { emoji: '😢', label: '难过', color: 'bg-blue-200' },
+  { emoji: '😠', label: '生气', color: 'bg-red-200' },
+  { emoji: '😰', label: '焦虑', color: 'bg-purple-200' },
+  { emoji: '😌', label: '平静', color: 'bg-green-200' },
+  { emoji: '😴', label: '疲惫', color: 'bg-gray-200' },
+  { emoji: '🤩', label: '兴奋', color: 'bg-orange-200' },
+  { emoji: '😔', label: '孤独', color: 'bg-indigo-200' }
+];
+
+// ─── Comfort Menu ───────────────────────────────────────────────────────────
+const COMFORT_APPETIZERS = [
+  { emoji: '🫁', label: '深呼吸3次' },
+  { emoji: '💧', label: '喝一口水' },
+  { emoji: '🤗', label: '抱抱自己' },
+  { emoji: '👋', label: '甩甩手' },
+  { emoji: '😊', label: '对镜子微笑' }
+];
+const COMFORT_MAINS = [
+  { emoji: '🎵', label: '听一首喜欢的歌' },
+  { emoji: '🖍️', label: '画一幅画' },
+  { emoji: '🚶', label: '散步5分钟' },
+  { emoji: '📖', label: '读一个故事' },
+  { emoji: '🧩', label: '玩一个小游戏' }
+];
+const COMFORT_DESSERTS = [
+  { emoji: '🛁', label: '泡个热水澡' },
+  { emoji: '🎬', label: '看喜欢的动画' },
+  { emoji: '👨‍👩‍👧', label: '和家人聊天' },
+  { emoji: '🌳', label: '去公园玩' },
+  { emoji: '🍪', label: '做好吃的点心' }
+];
+
+// ─── Feelings Translator ────────────────────────────────────────────────────
+const BEHAVIOR_FEELINGS = [
+  { behavior: '摔门', emoji: '🚪', feelings: ['生气 — 觉得不公平', '无助 — 没人听我说', '受伤 — 感情被伤害了'] },
+  { behavior: '不说话', emoji: '🤐', feelings: ['难过 — 心里很痛', '害怕 — 怕说错话', '失望 — 期望没被满足'] },
+  { behavior: '哭', emoji: '😭', feelings: ['伤心 — 失去了什么', '委屈 — 被误解了', '感动 — 被温暖触动'] },
+  { behavior: '发脾气', emoji: '💥', feelings: ['焦虑 — 压力太大了', '嫉妒 — 觉得不公平', '害怕 — 担心会失去'] },
+  { behavior: '躲起来', emoji: '🏠', feelings: ['害羞 — 不想被注意', '疲惫 — 需要休息', '不安全 — 需要保护'] },
+  { behavior: '不想上学', emoji: '📚', feelings: ['焦虑 — 担心考试或社交', '孤独 — 没有朋友', '无聊 — 觉得没意义'] }
+];
+
+// ─── Mindful Listening ──────────────────────────────────────────────────────
+const LISTENING_PROMPTS = [
+  '闭上眼睛，仔细听30秒，你能听到什么声音？',
+  '试着找到最远处的声音，它在哪里？',
+  '现在注意最近的声音，它是什么？',
+  '有没有你之前没注意到的声音？',
+  '哪个声音让你感到平静？'
+];
+const SOUND_CATEGORIES = [
+  { emoji: '🐦', label: '鸟叫' },
+  { emoji: '🚗', label: '车声' },
+  { emoji: '💨', label: '风声' },
+  { emoji: '🗣️', label: '人声' },
+  { emoji: '🎵', label: '音乐' },
+  { emoji: '⏰', label: '钟声' },
+  { emoji: '🐕', label: '动物' },
+  { emoji: '💧', label: '水声' },
+  { emoji: '🍃', label: '树叶' },
+  { emoji: '❓', label: '其他' }
+];
+
+// ─── Courage Coins ──────────────────────────────────────────────────────────
+const COURAGE_TYPES = [
+  { emoji: '🗣️', label: '勇敢说话', desc: '表达自己的想法' },
+  { emoji: '🤝', label: '主动交友', desc: '和新朋友打招呼' },
+  { emoji: '✋', label: '举手发言', desc: '在课堂上回答问题' },
+  { emoji: '🎭', label: '尝试新事物', desc: '做没做过的事情' },
+  { emoji: '💪', label: '面对困难', desc: '不放弃，坚持到底' },
+  { emoji: '😊', label: '承认错误', desc: '诚实面对自己' }
+];
+const COIN_COLORS = ['bg-yellow-300', 'bg-amber-300', 'bg-orange-300', 'bg-yellow-400', 'bg-amber-400', 'bg-orange-400'];
+
+// ─── Friendship Recipe ──────────────────────────────────────────────────────
+const FRIENDSHIP_INGREDIENTS = [
+  { emoji: '🤝', label: '信任', desc: '说到做到，保守秘密' },
+  { emoji: '👂', label: '倾听', desc: '认真听朋友说话' },
+  { emoji: '😊', label: '善良', desc: '对朋友温柔友善' },
+  { emoji: '🤗', label: '关心', desc: '在朋友难过时陪伴' },
+  { emoji: '🎉', label: '分享', desc: '分享快乐和好东西' },
+  { emoji: '🙏', label: '尊重', desc: '尊重不同的想法' },
+  { emoji: '😂', label: '幽默', desc: '一起笑，一起开心' },
+  { emoji: '⏰', label: '耐心', desc: '友谊需要时间培养' }
+];
+
+// ─── Thought Bubbles ────────────────────────────────────────────────────────
+const BUBBLE_SCENES = [
+  { id: 'rain', emoji: '🌧️', scene: '下雨了，不能出去玩',
+    characters: [
+      { name: '小明', emoji: '👦' },
+      { name: '小红', emoji: '👧' },
+      { name: '妈妈', emoji: '👩' }
+    ],
+    example: ['太无聊了！', '可以在家画画！', '孩子们在家安全。'] },
+  { id: 'test', emoji: '📝', scene: '明天要考试了',
+    characters: [
+      { name: '学生', emoji: '🧑‍🎓' },
+      { name: '好朋友', emoji: '👫' },
+      { name: '老师', emoji: '👨‍🏫' }
+    ],
+    example: ['我好紧张…', '我们一起复习吧！', '相信你们能做到。'] },
+  { id: 'newfriend', emoji: '🏫', scene: '班上来了一位新同学',
+    characters: [
+      { name: '新同学', emoji: '🧒' },
+      { name: '班长', emoji: '👧' },
+      { name: '老师', emoji: '👩‍🏫' }
+    ],
+    example: ['好紧张，大家会喜欢我吗？', '我去跟新同学打招呼！', '大家欢迎新朋友。'] },
+  { id: 'mistake', emoji: '😰', scene: '不小心打翻了牛奶',
+    characters: [
+      { name: '自己', emoji: '🧒' },
+      { name: '弟弟/妹妹', emoji: '👶' },
+      { name: '爸爸', emoji: '👨' }
+    ],
+    example: ['糟糕，我闯祸了…', '我来帮你擦！', '没关系，我们一起收拾。'] }
+];
+
+// ─── Calm Breathing Buddy ───────────────────────────────────────────────────
+const BUDDY_ANIMALS = [
+  { emoji: '🧸', name: '小熊', color: 'from-amber-100 to-yellow-100' },
+  { emoji: '🐱', name: '小猫', color: 'from-orange-100 to-amber-100' },
+  { emoji: '🐰', name: '小兔', color: 'from-pink-100 to-rose-100' },
+  { emoji: '🐶', name: '小狗', color: 'from-blue-100 to-cyan-100' },
+  { emoji: '🐼', name: '小熊猫', color: 'from-gray-100 to-white' }
+];
+
+// ─── Accomplishment Timeline ────────────────────────────────────────────────
+const ACCOMPLISHMENT_TYPES = [
+  { emoji: '⭐', label: '完成任务' },
+  { emoji: '💪', label: '勇敢面对' },
+  { emoji: '🤝', label: '帮助他人' },
+  { emoji: '📚', label: '学到新东西' },
+  { emoji: '🎨', label: '创造作品' },
+  { emoji: '❤️', label: '善待自己' }
+];
+
+// ─── Sensory Countdown ──────────────────────────────────────────────────────
+const SENSORY_STEPS = [
+  { count: 5, sense: '看到', emoji: '👀', color: 'from-blue-200 to-cyan-200', placeholder: '我看到…' },
+  { count: 4, sense: '听到', emoji: '👂', color: 'from-green-200 to-emerald-200', placeholder: '我听到…' },
+  { count: 3, sense: '触摸到', emoji: '✋', color: 'from-yellow-200 to-amber-200', placeholder: '我摸到…' },
+  { count: 2, sense: '闻到', emoji: '👃', color: 'from-pink-200 to-rose-200', placeholder: '我闻到…' },
+  { count: 1, sense: '尝到', emoji: '👅', color: 'from-purple-200 to-indigo-200', placeholder: '我尝到…' }
+];
+
+// ─── Emotion Jar Experiment ─────────────────────────────────────────────────
+const GLITTER_EMOTIONS = [
+  { emoji: '😠', label: '生气', color: '#ef4444' },
+  { emoji: '😰', label: '焦虑', color: '#a855f7' },
+  { emoji: '😢', label: '难过', color: '#3b82f6' },
+  { emoji: '😤', label: '挫败', color: '#f97316' },
+  { emoji: '😔', label: '孤独', color: '#6366f1' }
+];
+
+// ─── Strength Trading Cards ─────────────────────────────────────────────────
+const CARD_STRENGTHS = [
+  { name: '勇气', emoji: '🦁', desc: '面对困难不退缩' },
+  { name: '善良', emoji: '💝', desc: '对别人温柔友好' },
+  { name: '创造力', emoji: '🎨', desc: '有很多好主意' },
+  { name: '耐心', emoji: '🐢', desc: '能等待，不着急' },
+  { name: '幽默', emoji: '😄', desc: '能让别人开心' },
+  { name: '好奇心', emoji: '🔍', desc: '喜欢探索新事物' },
+  { name: '坚持', emoji: '⛰️', desc: '不轻易放弃' },
+  { name: '诚实', emoji: '⭐', desc: '说真话，守信用' },
+  { name: '团队精神', emoji: '🤝', desc: '和别人合作很好' },
+  { name: '感恩', emoji: '🙏', desc: '珍惜拥有的一切' }
+];
+const CARD_BORDERS = ['border-yellow-400', 'border-blue-400', 'border-red-400', 'border-green-400', 'border-purple-400'];
+
+// ─── Mood DJ ────────────────────────────────────────────────────────────────
+const DJ_SLIDERS = [
+  { id: 'energy', label: '精力', low: '😴 低', high: '⚡ 高', color: 'accent-yellow-500' },
+  { id: 'feeling', label: '心情', low: '😢 低落', high: '😊 开心', color: 'accent-green-500' },
+  { id: 'calm', label: '平静', low: '😰 紧张', high: '😌 放松', color: 'accent-blue-500' }
+];
+
+// ─── Helpful Thoughts Vending Machine ───────────────────────────────────────
+const NEGATIVE_COINS = [
+  { thought: '没有人喜欢我', reframes: ['有些人在乎我，只是我现在看不到', '我也有让别人开心的时候', '不是每个人都不喜欢我，我有朋友和家人'] },
+  { thought: '我什么都做不好', reframes: ['每个人都有擅长的事，我也一样', '做不好不代表永远做不好，我在学习', '我已经做到了很多事情'] },
+  { thought: '事情永远不会好起来', reframes: ['难过的感觉会过去的，就像天气会变晴', '以前也有难过的时候，后来好了', '每一天都是新的开始'] },
+  { thought: '都是我的错', reframes: ['很多事情不是一个人的错', '犯错是学习的一部分', '我可以下次做得更好，但现在不用自责'] },
+  { thought: '我不够好', reframes: ['我不需要完美，我已经足够好了', '每个人都有独特的价值', '我正在努力，这就够了'] },
+  { thought: '别人都比我强', reframes: ['每个人有不同的长处，比较没有意义', '我有别人没有的优点', '我只需要做最好的自己'] }
+];
+
+// ─── Feelings Mask Gallery ──────────────────────────────────────────────────
+const MASK_EMOTIONS = [
+  { emoji: '😊', label: '开心' }, { emoji: '😎', label: '酷' },
+  { emoji: '😢', label: '难过' }, { emoji: '😠', label: '生气' },
+  { emoji: '😰', label: '焦虑' }, { emoji: '😴', label: '疲惫' },
+  { emoji: '🤗', label: '温暖' }, { emoji: '😔', label: '失落' },
+  { emoji: '🤩', label: '兴奋' }, { emoji: '😌', label: '平静' }
+];
+
+// ─── Daily Anchor ───────────────────────────────────────────────────────────
+const ANCHOR_SUGGESTIONS = [
+  { emoji: '🎵', label: '听一首喜欢的歌' },
+  { emoji: '🍦', label: '吃一个好吃的东西' },
+  { emoji: '👫', label: '和朋友聊天' },
+  { emoji: '📖', label: '读一个故事' },
+  { emoji: '🎮', label: '玩一个小游戏' },
+  { emoji: '🌳', label: '去外面走走' },
+  { emoji: '🎨', label: '画一幅画' },
+  { emoji: '🤗', label: '抱抱家人' }
+];
+
+// ─── Compliment Boomerang ───────────────────────────────────────────────────
+const COMPLIMENT_STARTERS = [
+  '你的笑容很温暖',
+  '你很善良',
+  '你做得真好',
+  '你很勇敢',
+  '和你在一起很开心',
+  '你很有创意'
+];
+const BOOMERANG_FEELINGS = [
+  { emoji: '😊', label: '开心' },
+  { emoji: '🥰', label: '温暖' },
+  { emoji: '💪', label: '有力量' },
+  { emoji: '🌟', label: '有价值' },
+  { emoji: '😌', label: '平静' },
+  { emoji: '🤗', label: '被连接' }
+];
+
+// ─── Emotion Volume Control ─────────────────────────────────────────────────
+const VOLUME_EMOTIONS = [
+  { emoji: '😠', label: '生气', strategies: ['深呼吸3次', '数到10', '握拳再松开', '离开现场冷静', '说出你的感受'] },
+  { emoji: '😰', label: '焦虑', strategies: ['4-4-4呼吸', '感官着陆', '告诉自己"我安全"', '动动身体', '找人聊聊'] },
+  { emoji: '😢', label: '难过', strategies: ['允许自己哭', '抱抱自己', '写下感受', '听舒缓音乐', '和信任的人说'] },
+  { emoji: '😤', label: '挫败', strategies: ['休息一下', '换个方法试试', '把问题分小步', '寻求帮助', '提醒自己进步'] }
+];
+
+// ─── Safe Words & Signals ───────────────────────────────────────────────────
+const SIGNAL_TYPES = [
+  { id: 'help', emoji: '🆘', label: '我需要帮助', desc: '当你需要大人帮忙时', color: 'from-red-100 to-pink-100' },
+  { id: 'space', emoji: '🌙', label: '我需要独处', desc: '当你想安静一会儿时', color: 'from-blue-100 to-indigo-100' },
+  { id: 'ok', emoji: '✅', label: '我没事', desc: '告诉别人你现在还好', color: 'from-green-100 to-emerald-100' },
+  { id: 'talk', emoji: '💬', label: '我想聊聊', desc: '当你想找人说话时', color: 'from-purple-100 to-pink-100' }
+];
+const SIGNAL_IDEAS = [
+  '竖起大拇指', '拉拉耳朵', '摸摸鼻子', '比心', '举手', '眨眨眼',
+  '说"苹果"', '说"彩虹"', '说"安全"', '画一颗星星'
+];
+
+// ─── Emotion ABC Diary ──────────────────────────────────────────────────────
+const ABC_EXAMPLES = [
+  { a: '考试成绩不好', b: '我好笨', c: '难过、自卑', better: '一次考试不能代表我的全部，我可以下次更努力' },
+  { a: '朋友没跟我玩', b: '他们不喜欢我', c: '孤独、伤心', better: '也许他们今天有别的事，我可以主动问问' },
+  { a: '被老师批评', b: '我总是犯错', c: '害怕、沮丧', better: '老师批评是为了帮我进步，不代表我不好' }
+];
+
+// ─── Worry Balloon Release ──────────────────────────────────────────────────
+const BALLOON_COLORS = ['bg-red-300', 'bg-blue-300', 'bg-green-300', 'bg-yellow-300', 'bg-purple-300', 'bg-pink-300'];
+
+// ─── Feelings Bingo ─────────────────────────────────────────────────────────
+const BINGO_SQUARES = [
+  { emoji: '😊', label: '笑了' },
+  { emoji: '💪', label: '感到骄傲' },
+  { emoji: '🤝', label: '帮助了别人' },
+  { emoji: '🌟', label: '尝试新事物' },
+  { emoji: '🎵', label: '哼了歌' },
+  { emoji: '🙏', label: '说了谢谢' },
+  { emoji: '🏃', label: '动了身体' },
+  { emoji: '📖', label: '学了新东西' },
+  { emoji: '❤️', label: '感到被爱' }
+];
+
+// ─── Mirror Affirmation Challenge ───────────────────────────────────────────
+const MIRROR_DAYS = [
+  { day: 1, prompt: '对镜子说：我今天起床了，这很棒', level: '简单' },
+  { day: 2, prompt: '对镜子说：我有一个很棒的笑容', level: '简单' },
+  { day: 3, prompt: '对镜子说：我是一个善良的人', level: '中等' },
+  { day: 4, prompt: '对镜子说：我值得被爱', level: '中等' },
+  { day: 5, prompt: '对镜子说：我比我想象的更坚强', level: '挑战' },
+  { day: 6, prompt: '对镜子说：我为自己感到骄傲', level: '挑战' },
+  { day: 7, prompt: '对镜子说：我爱我自己', level: '勇者' }
+];
+
+// ─── Emotion Orchestra ──────────────────────────────────────────────────────
+const ORCHESTRA_INSTRUMENTS = [
+  { emoji: '🥁', label: '鼓（生气）', emotion: '生气', color: 'bg-red-200' },
+  { emoji: '🎻', label: '小提琴（难过）', emotion: '难过', color: 'bg-blue-200' },
+  { emoji: '🎺', label: '小号（兴奋）', emotion: '兴奋', color: 'bg-yellow-200' },
+  { emoji: '🪈', label: '笛子（平静）', emotion: '平静', color: 'bg-green-200' },
+  { emoji: '🎸', label: '吉他（焦虑）', emotion: '焦虑', color: 'bg-purple-200' },
+  { emoji: '🎹', label: '钢琴（温柔）', emotion: '温柔', color: 'bg-pink-200' }
+];
+
+// ─── Problem Shrink Ray ─────────────────────────────────────────────────────
+const SHRINK_QUESTIONS = [
+  { emoji: '🔍', q: '这个问题里，哪个部分是你能控制的？' },
+  { emoji: '👣', q: '最小的第一步是什么？' },
+  { emoji: '🤝', q: '谁可以帮助你？' },
+  { emoji: '⏰', q: '一年后这件事还重要吗？' },
+  { emoji: '💡', q: '如果朋友遇到同样的问题，你会怎么建议？' }
+];
+
+// ─── Gratitude Glasses ──────────────────────────────────────────────────────
+const ORDINARY_THINGS = [
+  { thing: '我的床', emoji: '🛏️', reframe: '一个温暖舒适的地方，每天给我好好休息' },
+  { thing: '我的书包', emoji: '🎒', reframe: '陪我去学校，装着我喜欢的东西' },
+  { thing: '一杯水', emoji: '💧', reframe: '让我的身体保持健康，随时都能喝到' },
+  { thing: '窗户', emoji: '🪟', reframe: '让我看到外面的世界，感受阳光和风' },
+  { thing: '我的鞋子', emoji: '👟', reframe: '带我去任何想去的地方，保护我的脚' },
+  { thing: '一支笔', emoji: '✏️', reframe: '帮我写下想法，画出梦想' }
+];
+
+// ─── Emotion Time Capsule ───────────────────────────────────────────────────
+const CAPSULE_PROMPTS = [
+  '现在你最强烈的感受是什么？',
+  '今天发生了什么让你有这种感受？',
+  '你希望7天后的自己感觉怎么样？',
+  '给7天后的自己说一句话'
+];
+
+// ─── Kindness Ripple ────────────────────────────────────────────────────────
+const RIPPLE_ACTS = [
+  { emoji: '😊', label: '微笑' },
+  { emoji: '🤗', label: '拥抱' },
+  { emoji: '👋', label: '打招呼' },
+  { emoji: '🎁', label: '分享东西' },
+  { emoji: '👂', label: '认真倾听' },
+  { emoji: '✉️', label: '写小纸条' },
+  { emoji: '🙏', label: '说谢谢' },
+  { emoji: '💪', label: '帮忙做事' }
+];
+
+// ─── Support Solar System ───────────────────────────────────────────────────
+const PLANET_COLORS = ['bg-yellow-300', 'bg-blue-300', 'bg-red-300', 'bg-green-300', 'bg-purple-300', 'bg-orange-300', 'bg-pink-300', 'bg-cyan-300'];
+const ORBIT_LABELS = ['最亲密', '很亲近', '比较亲近', '认识'];
 
 const fmtTime = (s) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
 const todayStr = () => new Date().toDateString();
@@ -7292,6 +7921,3165 @@ function ScavengerHuntPage({ completedHunts, onComplete, onBack }) {
   );
 }
 
+// ─── Emotion Archaeology ────────────────────────────────────────────────────
+function EmotionArchaeologyPage({ digs, onDig, onBack }) {
+  const [activeSurface, setActiveSurface] = useState(null);
+  const [revealedIdx, setRevealedIdx] = useState(-1);
+  const [identified, setIdentified] = useState(null);
+
+  if (activeSurface !== null) {
+    const layer = EMOTION_LAYERS[activeSurface];
+    return (
+      <div className="p-6 space-y-5">
+        <BackButton onClick={() => { setActiveSurface(null); setRevealedIdx(-1); setIdentified(null); }} />
+        <div className="text-center">
+          <div className="text-5xl mb-2">{layer.emoji}</div>
+          <h2 className="text-xl font-bold text-gray-800">表面情绪：{layer.surface}</h2>
+          <p className="text-sm text-gray-500">让我们看看下面藏着什么...</p>
+        </div>
+        <div className="space-y-3">
+          {layer.beneath.map((b, i) => (
+            <button key={i} onClick={() => { setRevealedIdx(i); setIdentified(null); }}
+              className={`w-full rounded-2xl p-4 text-left transition shadow ${i <= revealedIdx ? 'bg-white' : 'bg-gradient-to-r from-amber-100 to-yellow-100'}`}>
+              {i <= revealedIdx ? (
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">{b.emoji}</span>
+                  <div>
+                    <p className="font-bold text-gray-800">{b.emotion}</p>
+                    <p className="text-xs text-gray-500">{b.desc}</p>
+                  </div>
+                </div>
+              ) : (
+                <div className="text-center">
+                  <p className="text-sm text-amber-600">⛏️ 点击挖掘第{i + 1}层</p>
+                </div>
+              )}
+            </button>
+          ))}
+        </div>
+        {revealedIdx >= 0 && (
+          <div className="bg-purple-50 rounded-2xl p-4">
+            <p className="text-sm font-bold text-purple-700 mb-2">你觉得哪个最像你现在的感受？</p>
+            <div className="flex flex-wrap gap-2">
+              {layer.beneath.slice(0, revealedIdx + 1).map((b, i) => (
+                <button key={i} onClick={() => { setIdentified(b.emotion); onDig({ surface: layer.surface, deep: b.emotion, date: todayDate() }); }}
+                  className={`px-3 py-2 rounded-full text-sm ${identified === b.emotion ? 'bg-purple-500 text-white' : 'bg-white text-gray-600'}`}>
+                  {b.emoji} {b.emotion}
+                </button>
+              ))}
+            </div>
+            {identified && <p className="text-center text-green-600 font-bold mt-3">发现了！你的{activeSurface !== null ? layer.surface : ''}下面是{identified}。认识真正的感受是第一步！🎉</p>}
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="⛏️" title="情绪考古" subtitle="挖掘表面情绪下面藏着什么" />
+      <div className="bg-gradient-to-r from-amber-50 to-yellow-50 rounded-2xl p-4">
+        <p className="text-sm text-gray-600">💡 很多时候，我们感受到的情绪只是"表面"。下面可能藏着更真实的感受。让我们一起挖掘看看！</p>
+      </div>
+      <div className="space-y-3">
+        {EMOTION_LAYERS.map((layer, i) => (
+          <button key={i} onClick={() => setActiveSurface(i)}
+            className="w-full flex items-center gap-4 bg-white rounded-2xl p-4 shadow hover:shadow-md transition">
+            <span className="text-3xl">{layer.emoji}</span>
+            <div className="text-left">
+              <p className="font-bold text-gray-800">我觉得{layer.surface}</p>
+              <p className="text-xs text-gray-500">点击挖掘更深的感受</p>
+            </div>
+            <span className="ml-auto text-gray-300">⛏️</span>
+          </button>
+        ))}
+      </div>
+      {(digs || []).length > 0 && (
+        <div className="space-y-2">
+          <h3 className="font-bold text-gray-700">我的发现 ({digs.length})</h3>
+          {(digs || []).slice().reverse().slice(0, 5).map((d, i) => (
+            <div key={i} className="bg-white rounded-xl p-3 shadow-sm flex items-center gap-2">
+              <span className="text-sm">{d.surface} → <span className="font-bold text-purple-600">{d.deep}</span></span>
+              <span className="text-xs text-gray-400 ml-auto">{d.date}</span>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Butterfly Hug & Body-Based Coping ──────────────────────────────────────
+function BodyCopingPage({ completions, onComplete, onBack }) {
+  const [active, setActive] = useState(null);
+  const [step, setStep] = useState(0);
+  const [timer, setTimer] = useState(0);
+
+  useEffect(() => {
+    if (active === null || timer <= 0) return;
+    const id = setInterval(() => setTimer(prev => prev - 1), 1000);
+    return () => clearInterval(id);
+  }, [active, timer]);
+
+  if (active !== null) {
+    const exercise = BODY_COPING[active];
+    const currentStep = exercise.steps[step];
+    const isLast = step >= exercise.steps.length - 1;
+    return (
+      <div className="p-6 space-y-5">
+        <BackButton onClick={() => { setActive(null); setStep(0); setTimer(0); }} />
+        <div className="text-center">
+          <div className="text-5xl mb-2">{exercise.emoji}</div>
+          <h2 className="text-xl font-bold text-gray-800">{exercise.title}</h2>
+        </div>
+        <div className="bg-white rounded-2xl p-6 shadow-lg text-center">
+          <div className="text-4xl font-mono text-purple-600 mb-4">{fmtTime(timer)}</div>
+          <div className="bg-purple-50 rounded-xl p-5 mb-4">
+            <p className="text-xs text-gray-400 mb-1">第 {step + 1}/{exercise.steps.length} 步</p>
+            <p className="text-lg font-bold text-gray-800">{currentStep}</p>
+          </div>
+          <button onClick={() => {
+            if (isLast) { onComplete(exercise.id); setActive(null); setStep(0); setTimer(0); }
+            else setStep(prev => prev + 1);
+          }} className="w-full bg-purple-500 text-white rounded-xl py-3 font-bold hover:bg-purple-600">
+            {isLast ? '完成！ 🦋' : '下一步 →'}
+          </button>
+        </div>
+        <div className="bg-blue-50 rounded-xl p-3">
+          <p className="text-xs text-gray-600">{exercise.desc}</p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🦋" title="身体安抚术" subtitle="用身体动作帮助大脑平静" />
+      <div className="space-y-3">
+        {BODY_COPING.map((ex, i) => {
+          const done = (completions || []).includes(ex.id);
+          return (
+            <button key={ex.id} onClick={() => { setActive(i); setStep(0); setTimer(ex.duration); }}
+              className={`w-full flex items-center gap-4 bg-white rounded-2xl p-4 shadow hover:shadow-md transition ${done ? 'ring-2 ring-green-300' : ''}`}>
+              <span className="text-3xl">{ex.emoji}</span>
+              <div className="text-left flex-1">
+                <p className="font-bold text-gray-800">{ex.title}</p>
+                <p className="text-xs text-gray-500">{ex.desc.slice(0, 30)}...</p>
+              </div>
+              {done && <span className="text-green-500">✅</span>}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// ─── Permission Slips ───────────────────────────────────────────────────────
+function PermissionSlipPage({ slips, onSave, onBack }) {
+  const [customText, setCustomText] = useState('');
+
+  const handleSave = (text) => {
+    onSave({ text, date: todayDate() });
+  };
+
+  const handleCustom = () => {
+    if (!customText.trim()) return;
+    handleSave('允许自己' + customText.trim());
+    setCustomText('');
+  };
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="📜" title="许可小条" subtitle="给自己写一张允许的纸条" />
+      <div className="bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-4">
+        <p className="text-sm text-gray-600">💡 有时候我们对自己太严格了。给自己一张"许可条"，允许自己做一个真实的人。</p>
+      </div>
+      <div className="space-y-2">
+        {PERMISSION_TEMPLATES.map((p, i) => {
+          const saved = (slips || []).some(s => s.text === p.text);
+          return (
+            <button key={i} onClick={() => !saved && handleSave(p.text)}
+              className={`w-full flex items-center gap-3 bg-white rounded-xl p-4 shadow-sm text-left transition ${saved ? 'ring-2 ring-green-300 bg-green-50' : 'hover:shadow-md'}`}>
+              <span className="text-2xl">{p.emoji}</span>
+              <p className="text-sm text-gray-800 flex-1">{p.text}</p>
+              {saved ? <span className="text-green-500">📜</span> : <span className="text-xs text-purple-500 font-bold">领取</span>}
+            </button>
+          );
+        })}
+      </div>
+      <div className="bg-white rounded-2xl p-4 shadow-lg">
+        <p className="text-sm font-bold text-gray-700 mb-2">✍️ 写一张自己的许可条</p>
+        <div className="flex gap-2">
+          <span className="text-sm text-gray-500 self-center">允许自己</span>
+          <input value={customText} onChange={e => setCustomText(e.target.value)} placeholder="..."
+            className="flex-1 border-2 border-purple-200 rounded-xl p-2 text-sm outline-none focus:border-purple-400" />
+          <button onClick={handleCustom} className="bg-purple-500 text-white px-4 rounded-xl font-bold text-sm">保存</button>
+        </div>
+      </div>
+      {(slips || []).length > 0 && (
+        <div className="bg-gradient-to-r from-yellow-50 to-amber-50 rounded-2xl p-4">
+          <h3 className="font-bold text-amber-700 mb-2">📜 我的许可条 ({slips.length})</h3>
+          <div className="space-y-1">
+            {(slips || []).slice().reverse().slice(0, 8).map((s, i) => (
+              <p key={i} className="text-sm text-gray-700 bg-white rounded-lg p-2">📜 {s.text}</p>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Daily Dose of Awe ─────────────────────────────────────────────────────
+function AwePromptPage({ aweLogs, onLog, onBack }) {
+  const today = todayDate();
+  const todayIdx = Math.abs(new Date().getDate() % AWE_PROMPTS.length);
+  const todayPrompt = AWE_PROMPTS[todayIdx];
+  const doneToday = (aweLogs || []).some(l => l.date === today);
+  const [reflection, setReflection] = useState('');
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🤩" title="每日惊叹" subtitle="发现世界的神奇之处" />
+      <div className="bg-gradient-to-r from-indigo-100 to-purple-100 rounded-2xl p-6 shadow-lg text-center">
+        <div className="text-5xl mb-3">{todayPrompt.emoji}</div>
+        <p className="text-gray-800 font-semibold">{todayPrompt.prompt}</p>
+      </div>
+      {!doneToday ? (
+        <div className="bg-white rounded-2xl p-5 shadow-lg space-y-3">
+          <textarea value={reflection} onChange={e => setReflection(e.target.value)} placeholder="你发现了什么？写下你的感受..."
+            className="w-full border-2 border-indigo-200 rounded-xl p-3 h-20 outline-none focus:border-indigo-400" />
+          <button onClick={() => { if (reflection.trim()) { onLog({ prompt: todayPrompt.prompt, reflection: reflection.trim(), date: today }); setReflection(''); } }}
+            className="w-full bg-indigo-500 text-white rounded-xl py-3 font-bold hover:bg-indigo-600">记录今天的惊叹 🤩</button>
+        </div>
+      ) : (
+        <div className="bg-green-50 rounded-2xl p-4 text-center">
+          <p className="text-green-600 font-bold">今天的惊叹已记录！ ✅</p>
+        </div>
+      )}
+      {(aweLogs || []).length > 0 && (
+        <div className="space-y-2">
+          <h3 className="font-bold text-gray-700">惊叹日记 ({aweLogs.length})</h3>
+          {(aweLogs || []).slice().reverse().slice(0, 5).map((l, i) => (
+            <div key={i} className="bg-white rounded-xl p-3 shadow-sm">
+              <p className="text-xs text-indigo-500">{l.prompt}</p>
+              <p className="text-sm text-gray-800 mt-1">{l.reflection}</p>
+              <p className="text-xs text-gray-400 mt-1">{l.date}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Compassionate Observer ─────────────────────────────────────────────────
+function CompassionateObserverPage({ sessions, onComplete, onBack }) {
+  const [active, setActive] = useState(null);
+  const [guideStep, setGuideStep] = useState(0);
+  const [timer, setTimer] = useState(0);
+
+  useEffect(() => {
+    if (active === null || timer <= 0) return;
+    const id = setInterval(() => setTimer(prev => prev - 1), 1000);
+    return () => clearInterval(id);
+  }, [active, timer]);
+
+  if (active !== null) {
+    const exercise = OBSERVER_EXERCISES[active];
+    const guideText = exercise.guide[guideStep];
+    const isLast = guideStep >= exercise.guide.length - 1;
+    return (
+      <div className="p-6 space-y-5">
+        <BackButton onClick={() => { setActive(null); setGuideStep(0); setTimer(0); }} />
+        <div className="text-center">
+          <div className="text-5xl mb-2">{exercise.emoji}</div>
+          <h2 className="text-xl font-bold text-gray-800">{exercise.title}</h2>
+          <p className="text-3xl font-mono text-blue-500 mt-2">{fmtTime(timer)}</p>
+        </div>
+        <div className="bg-gradient-to-b from-blue-50 to-purple-50 rounded-2xl p-6 shadow-lg text-center min-h-[150px] flex items-center justify-center">
+          <p className="text-lg text-gray-800 leading-relaxed">{guideText}</p>
+        </div>
+        <button onClick={() => {
+          if (isLast) { onComplete(exercise.id); setActive(null); setGuideStep(0); setTimer(0); }
+          else setGuideStep(prev => prev + 1);
+        }} className="w-full bg-blue-500 text-white rounded-xl py-3 font-bold hover:bg-blue-600">
+          {isLast ? '完成冥想 🧘' : '继续... →'}
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🧘" title="安静观察者" subtitle="学习观察想法，而不被它们带走" />
+      <div className="bg-blue-50 rounded-2xl p-4">
+        <p className="text-sm text-gray-600">💡 你不是你的想法。想法就像天上的云、海里的浪、路过的火车——来了又走。你只需要安静地观察。</p>
+      </div>
+      <div className="space-y-3">
+        {OBSERVER_EXERCISES.map((ex, i) => {
+          const done = (sessions || []).includes(ex.id);
+          return (
+            <button key={ex.id} onClick={() => { setActive(i); setGuideStep(0); setTimer(ex.duration); }}
+              className={`w-full flex items-center gap-4 bg-white rounded-2xl p-4 shadow hover:shadow-md transition ${done ? 'ring-2 ring-blue-300' : ''}`}>
+              <span className="text-3xl">{ex.emoji}</span>
+              <div className="text-left flex-1">
+                <p className="font-bold text-gray-800">{ex.title}</p>
+                <p className="text-xs text-gray-500">{Math.floor(ex.duration / 60)}分钟引导练习</p>
+              </div>
+              {done && <span className="text-blue-500">✅</span>}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// ─── Emotional CPR ──────────────────────────────────────────────────────────
+function EmotionalCPRPage({ uses, onUse, onBack }) {
+  const [activeStep, setActiveStep] = useState(null);
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🚨" title="情绪急救CPR" subtitle="紧急时刻的3个步骤" />
+      <div className="bg-red-50 rounded-2xl p-4">
+        <p className="text-sm text-gray-600">💡 当你感觉非常难受、快要崩溃的时候，记住这三个字母：<span className="font-bold text-red-600">C-P-R</span></p>
+      </div>
+      <div className="space-y-4">
+        {CPR_STEPS.map((s, i) => (
+          <button key={i} onClick={() => setActiveStep(activeStep === i ? null : i)}
+            className="w-full bg-white rounded-2xl shadow overflow-hidden text-left">
+            <div className={`${s.color} p-4 flex items-center gap-3`}>
+              <span className="text-3xl bg-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-gray-800">{s.letter}</span>
+              <div>
+                <p className="font-bold text-white text-lg">{s.title}</p>
+                <p className="text-white text-xs opacity-80">{s.quick}</p>
+              </div>
+              <span className="text-2xl ml-auto">{s.emoji}</span>
+            </div>
+            {activeStep === i && (
+              <div className="p-4 space-y-2">
+                {s.actions.map((a, j) => (
+                  <div key={j} className="flex items-center gap-2 bg-gray-50 rounded-xl p-3">
+                    <span className="text-green-500">•</span>
+                    <p className="text-sm text-gray-700">{a}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </button>
+        ))}
+      </div>
+      <button onClick={() => onUse({ date: todayDate() })}
+        className="w-full bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-2xl py-4 font-bold text-lg shadow-lg">我用了CPR急救 💪</button>
+      {(uses || []).length > 0 && (
+        <p className="text-center text-sm text-gray-500">你已经使用了{uses.length}次CPR急救，每次都说明你在照顾自己！</p>
+      )}
+    </div>
+  );
+}
+
+// ─── Strengths Shield ───────────────────────────────────────────────────────
+function StrengthsShieldPage({ shield, onSave, onBack }) {
+  const [editing, setEditing] = useState(null);
+  const [input, setInput] = useState('');
+
+  const handleAdd = () => {
+    if (!input.trim() || !editing) return;
+    const updated = { ...(shield || {}), [editing]: [...((shield || {})[editing] || []), input.trim()] };
+    onSave(updated);
+    setInput('');
+  };
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🛡️" title="力量盾牌" subtitle="建造你的心灵防护盾" />
+      <div className="grid grid-cols-2 gap-3">
+        {SHIELD_QUADRANTS.map(q => {
+          const items = (shield || {})[q.id] || [];
+          return (
+            <button key={q.id} onClick={() => setEditing(editing === q.id ? null : q.id)}
+              className={`bg-gradient-to-br ${q.color} rounded-2xl p-4 shadow text-left min-h-[120px] transition ${editing === q.id ? 'ring-2 ring-purple-400 scale-105' : ''}`}>
+              <div className="text-2xl mb-1">{q.emoji}</div>
+              <p className="font-bold text-gray-800 text-sm">{q.title}</p>
+              {items.length > 0 ? items.map((item, i) => (
+                <p key={i} className="text-xs text-gray-600 mt-1">• {item}</p>
+              )) : <p className="text-xs text-gray-400 mt-1">{q.prompt}</p>}
+            </button>
+          );
+        })}
+      </div>
+      {editing && (
+        <div className="bg-white rounded-2xl p-4 shadow-lg">
+          <p className="text-sm font-bold text-gray-700 mb-2">{SHIELD_QUADRANTS.find(q => q.id === editing)?.prompt}</p>
+          <div className="flex gap-2">
+            <input value={input} onChange={e => setInput(e.target.value)} placeholder="写下来..."
+              className="flex-1 border-2 border-purple-200 rounded-xl p-2 text-sm outline-none focus:border-purple-400" />
+            <button onClick={handleAdd} className="bg-purple-500 text-white px-4 rounded-xl font-bold text-sm">添加</button>
+          </div>
+        </div>
+      )}
+      <div className="bg-purple-50 rounded-2xl p-4 text-center">
+        <p className="text-sm text-gray-600">当消极想法来袭时，拿出你的盾牌看看——你比你想的更强大！ 🛡️</p>
+      </div>
+    </div>
+  );
+}
+
+// ─── Micro-Kindness to Self ─────────────────────────────────────────────────
+function MicroKindnessPage({ log, onLog, onBack }) {
+  const today = todayDate();
+  const todayDone = (log || []).filter(l => l.date === today).map(l => l.text);
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🌸" title="微小善意" subtitle="对自己温柔一点点" />
+      <div className="bg-pink-50 rounded-2xl p-4">
+        <p className="text-sm text-gray-600">💡 照顾自己不需要做大事。一个小小的善意动作，就能让你好一点点。</p>
+      </div>
+      <div className="grid grid-cols-2 gap-2">
+        {MICRO_KINDNESS.map((k, i) => {
+          const done = todayDone.includes(k.text);
+          return (
+            <button key={i} onClick={() => !done && onLog({ text: k.text, date: today })}
+              className={`flex items-center gap-2 bg-white rounded-xl p-3 shadow-sm text-left transition ${done ? 'bg-green-50 ring-2 ring-green-300' : 'hover:shadow-md'}`}>
+              <span className="text-xl">{done ? '✅' : k.emoji}</span>
+              <span className="text-xs text-gray-700">{k.text}</span>
+            </button>
+          );
+        })}
+      </div>
+      <div className="bg-gradient-to-r from-pink-100 to-purple-100 rounded-2xl p-4 text-center">
+        <p className="text-sm text-gray-700">今天完成: <span className="font-bold text-pink-600">{todayDone.length}</span> / {MICRO_KINDNESS.length}</p>
+        {todayDone.length >= 3 && <p className="text-xs text-pink-500 mt-1">你对自己真好！继续保持 🌸</p>}
+      </div>
+    </div>
+  );
+}
+
+// ─── Feelings Forecast Journal ──────────────────────────────────────────────
+function FeelingsForecastPage({ forecasts, onSave, onBack }) {
+  const today = todayDate();
+  const todayEntry = (forecasts || []).find(f => f.date === today);
+  const [morning, setMorning] = useState(null);
+  const [evening, setEvening] = useState(null);
+
+  const handleMorning = (w) => {
+    setMorning(w);
+    onSave({ date: today, morning: w.label, morningEmoji: w.emoji, evening: todayEntry?.evening });
+  };
+
+  const handleEvening = (w) => {
+    setEvening(w);
+    onSave({ date: today, morning: todayEntry?.morning || morning?.label, morningEmoji: todayEntry?.morningEmoji || morning?.emoji, evening: w.label, eveningEmoji: w.emoji });
+  };
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🌤️" title="心情天气" subtitle="每天预报你的心情天气" />
+      <div className="bg-white rounded-2xl p-5 shadow-lg">
+        <h3 className="font-bold text-gray-800 mb-3">☀️ 早上：今天的心情预报</h3>
+        <div className="flex justify-between">
+          {WEATHER_EMOJI.map(w => (
+            <button key={w.label} onClick={() => handleMorning(w)}
+              className={`flex flex-col items-center p-2 rounded-xl transition ${(todayEntry?.morning || morning?.label) === w.label ? 'bg-blue-100 scale-110' : 'hover:bg-gray-50'}`}>
+              <span className="text-2xl">{w.emoji}</span>
+              <span className="text-xs text-gray-600">{w.label}</span>
+            </button>
+          ))}
+        </div>
+        {(todayEntry?.morning || morning) && <p className="text-center text-sm text-blue-600 mt-2">早上预报：{todayEntry?.morningEmoji || morning?.emoji} {todayEntry?.morning || morning?.label}</p>}
+      </div>
+      <div className="bg-white rounded-2xl p-5 shadow-lg">
+        <h3 className="font-bold text-gray-800 mb-3">🌙 晚上：实际天气如何？</h3>
+        <div className="flex justify-between">
+          {WEATHER_EMOJI.map(w => (
+            <button key={w.label} onClick={() => handleEvening(w)}
+              className={`flex flex-col items-center p-2 rounded-xl transition ${(todayEntry?.evening || evening?.label) === w.label ? 'bg-purple-100 scale-110' : 'hover:bg-gray-50'}`}>
+              <span className="text-2xl">{w.emoji}</span>
+              <span className="text-xs text-gray-600">{w.label}</span>
+            </button>
+          ))}
+        </div>
+        {(todayEntry?.evening || evening) && <p className="text-center text-sm text-purple-600 mt-2">实际天气：{todayEntry?.eveningEmoji || evening?.emoji} {todayEntry?.evening || evening?.label}</p>}
+      </div>
+      {(forecasts || []).filter(f => f.morning && f.evening).length > 0 && (
+        <div className="space-y-2">
+          <h3 className="font-bold text-gray-700">天气历史</h3>
+          {(forecasts || []).filter(f => f.morning && f.evening).slice().reverse().slice(0, 7).map((f, i) => (
+            <div key={i} className="bg-white rounded-xl p-3 shadow-sm flex items-center gap-3">
+              <span className="text-xs text-gray-400">{f.date}</span>
+              <span>{f.morningEmoji} → {f.eveningEmoji}</span>
+              <span className="text-xs text-gray-500 ml-auto">{f.morning} → {f.evening}</span>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Hope Jar ───────────────────────────────────────────────────────────────
+function HopeJarPage({ hopes, onAdd, onBack }) {
+  const [category, setCategory] = useState(null);
+  const [text, setText] = useState('');
+
+  const handleAdd = () => {
+    if (!text.trim() || !category) return;
+    onAdd({ text: text.trim(), category: category.label, emoji: category.emoji, date: todayDate() });
+    setText(''); setCategory(null);
+  };
+
+  const jarFill = Math.min(100, ((hopes || []).length / 20) * 100);
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🫙" title="希望罐子" subtitle="收集你的希望和力量" />
+      <div className="bg-gradient-to-b from-yellow-50 to-amber-50 rounded-2xl p-5 shadow-lg text-center">
+        <div className="relative inline-block">
+          <div className="text-7xl">🫙</div>
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-yellow-300 to-amber-200 rounded-b-full opacity-60" style={{ height: `${jarFill}%` }}></div>
+        </div>
+        <p className="font-bold text-gray-800 mt-2">{(hopes || []).length} 个希望</p>
+        <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
+          <div className="bg-gradient-to-r from-yellow-400 to-amber-500 h-2 rounded-full transition-all" style={{ width: `${jarFill}%` }}></div>
+        </div>
+      </div>
+      {category ? (
+        <div className="bg-white rounded-2xl p-5 shadow-lg space-y-3">
+          <h3 className="font-bold text-gray-800">{category.emoji} {category.label}</h3>
+          <p className="text-xs text-gray-500">{category.hint}</p>
+          <textarea value={text} onChange={e => setText(e.target.value)} placeholder="写下你的希望..."
+            className="w-full border-2 border-amber-200 rounded-xl p-3 h-20 outline-none focus:border-amber-400" />
+          <div className="flex gap-2">
+            <button onClick={() => { setCategory(null); setText(''); }} className="flex-1 bg-gray-200 rounded-xl py-3 font-bold text-gray-700">取消</button>
+            <button onClick={handleAdd} className="flex-1 bg-amber-500 text-white rounded-xl py-3 font-bold hover:bg-amber-600">放入罐子 🫙</button>
+          </div>
+        </div>
+      ) : (
+        <div className="space-y-2">
+          {HOPE_CATEGORIES.map(c => (
+            <button key={c.label} onClick={() => setCategory(c)}
+              className="w-full flex items-center gap-3 bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition">
+              <span className="text-2xl">{c.emoji}</span>
+              <div className="text-left">
+                <p className="font-bold text-gray-800 text-sm">{c.label}</p>
+                <p className="text-xs text-gray-500">{c.hint.slice(0, 25)}...</p>
+              </div>
+            </button>
+          ))}
+        </div>
+      )}
+      {(hopes || []).length > 0 && (
+        <div className="space-y-2">
+          <h3 className="font-bold text-gray-700">罐子里的希望</h3>
+          {(hopes || []).slice().reverse().slice(0, 8).map((h, i) => (
+            <div key={i} className="bg-white rounded-xl p-3 shadow-sm flex items-start gap-2">
+              <span>{h.emoji}</span>
+              <div className="flex-1">
+                <p className="text-sm text-gray-800">{h.text}</p>
+                <p className="text-xs text-gray-400">{h.date}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Breathing Games ────────────────────────────────────────────────────────
+function BreathingGamePage({ gamesPlayed, onComplete, onBack }) {
+  const [activeGame, setActiveGame] = useState(null);
+  const [round, setRound] = useState(0);
+  const [phase, setPhase] = useState('ready');
+  const [timer, setTimer] = useState(0);
+
+  useEffect(() => {
+    if (!activeGame || phase === 'ready' || timer <= 0) return;
+    const id = setInterval(() => {
+      setTimer(prev => {
+        if (prev <= 1) {
+          if (phase === 'inhale') { setPhase('exhale'); return activeGame.exhale; }
+          if (phase === 'exhale') {
+            if (round + 1 >= activeGame.rounds) { setPhase('done'); return 0; }
+            setRound(r => r + 1); setPhase('inhale'); return activeGame.inhale;
+          }
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    return () => clearInterval(id);
+  }, [activeGame, phase, timer, round]);
+
+  if (activeGame && phase === 'done') {
+    return (
+      <div className="p-6 space-y-5 text-center">
+        <div className="text-6xl mb-4">{activeGame.emoji}</div>
+        <h2 className="text-2xl font-bold text-gray-800">{activeGame.successMsg}</h2>
+        <p className="text-gray-600">你完成了{activeGame.rounds}轮呼吸！</p>
+        <button onClick={() => { onComplete(activeGame.id); setActiveGame(null); setRound(0); setPhase('ready'); }}
+          className="bg-green-500 text-white rounded-2xl px-8 py-4 font-bold text-lg">太棒了！ 🎉</button>
+      </div>
+    );
+  }
+
+  if (activeGame && phase !== 'ready') {
+    const progress = ((round * (activeGame.inhale + activeGame.exhale) + (phase === 'exhale' ? activeGame.inhale : 0) + (phase === 'inhale' ? activeGame.inhale - timer : activeGame.exhale - timer)) / (activeGame.rounds * (activeGame.inhale + activeGame.exhale))) * 100;
+    return (
+      <div className="p-6 space-y-5">
+        <BackButton onClick={() => { setActiveGame(null); setRound(0); setPhase('ready'); }} />
+        <div className="text-center">
+          <div className={`text-7xl mb-4 transition-transform duration-1000 ${phase === 'inhale' ? 'scale-125' : 'scale-75'}`}>{activeGame.emoji}</div>
+          <p className="text-sm text-gray-500">第 {round + 1}/{activeGame.rounds} 轮</p>
+          <p className="text-4xl font-mono text-purple-600 my-3">{timer}</p>
+          <p className="text-xl font-bold text-gray-800">{phase === 'inhale' ? '吸气... 🌬️' : '呼气... 💨'}</p>
+          <p className="text-sm text-gray-500 mt-2">{activeGame.instruction}</p>
+        </div>
+        <div className="w-full bg-gray-200 rounded-full h-3">
+          <div className="bg-gradient-to-r from-blue-400 to-purple-500 h-3 rounded-full transition-all" style={{ width: `${progress}%` }}></div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🎮" title="呼吸小游戏" subtitle="用好玩的方式练习呼吸" />
+      <div className="space-y-3">
+        {BREATHING_GAMES.map(game => {
+          const played = (gamesPlayed || []).includes(game.id);
+          return (
+            <button key={game.id} onClick={() => { setActiveGame(game); setRound(0); setPhase('inhale'); setTimer(game.inhale); }}
+              className={`w-full flex items-center gap-4 bg-white rounded-2xl p-4 shadow hover:shadow-md transition ${played ? 'ring-2 ring-green-300' : ''}`}>
+              <span className="text-3xl">{game.emoji}</span>
+              <div className="text-left flex-1">
+                <p className="font-bold text-gray-800">{game.title}</p>
+                <p className="text-xs text-gray-500">{game.desc}</p>
+              </div>
+              {played && <span className="text-green-500">✅</span>}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// ─── Decision Compass ───────────────────────────────────────────────────────
+function DecisionCompassPage({ decisions, onSave, onBack }) {
+  const [step, setStep] = useState(0);
+  const [answers, setAnswers] = useState({});
+  const [topic, setTopic] = useState('');
+
+  const handleSave = () => {
+    if (!topic.trim()) return;
+    onSave({ topic: topic.trim(), answers, date: todayDate() });
+    setStep(0); setAnswers({}); setTopic('');
+  };
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🧭" title="决定指南针" subtitle="不知道怎么选？让指南针帮你" />
+      {step === 0 ? (
+        <div className="bg-white rounded-2xl p-5 shadow-lg space-y-3">
+          <h3 className="font-bold text-gray-800">你在纠结什么事情？</h3>
+          <textarea value={topic} onChange={e => setTopic(e.target.value)} placeholder="写下让你犹豫不决的事情..."
+            className="w-full border-2 border-blue-200 rounded-xl p-3 h-20 outline-none focus:border-blue-400" />
+          {topic.trim() && <button onClick={() => setStep(1)} className="w-full bg-blue-500 text-white rounded-xl py-3 font-bold">开始思考 🧭</button>}
+        </div>
+      ) : (
+        <div className="bg-white rounded-2xl p-5 shadow-lg space-y-4">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-2xl">{DECISION_QUESTIONS[step - 1].emoji}</span>
+            <p className="font-bold text-gray-800">{DECISION_QUESTIONS[step - 1].question}</p>
+          </div>
+          <textarea value={answers[step] || ''} onChange={e => setAnswers(prev => ({ ...prev, [step]: e.target.value }))} placeholder="想一想，写下来..."
+            className="w-full border-2 border-purple-200 rounded-xl p-3 h-20 outline-none focus:border-purple-400" />
+          <div className="flex gap-2">
+            {step > 1 && <button onClick={() => setStep(prev => prev - 1)} className="flex-1 bg-gray-200 rounded-xl py-3 font-bold text-gray-700">上一步</button>}
+            {step < DECISION_QUESTIONS.length ? (
+              <button onClick={() => setStep(prev => prev + 1)} className="flex-1 bg-purple-500 text-white rounded-xl py-3 font-bold">下一步 →</button>
+            ) : (
+              <button onClick={handleSave} className="flex-1 bg-green-500 text-white rounded-xl py-3 font-bold">完成思考 ✅</button>
+            )}
+          </div>
+          <div className="flex gap-1">
+            {DECISION_QUESTIONS.map((_, i) => (
+              <div key={i} className={`flex-1 h-1 rounded-full ${i < step ? 'bg-purple-400' : 'bg-gray-200'}`}></div>
+            ))}
+          </div>
+        </div>
+      )}
+      {(decisions || []).length > 0 && (
+        <div className="space-y-2">
+          <h3 className="font-bold text-gray-700">决定记录 ({decisions.length})</h3>
+          {(decisions || []).slice().reverse().slice(0, 5).map((d, i) => (
+            <div key={i} className="bg-white rounded-xl p-3 shadow-sm">
+              <p className="font-semibold text-gray-800 text-sm">🧭 {d.topic}</p>
+              <p className="text-xs text-gray-400">{d.date}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Empathy Glasses ────────────────────────────────────────────────────────
+function EmpathyGlassesPage({ practiced, onPractice, onBack }) {
+  const [active, setActive] = useState(null);
+  const [revealed, setRevealed] = useState(0);
+
+  if (active !== null) {
+    const scenario = EMPATHY_SCENARIOS[active];
+    return (
+      <div className="p-6 space-y-5">
+        <BackButton onClick={() => { setActive(null); setRevealed(0); }} />
+        <PageHeader emoji="👓" title="换个角度看" subtitle="" />
+        <div className="bg-orange-50 rounded-2xl p-4">
+          <p className="font-bold text-gray-800">{scenario.situation}</p>
+        </div>
+        <div className="space-y-3">
+          {scenario.perspectives.map((p, i) => (
+            <button key={i} onClick={() => setRevealed(Math.max(revealed, i + 1))}
+              className={`w-full rounded-2xl p-4 text-left shadow transition ${i < revealed ? 'bg-white' : 'bg-gradient-to-r from-purple-50 to-blue-50'}`}>
+              {i < revealed ? (
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">{p.emoji}</span>
+                  <div>
+                    <p className="font-bold text-gray-800 text-sm">{p.role}的视角</p>
+                    <p className="text-sm text-gray-600 mt-1">"{p.thought}"</p>
+                  </div>
+                </div>
+              ) : (
+                <p className="text-center text-sm text-purple-600">👓 点击看看{p.role}的视角</p>
+              )}
+            </button>
+          ))}
+        </div>
+        {revealed >= scenario.perspectives.length && (
+          <div className="space-y-3">
+            <div className="bg-green-50 rounded-2xl p-4">
+              <p className="text-sm text-green-700">💡 看到了吗？同样一件事，不同的人有不同的感受和想法。没有谁是"错"的。</p>
+            </div>
+            <button onClick={() => { onPractice(scenario.situation); setActive(null); setRevealed(0); }}
+              className="w-full bg-purple-500 text-white rounded-xl py-3 font-bold">我学会了！ 👓</button>
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="👓" title="共情眼镜" subtitle="戴上眼镜，看看别人怎么想" />
+      <div className="space-y-3">
+        {EMPATHY_SCENARIOS.map((s, i) => {
+          const done = (practiced || []).includes(s.situation);
+          return (
+            <button key={i} onClick={() => setActive(i)}
+              className={`w-full flex items-center gap-3 bg-white rounded-2xl p-4 shadow hover:shadow-md transition ${done ? 'opacity-70' : ''}`}>
+              <span className="text-2xl">👓</span>
+              <p className="text-sm text-gray-800 text-left flex-1">{s.situation}</p>
+              {done && <span className="text-green-500">✅</span>}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// ─── Mood Collage Board ─────────────────────────────────────────────────────
+function MoodCollagePage({ collages, onSave, onBack }) {
+  const [selected, setSelected] = useState({ emojis: [], words: [], colors: [] });
+
+  const toggle = (type, item) => {
+    setSelected(prev => ({
+      ...prev,
+      [type]: prev[type].includes(item) ? prev[type].filter(i => i !== item) : [...prev[type], item]
+    }));
+  };
+
+  const total = selected.emojis.length + selected.words.length + selected.colors.length;
+
+  const handleSave = () => {
+    if (total === 0) return;
+    onSave({ ...selected, date: todayDate() });
+    setSelected({ emojis: [], words: [], colors: [] });
+  };
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🎨" title="心情拼图" subtitle="选择能代表你现在心情的元素" />
+      <div className="bg-white rounded-2xl p-4 shadow">
+        <h3 className="font-bold text-gray-800 mb-2 text-sm">选表情</h3>
+        <div className="flex flex-wrap gap-2">
+          {COLLAGE_EMOJIS.map(e => (
+            <button key={e} onClick={() => toggle('emojis', e)}
+              className={`text-2xl p-1 rounded-lg transition ${selected.emojis.includes(e) ? 'bg-purple-200 scale-125' : 'hover:bg-gray-100'}`}>{e}</button>
+          ))}
+        </div>
+      </div>
+      <div className="bg-white rounded-2xl p-4 shadow">
+        <h3 className="font-bold text-gray-800 mb-2 text-sm">选词语</h3>
+        <div className="flex flex-wrap gap-2">
+          {COLLAGE_WORDS.map(w => (
+            <button key={w} onClick={() => toggle('words', w)}
+              className={`px-3 py-1 rounded-full text-sm ${selected.words.includes(w) ? 'bg-purple-500 text-white' : 'bg-gray-100 text-gray-600'}`}>{w}</button>
+          ))}
+        </div>
+      </div>
+      <div className="bg-white rounded-2xl p-4 shadow">
+        <h3 className="font-bold text-gray-800 mb-2 text-sm">选颜色</h3>
+        <div className="flex flex-wrap gap-2">
+          {COLLAGE_COLORS.map(c => (
+            <button key={c} onClick={() => toggle('colors', c)}
+              className={`w-10 h-10 rounded-full ${c} transition ${selected.colors.includes(c) ? 'ring-4 ring-purple-400 scale-110' : ''}`}></button>
+          ))}
+        </div>
+      </div>
+      {total > 0 && (
+        <div className="space-y-3">
+          <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-4">
+            <p className="text-sm font-bold text-gray-700 mb-2">我的心情拼图</p>
+            <div className="flex flex-wrap gap-1">
+              {selected.emojis.map(e => <span key={e} className="text-2xl">{e}</span>)}
+              {selected.words.map(w => <span key={w} className="bg-white px-2 py-0.5 rounded-full text-xs">{w}</span>)}
+              {selected.colors.map(c => <span key={c} className={`w-6 h-6 rounded-full ${c} inline-block`}></span>)}
+            </div>
+          </div>
+          <button onClick={handleSave} className="w-full bg-purple-500 text-white rounded-xl py-3 font-bold">保存拼图 🎨</button>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Emotion Vocabulary Stories ─────────────────────────────────────────────
+function VocabStoryPage({ learned, onLearn, onBack }) {
+  const [active, setActive] = useState(null);
+
+  if (active !== null) {
+    const story = VOCAB_STORIES[active];
+    const done = (learned || []).includes(story.word);
+    return (
+      <div className="p-6 space-y-5">
+        <BackButton onClick={() => setActive(null)} />
+        <div className="text-center">
+          <div className="text-5xl mb-3">{story.emoji}</div>
+          <h2 className="text-2xl font-bold text-purple-700">{story.word}</h2>
+        </div>
+        <div className="bg-white rounded-2xl p-5 shadow-lg">
+          <p className="text-gray-700 leading-relaxed">{story.story}</p>
+        </div>
+        <div className="bg-yellow-50 rounded-2xl p-4">
+          <p className="text-sm font-bold text-yellow-800">🤔 {story.question}</p>
+        </div>
+        {!done && (
+          <button onClick={() => { onLearn(story.word); setActive(null); }}
+            className="w-full bg-purple-500 text-white rounded-xl py-3 font-bold">我学会了这个词！ 📚</button>
+        )}
+      </div>
+    );
+  }
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="📖" title="情绪词典" subtitle="通过故事学习高级情绪词汇" />
+      <div className="space-y-3">
+        {VOCAB_STORIES.map((s, i) => {
+          const done = (learned || []).includes(s.word);
+          return (
+            <button key={i} onClick={() => setActive(i)}
+              className={`w-full flex items-center gap-4 bg-white rounded-2xl p-4 shadow hover:shadow-md transition ${done ? 'ring-2 ring-green-300' : ''}`}>
+              <span className="text-2xl">{s.emoji}</span>
+              <div className="text-left flex-1">
+                <p className="font-bold text-gray-800">{s.word}</p>
+                <p className="text-xs text-gray-500">{s.story.slice(0, 30)}...</p>
+              </div>
+              {done && <span className="text-green-500">✅</span>}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// ─── Gratitude Chain ────────────────────────────────────────────────────────
+function GratitudeChainPage({ chain, onAdd, onBack }) {
+  const [text, setText] = useState('');
+
+  const handleAdd = () => {
+    if (!text.trim()) return;
+    onAdd({ text: text.trim(), color: CHAIN_COLORS[(chain || []).length % CHAIN_COLORS.length], date: todayDate() });
+    setText('');
+  };
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🔗" title="感恩链条" subtitle="每一个感恩都是一环，看你的链条有多长" />
+      <div className="bg-white rounded-2xl p-5 shadow-lg space-y-3">
+        <textarea value={text} onChange={e => setText(e.target.value)} placeholder="今天你感恩什么？不管多小都可以..."
+          className="w-full border-2 border-amber-200 rounded-xl p-3 h-16 outline-none focus:border-amber-400" />
+        <button onClick={handleAdd} className="w-full bg-amber-500 text-white rounded-xl py-3 font-bold hover:bg-amber-600">加一环 🔗</button>
+      </div>
+      {(chain || []).length > 0 && (
+        <div>
+          <p className="font-bold text-gray-700 mb-2">我的感恩链 ({chain.length}环)</p>
+          <div className="flex flex-wrap gap-1">
+            {(chain || []).map((link, i) => (
+              <div key={i} className={`${link.color} text-white text-xs px-3 py-1 rounded-full font-bold`} title={link.text}>
+                {link.text.length > 8 ? link.text.slice(0, 8) + '...' : link.text}
+              </div>
+            ))}
+          </div>
+          <div className="mt-3 space-y-1">
+            {(chain || []).slice().reverse().slice(0, 5).map((link, i) => (
+              <div key={i} className="flex items-center gap-2">
+                <div className={`w-4 h-4 rounded-full ${link.color}`}></div>
+                <p className="text-sm text-gray-700">{link.text}</p>
+                <span className="text-xs text-gray-400 ml-auto">{link.date}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Safe Person Quick-Cards ────────────────────────────────────────────────
+function SafePersonCardsPage({ cards, onSave, onBack }) {
+  const [editing, setEditing] = useState(false);
+  const [name, setName] = useState('');
+  const [relation, setRelation] = useState('');
+
+  const handleAdd = () => {
+    if (!name.trim()) return;
+    onSave([...(cards || []), { name: name.trim(), relation: relation.trim() }]);
+    setName(''); setRelation(''); setEditing(false);
+  };
+
+  const handleRemove = (idx) => onSave((cards || []).filter((_, i) => i !== idx));
+
+  const [copiedScript, setCopiedScript] = useState(null);
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="📱" title="求助快捷卡" subtitle="不知道怎么开口？用这些话" />
+      <div className="bg-white rounded-2xl p-4 shadow-lg">
+        <h3 className="font-bold text-gray-800 mb-3">我信任的人</h3>
+        {(cards || []).map((c, i) => (
+          <div key={i} className="flex items-center gap-3 bg-blue-50 rounded-xl p-3 mb-2">
+            <span className="text-xl">👤</span>
+            <div className="flex-1">
+              <p className="font-bold text-gray-800 text-sm">{c.name}</p>
+              {c.relation && <p className="text-xs text-gray-500">{c.relation}</p>}
+            </div>
+            <button onClick={() => handleRemove(i)} className="text-red-400 text-xs">×</button>
+          </div>
+        ))}
+        {editing ? (
+          <div className="space-y-2 mt-2">
+            <input value={name} onChange={e => setName(e.target.value)} placeholder="名字" className="w-full border rounded-xl p-2 text-sm outline-none" />
+            <input value={relation} onChange={e => setRelation(e.target.value)} placeholder="关系（妈妈、老师...）" className="w-full border rounded-xl p-2 text-sm outline-none" />
+            <div className="flex gap-2">
+              <button onClick={() => setEditing(false)} className="flex-1 bg-gray-200 rounded-xl py-2 text-sm font-bold">取消</button>
+              <button onClick={handleAdd} className="flex-1 bg-blue-500 text-white rounded-xl py-2 text-sm font-bold">添加</button>
+            </div>
+          </div>
+        ) : (
+          <button onClick={() => setEditing(true)} className="w-full bg-blue-100 text-blue-600 rounded-xl py-2 text-sm font-bold mt-2">+ 添加信任的人</button>
+        )}
+      </div>
+      <div className="space-y-2">
+        <h3 className="font-bold text-gray-800">📋 求助话术卡</h3>
+        <p className="text-xs text-gray-500">不知道怎么说？点击复制这些话：</p>
+        {HELP_SCRIPTS.map((s, i) => (
+          <button key={i} onClick={() => { navigator.clipboard?.writeText(s.script).catch(() => {}); setCopiedScript(i); setTimeout(() => setCopiedScript(null), 2000); }}
+            className={`w-full text-left bg-white rounded-xl p-4 shadow-sm transition ${copiedScript === i ? 'ring-2 ring-green-400 bg-green-50' : 'hover:shadow-md'}`}>
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-lg">{s.emoji}</span>
+              <span className="font-bold text-gray-800 text-sm">{s.label}</span>
+              {copiedScript === i && <span className="text-xs text-green-600 ml-auto">已复制!</span>}
+            </div>
+            <p className="text-sm text-gray-600">"{s.script}"</p>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ─── Morning Compass ────────────────────────────────────────────────────────
+function MorningCompassPage({ entries, onSave, onBack }) {
+  const today = todayDate();
+  const todayEntry = (entries || []).find(e => e.date === today);
+  const [feeling, setFeeling] = useState(null);
+  const [action, setAction] = useState('');
+  const [kindTo, setKindTo] = useState('');
+
+  if (todayEntry) {
+    return (
+      <div className="p-6 space-y-5">
+        <BackButton onClick={onBack} />
+        <PageHeader emoji="🧭" title="今日方向" subtitle="你已经设好今天的方向了" />
+        <div className="bg-gradient-to-r from-yellow-100 to-orange-100 rounded-2xl p-5 shadow-lg text-center">
+          <p className="text-sm text-gray-500">今天想感受</p>
+          <p className="text-3xl my-2">{todayEntry.feelingEmoji}</p>
+          <p className="font-bold text-gray-800 text-lg">{todayEntry.feeling}</p>
+        </div>
+        <div className="bg-white rounded-2xl p-4 shadow">
+          <p className="text-sm text-gray-600">🎯 今日行动：<span className="font-bold">{todayEntry.action}</span></p>
+          <p className="text-sm text-gray-600 mt-2">💗 善待：<span className="font-bold">{todayEntry.kindTo}</span></p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🧭" title="早安指南针" subtitle="1分钟设定今天的方向" />
+      <div className="bg-white rounded-2xl p-5 shadow-lg">
+        <p className="font-bold text-gray-800 mb-3">今天我想感受...</p>
+        <div className="flex flex-wrap gap-2">
+          {COMPASS_FEELINGS.map(f => (
+            <button key={f.label} onClick={() => setFeeling(f)}
+              className={`px-3 py-2 rounded-full text-sm ${feeling === f ? 'bg-yellow-500 text-white' : 'bg-gray-100'}`}>{f.emoji} {f.label}</button>
+          ))}
+        </div>
+      </div>
+      <div className="bg-white rounded-2xl p-5 shadow-lg">
+        <p className="font-bold text-gray-800 mb-3">今天我要做一件事...</p>
+        <div className="flex flex-wrap gap-2 mb-2">
+          {COMPASS_ACTIONS.map(a => (
+            <button key={a} onClick={() => setAction(a)}
+              className={`px-3 py-1 rounded-full text-xs ${action === a ? 'bg-blue-500 text-white' : 'bg-gray-100'}`}>{a}</button>
+          ))}
+        </div>
+        <input value={action} onChange={e => setAction(e.target.value)} placeholder="或者自定义..." className="w-full border rounded-xl p-2 text-sm outline-none mt-1" />
+      </div>
+      <div className="bg-white rounded-2xl p-5 shadow-lg">
+        <p className="font-bold text-gray-800 mb-2">今天我要善待...</p>
+        <input value={kindTo} onChange={e => setKindTo(e.target.value)} placeholder="一个人的名字（包括你自己）"
+          className="w-full border-2 border-pink-200 rounded-xl p-3 outline-none focus:border-pink-400" />
+      </div>
+      {feeling && action && kindTo.trim() && (
+        <button onClick={() => { onSave({ feeling: feeling.label, feelingEmoji: feeling.emoji, action, kindTo: kindTo.trim(), date: today }); }}
+          className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-2xl py-4 font-bold text-lg shadow-lg">出发！ 🧭</button>
+      )}
+    </div>
+  );
+}
+
+// ─── Coping Report Card ────────────────────────────────────────────────────
+function CopingReportPage({ reports, onSave, onBack }) {
+  const [emotion, setEmotion] = useState('');
+  const [ratings, setRatings] = useState({});
+
+  const handleSave = () => {
+    if (!emotion.trim()) return;
+    const used = Object.entries(ratings).filter(([_, v]) => v > 0).map(([k, v]) => ({ strategy: k, rating: v }));
+    if (used.length === 0) return;
+    onSave({ emotion: emotion.trim(), strategies: used, date: todayDate() });
+    setEmotion(''); setRatings({});
+  };
+
+  const bestStrategies = {};
+  (reports || []).forEach(r => {
+    (r.strategies || []).forEach(s => {
+      if (!bestStrategies[s.strategy] || s.rating > bestStrategies[s.strategy]) bestStrategies[s.strategy] = s.rating;
+    });
+  });
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="📊" title="应对成绩单" subtitle="记录什么方法对你最有用" />
+      <div className="bg-white rounded-2xl p-5 shadow-lg space-y-3">
+        <input value={emotion} onChange={e => setEmotion(e.target.value)} placeholder="你刚才经历了什么情绪？"
+          className="w-full border-2 border-blue-200 rounded-xl p-3 outline-none focus:border-blue-400" />
+        <p className="text-sm font-bold text-gray-600">你用了哪些方法？效果如何？</p>
+        {COPING_STRATEGIES_LIST.map(s => (
+          <div key={s.label} className="flex items-center gap-3">
+            <span className="text-lg">{s.emoji}</span>
+            <span className="text-sm text-gray-700 flex-1">{s.label}</span>
+            <div className="flex gap-1">
+              {[1,2,3,4,5].map(star => (
+                <button key={star} onClick={() => setRatings(prev => ({ ...prev, [s.label]: star }))}
+                  className={`text-sm ${star <= (ratings[s.label] || 0) ? 'text-yellow-400' : 'text-gray-300'}`}>★</button>
+              ))}
+            </div>
+          </div>
+        ))}
+        <button onClick={handleSave} className="w-full bg-blue-500 text-white rounded-xl py-3 font-bold hover:bg-blue-600">保存成绩单 📊</button>
+      </div>
+      {Object.keys(bestStrategies).length > 0 && (
+        <div className="bg-green-50 rounded-2xl p-4">
+          <h3 className="font-bold text-green-700 mb-2">🏆 我的最佳方法</h3>
+          {Object.entries(bestStrategies).sort((a, b) => b[1] - a[1]).slice(0, 5).map(([name, rating]) => (
+            <div key={name} className="flex items-center gap-2 py-1">
+              <span className="text-sm">{COPING_STRATEGIES_LIST.find(s => s.label === name)?.emoji}</span>
+              <span className="text-sm text-gray-700 flex-1">{name}</span>
+              <span className="text-yellow-400 text-sm">{'★'.repeat(rating)}</span>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Connection Conversation Cards ──────────────────────────────────────────
+function ConnectionCardsPage({ onBack }) {
+  const [category, setCategory] = useState(null);
+  const [cardIdx, setCardIdx] = useState(0);
+
+  if (category) {
+    const cards = category.cards;
+    return (
+      <div className="p-6 space-y-5">
+        <BackButton onClick={() => { setCategory(null); setCardIdx(0); }} />
+        <div className="text-center">
+          <span className="text-3xl">{category.emoji}</span>
+          <h2 className="text-xl font-bold text-gray-800 mt-2">{category.category}话题</h2>
+        </div>
+        <div className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-8 shadow-lg text-center min-h-[150px] flex items-center justify-center">
+          <p className="text-lg font-bold text-gray-800">{cards[cardIdx % cards.length]}</p>
+        </div>
+        <div className="flex gap-3">
+          <button onClick={() => setCardIdx(prev => (prev - 1 + cards.length) % cards.length)}
+            className="flex-1 bg-gray-200 rounded-xl py-3 font-bold">← 上一张</button>
+          <button onClick={() => setCardIdx(prev => (prev + 1) % cards.length)}
+            className="flex-1 bg-purple-500 text-white rounded-xl py-3 font-bold">下一张 →</button>
+        </div>
+        <p className="text-center text-xs text-gray-400">{cardIdx + 1} / {cards.length}</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="💬" title="聊天卡片" subtitle="不知道聊什么？抽一张卡片" />
+      <div className="bg-blue-50 rounded-2xl p-4">
+        <p className="text-sm text-gray-600">💡 和朋友或家人在一起但不知道说什么？抽一张卡片，开始一段有趣的对话吧！</p>
+      </div>
+      <div className="space-y-3">
+        {CONVERSATION_CARDS.map(cat => (
+          <button key={cat.category} onClick={() => setCategory(cat)}
+            className="w-full flex items-center gap-4 bg-white rounded-2xl p-5 shadow hover:shadow-md transition">
+            <span className="text-3xl">{cat.emoji}</span>
+            <div className="text-left">
+              <p className="font-bold text-gray-800">{cat.category}话题</p>
+              <p className="text-xs text-gray-500">{cat.cards.length}张卡片</p>
+            </div>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ─── Emotion Map Quest ──────────────────────────────────────────────────────
+function EmotionMapQuestPage({ maps, onSave, onBack }) {
+  const [slots, setSlots] = useState({});
+  const [notes, setNotes] = useState({});
+  const allFilled = TIME_SLOTS.every(s => slots[s.id]);
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🗺️" title="情绪地图" subtitle="标记你一天中不同时段的心情" />
+      <div className="space-y-3">
+        {TIME_SLOTS.map(slot => (
+          <div key={slot.id} className="bg-white rounded-xl p-4 shadow">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-2xl">{slot.emoji}</span>
+              <div>
+                <p className="font-bold text-gray-800">{slot.label}</p>
+                <p className="text-xs text-gray-500">{slot.hint}</p>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-2 mb-2">
+              {MAP_EMOTIONS.map(e => (
+                <button key={e.label} onClick={() => setSlots(prev => ({ ...prev, [slot.id]: e }))}
+                  className={`px-3 py-1 rounded-full text-sm transition ${slots[slot.id]?.label === e.label ? e.color + ' ring-2 ring-offset-1 ring-gray-400 font-bold' : 'bg-gray-100'}`}>
+                  {e.emoji} {e.label}
+                </button>
+              ))}
+            </div>
+            <input type="text" placeholder="发生了什么？（可选）" value={notes[slot.id] || ''}
+              onChange={e => setNotes(prev => ({ ...prev, [slot.id]: e.target.value }))}
+              className="w-full text-sm border rounded-lg px-3 py-2" />
+          </div>
+        ))}
+      </div>
+      {allFilled && (
+        <button onClick={() => { onSave({ date: todayStr(), slots, notes }); setSlots({}); setNotes({}); }}
+          className="w-full py-3 bg-gradient-to-r from-blue-400 to-purple-400 text-white rounded-xl font-bold">
+          保存今日情绪地图 🗺️
+        </button>
+      )}
+      {maps.length > 0 && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-gray-700 mb-2">最近记录 ({maps.length}次)</p>
+          {maps.slice(-3).reverse().map((m, i) => (
+            <div key={i} className="flex gap-2 text-sm py-1 border-b last:border-0">
+              {TIME_SLOTS.map(s => (
+                <span key={s.id} title={s.label}>{m.slots[s.id]?.emoji || '—'}</span>
+              ))}
+              <span className="text-gray-400 text-xs ml-auto">{m.date?.slice(0, 10)}</span>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Comfort Menu ───────────────────────────────────────────────────────────
+function ComfortMenuPage({ menu, onSave, onBack }) {
+  const [picks, setPicks] = useState({ appetizer: [], main: [], dessert: [] });
+  const toggle = (cat, item) => {
+    setPicks(prev => {
+      const arr = prev[cat];
+      return { ...prev, [cat]: arr.includes(item.label) ? arr.filter(x => x !== item.label) : [...arr, item.label] };
+    });
+  };
+  const hasPicks = picks.appetizer.length + picks.main.length + picks.dessert.length > 0;
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🍽️" title="安慰菜单" subtitle="选择能让你感觉好一点的事情" />
+      <div className="bg-white rounded-xl p-4 shadow">
+        <p className="font-bold text-pink-600 mb-2">🥗 开胃菜（1分钟）</p>
+        <div className="flex flex-wrap gap-2">
+          {COMFORT_APPETIZERS.map(item => (
+            <button key={item.label} onClick={() => toggle('appetizer', item)}
+              className={`px-3 py-2 rounded-lg text-sm transition ${picks.appetizer.includes(item.label) ? 'bg-pink-200 font-bold ring-2 ring-pink-400' : 'bg-pink-50'}`}>
+              {item.emoji} {item.label}
+            </button>
+          ))}
+        </div>
+      </div>
+      <div className="bg-white rounded-xl p-4 shadow">
+        <p className="font-bold text-orange-600 mb-2">🍲 主菜（5-10分钟）</p>
+        <div className="flex flex-wrap gap-2">
+          {COMFORT_MAINS.map(item => (
+            <button key={item.label} onClick={() => toggle('main', item)}
+              className={`px-3 py-2 rounded-lg text-sm transition ${picks.main.includes(item.label) ? 'bg-orange-200 font-bold ring-2 ring-orange-400' : 'bg-orange-50'}`}>
+              {item.emoji} {item.label}
+            </button>
+          ))}
+        </div>
+      </div>
+      <div className="bg-white rounded-xl p-4 shadow">
+        <p className="font-bold text-purple-600 mb-2">🍰 甜点（犒劳自己）</p>
+        <div className="flex flex-wrap gap-2">
+          {COMFORT_DESSERTS.map(item => (
+            <button key={item.label} onClick={() => toggle('dessert', item)}
+              className={`px-3 py-2 rounded-lg text-sm transition ${picks.dessert.includes(item.label) ? 'bg-purple-200 font-bold ring-2 ring-purple-400' : 'bg-purple-50'}`}>
+              {item.emoji} {item.label}
+            </button>
+          ))}
+        </div>
+      </div>
+      {hasPicks && (
+        <button onClick={() => { onSave({ date: todayStr(), picks }); setPicks({ appetizer: [], main: [], dessert: [] }); }}
+          className="w-full py-3 bg-gradient-to-r from-pink-400 to-orange-400 text-white rounded-xl font-bold">
+          保存我的安慰菜单 🍽️
+        </button>
+      )}
+      {menu.length > 0 && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-gray-700 mb-2">我的菜单 ({menu.length}份)</p>
+          {menu.slice(-3).reverse().map((m, i) => (
+            <div key={i} className="text-sm py-2 border-b last:border-0">
+              <p className="text-gray-400 text-xs">{m.date?.slice(0, 10)}</p>
+              <p>🥗 {m.picks.appetizer.join('、') || '—'}</p>
+              <p>🍲 {m.picks.main.join('、') || '—'}</p>
+              <p>🍰 {m.picks.dessert.join('、') || '—'}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Praise Jar ─────────────────────────────────────────────────────────────
+function PraiseJarPage({ praises, onAdd, onBack }) {
+  const [from, setFrom] = useState('');
+  const [msg, setMsg] = useState('');
+  const [opened, setOpened] = useState(null);
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🏺" title="表扬罐" subtitle="收集来自他人的赞美和鼓励" />
+      <div className="bg-white rounded-xl p-4 shadow space-y-3">
+        <p className="font-bold text-amber-600">添加一条表扬</p>
+        <input type="text" placeholder="来自谁？（妈妈、老师、朋友…）" value={from}
+          onChange={e => setFrom(e.target.value)} className="w-full border rounded-lg px-3 py-2 text-sm" />
+        <textarea placeholder="他们说了什么好话？" value={msg}
+          onChange={e => setMsg(e.target.value)} className="w-full border rounded-lg px-3 py-2 text-sm" rows={2} />
+        {from.trim() && msg.trim() && (
+          <button onClick={() => { onAdd({ from: from.trim(), msg: msg.trim(), date: todayStr() }); setFrom(''); setMsg(''); }}
+            className="w-full py-2 bg-gradient-to-r from-amber-400 to-yellow-400 text-white rounded-xl font-bold">
+            放进罐子 🏺
+          </button>
+        )}
+      </div>
+      {praises.length > 0 && (
+        <div className="space-y-2">
+          <p className="font-bold text-gray-700">罐子里有 {praises.length} 条表扬 ✨</p>
+          {opened !== null ? (
+            <div className="bg-gradient-to-br from-yellow-100 to-amber-100 rounded-xl p-5 shadow text-center space-y-2">
+              <p className="text-4xl">🌟</p>
+              <p className="text-lg font-bold text-amber-800">"{praises[opened].msg}"</p>
+              <p className="text-sm text-amber-600">—— {praises[opened].from}</p>
+              <button onClick={() => setOpened(null)} className="text-sm text-amber-500 underline">关闭</button>
+            </div>
+          ) : (
+            <button onClick={() => setOpened(Math.floor(Math.random() * praises.length))}
+              className="w-full py-3 bg-gradient-to-r from-yellow-300 to-amber-300 text-amber-800 rounded-xl font-bold text-lg">
+              随机打开一条 🎁
+            </button>
+          )}
+          <div className="grid grid-cols-4 gap-2 mt-2">
+            {praises.slice(-12).map((_, i) => (
+              <button key={i} onClick={() => setOpened(praises.length - 12 + i >= 0 ? praises.length - 12 + i : i)}
+                className="bg-amber-100 rounded-lg p-3 text-2xl hover:scale-110 transition">⭐</button>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Feelings Translator ────────────────────────────────────────────────────
+function FeelingsTranslatorPage({ translations, onSave, onBack }) {
+  const [selected, setSelected] = useState(null);
+  const [chosen, setChosen] = useState(null);
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🔄" title="情绪翻译器" subtitle="把行为翻译成真正的感受" />
+      {selected === null ? (
+        <div className="space-y-3">
+          <p className="text-sm text-gray-600 text-center">当你做这些事情时，你真正的感受是什么？</p>
+          {BEHAVIOR_FEELINGS.map((bf, i) => (
+            <button key={i} onClick={() => setSelected(i)}
+              className="w-full bg-white rounded-xl p-4 shadow flex items-center gap-3 hover:scale-102 transition">
+              <span className="text-3xl">{bf.emoji}</span>
+              <div className="text-left">
+                <p className="font-bold text-gray-800">当我{bf.behavior}的时候…</p>
+                <p className="text-xs text-gray-500">点击看看可能的感受</p>
+              </div>
+            </button>
+          ))}
+        </div>
+      ) : (
+        <div className="space-y-4">
+          <div className="bg-white rounded-xl p-4 shadow text-center">
+            <p className="text-3xl mb-2">{BEHAVIOR_FEELINGS[selected].emoji}</p>
+            <p className="font-bold text-lg text-gray-800">当我{BEHAVIOR_FEELINGS[selected].behavior}的时候…</p>
+            <p className="text-sm text-gray-500 mt-1">我真正的感受可能是：</p>
+          </div>
+          {BEHAVIOR_FEELINGS[selected].feelings.map((f, i) => (
+            <button key={i} onClick={() => setChosen(i)}
+              className={`w-full p-4 rounded-xl text-left transition ${chosen === i ? 'bg-gradient-to-r from-purple-200 to-pink-200 ring-2 ring-purple-400' : 'bg-white shadow'}`}>
+              <p className="font-semibold text-gray-800">{f}</p>
+            </button>
+          ))}
+          {chosen !== null && (
+            <button onClick={() => {
+              onSave({ behavior: BEHAVIOR_FEELINGS[selected].behavior, feeling: BEHAVIOR_FEELINGS[selected].feelings[chosen], date: todayStr() });
+              setSelected(null); setChosen(null);
+            }} className="w-full py-3 bg-gradient-to-r from-purple-400 to-pink-400 text-white rounded-xl font-bold">
+              记住这个翻译 🔄
+            </button>
+          )}
+          <button onClick={() => { setSelected(null); setChosen(null); }}
+            className="w-full py-2 text-gray-500 text-sm">返回行为列表</button>
+        </div>
+      )}
+      {translations.length > 0 && selected === null && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-gray-700 mb-2">我的翻译记录 ({translations.length})</p>
+          {translations.slice(-5).reverse().map((t, i) => (
+            <div key={i} className="text-sm py-2 border-b last:border-0">
+              <p className="text-gray-600">{t.behavior} → {t.feeling}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Mindful Listening ──────────────────────────────────────────────────────
+function MindfulListeningPage({ logs, onSave, onBack }) {
+  const [phase, setPhase] = useState('start');
+  const [timer, setTimer] = useState(30);
+  const [sounds, setSounds] = useState([]);
+  const [prompt] = useState(() => LISTENING_PROMPTS[Math.floor(Math.random() * LISTENING_PROMPTS.length)]);
+  useEffect(() => {
+    if (phase !== 'listening' || timer <= 0) return;
+    const id = setTimeout(() => {
+      if (timer === 1) setPhase('record');
+      setTimer(t => t - 1);
+    }, 1000);
+    return () => clearTimeout(id);
+  }, [phase, timer]);
+  const toggleSound = (s) => {
+    setSounds(prev => prev.includes(s.label) ? prev.filter(x => x !== s.label) : [...prev, s.label]);
+  };
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="👂" title="静心聆听" subtitle="用耳朵感受这个世界" />
+      {phase === 'start' && (
+        <div className="bg-white rounded-xl p-6 shadow text-center space-y-4">
+          <p className="text-5xl">🔇</p>
+          <p className="text-gray-700">{prompt}</p>
+          <button onClick={() => setPhase('listening')}
+            className="px-6 py-3 bg-gradient-to-r from-teal-400 to-cyan-400 text-white rounded-xl font-bold">
+            开始聆听 30秒 👂
+          </button>
+        </div>
+      )}
+      {phase === 'listening' && (
+        <div className="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-xl p-8 shadow text-center space-y-4">
+          <p className="text-6xl">👂</p>
+          <p className="text-4xl font-bold text-teal-600">{timer}秒</p>
+          <p className="text-gray-600">安静地听…注意周围的声音</p>
+          <div className="w-full bg-gray-200 rounded-full h-2">
+            <div className="bg-teal-400 h-2 rounded-full transition-all" style={{ width: `${((30 - timer) / 30) * 100}%` }} />
+          </div>
+        </div>
+      )}
+      {phase === 'record' && (
+        <div className="space-y-4">
+          <div className="bg-white rounded-xl p-4 shadow">
+            <p className="font-bold text-teal-600 mb-3">你听到了什么声音？</p>
+            <div className="flex flex-wrap gap-2">
+              {SOUND_CATEGORIES.map(s => (
+                <button key={s.label} onClick={() => toggleSound(s)}
+                  className={`px-3 py-2 rounded-lg text-sm transition ${sounds.includes(s.label) ? 'bg-teal-200 font-bold ring-2 ring-teal-400' : 'bg-gray-100'}`}>
+                  {s.emoji} {s.label}
+                </button>
+              ))}
+            </div>
+          </div>
+          {sounds.length > 0 && (
+            <button onClick={() => { onSave({ sounds, date: todayStr() }); setPhase('done'); }}
+              className="w-full py-3 bg-gradient-to-r from-teal-400 to-cyan-400 text-white rounded-xl font-bold">
+              保存聆听记录 ✨
+            </button>
+          )}
+        </div>
+      )}
+      {phase === 'done' && (
+        <div className="bg-gradient-to-br from-teal-100 to-cyan-100 rounded-xl p-6 shadow text-center space-y-3">
+          <p className="text-5xl">🎉</p>
+          <p className="font-bold text-teal-700 text-lg">太棒了！</p>
+          <p className="text-gray-600">你听到了 {sounds.length} 种声音</p>
+          <p className="text-sm text-gray-500">当你的脑袋很吵的时候，试着安静地听听周围，让注意力回到当下。</p>
+          <button onClick={() => { setPhase('start'); setSounds([]); setTimer(30); }}
+            className="px-4 py-2 bg-teal-200 text-teal-700 rounded-lg text-sm">再听一次</button>
+        </div>
+      )}
+      {logs.length > 0 && phase === 'start' && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-gray-700 mb-2">聆听记录 ({logs.length}次)</p>
+          {logs.slice(-5).reverse().map((l, i) => (
+            <p key={i} className="text-sm py-1 border-b last:border-0 text-gray-600">
+              {l.sounds.join('、')} <span className="text-gray-400 text-xs ml-1">{l.date?.slice(0, 10)}</span>
+            </p>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Courage Coins ──────────────────────────────────────────────────────────
+function CourageCoinPage({ coins, onEarn, onBack }) {
+  const [selected, setSelected] = useState(null);
+  const [detail, setDetail] = useState('');
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🪙" title="勇气金币" subtitle="每次勇敢都值得一枚金币" />
+      <div className="bg-white rounded-xl p-4 shadow">
+        <p className="font-bold text-amber-600 mb-3">今天你做了什么勇敢的事？</p>
+        <div className="grid grid-cols-2 gap-2">
+          {COURAGE_TYPES.map((ct, i) => (
+            <button key={i} onClick={() => setSelected(i)}
+              className={`p-3 rounded-xl text-left transition ${selected === i ? 'bg-amber-200 ring-2 ring-amber-400' : 'bg-amber-50'}`}>
+              <p className="text-2xl">{ct.emoji}</p>
+              <p className="font-bold text-sm text-gray-800">{ct.label}</p>
+              <p className="text-xs text-gray-500">{ct.desc}</p>
+            </button>
+          ))}
+        </div>
+      </div>
+      {selected !== null && (
+        <div className="bg-white rounded-xl p-4 shadow space-y-3">
+          <input type="text" placeholder="具体做了什么？" value={detail}
+            onChange={e => setDetail(e.target.value)} className="w-full border rounded-lg px-3 py-2 text-sm" />
+          {detail.trim() && (
+            <button onClick={() => {
+              onEarn({ type: COURAGE_TYPES[selected].label, detail: detail.trim(), date: todayStr() });
+              setSelected(null); setDetail('');
+            }} className="w-full py-3 bg-gradient-to-r from-amber-400 to-yellow-400 text-white rounded-xl font-bold">
+              获得勇气金币 🪙
+            </button>
+          )}
+        </div>
+      )}
+      {coins.length > 0 && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-amber-700 mb-2">我的金币 💰 {coins.length}枚</p>
+          <div className="flex flex-wrap gap-2 mb-3">
+            {coins.slice(-12).map((c, i) => (
+              <div key={i} className={`w-10 h-10 rounded-full ${COIN_COLORS[i % COIN_COLORS.length]} flex items-center justify-center text-lg shadow`}>🪙</div>
+            ))}
+          </div>
+          {coins.slice(-3).reverse().map((c, i) => (
+            <p key={i} className="text-sm py-1 border-b last:border-0 text-gray-600">
+              {c.type}：{c.detail} <span className="text-gray-400 text-xs">{c.date?.slice(0, 10)}</span>
+            </p>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Friendship Recipe ──────────────────────────────────────────────────────
+function FriendshipRecipePage({ recipes, onSave, onBack }) {
+  const [friendName, setFriendName] = useState('');
+  const [ingredients, setIngredients] = useState([]);
+  const [instructions, setInstructions] = useState('');
+  const toggleIngredient = (label) => {
+    setIngredients(prev => prev.includes(label) ? prev.filter(x => x !== label) : [...prev, label]);
+  };
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="👨‍🍳" title="友谊配方" subtitle="写一份好朋友的配方" />
+      <div className="bg-white rounded-xl p-4 shadow space-y-3">
+        <input type="text" placeholder="这份配方是给谁的？（朋友名字）" value={friendName}
+          onChange={e => setFriendName(e.target.value)} className="w-full border rounded-lg px-3 py-2 text-sm" />
+        <p className="font-bold text-green-600">选择配料：</p>
+        <div className="flex flex-wrap gap-2">
+          {FRIENDSHIP_INGREDIENTS.map(ing => (
+            <button key={ing.label} onClick={() => toggleIngredient(ing.label)}
+              className={`px-3 py-2 rounded-lg text-sm transition ${ingredients.includes(ing.label) ? 'bg-green-200 font-bold ring-2 ring-green-400' : 'bg-green-50'}`}>
+              {ing.emoji} {ing.label}
+            </button>
+          ))}
+        </div>
+        <textarea placeholder="怎么做一个好朋友？（做法/步骤）" value={instructions}
+          onChange={e => setInstructions(e.target.value)} className="w-full border rounded-lg px-3 py-2 text-sm" rows={2} />
+        {friendName.trim() && ingredients.length > 0 && (
+          <button onClick={() => {
+            onSave({ friend: friendName.trim(), ingredients, instructions: instructions.trim(), date: todayStr() });
+            setFriendName(''); setIngredients([]); setInstructions('');
+          }} className="w-full py-3 bg-gradient-to-r from-green-400 to-emerald-400 text-white rounded-xl font-bold">
+            保存配方 👨‍🍳
+          </button>
+        )}
+      </div>
+      {recipes.length > 0 && (
+        <div className="space-y-3">
+          <p className="font-bold text-gray-700">我的配方 ({recipes.length}份)</p>
+          {recipes.slice(-3).reverse().map((r, i) => (
+            <div key={i} className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-4 shadow">
+              <p className="font-bold text-green-700">给 {r.friend} 的友谊配方</p>
+              <p className="text-sm text-gray-600">配料：{r.ingredients.join('、')}</p>
+              {r.instructions && <p className="text-sm text-gray-500 mt-1">做法：{r.instructions}</p>}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Thought Bubbles ────────────────────────────────────────────────────────
+function ThoughtBubblesPage({ entries, onSave, onBack }) {
+  const [sceneIdx, setSceneIdx] = useState(null);
+  const [bubbles, setBubbles] = useState({});
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="💭" title="想法气泡" subtitle="猜猜他们在想什么？" />
+      {sceneIdx === null ? (
+        <div className="space-y-3">
+          {BUBBLE_SCENES.map((scene, i) => (
+            <button key={i} onClick={() => setSceneIdx(i)}
+              className="w-full bg-white rounded-xl p-4 shadow flex items-center gap-3 hover:scale-102 transition">
+              <span className="text-3xl">{scene.emoji}</span>
+              <div className="text-left">
+                <p className="font-bold text-gray-800">{scene.scene}</p>
+                <p className="text-xs text-gray-500">{scene.characters.map(c => c.emoji).join(' ')}</p>
+              </div>
+            </button>
+          ))}
+        </div>
+      ) : (
+        <div className="space-y-4">
+          <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-4 shadow text-center">
+            <p className="text-3xl">{BUBBLE_SCENES[sceneIdx].emoji}</p>
+            <p className="font-bold text-gray-800 mt-2">{BUBBLE_SCENES[sceneIdx].scene}</p>
+          </div>
+          {BUBBLE_SCENES[sceneIdx].characters.map((char, ci) => (
+            <div key={ci} className="bg-white rounded-xl p-4 shadow">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-2xl">{char.emoji}</span>
+                <p className="font-bold text-gray-700">{char.name}在想：</p>
+              </div>
+              <input type="text" placeholder={`例如：${BUBBLE_SCENES[sceneIdx].example[ci]}`}
+                value={bubbles[char.name] || ''}
+                onChange={e => setBubbles(prev => ({ ...prev, [char.name]: e.target.value }))}
+                className="w-full border rounded-lg px-3 py-2 text-sm" />
+            </div>
+          ))}
+          {BUBBLE_SCENES[sceneIdx].characters.every(c => bubbles[c.name]?.trim()) && (
+            <button onClick={() => {
+              onSave({ scene: BUBBLE_SCENES[sceneIdx].scene, bubbles: { ...bubbles }, date: todayStr() });
+              setSceneIdx(null); setBubbles({});
+            }} className="w-full py-3 bg-gradient-to-r from-blue-400 to-purple-400 text-white rounded-xl font-bold">
+              保存想法气泡 💭
+            </button>
+          )}
+          <button onClick={() => { setSceneIdx(null); setBubbles({}); }}
+            className="w-full py-2 text-gray-500 text-sm">返回场景列表</button>
+        </div>
+      )}
+      {entries.length > 0 && sceneIdx === null && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-gray-700 mb-2">完成的气泡 ({entries.length}个场景)</p>
+          {entries.slice(-3).reverse().map((e, i) => (
+            <div key={i} className="text-sm py-2 border-b last:border-0">
+              <p className="text-gray-600">{e.scene}</p>
+              {Object.entries(e.bubbles).map(([name, thought]) => (
+                <p key={name} className="text-gray-500 pl-2">💭 {name}: {thought}</p>
+              ))}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Calm Breathing Buddy ───────────────────────────────────────────────────
+function CalmBuddyPage({ sessions, onComplete, onBack }) {
+  const [buddy, setBuddy] = useState(null);
+  const [phase, setPhase] = useState('pick');
+  const [breathPhase, setBreathPhase] = useState('in');
+  const [cycles, setCycles] = useState(0);
+  const [timer, setTimer] = useState(4);
+  useEffect(() => {
+    if (phase !== 'breathing') return;
+    if (cycles >= 5) { setPhase('done'); return; }
+    const id = setTimeout(() => {
+      if (timer <= 1) {
+        if (breathPhase === 'in') { setBreathPhase('out'); setTimer(4); }
+        else { setBreathPhase('in'); setTimer(4); setCycles(c => c + 1); }
+      } else {
+        setTimer(t => t - 1);
+      }
+    }, 1000);
+    return () => clearTimeout(id);
+  }, [phase, breathPhase, timer, cycles]);
+  const buddyScale = phase === 'breathing' ? (breathPhase === 'in' ? `scale-${100 + (4 - timer) * 10}` : `scale-${140 - (4 - timer) * 10}`) : '';
+  const sizeClass = phase === 'breathing'
+    ? (breathPhase === 'in' ? 'text-8xl' : 'text-6xl')
+    : 'text-7xl';
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🧸" title="呼吸伙伴" subtitle="让小伙伴陪你一起呼吸" />
+      {phase === 'pick' && (
+        <div className="space-y-3">
+          <p className="text-center text-gray-600">选一个呼吸小伙伴放在你的肚子上</p>
+          <div className="grid grid-cols-3 gap-3">
+            {BUDDY_ANIMALS.map((b, i) => (
+              <button key={i} onClick={() => setBuddy(b)}
+                className={`bg-gradient-to-br ${b.color} rounded-xl p-4 text-center transition ${buddy?.name === b.name ? 'ring-3 ring-purple-400 scale-105' : ''}`}>
+                <p className="text-4xl">{b.emoji}</p>
+                <p className="text-sm font-bold text-gray-700 mt-1">{b.name}</p>
+              </button>
+            ))}
+          </div>
+          {buddy && (
+            <button onClick={() => { setPhase('breathing'); setCycles(0); setBreathPhase('in'); setTimer(4); }}
+              className="w-full py-3 bg-gradient-to-r from-purple-400 to-pink-400 text-white rounded-xl font-bold">
+              开始呼吸 🫁
+            </button>
+          )}
+        </div>
+      )}
+      {phase === 'breathing' && buddy && (
+        <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-8 shadow text-center space-y-4">
+          <p className={`transition-all duration-1000 ${sizeClass}`}>{buddy.emoji}</p>
+          <p className="text-2xl font-bold text-purple-600">
+            {breathPhase === 'in' ? '吸气… ⬆️' : '呼气… ⬇️'}
+          </p>
+          <p className="text-4xl font-bold text-purple-400">{timer}</p>
+          <p className="text-sm text-gray-500">第 {cycles + 1}/5 次呼吸</p>
+          <div className="w-full bg-gray-200 rounded-full h-2">
+            <div className="bg-purple-400 h-2 rounded-full transition-all" style={{ width: `${(cycles / 5) * 100}%` }} />
+          </div>
+          <p className="text-sm text-gray-600">
+            {breathPhase === 'in' ? `看着${buddy.name}慢慢升高…` : `${buddy.name}慢慢落下…`}
+          </p>
+        </div>
+      )}
+      {phase === 'done' && buddy && (
+        <div className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-xl p-6 shadow text-center space-y-3">
+          <p className="text-6xl">{buddy.emoji}</p>
+          <p className="font-bold text-purple-700 text-lg">做得真好！</p>
+          <p className="text-gray-600">{buddy.name}陪你完成了5次呼吸</p>
+          <button onClick={() => { onComplete({ buddy: buddy.name, date: todayStr() }); setPhase('pick'); setBuddy(null); }}
+            className="px-6 py-2 bg-purple-400 text-white rounded-xl font-bold">完成 ✨</button>
+        </div>
+      )}
+      {sessions.length > 0 && phase === 'pick' && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-gray-700 mb-2">呼吸记录 ({sessions.length}次)</p>
+          {sessions.slice(-5).reverse().map((s, i) => (
+            <p key={i} className="text-sm py-1 border-b last:border-0 text-gray-600">
+              和{s.buddy}一起呼吸 <span className="text-gray-400 text-xs">{s.date?.slice(0, 10)}</span>
+            </p>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Accomplishment Timeline ────────────────────────────────────────────────
+function AccomplishmentTimelinePage({ entries, onAdd, onBack }) {
+  const [type, setType] = useState(null);
+  const [desc, setDesc] = useState('');
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🏆" title="成就时间线" subtitle="记录你的每一个闪光时刻" />
+      <div className="bg-white rounded-xl p-4 shadow space-y-3">
+        <p className="font-bold text-indigo-600">添加一个成就</p>
+        <div className="flex flex-wrap gap-2">
+          {ACCOMPLISHMENT_TYPES.map((t, i) => (
+            <button key={i} onClick={() => setType(t)}
+              className={`px-3 py-2 rounded-lg text-sm transition ${type?.label === t.label ? 'bg-indigo-200 font-bold ring-2 ring-indigo-400' : 'bg-indigo-50'}`}>
+              {t.emoji} {t.label}
+            </button>
+          ))}
+        </div>
+        {type && (
+          <>
+            <input type="text" placeholder="具体做了什么？" value={desc}
+              onChange={e => setDesc(e.target.value)} className="w-full border rounded-lg px-3 py-2 text-sm" />
+            {desc.trim() && (
+              <button onClick={() => { onAdd({ type: type.label, emoji: type.emoji, desc: desc.trim(), date: todayStr() }); setType(null); setDesc(''); }}
+                className="w-full py-3 bg-gradient-to-r from-indigo-400 to-purple-400 text-white rounded-xl font-bold">
+                添加到时间线 🏆
+              </button>
+            )}
+          </>
+        )}
+      </div>
+      {entries.length > 0 && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-indigo-700 mb-3">我的成就 ({entries.length}个) ✨</p>
+          <div className="relative border-l-2 border-indigo-200 pl-4 space-y-4">
+            {entries.slice(-10).reverse().map((e, i) => (
+              <div key={i} className="relative">
+                <div className="absolute -left-6 w-4 h-4 rounded-full bg-indigo-400 border-2 border-white" />
+                <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-lg p-3">
+                  <p className="font-bold text-gray-800">{e.emoji} {e.desc}</p>
+                  <p className="text-xs text-gray-500">{e.type} · {e.date?.slice(0, 10)}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Daily Wins ─────────────────────────────────────────────────────────────
+function DailyWinsPage({ wins, onSave, onBack }) {
+  const [w1, setW1] = useState('');
+  const [w2, setW2] = useState('');
+  const [w3, setW3] = useState('');
+  const todayWins = wins.find(w => w.date === todayStr());
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🏅" title="每日小胜利" subtitle="今天有什么值得庆祝的小事？" />
+      {todayWins ? (
+        <div className="bg-gradient-to-br from-yellow-100 to-amber-100 rounded-xl p-5 shadow space-y-3">
+          <p className="font-bold text-amber-700 text-center">今天的3个小胜利 🎉</p>
+          {todayWins.items.map((w, i) => (
+            <div key={i} className="flex items-center gap-2 bg-white rounded-lg p-3">
+              <span className="text-xl">🌟</span>
+              <p className="text-gray-800">{w}</p>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="bg-white rounded-xl p-4 shadow space-y-3">
+          <p className="text-sm text-gray-600">不管多小的事，都值得庆祝！</p>
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <span className="text-xl">1️⃣</span>
+              <input type="text" placeholder="第一个小胜利" value={w1}
+                onChange={e => setW1(e.target.value)} className="flex-1 border rounded-lg px-3 py-2 text-sm" />
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-xl">2️⃣</span>
+              <input type="text" placeholder="第二个小胜利" value={w2}
+                onChange={e => setW2(e.target.value)} className="flex-1 border rounded-lg px-3 py-2 text-sm" />
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-xl">3️⃣</span>
+              <input type="text" placeholder="第三个小胜利" value={w3}
+                onChange={e => setW3(e.target.value)} className="flex-1 border rounded-lg px-3 py-2 text-sm" />
+            </div>
+          </div>
+          {w1.trim() && w2.trim() && w3.trim() && (
+            <button onClick={() => { onSave({ items: [w1.trim(), w2.trim(), w3.trim()], date: todayStr() }); setW1(''); setW2(''); setW3(''); }}
+              className="w-full py-3 bg-gradient-to-r from-yellow-400 to-amber-400 text-white rounded-xl font-bold">
+              记录今天的胜利 🏅
+            </button>
+          )}
+        </div>
+      )}
+      {wins.length > 0 && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-amber-700 mb-2">胜利记录 ({wins.length}天)</p>
+          {wins.slice(-5).reverse().map((w, i) => (
+            <div key={i} className="py-2 border-b last:border-0">
+              <p className="text-xs text-gray-400">{w.date?.slice(0, 10)}</p>
+              {w.items.map((item, j) => (
+                <p key={j} className="text-sm text-gray-600">🌟 {item}</p>
+              ))}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Sensory Countdown ──────────────────────────────────────────────────────
+function SensoryCountdownPage({ logs, onSave, onBack }) {
+  const [step, setStep] = useState(0);
+  const [answers, setAnswers] = useState({});
+  const [current, setCurrent] = useState('');
+  const s = SENSORY_STEPS[step];
+  const done = step >= SENSORY_STEPS.length;
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="5️⃣" title="感官倒数" subtitle="5-4-3-2-1，回到当下" />
+      {!done ? (
+        <div className="space-y-4">
+          <div className="flex justify-center gap-2">
+            {SENSORY_STEPS.map((ss, i) => (
+              <div key={i} className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${i < step ? 'bg-green-300 text-white' : i === step ? 'bg-gradient-to-r ' + ss.color + ' text-gray-800 ring-2 ring-gray-400' : 'bg-gray-200 text-gray-400'}`}>
+                {ss.count}
+              </div>
+            ))}
+          </div>
+          <div className={`bg-gradient-to-br ${s.color} rounded-xl p-6 shadow text-center space-y-3`}>
+            <p className="text-5xl">{s.emoji}</p>
+            <p className="text-xl font-bold text-gray-800">说出 {s.count} 样你{s.sense}的东西</p>
+          </div>
+          <div className="space-y-2">
+            {Array.from({ length: s.count }).map((_, i) => (
+              <div key={i} className="flex items-center gap-2">
+                <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${(answers[step] || [])[i] ? 'bg-green-400 text-white' : 'bg-gray-200'}`}>
+                  {i + 1}
+                </span>
+                {(answers[step] || [])[i] ? (
+                  <span className="text-sm text-gray-700">{(answers[step] || [])[i]}</span>
+                ) : (
+                  <div className="flex-1 flex gap-2">
+                    <input type="text" placeholder={s.placeholder} value={current}
+                      onChange={e => setCurrent(e.target.value)} className="flex-1 border rounded-lg px-3 py-2 text-sm" />
+                    {current.trim() && (
+                      <button onClick={() => {
+                        setAnswers(prev => ({ ...prev, [step]: [...(prev[step] || []), current.trim()] }));
+                        setCurrent('');
+                      }} className="px-3 py-1 bg-green-400 text-white rounded-lg text-sm">+</button>
+                    )}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+          {(answers[step] || []).length >= s.count && (
+            <button onClick={() => { setStep(prev => prev + 1); setCurrent(''); }}
+              className="w-full py-3 bg-gradient-to-r from-green-400 to-emerald-400 text-white rounded-xl font-bold">
+              {step < 4 ? '下一步 →' : '完成 ✨'}
+            </button>
+          )}
+        </div>
+      ) : (
+        <div className="bg-gradient-to-br from-green-100 to-emerald-100 rounded-xl p-6 shadow text-center space-y-3">
+          <p className="text-5xl">🎉</p>
+          <p className="font-bold text-green-700 text-lg">太棒了！你回到了当下！</p>
+          <p className="text-sm text-gray-600">你用五种感官重新连接了周围的世界。</p>
+          <button onClick={() => { onSave({ answers, date: todayStr() }); setStep(0); setAnswers({}); }}
+            className="px-6 py-2 bg-green-400 text-white rounded-xl font-bold">保存记录</button>
+        </div>
+      )}
+      {logs.length > 0 && !done && step === 0 && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-gray-700">练习记录 ({logs.length}次)</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Emotion Jar Experiment ─────────────────────────────────────────────────
+function EmotionJarPage({ logs, onSave, onBack }) {
+  const [emotion, setEmotion] = useState(null);
+  const [phase, setPhase] = useState('pick');
+  const [settling, setSettling] = useState(100);
+  useEffect(() => {
+    if (phase !== 'settling' || settling <= 0) return;
+    const id = setTimeout(() => {
+      setSettling(s => Math.max(0, s - 2));
+      if (settling <= 2) setPhase('settled');
+    }, 100);
+    return () => clearTimeout(id);
+  }, [phase, settling]);
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🫧" title="情绪瓶实验" subtitle="摇一摇，看情绪慢慢沉淀" />
+      {phase === 'pick' && (
+        <div className="space-y-3">
+          <p className="text-center text-gray-600">你现在有什么情绪在翻涌？</p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {GLITTER_EMOTIONS.map(e => (
+              <button key={e.label} onClick={() => setEmotion(e)}
+                className={`px-4 py-3 rounded-xl text-center transition ${emotion?.label === e.label ? 'ring-2 ring-gray-400 scale-105' : ''}`}
+                style={{ backgroundColor: e.color + '30' }}>
+                <p className="text-2xl">{e.emoji}</p>
+                <p className="text-sm font-bold">{e.label}</p>
+              </button>
+            ))}
+          </div>
+          {emotion && (
+            <button onClick={() => { setPhase('shaking'); setTimeout(() => { setPhase('settling'); setSettling(100); }, 2000); }}
+              className="w-full py-3 bg-gradient-to-r from-purple-400 to-pink-400 text-white rounded-xl font-bold">
+              摇一摇瓶子 🫧
+            </button>
+          )}
+        </div>
+      )}
+      {phase === 'shaking' && (
+        <div className="bg-gradient-to-b from-purple-100 to-pink-100 rounded-xl p-8 shadow text-center space-y-4 animate-pulse">
+          <p className="text-7xl">🫧</p>
+          <p className="text-xl font-bold text-purple-600">摇晃中…</p>
+          <p className="text-gray-600">看，{emotion?.label}的颜色在瓶子里翻滚</p>
+        </div>
+      )}
+      {(phase === 'settling' || phase === 'settled') && (
+        <div className="bg-gradient-to-b from-white to-purple-50 rounded-xl p-8 shadow text-center space-y-4">
+          <p className="text-7xl">🫧</p>
+          <p className="font-bold text-purple-600">{phase === 'settled' ? '沉淀好了' : '正在沉淀…'}</p>
+          <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
+            <div className="h-full rounded-full transition-all duration-200" style={{ width: `${100 - settling}%`, backgroundColor: emotion?.color }} />
+          </div>
+          <p className="text-sm text-gray-600">
+            {phase === 'settled' ? '看，当你安静下来，情绪也会慢慢平静。' : '慢慢呼吸，看着颜色沉到底部…'}
+          </p>
+          {phase === 'settled' && (
+            <button onClick={() => { onSave({ emotion: emotion?.label, date: todayStr() }); setPhase('pick'); setEmotion(null); }}
+              className="px-6 py-2 bg-purple-400 text-white rounded-xl font-bold">完成 ✨</button>
+          )}
+        </div>
+      )}
+      {logs.length > 0 && phase === 'pick' && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-gray-700 mb-2">沉淀记录 ({logs.length}次)</p>
+          {logs.slice(-5).reverse().map((l, i) => (
+            <p key={i} className="text-sm py-1 border-b last:border-0 text-gray-600">
+              {l.emotion} <span className="text-gray-400 text-xs">{l.date?.slice(0, 10)}</span>
+            </p>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Strength Trading Cards ─────────────────────────────────────────────────
+function StrengthTradingCardsPage({ cards, onCollect, onBack }) {
+  const [selected, setSelected] = useState(null);
+  const [power, setPower] = useState(5);
+  const [story, setStory] = useState('');
+  const collected = cards.map(c => c.name);
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🃏" title="优势卡牌" subtitle="收集你的力量卡片" />
+      {selected === null ? (
+        <div className="space-y-3">
+          <p className="text-center text-gray-600">选一个你拥有的优势</p>
+          <div className="grid grid-cols-2 gap-3">
+            {CARD_STRENGTHS.map((cs, i) => (
+              <button key={i} onClick={() => setSelected(cs)}
+                className={`p-4 rounded-xl text-center transition border-2 ${collected.includes(cs.name) ? 'border-yellow-400 bg-yellow-50' : 'border-gray-200 bg-white'}`}>
+                <p className="text-3xl">{cs.emoji}</p>
+                <p className="font-bold text-gray-800">{cs.name}</p>
+                <p className="text-xs text-gray-500">{cs.desc}</p>
+                {collected.includes(cs.name) && <p className="text-xs text-yellow-600 mt-1">✅ 已收集</p>}
+              </button>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <div className="space-y-4">
+          <div className={`bg-gradient-to-br from-yellow-100 to-amber-100 rounded-xl p-6 shadow text-center border-4 ${CARD_BORDERS[Math.floor(Math.random() * CARD_BORDERS.length)]}`}>
+            <p className="text-5xl">{selected.emoji}</p>
+            <p className="text-xl font-bold text-gray-800 mt-2">{selected.name}</p>
+            <p className="text-sm text-gray-600">{selected.desc}</p>
+            <div className="mt-3">
+              <p className="text-xs text-gray-500 mb-1">力量等级</p>
+              <input type="range" min="1" max="10" value={power} onChange={e => setPower(Number(e.target.value))}
+                className="w-full" />
+              <p className="text-lg font-bold text-amber-600">⚡ {power}/10</p>
+            </div>
+          </div>
+          <textarea placeholder="写一个你展现这个优势的故事…" value={story}
+            onChange={e => setStory(e.target.value)} className="w-full border rounded-lg px-3 py-2 text-sm" rows={2} />
+          <button onClick={() => {
+            onCollect({ name: selected.name, emoji: selected.emoji, power, story: story.trim(), date: todayStr() });
+            setSelected(null); setPower(5); setStory('');
+          }} className="w-full py-3 bg-gradient-to-r from-yellow-400 to-amber-400 text-white rounded-xl font-bold">
+            收集这张卡牌 🃏
+          </button>
+          <button onClick={() => { setSelected(null); setStory(''); }}
+            className="w-full py-2 text-gray-500 text-sm">返回</button>
+        </div>
+      )}
+      {cards.length > 0 && selected === null && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-amber-700 mb-2">我的卡牌 ({cards.length}张)</p>
+          <div className="grid grid-cols-3 gap-2">
+            {cards.slice(-9).map((c, i) => (
+              <div key={i} className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-lg p-2 text-center border border-yellow-300">
+                <p className="text-2xl">{c.emoji}</p>
+                <p className="text-xs font-bold">{c.name}</p>
+                <p className="text-xs text-amber-600">⚡{c.power}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Mood DJ ────────────────────────────────────────────────────────────────
+function MoodDJPage({ mixes, onSave, onBack }) {
+  const [sliders, setSliders] = useState({ energy: 5, feeling: 5, calm: 5 });
+  const [note, setNote] = useState('');
+  const moodEmoji = sliders.feeling > 7 ? '😊' : sliders.feeling > 4 ? '😐' : '😢';
+  const energyEmoji = sliders.energy > 7 ? '⚡' : sliders.energy > 4 ? '🔋' : '😴';
+  const calmEmoji = sliders.calm > 7 ? '😌' : sliders.calm > 4 ? '😐' : '😰';
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🎧" title="心情DJ" subtitle="调节你的心情频率" />
+      <div className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-xl p-6 shadow text-center">
+        <p className="text-5xl">{moodEmoji}{energyEmoji}{calmEmoji}</p>
+        <p className="text-sm text-gray-600 mt-2">你的心情混音</p>
+      </div>
+      <div className="space-y-4">
+        {DJ_SLIDERS.map(s => (
+          <div key={s.id} className="bg-white rounded-xl p-4 shadow">
+            <div className="flex justify-between text-sm mb-1">
+              <span>{s.low}</span>
+              <span className="font-bold">{s.label}: {sliders[s.id]}</span>
+              <span>{s.high}</span>
+            </div>
+            <input type="range" min="1" max="10" value={sliders[s.id]}
+              onChange={e => setSliders(prev => ({ ...prev, [s.id]: Number(e.target.value) }))}
+              className="w-full" />
+          </div>
+        ))}
+      </div>
+      <input type="text" placeholder="用一句话描述现在的感觉（可选）" value={note}
+        onChange={e => setNote(e.target.value)} className="w-full border rounded-lg px-3 py-2 text-sm" />
+      <button onClick={() => { onSave({ sliders: { ...sliders }, note: note.trim(), date: todayStr() }); setNote(''); }}
+        className="w-full py-3 bg-gradient-to-r from-purple-400 to-pink-400 text-white rounded-xl font-bold">
+        保存混音 🎧
+      </button>
+      {mixes.length > 0 && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-gray-700 mb-2">混音记录 ({mixes.length})</p>
+          {mixes.slice(-5).reverse().map((m, i) => (
+            <div key={i} className="text-sm py-2 border-b last:border-0">
+              <p className="text-gray-600">精力{m.sliders.energy} 心情{m.sliders.feeling} 平静{m.sliders.calm} {m.note && `— ${m.note}`}</p>
+              <p className="text-xs text-gray-400">{m.date?.slice(0, 10)}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Helpful Thoughts Vending Machine ───────────────────────────────────────
+function VendingMachinePage({ logs, onUse, onBack }) {
+  const [selected, setSelected] = useState(null);
+  const [phase, setPhase] = useState('insert');
+  const [reframe, setReframe] = useState('');
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🏭" title="想法贩卖机" subtitle="投入消极想法，得到积极想法" />
+      {phase === 'insert' && (
+        <div className="space-y-3">
+          <p className="text-center text-gray-600">选一个经常出现在脑海里的消极想法</p>
+          {NEGATIVE_COINS.map((nc, i) => (
+            <button key={i} onClick={() => setSelected(i)}
+              className={`w-full p-4 rounded-xl text-left transition ${selected === i ? 'bg-red-100 ring-2 ring-red-400' : 'bg-white shadow'}`}>
+              <p className="font-semibold text-gray-800">🪙 "{nc.thought}"</p>
+            </button>
+          ))}
+          {selected !== null && (
+            <button onClick={() => { setPhase('vending'); setTimeout(() => {
+              const r = NEGATIVE_COINS[selected].reframes;
+              setReframe(r[Math.floor(Math.random() * r.length)]);
+              setPhase('result');
+            }, 1500); }}
+              className="w-full py-3 bg-gradient-to-r from-red-400 to-orange-400 text-white rounded-xl font-bold">
+              投入消极硬币 🪙
+            </button>
+          )}
+        </div>
+      )}
+      {phase === 'vending' && (
+        <div className="bg-gradient-to-b from-gray-100 to-gray-200 rounded-xl p-8 shadow text-center space-y-4 animate-pulse">
+          <p className="text-7xl">🏭</p>
+          <p className="text-xl font-bold text-gray-600">叮咚叮咚…</p>
+          <p className="text-gray-500">贩卖机正在转换想法…</p>
+        </div>
+      )}
+      {phase === 'result' && (
+        <div className="space-y-4">
+          <div className="bg-red-50 rounded-xl p-4 shadow text-center">
+            <p className="text-sm text-red-400">旧想法</p>
+            <p className="text-gray-500 line-through">"{NEGATIVE_COINS[selected].thought}"</p>
+          </div>
+          <div className="text-center text-2xl">⬇️</div>
+          <div className="bg-gradient-to-br from-green-100 to-emerald-100 rounded-xl p-6 shadow text-center">
+            <p className="text-sm text-green-600">新想法 ✨</p>
+            <p className="text-lg font-bold text-green-800">"{reframe}"</p>
+          </div>
+          <button onClick={() => {
+            onUse({ negative: NEGATIVE_COINS[selected].thought, positive: reframe, date: todayStr() });
+            setPhase('insert'); setSelected(null); setReframe('');
+          }} className="w-full py-3 bg-gradient-to-r from-green-400 to-emerald-400 text-white rounded-xl font-bold">
+            记住新想法 💚
+          </button>
+          <button onClick={() => {
+            const r = NEGATIVE_COINS[selected].reframes;
+            setReframe(r[Math.floor(Math.random() * r.length)]);
+          }} className="w-full py-2 text-green-600 text-sm">换一个想法</button>
+        </div>
+      )}
+      {logs.length > 0 && phase === 'insert' && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-gray-700 mb-2">转换记录 ({logs.length})</p>
+          {logs.slice(-5).reverse().map((l, i) => (
+            <div key={i} className="text-sm py-2 border-b last:border-0">
+              <p className="text-red-400 line-through">{l.negative}</p>
+              <p className="text-green-600">→ {l.positive}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Feelings Mask Gallery ──────────────────────────────────────────────────
+function FeelingsMaskPage({ masks, onSave, onBack }) {
+  const [outside, setOutside] = useState([]);
+  const [inside, setInside] = useState([]);
+  const [phase, setPhase] = useState('outside');
+  const toggleEmotion = (list, setList, label) => {
+    setList(prev => prev.includes(label) ? prev.filter(x => x !== label) : prev.length < 3 ? [...prev, label] : prev);
+  };
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🎭" title="面具画廊" subtitle="外表和内心，可能不一样" />
+      {phase === 'outside' && (
+        <div className="bg-white rounded-xl p-4 shadow space-y-3">
+          <p className="font-bold text-blue-600">🎭 外面的面具</p>
+          <p className="text-sm text-gray-600">选择你展示给别人看的表情（最多3个）</p>
+          <div className="flex flex-wrap gap-2">
+            {MASK_EMOTIONS.map(e => (
+              <button key={e.label} onClick={() => toggleEmotion(outside, setOutside, e.label)}
+                className={`px-3 py-2 rounded-lg text-sm transition ${outside.includes(e.label) ? 'bg-blue-200 font-bold ring-2 ring-blue-400' : 'bg-blue-50'}`}>
+                {e.emoji} {e.label}
+              </button>
+            ))}
+          </div>
+          {outside.length > 0 && (
+            <button onClick={() => setPhase('inside')}
+              className="w-full py-2 bg-blue-400 text-white rounded-xl font-bold">下一步：内心 →</button>
+          )}
+        </div>
+      )}
+      {phase === 'inside' && (
+        <div className="bg-white rounded-xl p-4 shadow space-y-3">
+          <p className="font-bold text-purple-600">💜 内心的感受</p>
+          <p className="text-sm text-gray-600">选择你真正的感受（最多3个）</p>
+          <div className="flex flex-wrap gap-2">
+            {MASK_EMOTIONS.map(e => (
+              <button key={e.label} onClick={() => toggleEmotion(inside, setInside, e.label)}
+                className={`px-3 py-2 rounded-lg text-sm transition ${inside.includes(e.label) ? 'bg-purple-200 font-bold ring-2 ring-purple-400' : 'bg-purple-50'}`}>
+                {e.emoji} {e.label}
+              </button>
+            ))}
+          </div>
+          {inside.length > 0 && (
+            <button onClick={() => setPhase('compare')}
+              className="w-full py-2 bg-purple-400 text-white rounded-xl font-bold">看看对比 →</button>
+          )}
+        </div>
+      )}
+      {phase === 'compare' && (
+        <div className="space-y-4">
+          <div className="grid grid-cols-2 gap-3">
+            <div className="bg-blue-50 rounded-xl p-4 text-center">
+              <p className="text-3xl">🎭</p>
+              <p className="font-bold text-blue-700 text-sm">外面</p>
+              <p className="text-sm">{outside.join('、')}</p>
+            </div>
+            <div className="bg-purple-50 rounded-xl p-4 text-center">
+              <p className="text-3xl">💜</p>
+              <p className="font-bold text-purple-700 text-sm">内心</p>
+              <p className="text-sm">{inside.join('、')}</p>
+            </div>
+          </div>
+          <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-4 shadow">
+            <p className="text-sm text-gray-700">
+              {outside.some(o => inside.includes(o))
+                ? '你的外在和内心有相同的部分，这说明你在某些时候可以真实地表达自己。'
+                : '你的外在和内心不太一样。没关系，每个人都有这样的时候。试着找一个信任的人，分享你真正的感受。'}
+            </p>
+          </div>
+          <button onClick={() => {
+            onSave({ outside, inside, date: todayStr() });
+            setPhase('outside'); setOutside([]); setInside([]);
+          }} className="w-full py-3 bg-gradient-to-r from-blue-400 to-purple-400 text-white rounded-xl font-bold">
+            保存面具 🎭
+          </button>
+        </div>
+      )}
+      {masks.length > 0 && phase === 'outside' && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-gray-700 mb-2">面具记录 ({masks.length})</p>
+          {masks.slice(-3).reverse().map((m, i) => (
+            <div key={i} className="text-sm py-2 border-b last:border-0">
+              <p>🎭 外: {m.outside.join('、')} → 💜 内: {m.inside.join('、')}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Daily Anchor ───────────────────────────────────────────────────────────
+function DailyAnchorPage({ anchors, onSave, onBack }) {
+  const [picked, setPicked] = useState(null);
+  const [custom, setCustom] = useState('');
+  const todayAnchor = anchors.find(a => a.date === todayStr());
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="⚓" title="每日锚点" subtitle="选一件今天值得期待的小事" />
+      {todayAnchor ? (
+        <div className="bg-gradient-to-br from-blue-100 to-cyan-100 rounded-xl p-6 shadow text-center space-y-3">
+          <p className="text-5xl">⚓</p>
+          <p className="font-bold text-blue-700 text-lg">今天的锚点</p>
+          <p className="text-xl">{todayAnchor.anchor}</p>
+          <p className="text-sm text-gray-600">当你觉得难过的时候，想想这件事。</p>
+        </div>
+      ) : (
+        <div className="space-y-3">
+          <p className="text-center text-gray-600">选一个今天可以期待的事情</p>
+          <div className="grid grid-cols-2 gap-2">
+            {ANCHOR_SUGGESTIONS.map((a, i) => (
+              <button key={i} onClick={() => setPicked(a.label)}
+                className={`p-3 rounded-xl text-center transition ${picked === a.label ? 'bg-blue-200 ring-2 ring-blue-400' : 'bg-white shadow'}`}>
+                <p className="text-2xl">{a.emoji}</p>
+                <p className="text-sm font-bold text-gray-700">{a.label}</p>
+              </button>
+            ))}
+          </div>
+          <div className="flex gap-2">
+            <input type="text" placeholder="或者自己写一个…" value={custom}
+              onChange={e => { setCustom(e.target.value); setPicked(null); }}
+              className="flex-1 border rounded-lg px-3 py-2 text-sm" />
+          </div>
+          {(picked || custom.trim()) && (
+            <button onClick={() => { onSave({ anchor: picked || custom.trim(), date: todayStr() }); setPicked(null); setCustom(''); }}
+              className="w-full py-3 bg-gradient-to-r from-blue-400 to-cyan-400 text-white rounded-xl font-bold">
+              设为今日锚点 ⚓
+            </button>
+          )}
+        </div>
+      )}
+      {anchors.length > 0 && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-gray-700 mb-2">锚点记录 ({anchors.length}天)</p>
+          {anchors.slice(-5).reverse().map((a, i) => (
+            <p key={i} className="text-sm py-1 border-b last:border-0 text-gray-600">
+              ⚓ {a.anchor} <span className="text-gray-400 text-xs">{a.date?.slice(0, 10)}</span>
+            </p>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Compliment Boomerang ───────────────────────────────────────────────────
+function ComplimentBoomerangPage({ logs, onSave, onBack }) {
+  const [to, setTo] = useState('');
+  const [compliment, setCompliment] = useState('');
+  const [feeling, setFeeling] = useState(null);
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🪃" title="赞美回旋" subtitle="给别人赞美，感受回到自己的温暖" />
+      <div className="bg-white rounded-xl p-4 shadow space-y-3">
+        <input type="text" placeholder="你赞美了谁？" value={to}
+          onChange={e => setTo(e.target.value)} className="w-full border rounded-lg px-3 py-2 text-sm" />
+        <p className="text-sm text-gray-500">你说了什么？（可以参考下面的）</p>
+        <div className="flex flex-wrap gap-2">
+          {COMPLIMENT_STARTERS.map(c => (
+            <button key={c} onClick={() => setCompliment(c)}
+              className={`px-3 py-1 rounded-full text-sm ${compliment === c ? 'bg-pink-200 ring-2 ring-pink-400' : 'bg-pink-50'}`}>
+              {c}
+            </button>
+          ))}
+        </div>
+        <input type="text" placeholder="或者写你自己的赞美…" value={compliment}
+          onChange={e => setCompliment(e.target.value)} className="w-full border rounded-lg px-3 py-2 text-sm" />
+      </div>
+      {to.trim() && compliment.trim() && (
+        <div className="bg-white rounded-xl p-4 shadow space-y-3">
+          <p className="font-bold text-pink-600">赞美别人后，你感觉怎么样？</p>
+          <div className="flex flex-wrap gap-2">
+            {BOOMERANG_FEELINGS.map(f => (
+              <button key={f.label} onClick={() => setFeeling(f)}
+                className={`px-3 py-2 rounded-lg text-sm transition ${feeling?.label === f.label ? 'bg-pink-200 ring-2 ring-pink-400 font-bold' : 'bg-pink-50'}`}>
+                {f.emoji} {f.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+      {feeling && (
+        <button onClick={() => {
+          onSave({ to: to.trim(), compliment: compliment.trim(), feeling: feeling.label, date: todayStr() });
+          setTo(''); setCompliment(''); setFeeling(null);
+        }} className="w-full py-3 bg-gradient-to-r from-pink-400 to-rose-400 text-white rounded-xl font-bold">
+          记录赞美回旋 🪃
+        </button>
+      )}
+      {logs.length > 0 && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-pink-700 mb-2">赞美记录 ({logs.length})</p>
+          {logs.slice(-5).reverse().map((l, i) => (
+            <div key={i} className="text-sm py-2 border-b last:border-0">
+              <p className="text-gray-600">对{l.to}说: "{l.compliment}"</p>
+              <p className="text-pink-500">感觉: {l.feeling}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Emotion Volume Control ─────────────────────────────────────────────────
+function EmotionVolumePage({ logs, onSave, onBack }) {
+  const [emotion, setEmotion] = useState(null);
+  const [volume, setVolume] = useState(8);
+  const [strategy, setStrategy] = useState(null);
+  const [newVolume, setNewVolume] = useState(null);
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🔊" title="情绪音量" subtitle="学会调节情绪的大小声" />
+      {!emotion ? (
+        <div className="space-y-3">
+          <p className="text-center text-gray-600">你现在有什么情绪声音很大？</p>
+          <div className="grid grid-cols-2 gap-3">
+            {VOLUME_EMOTIONS.map((ve, i) => (
+              <button key={i} onClick={() => setEmotion(ve)}
+                className="bg-white rounded-xl p-4 shadow text-center hover:scale-105 transition">
+                <p className="text-3xl">{ve.emoji}</p>
+                <p className="font-bold text-gray-800">{ve.label}</p>
+              </button>
+            ))}
+          </div>
+        </div>
+      ) : newVolume === null ? (
+        <div className="space-y-4">
+          <div className="bg-white rounded-xl p-4 shadow text-center">
+            <p className="text-3xl">{emotion.emoji}</p>
+            <p className="font-bold text-gray-800">{emotion.label}的音量</p>
+            <input type="range" min="1" max="10" value={volume} onChange={e => setVolume(Number(e.target.value))}
+              className="w-full mt-2" />
+            <p className="text-2xl font-bold" style={{ color: volume > 7 ? '#ef4444' : volume > 4 ? '#f59e0b' : '#22c55e' }}>
+              {'🔊'.repeat(Math.ceil(volume / 3))} {volume}/10
+            </p>
+          </div>
+          <div className="bg-white rounded-xl p-4 shadow">
+            <p className="font-bold text-blue-600 mb-2">试试这些方法把音量调低：</p>
+            {emotion.strategies.map((s, i) => (
+              <button key={i} onClick={() => setStrategy(s)}
+                className={`w-full text-left p-3 rounded-lg mb-1 text-sm transition ${strategy === s ? 'bg-blue-200 ring-2 ring-blue-400 font-bold' : 'bg-blue-50'}`}>
+                {i + 1}. {s}
+              </button>
+            ))}
+          </div>
+          {strategy && (
+            <div className="bg-white rounded-xl p-4 shadow text-center">
+              <p className="text-sm text-gray-600 mb-2">试了"{strategy}"之后，音量变成了多少？</p>
+              <input type="range" min="1" max="10" value={Math.max(1, volume - 3)}
+                onChange={e => {}} className="w-full opacity-50" />
+              <div className="flex justify-center gap-2 mt-2">
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => (
+                  <button key={n} onClick={() => setNewVolume(n)}
+                    className={`w-8 h-8 rounded-full text-sm font-bold ${n <= 3 ? 'bg-green-200' : n <= 6 ? 'bg-yellow-200' : 'bg-red-200'}`}>
+                    {n}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      ) : (
+        <div className="bg-gradient-to-br from-green-100 to-emerald-100 rounded-xl p-6 shadow text-center space-y-3">
+          <p className="text-5xl">{newVolume < volume ? '🎉' : '💪'}</p>
+          <p className="font-bold text-green-700 text-lg">
+            {newVolume < volume ? `太棒了！从${volume}降到了${newVolume}！` : '没关系，有时候需要多试几次。'}
+          </p>
+          <p className="text-sm text-gray-600">方法：{strategy}</p>
+          <button onClick={() => {
+            onSave({ emotion: emotion.label, before: volume, after: newVolume, strategy, date: todayStr() });
+            setEmotion(null); setVolume(8); setStrategy(null); setNewVolume(null);
+          }} className="px-6 py-2 bg-green-400 text-white rounded-xl font-bold">完成 ✨</button>
+        </div>
+      )}
+      {logs.length > 0 && !emotion && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-gray-700 mb-2">调节记录 ({logs.length})</p>
+          {logs.slice(-5).reverse().map((l, i) => (
+            <div key={i} className="text-sm py-2 border-b last:border-0">
+              <p className="text-gray-600">{l.emotion}: {l.before} → {l.after} ({l.strategy})</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Safe Words & Signals ───────────────────────────────────────────────────
+function SafeSignalsPage({ signals, onSave, onBack }) {
+  const [entries, setEntries] = useState(signals.length > 0 ? signals[signals.length - 1].entries : {});
+  const [editing, setEditing] = useState(null);
+  const [word, setWord] = useState('');
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🤫" title="安全暗号" subtitle="和家人约定秘密信号" />
+      <p className="text-sm text-gray-600 text-center">和爸爸妈妈一起，为每种情况约定一个暗号</p>
+      <div className="space-y-3">
+        {SIGNAL_TYPES.map(st => (
+          <div key={st.id} className={`bg-gradient-to-r ${st.color} rounded-xl p-4 shadow`}>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-2xl">{st.emoji}</span>
+              <div>
+                <p className="font-bold text-gray-800">{st.label}</p>
+                <p className="text-xs text-gray-600">{st.desc}</p>
+              </div>
+            </div>
+            {entries[st.id] ? (
+              <div className="flex items-center gap-2">
+                <p className="bg-white rounded-lg px-3 py-1 text-sm font-bold flex-1">暗号：{entries[st.id]}</p>
+                <button onClick={() => { setEditing(st.id); setWord(entries[st.id]); }}
+                  className="text-xs text-gray-500 underline">修改</button>
+              </div>
+            ) : editing === st.id ? (
+              <div className="flex gap-2">
+                <input type="text" placeholder="输入暗号…" value={word}
+                  onChange={e => setWord(e.target.value)} className="flex-1 border rounded-lg px-3 py-2 text-sm" />
+                {word.trim() && (
+                  <button onClick={() => { setEntries(prev => ({ ...prev, [st.id]: word.trim() })); setEditing(null); setWord(''); }}
+                    className="px-3 py-1 bg-white rounded-lg text-sm font-bold">确定</button>
+                )}
+              </div>
+            ) : (
+              <div>
+                <button onClick={() => setEditing(st.id)}
+                  className="text-sm text-gray-600 underline">设置暗号</button>
+                <div className="flex flex-wrap gap-1 mt-1">
+                  {SIGNAL_IDEAS.slice(0, 5).map(idea => (
+                    <button key={idea} onClick={() => { setEntries(prev => ({ ...prev, [st.id]: idea })); }}
+                      className="px-2 py-1 bg-white bg-opacity-60 rounded text-xs">{idea}</button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+      {Object.keys(entries).length > 0 && (
+        <button onClick={() => onSave({ entries: { ...entries }, date: todayStr() })}
+          className="w-full py-3 bg-gradient-to-r from-indigo-400 to-purple-400 text-white rounded-xl font-bold">
+          保存我的暗号 🤫
+        </button>
+      )}
+    </div>
+  );
+}
+
+// ─── Emotion ABC Diary ──────────────────────────────────────────────────────
+function EmotionABCPage({ entries, onSave, onBack }) {
+  const [a, setA] = useState('');
+  const [b, setB] = useState('');
+  const [c, setC] = useState('');
+  const [better, setBetter] = useState('');
+  const [showEx, setShowEx] = useState(false);
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="📝" title="情绪ABC日记" subtitle="发生了什么→我怎么想→我怎么感觉" />
+      <div className="bg-white rounded-xl p-4 shadow space-y-3">
+        <div className="bg-red-50 rounded-lg p-3">
+          <p className="font-bold text-red-600 text-sm">A — 发生了什么？</p>
+          <input type="text" placeholder="例如：考试成绩不好" value={a}
+            onChange={e => setA(e.target.value)} className="w-full border rounded-lg px-3 py-2 text-sm mt-1" />
+        </div>
+        <div className="bg-yellow-50 rounded-lg p-3">
+          <p className="font-bold text-yellow-600 text-sm">B — 我怎么想的？</p>
+          <input type="text" placeholder="例如：我好笨" value={b}
+            onChange={e => setB(e.target.value)} className="w-full border rounded-lg px-3 py-2 text-sm mt-1" />
+        </div>
+        <div className="bg-blue-50 rounded-lg p-3">
+          <p className="font-bold text-blue-600 text-sm">C — 我的感受是？</p>
+          <input type="text" placeholder="例如：难过、自卑" value={c}
+            onChange={e => setC(e.target.value)} className="w-full border rounded-lg px-3 py-2 text-sm mt-1" />
+        </div>
+        <div className="bg-green-50 rounded-lg p-3">
+          <p className="font-bold text-green-600 text-sm">💡 换一个想法呢？</p>
+          <input type="text" placeholder="试试更平衡的想法…" value={better}
+            onChange={e => setBetter(e.target.value)} className="w-full border rounded-lg px-3 py-2 text-sm mt-1" />
+        </div>
+      </div>
+      <button onClick={() => setShowEx(!showEx)} className="text-sm text-gray-500 underline">
+        {showEx ? '隐藏例子' : '看看例子 📖'}
+      </button>
+      {showEx && (
+        <div className="bg-gray-50 rounded-xl p-4 space-y-2">
+          {ABC_EXAMPLES.map((ex, i) => (
+            <div key={i} className="text-sm border-b last:border-0 pb-2">
+              <p className="text-red-500">A: {ex.a}</p>
+              <p className="text-yellow-600">B: {ex.b}</p>
+              <p className="text-blue-500">C: {ex.c}</p>
+              <p className="text-green-600">💡 {ex.better}</p>
+            </div>
+          ))}
+        </div>
+      )}
+      {a.trim() && b.trim() && c.trim() && (
+        <button onClick={() => {
+          onSave({ a: a.trim(), b: b.trim(), c: c.trim(), better: better.trim(), date: todayStr() });
+          setA(''); setB(''); setC(''); setBetter('');
+        }} className="w-full py-3 bg-gradient-to-r from-purple-400 to-blue-400 text-white rounded-xl font-bold">
+          保存ABC日记 📝
+        </button>
+      )}
+      {entries.length > 0 && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-gray-700 mb-2">日记记录 ({entries.length})</p>
+          {entries.slice(-3).reverse().map((e, i) => (
+            <div key={i} className="text-sm py-2 border-b last:border-0">
+              <p className="text-red-500">A: {e.a}</p>
+              <p className="text-yellow-600">B: {e.b} → 💡 {e.better || '—'}</p>
+              <p className="text-blue-500">C: {e.c}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Worry Balloon Release ──────────────────────────────────────────────────
+function WorryBalloonPage({ releases, onRelease, onBack }) {
+  const [worry, setWorry] = useState('');
+  const [phase, setPhase] = useState('write');
+  const [colorIdx] = useState(() => Math.floor(Math.random() * BALLOON_COLORS.length));
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🎈" title="烦恼气球" subtitle="把烦恼写在气球上，放它飞走" />
+      {phase === 'write' && (
+        <div className="bg-white rounded-xl p-4 shadow space-y-3">
+          <p className="text-center text-gray-600">把你的烦恼写在气球上</p>
+          <textarea placeholder="我的烦恼是…" value={worry}
+            onChange={e => setWorry(e.target.value)} className="w-full border rounded-lg px-3 py-2 text-sm" rows={3} />
+          {worry.trim() && (
+            <button onClick={() => setPhase('holding')}
+              className="w-full py-3 bg-gradient-to-r from-blue-400 to-purple-400 text-white rounded-xl font-bold">
+              写在气球上 🎈
+            </button>
+          )}
+        </div>
+      )}
+      {phase === 'holding' && (
+        <div className="text-center space-y-4">
+          <div className={`${BALLOON_COLORS[colorIdx]} w-40 h-48 rounded-full mx-auto flex items-center justify-center shadow-lg`}>
+            <p className="text-sm text-white font-bold px-4 text-center">{worry}</p>
+          </div>
+          <p className="text-gray-600">深呼吸，准备好放手了吗？</p>
+          <button onClick={() => { setPhase('releasing'); setTimeout(() => setPhase('gone'), 3000); }}
+            className="px-6 py-3 bg-gradient-to-r from-pink-400 to-purple-400 text-white rounded-xl font-bold text-lg">
+            放手，让它飞走 🕊️
+          </button>
+        </div>
+      )}
+      {phase === 'releasing' && (
+        <div className="text-center space-y-4 animate-pulse">
+          <p className="text-6xl">🎈</p>
+          <p className="text-2xl text-gray-400">飞走了…</p>
+          <p className="text-sm text-gray-500">看着气球越飞越远，烦恼越来越小…</p>
+        </div>
+      )}
+      {phase === 'gone' && (
+        <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-xl p-6 shadow text-center space-y-3">
+          <p className="text-5xl">☁️</p>
+          <p className="font-bold text-purple-700 text-lg">气球飞走了</p>
+          <p className="text-gray-600">你的烦恼不会消失，但你学会了不紧紧抓着它。</p>
+          <button onClick={() => {
+            onRelease({ worry: worry.trim(), date: todayStr() });
+            setPhase('write'); setWorry('');
+          }} className="px-6 py-2 bg-purple-400 text-white rounded-xl font-bold">完成 ✨</button>
+        </div>
+      )}
+      {releases.length > 0 && phase === 'write' && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-gray-700 mb-2">放飞了 {releases.length} 个气球 🎈</p>
+          {releases.slice(-3).reverse().map((r, i) => (
+            <p key={i} className="text-sm py-1 border-b last:border-0 text-gray-500">
+              🎈 {r.worry} <span className="text-xs text-gray-400">{r.date?.slice(0, 10)}</span>
+            </p>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Feelings Bingo ─────────────────────────────────────────────────────────
+function FeelingsBingoPage({ games, onSave, onBack }) {
+  const todayGame = games.find(g => g.date === todayStr());
+  const [checked, setChecked] = useState(todayGame?.checked || []);
+  const toggle = (idx) => setChecked(prev => prev.includes(idx) ? prev.filter(x => x !== idx) : [...prev, idx]);
+  const hasLine = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
+    .some(line => line.every(i => checked.includes(i)));
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🎯" title="情绪宾果" subtitle="完成一行就是赢！" />
+      <div className="grid grid-cols-3 gap-2">
+        {BINGO_SQUARES.map((sq, i) => (
+          <button key={i} onClick={() => toggle(i)}
+            className={`p-4 rounded-xl text-center transition border-2 ${checked.includes(i) ? 'bg-green-200 border-green-400' : 'bg-white border-gray-200'}`}>
+            <p className="text-2xl">{sq.emoji}</p>
+            <p className="text-xs font-bold text-gray-700">{sq.label}</p>
+            {checked.includes(i) && <p className="text-green-600 text-lg">✓</p>}
+          </button>
+        ))}
+      </div>
+      {hasLine && !todayGame && (
+        <div className="bg-gradient-to-r from-yellow-100 to-amber-100 rounded-xl p-4 shadow text-center">
+          <p className="text-3xl">🎉</p>
+          <p className="font-bold text-amber-700">宾果！你完成了一行！</p>
+          <button onClick={() => onSave({ checked, date: todayStr() })}
+            className="mt-2 px-6 py-2 bg-amber-400 text-white rounded-xl font-bold">保存今天的宾果</button>
+        </div>
+      )}
+      {todayGame && (
+        <div className="bg-green-50 rounded-xl p-4 text-center">
+          <p className="font-bold text-green-700">今天的宾果已完成！({todayGame.checked.length}/9)</p>
+        </div>
+      )}
+      <p className="text-center text-sm text-gray-500">完成宾果 {games.length} 次</p>
+    </div>
+  );
+}
+
+// ─── Mirror Affirmation Challenge ───────────────────────────────────────────
+function MirrorChallengePage({ logs, onComplete, onBack }) {
+  const completedDays = logs.map(l => l.day);
+  const nextDay = MIRROR_DAYS.find(d => !completedDays.includes(d.day)) || null;
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🪞" title="镜子挑战" subtitle="7天，每天对自己说一句好话" />
+      <div className="space-y-3">
+        {MIRROR_DAYS.map(md => {
+          const done = completedDays.includes(md.day);
+          const isNext = nextDay?.day === md.day;
+          return (
+            <div key={md.day} className={`rounded-xl p-4 shadow ${done ? 'bg-green-50 border border-green-300' : isNext ? 'bg-yellow-50 border-2 border-yellow-400' : 'bg-gray-50 opacity-60'}`}>
+              <div className="flex items-center gap-3">
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${done ? 'bg-green-400 text-white' : isNext ? 'bg-yellow-400 text-white' : 'bg-gray-300 text-gray-500'}`}>
+                  {done ? '✓' : md.day}
+                </div>
+                <div className="flex-1">
+                  <p className={`text-sm font-bold ${done ? 'text-green-700' : 'text-gray-700'}`}>{md.prompt}</p>
+                  <p className="text-xs text-gray-500">难度：{md.level}</p>
+                </div>
+                {isNext && !done && (
+                  <button onClick={() => onComplete({ day: md.day, date: todayStr() })}
+                    className="px-3 py-1 bg-yellow-400 text-white rounded-lg text-sm font-bold">完成</button>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      {completedDays.length === 7 && (
+        <div className="bg-gradient-to-r from-yellow-100 to-amber-100 rounded-xl p-4 text-center">
+          <p className="text-3xl">🏆</p>
+          <p className="font-bold text-amber-700">7天镜子挑战完成！你太棒了！</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Emotion Orchestra ──────────────────────────────────────────────────────
+function EmotionOrchestraPage({ performances, onSave, onBack }) {
+  const [volumes, setVolumes] = useState(Object.fromEntries(ORCHESTRA_INSTRUMENTS.map(i => [i.emotion, 3])));
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🎼" title="情绪交响乐" subtitle="调节每种情绪的音量" />
+      <p className="text-center text-sm text-gray-600">每种乐器代表一种情绪，调整它们的大小声</p>
+      <div className="space-y-3">
+        {ORCHESTRA_INSTRUMENTS.map(inst => (
+          <div key={inst.emotion} className={`${inst.color} rounded-xl p-4 shadow`}>
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-2xl">{inst.emoji}</span>
+              <span className="font-bold text-gray-800 text-sm">{inst.label}</span>
+              <span className="ml-auto font-bold text-gray-600">{volumes[inst.emotion]}/10</span>
+            </div>
+            <input type="range" min="0" max="10" value={volumes[inst.emotion]}
+              onChange={e => setVolumes(prev => ({ ...prev, [inst.emotion]: Number(e.target.value) }))}
+              className="w-full" />
+          </div>
+        ))}
+      </div>
+      <div className="bg-white rounded-xl p-4 shadow text-center">
+        <p className="text-sm text-gray-600 mb-2">你的交响乐</p>
+        <div className="flex justify-center gap-1">
+          {ORCHESTRA_INSTRUMENTS.map(inst => (
+            <div key={inst.emotion} className="text-center">
+              <div style={{ height: `${volumes[inst.emotion] * 8 + 10}px` }}
+                className={`w-8 ${inst.color} rounded-t-lg transition-all`} />
+              <p className="text-xs">{inst.emoji}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <button onClick={() => onSave({ volumes: { ...volumes }, date: todayStr() })}
+        className="w-full py-3 bg-gradient-to-r from-purple-400 to-pink-400 text-white rounded-xl font-bold">
+        保存演奏 🎼
+      </button>
+      {performances.length > 0 && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-gray-700">演奏记录 ({performances.length}次)</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Problem Shrink Ray ─────────────────────────────────────────────────────
+function ProblemShrinkRayPage({ logs, onSave, onBack }) {
+  const [problem, setProblem] = useState('');
+  const [step, setStep] = useState(0);
+  const [answers, setAnswers] = useState({});
+  const [current, setCurrent] = useState('');
+  const started = problem.trim() && step > 0;
+  const sizes = ['text-3xl', 'text-2xl', 'text-xl', 'text-lg', 'text-base', 'text-sm'];
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🔫" title="问题缩小器" subtitle="把大问题变小！" />
+      {step === 0 && (
+        <div className="bg-white rounded-xl p-4 shadow space-y-3">
+          <p className="text-center text-gray-600">你有什么大问题让你烦恼？</p>
+          <textarea placeholder="我的问题是…" value={problem}
+            onChange={e => setProblem(e.target.value)} className="w-full border rounded-lg px-3 py-2 text-sm" rows={2} />
+          {problem.trim() && (
+            <button onClick={() => setStep(1)}
+              className="w-full py-3 bg-gradient-to-r from-orange-400 to-red-400 text-white rounded-xl font-bold">
+              开始缩小！🔫
+            </button>
+          )}
+        </div>
+      )}
+      {started && step <= SHRINK_QUESTIONS.length && (
+        <div className="space-y-4">
+          <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-4 shadow text-center">
+            <p className={`font-bold text-red-600 ${sizes[Math.min(step, sizes.length - 1)]} transition-all`}>
+              {problem}
+            </p>
+            <p className="text-xs text-gray-500 mt-1">问题在缩小中… ({step}/{SHRINK_QUESTIONS.length})</p>
+          </div>
+          <div className="bg-white rounded-xl p-4 shadow space-y-3">
+            <p className="text-2xl text-center">{SHRINK_QUESTIONS[step - 1].emoji}</p>
+            <p className="font-bold text-gray-800 text-center">{SHRINK_QUESTIONS[step - 1].q}</p>
+            <input type="text" placeholder="你的回答…" value={current}
+              onChange={e => setCurrent(e.target.value)} className="w-full border rounded-lg px-3 py-2 text-sm" />
+            {current.trim() && (
+              <button onClick={() => {
+                setAnswers(prev => ({ ...prev, [step]: current.trim() }));
+                setCurrent('');
+                setStep(s => s + 1);
+              }} className="w-full py-2 bg-orange-400 text-white rounded-xl font-bold">
+                {step < SHRINK_QUESTIONS.length ? '继续缩小 →' : '完成缩小！'}
+              </button>
+            )}
+          </div>
+        </div>
+      )}
+      {step > SHRINK_QUESTIONS.length && (
+        <div className="bg-gradient-to-br from-green-100 to-emerald-100 rounded-xl p-6 shadow text-center space-y-3">
+          <p className="text-5xl">🎉</p>
+          <p className="font-bold text-green-700 text-lg">问题缩小了！</p>
+          <p className="text-sm text-gray-600 line-through">{problem}</p>
+          <p className="text-sm text-green-600 font-bold">第一步：{answers[2] || answers[1]}</p>
+          <button onClick={() => {
+            onSave({ problem: problem.trim(), answers, date: todayStr() });
+            setProblem(''); setStep(0); setAnswers({});
+          }} className="px-6 py-2 bg-green-400 text-white rounded-xl font-bold">保存 ✨</button>
+        </div>
+      )}
+      {logs.length > 0 && step === 0 && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-gray-700 mb-2">缩小了 {logs.length} 个问题</p>
+          {logs.slice(-3).reverse().map((l, i) => (
+            <p key={i} className="text-sm py-1 border-b last:border-0 text-gray-600">
+              🔫 {l.problem} <span className="text-xs text-gray-400">{l.date?.slice(0, 10)}</span>
+            </p>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Gratitude Glasses ──────────────────────────────────────────────────────
+function GratitudeGlassesPage({ logs, onSave, onBack }) {
+  const [wearing, setWearing] = useState(false);
+  const [seen, setSeen] = useState([]);
+  const [custom, setCustom] = useState('');
+  const [customReframe, setCustomReframe] = useState('');
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="👓" title="感恩眼镜" subtitle="戴上眼镜，换个角度看世界" />
+      {!wearing ? (
+        <div className="text-center space-y-4">
+          <p className="text-6xl">👓</p>
+          <p className="text-gray-600">戴上感恩眼镜，普通的东西也会变得特别</p>
+          <button onClick={() => setWearing(true)}
+            className="px-6 py-3 bg-gradient-to-r from-green-400 to-emerald-400 text-white rounded-xl font-bold text-lg">
+            戴上眼镜 👓
+          </button>
+        </div>
+      ) : (
+        <div className="space-y-3">
+          <div className="bg-green-50 rounded-xl p-3 text-center">
+            <p className="text-sm text-green-600">👓 感恩眼镜已戴上！点击看看这些东西的另一面</p>
+          </div>
+          {ORDINARY_THINGS.map((ot, i) => (
+            <button key={i} onClick={() => setSeen(prev => prev.includes(i) ? prev : [...prev, i])}
+              className={`w-full rounded-xl p-4 shadow text-left transition ${seen.includes(i) ? 'bg-gradient-to-r from-green-50 to-emerald-50' : 'bg-white'}`}>
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">{ot.emoji}</span>
+                <div>
+                  <p className="font-bold text-gray-800">{ot.thing}</p>
+                  {seen.includes(i) && <p className="text-sm text-green-600 mt-1">✨ {ot.reframe}</p>}
+                </div>
+              </div>
+            </button>
+          ))}
+          <div className="bg-white rounded-xl p-4 shadow space-y-2">
+            <p className="font-bold text-green-600 text-sm">自己找一个：</p>
+            <input type="text" placeholder="一个普通的东西" value={custom}
+              onChange={e => setCustom(e.target.value)} className="w-full border rounded-lg px-3 py-2 text-sm" />
+            <input type="text" placeholder="用感恩眼镜看它…" value={customReframe}
+              onChange={e => setCustomReframe(e.target.value)} className="w-full border rounded-lg px-3 py-2 text-sm" />
+          </div>
+          {seen.length >= 3 && (
+            <button onClick={() => {
+              onSave({ seen: seen.length, custom: custom.trim(), reframe: customReframe.trim(), date: todayStr() });
+              setWearing(false); setSeen([]); setCustom(''); setCustomReframe('');
+            }} className="w-full py-3 bg-gradient-to-r from-green-400 to-emerald-400 text-white rounded-xl font-bold">
+              摘下眼镜，保存发现 ✨
+            </button>
+          )}
+        </div>
+      )}
+      {logs.length > 0 && !wearing && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-gray-700">戴了 {logs.length} 次感恩眼镜</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Emotion Time Capsule ───────────────────────────────────────────────────
+function EmotionTimeCapsulePage({ capsules, onSeal, onOpen, onBack }) {
+  const [answers, setAnswers] = useState({});
+  const now = Date.now();
+  const sealed = capsules.filter(c => !c.opened);
+  const openable = sealed.filter(c => now - c.sealedAt >= 7 * 24 * 60 * 60 * 1000);
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="💊" title="情绪时光机" subtitle="封存现在的感受，7天后打开" />
+      <div className="bg-white rounded-xl p-4 shadow space-y-3">
+        <p className="font-bold text-indigo-600">封存一颗情绪胶囊</p>
+        {CAPSULE_PROMPTS.map((p, i) => (
+          <div key={i}>
+            <p className="text-sm text-gray-600">{p}</p>
+            <input type="text" value={answers[i] || ''}
+              onChange={e => setAnswers(prev => ({ ...prev, [i]: e.target.value }))}
+              className="w-full border rounded-lg px-3 py-2 text-sm mt-1" />
+          </div>
+        ))}
+        {CAPSULE_PROMPTS.every((_, i) => answers[i]?.trim()) && (
+          <button onClick={() => {
+            onSeal({ answers: { ...answers }, sealedAt: now, date: todayStr() });
+            setAnswers({});
+          }} className="w-full py-3 bg-gradient-to-r from-indigo-400 to-purple-400 text-white rounded-xl font-bold">
+            封存胶囊 💊
+          </button>
+        )}
+      </div>
+      {openable.length > 0 && (
+        <div className="bg-gradient-to-r from-yellow-100 to-amber-100 rounded-xl p-4 shadow">
+          <p className="font-bold text-amber-700">🎉 有 {openable.length} 颗胶囊可以打开了！</p>
+          {openable.map((c, i) => (
+            <button key={i} onClick={() => onOpen(c)}
+              className="w-full mt-2 py-2 bg-amber-400 text-white rounded-lg font-bold text-sm">
+              打开 {c.date} 的胶囊
+            </button>
+          ))}
+        </div>
+      )}
+      {sealed.filter(c => now - c.sealedAt < 7 * 24 * 60 * 60 * 1000).length > 0 && (
+        <div className="bg-indigo-50 rounded-xl p-4">
+          <p className="font-bold text-indigo-700">等待中的胶囊</p>
+          {sealed.filter(c => now - c.sealedAt < 7 * 24 * 60 * 60 * 1000).map((c, i) => {
+            const daysLeft = Math.ceil((7 * 24 * 60 * 60 * 1000 - (now - c.sealedAt)) / (24 * 60 * 60 * 1000));
+            return <p key={i} className="text-sm text-indigo-600">💊 {c.date} — 还有{daysLeft}天</p>;
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Kindness Ripple ────────────────────────────────────────────────────────
+function KindnessRipplePage({ ripples, onSave, onBack }) {
+  const [act, setAct] = useState(null);
+  const [who, setWho] = useState('');
+  const [reaction, setReaction] = useState('');
+  const [rippled, setRippled] = useState('');
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🌊" title="善良涟漪" subtitle="一个善意，可以传得很远" />
+      <div className="bg-white rounded-xl p-4 shadow space-y-3">
+        <p className="font-bold text-blue-600">你做了什么善意的事？</p>
+        <div className="flex flex-wrap gap-2">
+          {RIPPLE_ACTS.map(ra => (
+            <button key={ra.label} onClick={() => setAct(ra)}
+              className={`px-3 py-2 rounded-lg text-sm transition ${act?.label === ra.label ? 'bg-blue-200 ring-2 ring-blue-400 font-bold' : 'bg-blue-50'}`}>
+              {ra.emoji} {ra.label}
+            </button>
+          ))}
+        </div>
+        {act && (
+          <>
+            <input type="text" placeholder="对谁做的？" value={who}
+              onChange={e => setWho(e.target.value)} className="w-full border rounded-lg px-3 py-2 text-sm" />
+            <input type="text" placeholder="对方什么反应？" value={reaction}
+              onChange={e => setReaction(e.target.value)} className="w-full border rounded-lg px-3 py-2 text-sm" />
+            <input type="text" placeholder="你觉得这个善意会传下去吗？怎么传？" value={rippled}
+              onChange={e => setRippled(e.target.value)} className="w-full border rounded-lg px-3 py-2 text-sm" />
+          </>
+        )}
+        {act && who.trim() && (
+          <button onClick={() => {
+            onSave({ act: act.label, who: who.trim(), reaction: reaction.trim(), rippled: rippled.trim(), date: todayStr() });
+            setAct(null); setWho(''); setReaction(''); setRippled('');
+          }} className="w-full py-3 bg-gradient-to-r from-blue-400 to-cyan-400 text-white rounded-xl font-bold">
+            记录涟漪 🌊
+          </button>
+        )}
+      </div>
+      {ripples.length > 0 && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-blue-700 mb-2">涟漪记录 ({ripples.length}个) 🌊</p>
+          {ripples.slice(-3).reverse().map((r, i) => (
+            <div key={i} className="text-sm py-2 border-b last:border-0">
+              <p className="text-gray-600">{r.act} → {r.who}</p>
+              {r.reaction && <p className="text-blue-500">反应: {r.reaction}</p>}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Support Solar System ───────────────────────────────────────────────────
+function SupportSolarSystemPage({ systems, onSave, onBack }) {
+  const [planets, setPlanets] = useState(systems.length > 0 ? systems[systems.length - 1].planets : []);
+  const [name, setName] = useState('');
+  const [orbit, setOrbit] = useState(0);
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="☀️" title="支持太阳系" subtitle="你是太阳，身边的人是你的星球" />
+      <div className="bg-gradient-to-br from-indigo-900 to-purple-900 rounded-xl p-6 shadow text-center relative" style={{ minHeight: '250px' }}>
+        <div className="absolute inset-0 flex items-center justify-center">
+          {ORBIT_LABELS.map((_, i) => (
+            <div key={i} className="absolute rounded-full border border-indigo-400 border-opacity-30"
+              style={{ width: `${(i + 1) * 50 + 30}px`, height: `${(i + 1) * 50 + 30}px` }} />
+          ))}
+        </div>
+        <div className="relative z-10">
+          <p className="text-4xl">☀️</p>
+          <p className="text-yellow-300 text-xs font-bold">你</p>
+        </div>
+        {planets.map((p, i) => {
+          const angle = (i * 137.5) * Math.PI / 180;
+          const dist = (p.orbit + 1) * 28 + 20;
+          return (
+            <div key={i} className="absolute z-10" style={{
+              left: `calc(50% + ${Math.cos(angle) * dist}px - 14px)`,
+              top: `calc(50% + ${Math.sin(angle) * dist}px - 14px)`
+            }}>
+              <div className={`w-7 h-7 rounded-full ${PLANET_COLORS[i % PLANET_COLORS.length]} flex items-center justify-center text-xs font-bold shadow`}>
+                {p.name[0]}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <div className="bg-white rounded-xl p-4 shadow space-y-3">
+        <p className="font-bold text-indigo-600">添加一颗星球</p>
+        <input type="text" placeholder="这个人叫什么？" value={name}
+          onChange={e => setName(e.target.value)} className="w-full border rounded-lg px-3 py-2 text-sm" />
+        <div className="flex gap-2">
+          {ORBIT_LABELS.map((label, i) => (
+            <button key={i} onClick={() => setOrbit(i)}
+              className={`flex-1 py-2 rounded-lg text-xs font-bold transition ${orbit === i ? 'bg-indigo-200 ring-2 ring-indigo-400' : 'bg-indigo-50'}`}>
+              {label}
+            </button>
+          ))}
+        </div>
+        {name.trim() && (
+          <button onClick={() => { setPlanets(prev => [...prev.slice(-7), { name: name.trim(), orbit }]); setName(''); }}
+            className="w-full py-2 bg-indigo-400 text-white rounded-xl font-bold">添加星球 🪐</button>
+        )}
+      </div>
+      {planets.length > 0 && (
+        <>
+          <div className="bg-white rounded-xl p-4 shadow">
+            <p className="font-bold text-gray-700 mb-2">我的星球 ({planets.length})</p>
+            {planets.map((p, i) => (
+              <div key={i} className="flex items-center gap-2 py-1">
+                <div className={`w-5 h-5 rounded-full ${PLANET_COLORS[i % PLANET_COLORS.length]}`} />
+                <span className="text-sm text-gray-700">{p.name}</span>
+                <span className="text-xs text-gray-400 ml-auto">{ORBIT_LABELS[p.orbit]}</span>
+              </div>
+            ))}
+          </div>
+          <button onClick={() => onSave({ planets, date: todayStr() })}
+            className="w-full py-3 bg-gradient-to-r from-indigo-400 to-purple-400 text-white rounded-xl font-bold">
+            保存太阳系 ☀️
+          </button>
+        </>
+      )}
+    </div>
+  );
+}
+
 // ─── Main App ────────────────────────────────────────────────────────────────
 
 export default function HealingKidsApp() {
@@ -7395,6 +11183,56 @@ export default function HealingKidsApp() {
   const [habitStacks, setHabitStacks] = useState([]);
   const [conflictResolved, setConflictResolved] = useState([]);
   const [scavengerDone, setScavengerDone] = useState([]);
+  const [archaeologyDigs, setArchaeologyDigs] = useState([]);
+  const [bodyCopingDone, setBodyCopingDone] = useState([]);
+  const [permissionSlips, setPermissionSlips] = useState([]);
+  const [aweLogs, setAweLogs] = useState([]);
+  const [observerSessions, setObserverSessions] = useState([]);
+  const [cprUses, setCprUses] = useState([]);
+  const [strengthsShield, setStrengthsShield] = useState({});
+  const [microKindnessLog, setMicroKindnessLog] = useState([]);
+  const [feelingsForecasts, setFeelingsForecasts] = useState([]);
+  const [hopeJar, setHopeJar] = useState([]);
+  const [breathingGamesPlayed, setBreathingGamesPlayed] = useState([]);
+  const [decisionLog, setDecisionLog] = useState([]);
+  const [empathyPracticed, setEmpathyPracticed] = useState([]);
+  const [moodCollages, setMoodCollages] = useState([]);
+  const [vocabLearned, setVocabLearned] = useState([]);
+  const [gratitudeChain, setGratitudeChain] = useState([]);
+  const [safePersonCards, setSafePersonCards] = useState([]);
+  const [morningCompass, setMorningCompass] = useState([]);
+  const [copingReports, setCopingReports] = useState([]);
+  const [emotionMaps, setEmotionMaps] = useState([]);
+  const [comfortMenus, setComfortMenus] = useState([]);
+  const [praiseJar, setPraiseJar] = useState([]);
+  const [feelingsTranslations, setFeelingsTranslations] = useState([]);
+  const [listeningLogs, setListeningLogs] = useState([]);
+  const [courageCoins, setCourageCoins] = useState([]);
+  const [friendshipRecipes, setFriendshipRecipes] = useState([]);
+  const [thoughtBubbles, setThoughtBubbles] = useState([]);
+  const [calmBuddySessions, setCalmBuddySessions] = useState([]);
+  const [accomplishments, setAccomplishments] = useState([]);
+  const [dailyWins, setDailyWins] = useState([]);
+  const [sensoryCountdowns, setSensoryCountdowns] = useState([]);
+  const [emotionJarLogs, setEmotionJarLogs] = useState([]);
+  const [tradingCards, setTradingCards] = useState([]);
+  const [moodDJMixes, setMoodDJMixes] = useState([]);
+  const [vendingMachineLogs, setVendingMachineLogs] = useState([]);
+  const [feelingsMasks, setFeelingsMasks] = useState([]);
+  const [dailyAnchors, setDailyAnchors] = useState([]);
+  const [boomerangLogs, setBoomerangLogs] = useState([]);
+  const [volumeControlLogs, setVolumeControlLogs] = useState([]);
+  const [safeSignals, setSafeSignals] = useState([]);
+  const [abcDiary, setAbcDiary] = useState([]);
+  const [balloonReleases, setBalloonReleases] = useState([]);
+  const [bingoGames, setBingoGames] = useState([]);
+  const [mirrorDays, setMirrorDays] = useState([]);
+  const [orchestraPerfs, setOrchestraPerfs] = useState([]);
+  const [shrinkRayLogs, setShrinkRayLogs] = useState([]);
+  const [gratitudeGlassesLogs, setGratitudeGlassesLogs] = useState([]);
+  const [emotionTimeCapsules, setEmotionTimeCapsules] = useState([]);
+  const [kindnessRipples, setKindnessRipples] = useState([]);
+  const [solarSystems, setSolarSystems] = useState([]);
 
   useEffect(() => {
     const saved = loadState();
@@ -7488,6 +11326,56 @@ export default function HealingKidsApp() {
       setHabitStacks(saved.habitStacks || []);
       setConflictResolved(saved.conflictResolved || []);
       setScavengerDone(saved.scavengerDone || []);
+      setArchaeologyDigs(saved.archaeologyDigs || []);
+      setBodyCopingDone(saved.bodyCopingDone || []);
+      setPermissionSlips(saved.permissionSlips || []);
+      setAweLogs(saved.aweLogs || []);
+      setObserverSessions(saved.observerSessions || []);
+      setCprUses(saved.cprUses || []);
+      setStrengthsShield(saved.strengthsShield || {});
+      setMicroKindnessLog(saved.microKindnessLog || []);
+      setFeelingsForecasts(saved.feelingsForecasts || []);
+      setHopeJar(saved.hopeJar || []);
+      setBreathingGamesPlayed(saved.breathingGamesPlayed || []);
+      setDecisionLog(saved.decisionLog || []);
+      setEmpathyPracticed(saved.empathyPracticed || []);
+      setMoodCollages(saved.moodCollages || []);
+      setVocabLearned(saved.vocabLearned || []);
+      setGratitudeChain(saved.gratitudeChain || []);
+      setSafePersonCards(saved.safePersonCards || []);
+      setMorningCompass(saved.morningCompass || []);
+      setCopingReports(saved.copingReports || []);
+      setEmotionMaps(saved.emotionMaps || []);
+      setComfortMenus(saved.comfortMenus || []);
+      setPraiseJar(saved.praiseJar || []);
+      setFeelingsTranslations(saved.feelingsTranslations || []);
+      setListeningLogs(saved.listeningLogs || []);
+      setCourageCoins(saved.courageCoins || []);
+      setFriendshipRecipes(saved.friendshipRecipes || []);
+      setThoughtBubbles(saved.thoughtBubbles || []);
+      setCalmBuddySessions(saved.calmBuddySessions || []);
+      setAccomplishments(saved.accomplishments || []);
+      setDailyWins(saved.dailyWins || []);
+      setSensoryCountdowns(saved.sensoryCountdowns || []);
+      setEmotionJarLogs(saved.emotionJarLogs || []);
+      setTradingCards(saved.tradingCards || []);
+      setMoodDJMixes(saved.moodDJMixes || []);
+      setVendingMachineLogs(saved.vendingMachineLogs || []);
+      setFeelingsMasks(saved.feelingsMasks || []);
+      setDailyAnchors(saved.dailyAnchors || []);
+      setBoomerangLogs(saved.boomerangLogs || []);
+      setVolumeControlLogs(saved.volumeControlLogs || []);
+      setSafeSignals(saved.safeSignals || []);
+      setAbcDiary(saved.abcDiary || []);
+      setBalloonReleases(saved.balloonReleases || []);
+      setBingoGames(saved.bingoGames || []);
+      setMirrorDays(saved.mirrorDays || []);
+      setOrchestraPerfs(saved.orchestraPerfs || []);
+      setShrinkRayLogs(saved.shrinkRayLogs || []);
+      setGratitudeGlassesLogs(saved.gratitudeGlassesLogs || []);
+      setEmotionTimeCapsules(saved.emotionTimeCapsules || []);
+      setKindnessRipples(saved.kindnessRipples || []);
+      setSolarSystems(saved.solarSystems || []);
     }
     setHydrated(true);
   }, []);
@@ -7511,6 +11399,16 @@ export default function HealingKidsApp() {
       futureLetters, movementLog, parkedWorries, processedWorries, courageLog, muscleRelaxCount,
       selfTalkEntries, supportNetwork, responsibilityPies, calmRatings,
       boundaryPracticed, emotionForecasts, habitStacks, conflictResolved, scavengerDone,
+      archaeologyDigs, bodyCopingDone, permissionSlips, aweLogs, observerSessions,
+      cprUses, strengthsShield, microKindnessLog, feelingsForecasts, hopeJar,
+      breathingGamesPlayed, decisionLog, empathyPracticed, moodCollages, vocabLearned,
+      gratitudeChain, safePersonCards, morningCompass, copingReports,
+      emotionMaps, comfortMenus, praiseJar, feelingsTranslations, listeningLogs,
+      courageCoins, friendshipRecipes, thoughtBubbles, calmBuddySessions, accomplishments, dailyWins,
+      sensoryCountdowns, emotionJarLogs, tradingCards, moodDJMixes, vendingMachineLogs,
+      feelingsMasks, dailyAnchors, boomerangLogs, volumeControlLogs, safeSignals,
+      abcDiary, balloonReleases, bingoGames, mirrorDays, orchestraPerfs,
+      shrinkRayLogs, gratitudeGlassesLogs, emotionTimeCapsules, kindnessRipples, solarSystems,
       lastDate: todayStr()
     });
   }, [mood, dailyProgress, points, streak, journalEntries, moodHistory,
@@ -7528,7 +11426,17 @@ export default function HealingKidsApp() {
       socialRolePlayHistory, growthMindsetDone, memoryVault, sensoryKit, charadesScore,
       futureLetters, movementLog, parkedWorries, processedWorries, courageLog, muscleRelaxCount,
       selfTalkEntries, supportNetwork, responsibilityPies, calmRatings,
-      boundaryPracticed, emotionForecasts, habitStacks, conflictResolved, scavengerDone, hydrated]);
+      boundaryPracticed, emotionForecasts, habitStacks, conflictResolved, scavengerDone,
+      archaeologyDigs, bodyCopingDone, permissionSlips, aweLogs, observerSessions,
+      cprUses, strengthsShield, microKindnessLog, feelingsForecasts, hopeJar,
+      breathingGamesPlayed, decisionLog, empathyPracticed, moodCollages, vocabLearned,
+      gratitudeChain, safePersonCards, morningCompass, copingReports,
+      emotionMaps, comfortMenus, praiseJar, feelingsTranslations, listeningLogs,
+      courageCoins, friendshipRecipes, thoughtBubbles, calmBuddySessions, accomplishments, dailyWins,
+      sensoryCountdowns, emotionJarLogs, tradingCards, moodDJMixes, vendingMachineLogs,
+      feelingsMasks, dailyAnchors, boomerangLogs, volumeControlLogs, safeSignals,
+      abcDiary, balloonReleases, bingoGames, mirrorDays, orchestraPerfs,
+      shrinkRayLogs, gratitudeGlassesLogs, emotionTimeCapsules, kindnessRipples, solarSystems, hydrated]);
 
   const completeActivity = useCallback((activityId) => {
     setDailyProgress(prev => {
@@ -8121,6 +12029,264 @@ export default function HealingKidsApp() {
         {currentPage === 'scavengerhunt' && (
           <ScavengerHuntPage completedHunts={scavengerDone}
             onComplete={id => { setScavengerDone(prev => prev.includes(id) ? prev : [...prev, id]); setPoints(p => p + 20); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'archaeology' && (
+          <EmotionArchaeologyPage digs={archaeologyDigs}
+            onDig={d => { setArchaeologyDigs(prev => [...prev.slice(-30), d]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'bodycoping' && (
+          <BodyCopingPage completions={bodyCopingDone}
+            onComplete={id => { setBodyCopingDone(prev => prev.includes(id) ? prev : [...prev, id]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'permissionslip' && (
+          <PermissionSlipPage slips={permissionSlips}
+            onSave={s => { setPermissionSlips(prev => [...prev.slice(-30), s]); setPoints(p => p + 5); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'awe' && (
+          <AwePromptPage aweLogs={aweLogs}
+            onLog={l => { setAweLogs(prev => [...prev.slice(-50), l]); setPoints(p => p + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'observer' && (
+          <CompassionateObserverPage sessions={observerSessions}
+            onComplete={id => { setObserverSessions(prev => prev.includes(id) ? prev : [...prev, id]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'emotionalcpr' && (
+          <EmotionalCPRPage uses={cprUses}
+            onUse={u => { setCprUses(prev => [...prev.slice(-20), u]); setPoints(p => p + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'strengthshield' && (
+          <StrengthsShieldPage shield={strengthsShield} onSave={s => { setStrengthsShield(s); setPoints(p => p + 10); }} onBack={goTools} />
+        )}
+        {currentPage === 'microkindness' && (
+          <MicroKindnessPage log={microKindnessLog}
+            onLog={l => { setMicroKindnessLog(prev => [...prev.slice(-100), l]); setPoints(p => p + 5); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'feelingsforecast' && (
+          <FeelingsForecastPage forecasts={feelingsForecasts}
+            onSave={(data) => {
+              setFeelingsForecasts(prev => {
+                const existing = prev.findIndex(f => f.date === data.date);
+                if (existing >= 0) return prev.map((f, i) => i === existing ? data : f);
+                return [...prev.slice(-60), data];
+              });
+              setPoints(p => p + 5);
+            }} onBack={goTools} />
+        )}
+        {currentPage === 'hopejar' && (
+          <HopeJarPage hopes={hopeJar}
+            onAdd={h => { setHopeJar(prev => [...prev.slice(-50), h]); setPoints(p => p + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'breathinggame' && (
+          <BreathingGamePage played={breathingGamesPlayed}
+            onComplete={g => { setBreathingGamesPlayed(prev => [...prev.slice(-50), g]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'decisioncompass' && (
+          <DecisionCompassPage log={decisionLog}
+            onSave={d => { setDecisionLog(prev => [...prev.slice(-50), d]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'empathyglasses' && (
+          <EmpathyGlassesPage practiced={empathyPracticed}
+            onComplete={e => { setEmpathyPracticed(prev => [...prev.slice(-50), e]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'moodcollage' && (
+          <MoodCollagePage collages={moodCollages}
+            onSave={c => { setMoodCollages(prev => [...prev.slice(-30), c]); setPoints(p => p + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'vocabstory' && (
+          <VocabStoryPage learned={vocabLearned}
+            onLearn={v => { setVocabLearned(prev => [...prev.slice(-50), v]); setPoints(p => p + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'gratitudechain' && (
+          <GratitudeChainPage chain={gratitudeChain}
+            onAdd={link => { setGratitudeChain(prev => [...prev.slice(-100), link]); setPoints(p => p + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'safepersoncards' && (
+          <SafePersonCardsPage cards={safePersonCards}
+            onSave={c => setSafePersonCards(c.slice(-10))}
+            onBack={goTools} />
+        )}
+        {currentPage === 'morningcompass' && (
+          <MorningCompassPage entries={morningCompass}
+            onSave={e => { setMorningCompass(prev => [...prev.slice(-60), e]); setPoints(p => p + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'copingreport' && (
+          <CopingReportPage reports={copingReports}
+            onSave={r => { setCopingReports(prev => [...prev.slice(-30), r]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'connectioncards' && (
+          <ConnectionCardsPage onBack={goTools} />
+        )}
+        {currentPage === 'emotionmapquest' && (
+          <EmotionMapQuestPage maps={emotionMaps}
+            onSave={m => { setEmotionMaps(prev => [...prev.slice(-60), m]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'comfortmenu' && (
+          <ComfortMenuPage menu={comfortMenus}
+            onSave={m => { setComfortMenus(prev => [...prev.slice(-30), m]); setPoints(p => p + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'praisejar' && (
+          <PraiseJarPage praises={praiseJar}
+            onAdd={p => { setPraiseJar(prev => [...prev.slice(-50), p]); setPoints(p2 => p2 + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'feelingstranslator' && (
+          <FeelingsTranslatorPage translations={feelingsTranslations}
+            onSave={t => { setFeelingsTranslations(prev => [...prev.slice(-50), t]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'mindfullistening' && (
+          <MindfulListeningPage logs={listeningLogs}
+            onSave={l => { setListeningLogs(prev => [...prev.slice(-50), l]); setPoints(p => p + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'couragecoin' && (
+          <CourageCoinPage coins={courageCoins}
+            onEarn={c => { setCourageCoins(prev => [...prev.slice(-50), c]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'friendshiprecipe' && (
+          <FriendshipRecipePage recipes={friendshipRecipes}
+            onSave={r => { setFriendshipRecipes(prev => [...prev.slice(-20), r]); setPoints(p => p + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'thoughtbubbles' && (
+          <ThoughtBubblesPage entries={thoughtBubbles}
+            onSave={e => { setThoughtBubbles(prev => [...prev.slice(-30), e]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'calmbuddy' && (
+          <CalmBuddyPage sessions={calmBuddySessions}
+            onComplete={s => { setCalmBuddySessions(prev => [...prev.slice(-50), s]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'accomplishments' && (
+          <AccomplishmentTimelinePage entries={accomplishments}
+            onAdd={a => { setAccomplishments(prev => [...prev.slice(-100), a]); setPoints(p => p + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'dailywins' && (
+          <DailyWinsPage wins={dailyWins}
+            onSave={w => { setDailyWins(prev => [...prev.slice(-60), w]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'sensorycountdown' && (
+          <SensoryCountdownPage logs={sensoryCountdowns}
+            onSave={l => { setSensoryCountdowns(prev => [...prev.slice(-50), l]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'emotionjar' && (
+          <EmotionJarPage logs={emotionJarLogs}
+            onSave={l => { setEmotionJarLogs(prev => [...prev.slice(-50), l]); setPoints(p => p + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'tradingcards' && (
+          <StrengthTradingCardsPage cards={tradingCards}
+            onCollect={c => { setTradingCards(prev => [...prev.slice(-30), c]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'mooddj' && (
+          <MoodDJPage mixes={moodDJMixes}
+            onSave={m => { setMoodDJMixes(prev => [...prev.slice(-60), m]); setPoints(p => p + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'vendingmachine' && (
+          <VendingMachinePage logs={vendingMachineLogs}
+            onUse={l => { setVendingMachineLogs(prev => [...prev.slice(-50), l]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'feelingsmask' && (
+          <FeelingsMaskPage masks={feelingsMasks}
+            onSave={m => { setFeelingsMasks(prev => [...prev.slice(-30), m]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'dailyanchor' && (
+          <DailyAnchorPage anchors={dailyAnchors}
+            onSave={a => { setDailyAnchors(prev => [...prev.slice(-60), a]); setPoints(p => p + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'boomerang' && (
+          <ComplimentBoomerangPage logs={boomerangLogs}
+            onSave={l => { setBoomerangLogs(prev => [...prev.slice(-50), l]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'emotionvolume' && (
+          <EmotionVolumePage logs={volumeControlLogs}
+            onSave={l => { setVolumeControlLogs(prev => [...prev.slice(-50), l]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'safesignals' && (
+          <SafeSignalsPage signals={safeSignals}
+            onSave={s => { setSafeSignals(prev => [...prev.slice(-10), s]); setPoints(p => p + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'abcdiary' && (
+          <EmotionABCPage entries={abcDiary}
+            onSave={e => { setAbcDiary(prev => [...prev.slice(-50), e]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'worryballoon' && (
+          <WorryBalloonPage releases={balloonReleases}
+            onRelease={r => { setBalloonReleases(prev => [...prev.slice(-50), r]); setPoints(p => p + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'feelingsbingo' && (
+          <FeelingsBingoPage games={bingoGames}
+            onSave={g => { setBingoGames(prev => [...prev.slice(-30), g]); setPoints(p => p + 20); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'mirrorchallenge' && (
+          <MirrorChallengePage logs={mirrorDays}
+            onComplete={d => { setMirrorDays(prev => [...prev.slice(-14), d]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'orchestra' && (
+          <EmotionOrchestraPage performances={orchestraPerfs}
+            onSave={p => { setOrchestraPerfs(prev => [...prev.slice(-30), p]); setPoints(p2 => p2 + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'shrinkray' && (
+          <ProblemShrinkRayPage logs={shrinkRayLogs}
+            onSave={l => { setShrinkRayLogs(prev => [...prev.slice(-30), l]); setPoints(p => p + 20); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'gratitudeglasses' && (
+          <GratitudeGlassesPage logs={gratitudeGlassesLogs}
+            onSave={l => { setGratitudeGlassesLogs(prev => [...prev.slice(-30), l]); setPoints(p => p + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'emotiontimecapsule' && (
+          <EmotionTimeCapsulePage capsules={emotionTimeCapsules}
+            onSeal={c => { setEmotionTimeCapsules(prev => [...prev.slice(-20), c]); setPoints(p => p + 15); }}
+            onOpen={c => { setEmotionTimeCapsules(prev => prev.map(p => p.sealedAt === c.sealedAt ? { ...p, opened: true } : p)); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'kindnessripple' && (
+          <KindnessRipplePage ripples={kindnessRipples}
+            onSave={r => { setKindnessRipples(prev => [...prev.slice(-50), r]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'solarsystem' && (
+          <SupportSolarSystemPage systems={solarSystems}
+            onSave={s => { setSolarSystems(prev => [...prev.slice(-10), s]); setPoints(p => p + 10); }}
             onBack={goTools} />
         )}
 
