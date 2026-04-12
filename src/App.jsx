@@ -543,9 +543,9 @@ const GUIDED_PATHWAYS = {
 };
 
 const TOOL_CATEGORIES = [
-  { name: '放松与正念', emoji: '🧘', ids: ['bodyscan', 'grounding', 'movement', 'safeplace', 'mindfuleat', 'musclerelax', 'mindfulmovement', 'calmdownmenu', 'bodycoping', 'observer', 'breathinggame', 'mindfullistening', 'calmbuddy', 'sensorycountdown', 'emotionjar', 'worryballoon', 'happyplace', 'worryshredder', 'freezedance', 'colorbreathing', 'brainreboot'] },
-  { name: '情绪认知', emoji: '🎭', ids: ['emotions', 'thermometer', 'bodymap', 'detective', 'moodchart', 'emotioncharades', 'emotionforecast', 'archaeology', 'feelingsforecast', 'vocabstory', 'emotionmapquest', 'feelingstranslator', 'mooddj', 'emotionvolume', 'feelingsmask', 'orchestra', 'abcdiary', 'trafficlight', 'feelingfaces', 'feelingsdict', 'chameleon', 'moodring', 'forecastjournal', 'elevator', 'mooddashboard'] },
-  { name: '思维训练', emoji: '🧠', ids: ['thought', 'traps', 'worrybox', 'worrysorter', 'predict', 'worrytime', 'growthmindset', 'selftalk', 'responsibilitypie', 'decisioncompass', 'thoughtbubbles', 'vendingmachine', 'shrinkray', 'worryweight'] },
+  { name: '放松与正念', emoji: '🧘', ids: ['bodyscan', 'grounding', 'movement', 'safeplace', 'mindfuleat', 'musclerelax', 'mindfulmovement', 'calmdownmenu', 'bodycoping', 'observer', 'breathinggame', 'mindfullistening', 'calmbuddy', 'sensorycountdown', 'emotionjar', 'worryballoon', 'happyplace', 'worryshredder', 'freezedance', 'colorbreathing', 'brainreboot', 'calmjar', 'bodycomfortscan', 'safespacevisualizer'] },
+  { name: '情绪认知', emoji: '🎭', ids: ['emotions', 'thermometer', 'bodymap', 'detective', 'moodchart', 'emotioncharades', 'emotionforecast', 'archaeology', 'feelingsforecast', 'vocabstory', 'emotionmapquest', 'feelingstranslator', 'mooddj', 'emotionvolume', 'feelingsmask', 'orchestra', 'abcdiary', 'trafficlight', 'feelingfaces', 'feelingsdict', 'chameleon', 'moodring', 'forecastjournal', 'elevator', 'mooddashboard', 'emotionpuzzle', 'emotionsubtitles', 'weathervane', 'emotionstamps'] },
+  { name: '思维训练', emoji: '🧠', ids: ['thought', 'traps', 'worrybox', 'worrysorter', 'predict', 'worrytime', 'growthmindset', 'selftalk', 'responsibilitypie', 'decisioncompass', 'thoughtbubbles', 'vendingmachine', 'shrinkray', 'worryweight', 'worrytimer', 'kindinnervoice'] },
   { name: '积极行动', emoji: '🌟', ids: ['activation', 'activity', 'kindness', 'goals', 'routine', 'couragetracker', 'habitstack', 'scavengerhunt', 'microkindness', 'awe', 'couragecoin', 'dailywins', 'feelingsbingo', 'kindnessripple', 'oppositeaction', 'oneminute', 'positivespy'] },
   { name: '自我成长', emoji: '🌱', ids: ['strengths', 'values', 'fearladder', 'problemsolve', 'psychoedu', 'memoryvault', 'skilltree', 'strengthshield', 'permissionslip', 'tradingcards', 'mirrorchallenge', 'courageladderlite', 'strengthspotter', 'growthrings', 'strengthdecoder'] },
   { name: '创意表达', emoji: '🎨', ids: ['drawboard', 'storycreator', 'playlist', 'dreamjournal', 'timecapsule', 'futureletter', 'moodcollage'] },
@@ -554,7 +554,7 @@ const TOOL_CATEGORIES = [
   { name: '每日仪式', emoji: '☀️', ids: ['morningroutine', 'eveningroutine', 'routine', 'sleepcoach', 'moodinsights', 'morningcompass', 'dailyanchor', 'starmoments'] },
   { name: '成长计划', emoji: '📅', ids: ['program', 'storyjourney', 'dailychallenge', 'streakrewards', 'milestones', 'screening'] },
   { name: '应急与安全', emoji: '🛡️', ids: ['coping', 'firstaid', 'safety', 'volcano', 'sleep', 'offlinecard', 'emotionalcpr', 'safepersoncards', 'comfortmenu', 'safesignals', 'volcanolevels', 'feelingsfirstaid'] },
-  { name: '记录与回顾', emoji: '📊', ids: ['jar', 'celebration', 'weekreview', 'rewards', 'achievementshare', 'timeline', 'copingreport', 'accomplishments', 'emotiontimecapsule', 'moodplaylistcreator', 'memoryplaylist'] },
+  { name: '记录与回顾', emoji: '📊', ids: ['jar', 'celebration', 'weekreview', 'rewards', 'achievementshare', 'timeline', 'copingreport', 'accomplishments', 'emotiontimecapsule', 'moodplaylistcreator', 'memoryplaylist', 'victoryvault'] },
   { name: '家长与支持', emoji: '👨‍👩‍👧', ids: ['parent', 'parentnudge', 'parentedu', 'familyboard', 'therapistreport', 'counselor', 'emotionvocab'] }
 ];
 
@@ -996,7 +996,17 @@ const TOOL_PAGES = [
   { id: 'mooddashboard', emoji: '🏎️', title: '心情仪表盘', color: 'from-gray-100 to-blue-100', desc: '四个指标' },
   { id: 'feelingsfirstaid', emoji: '🏥', title: '情绪急救站', color: 'from-green-100 to-red-100', desc: '分级急救' },
   { id: 'treasurehunt', emoji: '🗺️', title: '感恩寻宝', color: 'from-yellow-100 to-amber-100', desc: '五感寻宝' },
-  { id: 'memoryplaylist', emoji: '📻', title: '回忆歌单', color: 'from-pink-100 to-purple-100', desc: '美好回忆' }
+  { id: 'memoryplaylist', emoji: '📻', title: '回忆歌单', color: 'from-pink-100 to-purple-100', desc: '美好回忆' },
+  { id: 'emotionpuzzle', emoji: '🧩', title: '情绪拼图', color: 'from-purple-100 to-pink-100', desc: '拼出心情' },
+  { id: 'worrytimer', emoji: '⏰', title: '烦恼计时器', color: 'from-yellow-100 to-orange-100', desc: '5分钟限时' },
+  { id: 'emotionsubtitles', emoji: '💬', title: '情绪字幕', color: 'from-blue-100 to-purple-100', desc: '写下字幕' },
+  { id: 'calmjar', emoji: '🫧', title: '安静瓶', color: 'from-blue-100 to-purple-100', desc: '看它沉淀' },
+  { id: 'kindinnervoice', emoji: '🗣️', title: '善良内心声音', color: 'from-green-100 to-emerald-100', desc: '温柔替代' },
+  { id: 'bodycomfortscan', emoji: '🫂', title: '身体安慰扫描', color: 'from-pink-100 to-purple-100', desc: '送去温暖' },
+  { id: 'weathervane', emoji: '🌬️', title: '情绪风向标', color: 'from-blue-100 to-cyan-100', desc: '顺风而行' },
+  { id: 'victoryvault', emoji: '🏆', title: '胜利金库', color: 'from-yellow-100 to-amber-100', desc: '最伟大时刻' },
+  { id: 'emotionstamps', emoji: '📕', title: '情绪护照', color: 'from-indigo-100 to-purple-100', desc: '收集印章' },
+  { id: 'safespacevisualizer', emoji: '🏠', title: '安全空间想象', color: 'from-blue-100 to-purple-100', desc: '四感建造' }
 ];
 
 // ─── Social Skills Role-Play ────────────────────────────────────────────────
@@ -2140,6 +2150,89 @@ const MEMORY_MOODS = [
   { emoji: '💪', label: '骄傲回忆', color: 'from-green-100 to-emerald-100' },
   { emoji: '😂', label: '搞笑回忆', color: 'from-orange-100 to-yellow-100' },
   { emoji: '🌟', label: '惊喜回忆', color: 'from-purple-100 to-indigo-100' }
+];
+
+// ─── Emotion Puzzle ──────────────────────────────────────────────────────────
+const PUZZLE_PIECES = [
+  { emoji: '😊', label: '开心' }, { emoji: '😢', label: '难过' },
+  { emoji: '😠', label: '生气' }, { emoji: '😰', label: '焦虑' },
+  { emoji: '😌', label: '平静' }, { emoji: '🤩', label: '兴奋' },
+  { emoji: '😔', label: '失落' }, { emoji: '😴', label: '疲惫' },
+  { emoji: '🥰', label: '温暖' }
+];
+
+// ─── Worry Timer ────────────────────────────────────────────────────────────
+const WORRY_TIMER_RULES = [
+  '在这5分钟里，你可以尽情担心',
+  '时间到了就停止，把担心留在这里',
+  '如果新的担心出现，告诉自己"等到明天的烦恼时间"'
+];
+
+// ─── Emotion Subtitles ──────────────────────────────────────────────────────
+const SUBTITLE_SCENES = [
+  { scene: '小明在课堂上被老师点名回答，但他不会', emoji: '🏫',
+    characters: [{ name: '小明', hint: '心里可能是…' }, { name: '同学们', hint: '可能在想…' }, { name: '老师', hint: '其实想…' }] },
+  { scene: '妈妈看到成绩单后沉默了很久', emoji: '📝',
+    characters: [{ name: '孩子', hint: '害怕妈妈…' }, { name: '妈妈', hint: '沉默是因为…' }] },
+  { scene: '好朋友突然开始跟别人玩，不理你了', emoji: '👫',
+    characters: [{ name: '你', hint: '感觉…' }, { name: '好朋友', hint: '可能是因为…' }, { name: '新朋友', hint: '并不知道…' }] },
+  { scene: '爸爸妈妈在房间里大声说话', emoji: '🏠',
+    characters: [{ name: '你', hint: '听到后感觉…' }, { name: '爸爸妈妈', hint: '他们其实…' }] }
+];
+
+// ─── Calm Jar Timer ─────────────────────────────────────────────────────────
+const CALM_JAR_COLORS = ['#ef4444', '#f59e0b', '#3b82f6', '#8b5cf6', '#ec4899', '#10b981'];
+
+// ─── Kind Inner Voice ───────────────────────────────────────────────────────
+const HARSH_THOUGHTS = [
+  { harsh: '我太笨了', friend: '每个人学习速度不同，你已经很努力了', teacher: '不会不代表笨，只是还没学到', future: '你后来学会了好多东西呢' },
+  { harsh: '没有人喜欢我', friend: '我喜欢你呀！你是很好的朋友', teacher: '很多人关心你，只是表达方式不同', future: '你后来交到了很好的朋友' },
+  { harsh: '我什么都做不好', friend: '你上次帮我的时候做得很好', teacher: '每个人都有擅长的事，你也一样', future: '你做到了好多你以为做不到的事' },
+  { harsh: '都是我的错', friend: '这不全是你的错，别太自责了', teacher: '很多事情是多方面原因造成的', future: '你学会了不再把所有责任都扛在自己身上' },
+  { harsh: '我不够好', friend: '你已经足够好了，我为你骄傲', teacher: '每个人都有价值，不需要完美', future: '你终于明白了，你一直都够好' }
+];
+
+// ─── Body Comfort Scan ──────────────────────────────────────────────────────
+const COMFORT_BODY_PARTS = [
+  { part: '头部', emoji: '🧠', comfort: '想象温暖的阳光照在头顶，紧张慢慢融化' },
+  { part: '肩膀', emoji: '💪', comfort: '让肩膀像冰淇淋一样慢慢融化下来' },
+  { part: '胸口', emoji: '❤️', comfort: '把手放在胸口，感受心跳，告诉自己"我很安全"' },
+  { part: '肚子', emoji: '🌊', comfort: '想象肚子里有温暖的海浪，轻轻地来回摇' },
+  { part: '双手', emoji: '🤲', comfort: '轻轻搓搓手心，感受温度慢慢传开' },
+  { part: '双脚', emoji: '🦶', comfort: '感受脚踩在地上的力量，大地在支撑着你' }
+];
+
+// ─── Emotion Weather Vane ───────────────────────────────────────────────────
+const VANE_DIRECTIONS = [
+  { emotion: '开心', emoji: '😊', direction: 'N', advice: '顺风而行，享受这份快乐' },
+  { emotion: '难过', emoji: '😢', direction: 'S', advice: '风向南吹，让眼泪流，它会过去的' },
+  { emotion: '焦虑', emoji: '😰', direction: 'E', advice: '东风来了，深呼吸，像帆船一样稳住' },
+  { emotion: '生气', emoji: '😠', direction: 'W', advice: '西风猛烈，先停下来，等风小一些再走' },
+  { emotion: '平静', emoji: '😌', direction: 'NE', advice: '微风轻拂，好好享受这个时刻' },
+  { emotion: '疲惫', emoji: '😴', direction: 'SE', advice: '风停了，是时候休息充电了' }
+];
+
+// ─── Victory Vault ──────────────────────────────────────────────────────────
+const VAULT_LEVELS = [
+  { level: 'bronze', emoji: '🥉', label: '铜牌', desc: '小小的胜利', color: 'bg-amber-200' },
+  { level: 'silver', emoji: '🥈', label: '银牌', desc: '不错的成就', color: 'bg-gray-200' },
+  { level: 'gold', emoji: '🥇', label: '金牌', desc: '超棒的胜利！', color: 'bg-yellow-200' }
+];
+
+// ─── Emotion Stamps Passport ────────────────────────────────────────────────
+const PASSPORT_EMOTIONS = [
+  { emoji: '😊', label: '快乐国' }, { emoji: '😢', label: '悲伤国' },
+  { emoji: '😠', label: '愤怒国' }, { emoji: '😰', label: '焦虑国' },
+  { emoji: '😌', label: '平静国' }, { emoji: '💪', label: '勇气国' },
+  { emoji: '🥰', label: '温暖国' }, { emoji: '🤔', label: '困惑国' }
+];
+
+// ─── Safe Space Visualizer ──────────────────────────────────────────────────
+const SAFE_SPACE_PROMPTS = [
+  { sense: '看到', emoji: '👀', placeholder: '你看到了什么？（颜色、光线、风景…）' },
+  { sense: '听到', emoji: '👂', placeholder: '你听到了什么？（鸟鸣、水声、音乐…）' },
+  { sense: '闻到', emoji: '👃', placeholder: '你闻到了什么？（花香、海风、饼干…）' },
+  { sense: '感受到', emoji: '✋', placeholder: '身体感觉到什么？（温暖、微风、柔软…）' }
 ];
 
 const fmtTime = (s) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
@@ -13086,6 +13179,523 @@ function MemoryPlaylistPage({ playlists, onSave, onBack }) {
   );
 }
 
+// ─── Emotion Puzzle ──────────────────────────────────────────────────────────
+function EmotionPuzzlePage({ puzzles, onSave, onBack }) {
+  const [pieces, setPieces] = useState([]);
+  const [sizes, setSizes] = useState({});
+  const toggle = (p) => setPieces(prev => prev.includes(p.label) ? prev.filter(x => x !== p.label) : [...prev, p.label]);
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🧩" title="情绪拼图" subtitle="今天的情绪由哪些拼图组成？" />
+      <div className="grid grid-cols-3 gap-2">
+        {PUZZLE_PIECES.map(pp => (
+          <button key={pp.label} onClick={() => toggle(pp)}
+            className={`p-3 rounded-xl text-center transition ${pieces.includes(pp.label) ? 'bg-purple-200 ring-2 ring-purple-400 scale-105' : 'bg-white shadow'}`}>
+            <p className="text-2xl">{pp.emoji}</p>
+            <p className="text-xs font-bold">{pp.label}</p>
+          </button>
+        ))}
+      </div>
+      {pieces.length > 0 && (
+        <div className="bg-white rounded-xl p-4 shadow space-y-3">
+          <p className="font-bold text-purple-600 text-sm">每个拼图占多大？（点击调整大小）</p>
+          {pieces.map(p => {
+            const pp = PUZZLE_PIECES.find(x => x.label === p);
+            const size = sizes[p] || 1;
+            return (
+              <div key={p} className="flex items-center gap-2">
+                <span>{pp?.emoji}</span>
+                <span className="text-sm font-bold flex-1">{p}</span>
+                {[1,2,3].map(s => (
+                  <button key={s} onClick={() => setSizes(prev => ({ ...prev, [p]: s }))}
+                    className={`w-8 h-8 rounded-full text-xs font-bold ${size === s ? 'bg-purple-400 text-white' : 'bg-gray-200'}`}>{s === 1 ? '小' : s === 2 ? '中' : '大'}</button>
+                ))}
+              </div>
+            );
+          })}
+          <button onClick={() => { onSave({ pieces, sizes: { ...sizes }, date: todayStr() }); setPieces([]); setSizes({}); }}
+            className="w-full py-3 bg-gradient-to-r from-purple-400 to-pink-400 text-white rounded-xl font-bold">
+            完成拼图 🧩
+          </button>
+        </div>
+      )}
+      {puzzles.length > 0 && pieces.length === 0 && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-gray-700 mb-2">拼图记录 ({puzzles.length}天)</p>
+          {puzzles.slice(-3).reverse().map((p, i) => (
+            <p key={i} className="text-sm py-1 border-b last:border-0 text-gray-600">🧩 {p.pieces.join('、')}</p>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Worry Timer ────────────────────────────────────────────────────────────
+function WorryTimerPage({ logs, onSave, onBack }) {
+  const [worry, setWorry] = useState('');
+  const [timer, setTimer] = useState(300);
+  const [running, setRunning] = useState(false);
+  const [done, setDone] = useState(false);
+  useEffect(() => {
+    if (!running || timer <= 0) return;
+    const id = setTimeout(() => {
+      setTimer(t => t - 1);
+      if (timer === 1) { setRunning(false); setDone(true); }
+    }, 1000);
+    return () => clearTimeout(id);
+  }, [running, timer]);
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="⏰" title="烦恼计时器" subtitle="5分钟烦恼时间，然后停！" />
+      {!running && !done ? (
+        <div className="bg-white rounded-xl p-4 shadow space-y-3">
+          <div className="bg-yellow-50 rounded-lg p-3">
+            {WORRY_TIMER_RULES.map((r, i) => (
+              <p key={i} className="text-sm text-yellow-700">• {r}</p>
+            ))}
+          </div>
+          <textarea placeholder="你在担心什么？（写出来让它有个地方待）" value={worry}
+            onChange={e => setWorry(e.target.value)} className="w-full border rounded-lg px-3 py-2 text-sm" rows={3} />
+          {worry.trim() && (
+            <button onClick={() => { setRunning(true); setTimer(300); }}
+              className="w-full py-3 bg-gradient-to-r from-yellow-400 to-orange-400 text-white rounded-xl font-bold">
+              开始5分钟烦恼时间 ⏰
+            </button>
+          )}
+        </div>
+      ) : running ? (
+        <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-xl p-8 shadow text-center space-y-4">
+          <p className="text-sm text-gray-600">烦恼时间进行中…尽管担心</p>
+          <p className="text-5xl font-bold text-orange-500">{Math.floor(timer / 60)}:{String(timer % 60).padStart(2, '0')}</p>
+          <div className="w-full bg-gray-200 rounded-full h-3">
+            <div className="bg-orange-400 h-3 rounded-full transition-all" style={{ width: `${((300 - timer) / 300) * 100}%` }} />
+          </div>
+          <p className="text-gray-500 text-sm">"{worry}"</p>
+        </div>
+      ) : (
+        <div className="bg-gradient-to-br from-green-100 to-emerald-100 rounded-xl p-6 shadow text-center space-y-3">
+          <p className="text-5xl">🛑</p>
+          <p className="font-bold text-green-700 text-lg">时间到！烦恼时间结束了</p>
+          <p className="text-gray-600">把烦恼留在这里，去做别的事吧。如果它又来了，告诉自己："明天还有烦恼时间。"</p>
+          <button onClick={() => { onSave({ worry: worry.trim(), date: todayStr() }); setDone(false); setWorry(''); }}
+            className="px-6 py-2 bg-green-400 text-white rounded-xl font-bold">完成 ✨</button>
+        </div>
+      )}
+      {logs.length > 0 && !running && !done && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-gray-700">使用了 {logs.length} 次烦恼计时器</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Emotion Subtitles ──────────────────────────────────────────────────────
+function EmotionSubtitlesPage({ entries, onSave, onBack }) {
+  const [sceneIdx, setSceneIdx] = useState(null);
+  const [subs, setSubs] = useState({});
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="💬" title="情绪字幕" subtitle="给真实场景写上情绪字幕" />
+      {sceneIdx === null ? (
+        <div className="space-y-3">
+          {SUBTITLE_SCENES.map((ss, i) => (
+            <button key={i} onClick={() => setSceneIdx(i)}
+              className="w-full bg-white rounded-xl p-4 shadow flex items-center gap-3 hover:scale-102 transition">
+              <span className="text-3xl">{ss.emoji}</span>
+              <p className="font-bold text-gray-800 text-sm text-left">{ss.scene}</p>
+            </button>
+          ))}
+        </div>
+      ) : (
+        <div className="space-y-4">
+          <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-4 shadow text-center">
+            <p className="text-2xl">{SUBTITLE_SCENES[sceneIdx].emoji}</p>
+            <p className="font-bold text-gray-800 mt-1">{SUBTITLE_SCENES[sceneIdx].scene}</p>
+          </div>
+          {SUBTITLE_SCENES[sceneIdx].characters.map((ch, ci) => (
+            <div key={ci} className="bg-white rounded-xl p-4 shadow">
+              <p className="font-bold text-gray-700 text-sm">{ch.name}的字幕：<span className="text-gray-400 font-normal">{ch.hint}</span></p>
+              <input type="text" placeholder="写下你觉得的字幕…" value={subs[ch.name] || ''}
+                onChange={e => setSubs(prev => ({ ...prev, [ch.name]: e.target.value }))}
+                className="w-full border rounded-lg px-3 py-2 text-sm mt-1" />
+            </div>
+          ))}
+          {SUBTITLE_SCENES[sceneIdx].characters.every(ch => subs[ch.name]?.trim()) && (
+            <button onClick={() => {
+              onSave({ scene: SUBTITLE_SCENES[sceneIdx].scene, subs: { ...subs }, date: todayStr() });
+              setSceneIdx(null); setSubs({});
+            }} className="w-full py-3 bg-gradient-to-r from-blue-400 to-purple-400 text-white rounded-xl font-bold">
+              保存字幕 💬
+            </button>
+          )}
+          <button onClick={() => { setSceneIdx(null); setSubs({}); }} className="w-full py-2 text-gray-500 text-sm">返回</button>
+        </div>
+      )}
+      {entries.length > 0 && sceneIdx === null && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-gray-700">写了 {entries.length} 个场景的字幕</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Calm Jar Timer ─────────────────────────────────────────────────────────
+function CalmJarTimerPage({ logs, onSave, onBack }) {
+  const [phase, setPhase] = useState('ready');
+  const [settling, setSettling] = useState(100);
+  const [color] = useState(() => CALM_JAR_COLORS[Math.floor(Math.random() * CALM_JAR_COLORS.length)]);
+  useEffect(() => {
+    if (phase !== 'settling' || settling <= 0) return;
+    const id = setTimeout(() => {
+      setSettling(s => s - 1);
+      if (settling <= 1) setPhase('settled');
+    }, 1800);
+    return () => clearTimeout(id);
+  }, [phase, settling]);
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🫧" title="安静瓶计时器" subtitle="摇一摇，然后安静看着它沉淀" />
+      {phase === 'ready' && (
+        <div className="text-center space-y-4">
+          <div className="w-32 h-48 rounded-2xl mx-auto border-4 border-gray-300 bg-gradient-to-b from-white to-blue-50 flex items-center justify-center">
+            <p className="text-5xl">🫧</p>
+          </div>
+          <button onClick={() => { setPhase('shaking'); setTimeout(() => { setPhase('settling'); setSettling(100); }, 2000); }}
+            className="px-8 py-3 bg-gradient-to-r from-purple-400 to-pink-400 text-white rounded-xl font-bold text-lg">
+            摇一摇 🫧
+          </button>
+        </div>
+      )}
+      {phase === 'shaking' && (
+        <div className="text-center space-y-4 animate-pulse">
+          <div className="w-32 h-48 rounded-2xl mx-auto border-4 border-gray-300 flex items-center justify-center" style={{ backgroundColor: color + '40' }}>
+            <p className="text-4xl">🌪️</p>
+          </div>
+          <p className="text-gray-600">摇晃中…</p>
+        </div>
+      )}
+      {(phase === 'settling' || phase === 'settled') && (
+        <div className="text-center space-y-4">
+          <div className="w-32 h-48 rounded-2xl mx-auto border-4 border-gray-300 relative overflow-hidden bg-white">
+            <div className="absolute bottom-0 w-full transition-all duration-1000 rounded-b-xl" style={{ height: `${100 - settling}%`, backgroundColor: color + '60' }} />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <p className="text-3xl">{phase === 'settled' ? '✨' : '🫧'}</p>
+            </div>
+          </div>
+          <p className="text-gray-600">{phase === 'settled' ? '沉淀好了。你的心也平静了吗？' : '安静地看着…慢慢呼吸…'}</p>
+          {phase === 'settled' && (
+            <button onClick={() => { onSave({ date: todayStr() }); setPhase('ready'); }}
+              className="px-6 py-2 bg-green-400 text-white rounded-xl font-bold">完成 ✨</button>
+          )}
+        </div>
+      )}
+      {logs.length > 0 && phase === 'ready' && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-gray-700">安静了 {logs.length} 次 🫧</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Kind Inner Voice ───────────────────────────────────────────────────────
+function KindInnerVoicePage({ logs, onSave, onBack }) {
+  const [idx, setIdx] = useState(null);
+  const [voice, setVoice] = useState(null);
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🗣️" title="善良内心声音" subtitle="用温柔替代苛刻" />
+      {idx === null ? (
+        <div className="space-y-3">
+          <p className="text-center text-gray-600">你脑海里有没有这样的声音？</p>
+          {HARSH_THOUGHTS.map((ht, i) => (
+            <button key={i} onClick={() => setIdx(i)}
+              className="w-full bg-red-50 rounded-xl p-4 shadow text-left hover:scale-102 transition">
+              <p className="text-red-500 font-bold">🗯️ "{ht.harsh}"</p>
+            </button>
+          ))}
+        </div>
+      ) : (
+        <div className="space-y-4">
+          <div className="bg-red-50 rounded-xl p-4 text-center">
+            <p className="text-red-400 text-sm">苛刻的声音说：</p>
+            <p className="text-red-600 font-bold line-through">"{HARSH_THOUGHTS[idx].harsh}"</p>
+          </div>
+          <p className="text-center font-bold text-gray-700">换一个温柔的声音：</p>
+          <button onClick={() => setVoice('friend')}
+            className={`w-full p-4 rounded-xl text-left transition ${voice === 'friend' ? 'bg-green-100 ring-2 ring-green-400' : 'bg-white shadow'}`}>
+            <p className="text-sm text-green-600 font-bold">👫 好朋友会说：</p>
+            <p className="text-gray-700">"{HARSH_THOUGHTS[idx].friend}"</p>
+          </button>
+          <button onClick={() => setVoice('teacher')}
+            className={`w-full p-4 rounded-xl text-left transition ${voice === 'teacher' ? 'bg-blue-100 ring-2 ring-blue-400' : 'bg-white shadow'}`}>
+            <p className="text-sm text-blue-600 font-bold">👩‍🏫 温柔的老师会说：</p>
+            <p className="text-gray-700">"{HARSH_THOUGHTS[idx].teacher}"</p>
+          </button>
+          <button onClick={() => setVoice('future')}
+            className={`w-full p-4 rounded-xl text-left transition ${voice === 'future' ? 'bg-purple-100 ring-2 ring-purple-400' : 'bg-white shadow'}`}>
+            <p className="text-sm text-purple-600 font-bold">🔮 未来的你会说：</p>
+            <p className="text-gray-700">"{HARSH_THOUGHTS[idx].future}"</p>
+          </button>
+          {voice && (
+            <button onClick={() => {
+              onSave({ harsh: HARSH_THOUGHTS[idx].harsh, voice, date: todayStr() });
+              setIdx(null); setVoice(null);
+            }} className="w-full py-3 bg-gradient-to-r from-green-400 to-emerald-400 text-white rounded-xl font-bold">
+              记住温柔的声音 💚
+            </button>
+          )}
+        </div>
+      )}
+      {logs.length > 0 && idx === null && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-green-700 mb-2">替换了 {logs.length} 个苛刻声音</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Body Comfort Scan ──────────────────────────────────────────────────────
+function BodyComfortScanPage({ logs, onSave, onBack }) {
+  const [step, setStep] = useState(0);
+  const [done, setDone] = useState(false);
+  const part = COMFORT_BODY_PARTS[step];
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🫂" title="身体安慰扫描" subtitle="给身体每个部分送去温暖" />
+      {!done ? (
+        <div className="space-y-4">
+          <div className="flex justify-center gap-2">
+            {COMFORT_BODY_PARTS.map((_, i) => (
+              <div key={i} className={`w-6 h-6 rounded-full text-xs flex items-center justify-center font-bold ${i < step ? 'bg-green-400 text-white' : i === step ? 'bg-pink-400 text-white' : 'bg-gray-200'}`}>
+                {i < step ? '✓' : i + 1}
+              </div>
+            ))}
+          </div>
+          <div className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-xl p-6 shadow text-center space-y-3">
+            <p className="text-4xl">{part.emoji}</p>
+            <p className="font-bold text-gray-800 text-lg">{part.part}</p>
+            <p className="text-gray-600">{part.comfort}</p>
+          </div>
+          <button onClick={() => {
+            if (step < COMFORT_BODY_PARTS.length - 1) setStep(s => s + 1);
+            else setDone(true);
+          }} className="w-full py-3 bg-gradient-to-r from-pink-400 to-purple-400 text-white rounded-xl font-bold">
+            {step < COMFORT_BODY_PARTS.length - 1 ? '下一个部位 →' : '完成扫描 ✨'}
+          </button>
+        </div>
+      ) : (
+        <div className="bg-gradient-to-br from-pink-100 to-purple-100 rounded-xl p-6 shadow text-center space-y-3">
+          <p className="text-5xl">🫂</p>
+          <p className="font-bold text-purple-700 text-lg">全身安慰完成！</p>
+          <p className="text-gray-600">你给身体的每个部分都送去了温暖。</p>
+          <button onClick={() => { onSave({ date: todayStr() }); setStep(0); setDone(false); }}
+            className="px-6 py-2 bg-purple-400 text-white rounded-xl font-bold">完成 ✨</button>
+        </div>
+      )}
+      {logs.length > 0 && !done && step === 0 && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-gray-700">安慰了 {logs.length} 次身体 🫂</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Emotion Weather Vane ───────────────────────────────────────────────────
+function EmotionWeatherVanePage({ logs, onSave, onBack }) {
+  const [selected, setSelected] = useState(null);
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🌬️" title="情绪风向标" subtitle="风吹向哪里？顺着它走" />
+      <div className="bg-gradient-to-b from-blue-50 to-white rounded-xl p-6 shadow text-center">
+        <p className="text-6xl">{selected ? selected.emoji : '🌬️'}</p>
+        <p className="text-gray-500 text-sm mt-2">{selected ? `风向：${selected.direction} — ${selected.emotion}` : '选择你的情绪风向'}</p>
+      </div>
+      <div className="grid grid-cols-3 gap-2">
+        {VANE_DIRECTIONS.map(vd => (
+          <button key={vd.emotion} onClick={() => setSelected(vd)}
+            className={`p-3 rounded-xl text-center transition ${selected?.emotion === vd.emotion ? 'bg-blue-200 ring-2 ring-blue-400' : 'bg-white shadow'}`}>
+            <p className="text-xl">{vd.emoji}</p>
+            <p className="text-xs font-bold">{vd.emotion}</p>
+          </button>
+        ))}
+      </div>
+      {selected && (
+        <div className="bg-blue-50 rounded-xl p-4 shadow">
+          <p className="text-blue-700 font-bold text-sm">🌬️ {selected.advice}</p>
+        </div>
+      )}
+      {selected && (
+        <button onClick={() => { onSave({ emotion: selected.emotion, direction: selected.direction, date: todayStr() }); setSelected(null); }}
+          className="w-full py-3 bg-gradient-to-r from-blue-400 to-cyan-400 text-white rounded-xl font-bold">
+          记录风向 🌬️
+        </button>
+      )}
+      {logs.length > 0 && !selected && (
+        <div className="bg-white rounded-xl p-4 shadow">
+          <p className="font-bold text-gray-700 mb-2">风向记录 ({logs.length})</p>
+          <div className="flex gap-2">
+            {logs.slice(-7).map((l, i) => <span key={i} className="text-xl" title={l.emotion}>{VANE_DIRECTIONS.find(v => v.emotion === l.emotion)?.emoji || '🌬️'}</span>)}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Victory Vault ──────────────────────────────────────────────────────────
+function VictoryVaultPage({ victories, onAdd, onBack }) {
+  const [desc, setDesc] = useState('');
+  const [level, setLevel] = useState(null);
+  const [cracked, setCracked] = useState(null);
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🏆" title="胜利金库" subtitle="你的最伟大时刻，安全保管" />
+      <div className="bg-white rounded-xl p-4 shadow space-y-3">
+        <input type="text" placeholder="你的胜利是什么？" value={desc}
+          onChange={e => setDesc(e.target.value)} className="w-full border rounded-lg px-3 py-2 text-sm" />
+        <div className="flex gap-2">
+          {VAULT_LEVELS.map(vl => (
+            <button key={vl.level} onClick={() => setLevel(vl)}
+              className={`flex-1 p-3 rounded-xl text-center transition ${level?.level === vl.level ? vl.color + ' ring-2 ring-gray-400' : 'bg-gray-50'}`}>
+              <p className="text-xl">{vl.emoji}</p>
+              <p className="text-xs font-bold">{vl.label}</p>
+            </button>
+          ))}
+        </div>
+        {desc.trim() && level && (
+          <button onClick={() => { onAdd({ desc: desc.trim(), level: level.level, emoji: level.emoji, date: todayStr() }); setDesc(''); setLevel(null); }}
+            className="w-full py-3 bg-gradient-to-r from-yellow-400 to-amber-400 text-white rounded-xl font-bold">
+            存入金库 🔐
+          </button>
+        )}
+      </div>
+      {victories.length > 0 && (
+        <div className="space-y-2">
+          <div className="flex justify-between items-center">
+            <p className="font-bold text-amber-700">金库 ({victories.length}项)</p>
+            <button onClick={() => setCracked(victories[Math.floor(Math.random() * victories.length)])}
+              className="px-3 py-1 bg-amber-400 text-white rounded-lg text-sm font-bold">打开金库 🔓</button>
+          </div>
+          {cracked && (
+            <div className="bg-gradient-to-br from-yellow-100 to-amber-100 rounded-xl p-5 shadow text-center space-y-2">
+              <p className="text-3xl">{cracked.emoji}</p>
+              <p className="font-bold text-amber-800 text-lg">"{cracked.desc}"</p>
+              <button onClick={() => setCracked(null)} className="text-sm text-amber-500 underline">关闭</button>
+            </div>
+          )}
+          {!cracked && victories.slice(-5).reverse().map((v, i) => (
+            <div key={i} className={`${VAULT_LEVELS.find(l => l.level === v.level)?.color || 'bg-gray-100'} rounded-lg p-3 flex items-center gap-2`}>
+              <span>{v.emoji}</span>
+              <span className="text-sm text-gray-800">{v.desc}</span>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Emotion Stamps Passport ────────────────────────────────────────────────
+function EmotionStampsPage({ stamps, onStamp, onBack }) {
+  const [emotion, setEmotion] = useState(null);
+  const [note, setNote] = useState('');
+  const collected = stamps.map(s => s.emotion);
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="📕" title="情绪护照" subtitle="收集每种情绪的印章" />
+      <div className="bg-gradient-to-br from-blue-900 to-indigo-900 rounded-xl p-4 shadow">
+        <p className="text-center text-yellow-300 font-bold mb-2">🛂 我的情绪护照</p>
+        <div className="grid grid-cols-4 gap-2">
+          {PASSPORT_EMOTIONS.map(pe => {
+            const hasStamp = collected.includes(pe.label);
+            return (
+              <button key={pe.label} onClick={() => setEmotion(pe)}
+                className={`p-2 rounded-lg text-center ${hasStamp ? 'bg-green-800 bg-opacity-50' : 'bg-white bg-opacity-10'}`}>
+                <p className="text-xl">{pe.emoji}</p>
+                <p className="text-xs text-white">{pe.label}</p>
+                {hasStamp && <p className="text-green-300 text-xs">✓</p>}
+              </button>
+            );
+          })}
+        </div>
+        <p className="text-center text-yellow-200 text-xs mt-2">{collected.length}/{PASSPORT_EMOTIONS.length} 个国家已盖章</p>
+      </div>
+      {emotion && (
+        <div className="bg-white rounded-xl p-4 shadow space-y-3">
+          <p className="font-bold text-gray-700">{emotion.emoji} 你什么时候感到了{emotion.label.replace('国', '')}？</p>
+          <input type="text" placeholder="简单描述一下…" value={note}
+            onChange={e => setNote(e.target.value)} className="w-full border rounded-lg px-3 py-2 text-sm" />
+          {note.trim() && (
+            <button onClick={() => { onStamp({ emotion: emotion.label, emoji: emotion.emoji, note: note.trim(), date: todayStr() }); setEmotion(null); setNote(''); }}
+              className="w-full py-2 bg-gradient-to-r from-indigo-400 to-purple-400 text-white rounded-xl font-bold">
+              盖章！📕
+            </button>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Safe Space Visualizer ──────────────────────────────────────────────────
+function SafeSpaceVisualizerPage({ spaces, onSave, onBack }) {
+  const [name, setName] = useState('');
+  const [senses, setSenses] = useState({});
+  const allFilled = SAFE_SPACE_PROMPTS.every((_, i) => senses[i]?.trim());
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🏠" title="安全空间想象" subtitle="闭上眼，建造你的安全地方" />
+      <div className="bg-white rounded-xl p-4 shadow space-y-3">
+        <input type="text" placeholder="给你的安全空间起个名字" value={name}
+          onChange={e => setName(e.target.value)} className="w-full border rounded-lg px-3 py-2 text-sm font-bold" />
+        {SAFE_SPACE_PROMPTS.map((sp, i) => (
+          <div key={i}>
+            <p className="text-sm font-bold text-gray-600">{sp.emoji} {sp.sense}</p>
+            <input type="text" placeholder={sp.placeholder} value={senses[i] || ''}
+              onChange={e => setSenses(prev => ({ ...prev, [i]: e.target.value }))}
+              className="w-full border rounded-lg px-3 py-2 text-sm mt-1" />
+          </div>
+        ))}
+      </div>
+      {name.trim() && allFilled && (
+        <button onClick={() => { onSave({ name: name.trim(), senses: { ...senses }, date: todayStr() }); setName(''); setSenses({}); }}
+          className="w-full py-3 bg-gradient-to-r from-blue-400 to-purple-400 text-white rounded-xl font-bold">
+          保存安全空间 🏠
+        </button>
+      )}
+      {spaces.length > 0 && (
+        <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-4 shadow">
+          <p className="font-bold text-gray-700 mb-2">我的安全空间 ({spaces.length}个)</p>
+          {spaces.slice(-2).reverse().map((s, i) => (
+            <div key={i} className="py-2 border-b last:border-0">
+              <p className="font-bold text-blue-700">🏠 {s.name}</p>
+              {SAFE_SPACE_PROMPTS.map((sp, j) => (
+                <p key={j} className="text-xs text-gray-600">{sp.emoji} {s.senses[j]}</p>
+              ))}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 // ─── Main App ────────────────────────────────────────────────────────────────
 
 export default function HealingKidsApp() {
@@ -13269,6 +13879,16 @@ export default function HealingKidsApp() {
   const [firstAidLogs, setFirstAidLogs] = useState([]);
   const [treasureHunts, setTreasureHunts] = useState([]);
   const [memoryPlaylists, setMemoryPlaylists] = useState([]);
+  const [emotionPuzzles, setEmotionPuzzles] = useState([]);
+  const [worryTimerLogs, setWorryTimerLogs] = useState([]);
+  const [subtitleEntries, setSubtitleEntries] = useState([]);
+  const [calmJarLogs, setCalmJarLogs] = useState([]);
+  const [kindVoiceLogs, setKindVoiceLogs] = useState([]);
+  const [comfortScanLogs, setComfortScanLogs] = useState([]);
+  const [weatherVaneLogs, setWeatherVaneLogs] = useState([]);
+  const [victoryVault, setVictoryVault] = useState([]);
+  const [emotionStamps, setEmotionStamps] = useState([]);
+  const [safeSpaces, setSafeSpaces] = useState([]);
 
   useEffect(() => {
     const saved = loadState();
@@ -13442,6 +14062,16 @@ export default function HealingKidsApp() {
       setFirstAidLogs(saved.firstAidLogs || []);
       setTreasureHunts(saved.treasureHunts || []);
       setMemoryPlaylists(saved.memoryPlaylists || []);
+      setEmotionPuzzles(saved.emotionPuzzles || []);
+      setWorryTimerLogs(saved.worryTimerLogs || []);
+      setSubtitleEntries(saved.subtitleEntries || []);
+      setCalmJarLogs(saved.calmJarLogs || []);
+      setKindVoiceLogs(saved.kindVoiceLogs || []);
+      setComfortScanLogs(saved.comfortScanLogs || []);
+      setWeatherVaneLogs(saved.weatherVaneLogs || []);
+      setVictoryVault(saved.victoryVault || []);
+      setEmotionStamps(saved.emotionStamps || []);
+      setSafeSpaces(saved.safeSpaces || []);
     }
     setHydrated(true);
   }, []);
@@ -13481,6 +14111,8 @@ export default function HealingKidsApp() {
       compassionLetters, moodRingChecks, spyMissions, freezeDanceLogs, growthRings,
       elevatorLogs, rebootLogs, complimentCatches, worryWeights, colorBreathLogs,
       decodedStrengths, dashboardReadings, firstAidLogs, treasureHunts, memoryPlaylists,
+      emotionPuzzles, worryTimerLogs, subtitleEntries, calmJarLogs, kindVoiceLogs,
+      comfortScanLogs, weatherVaneLogs, victoryVault, emotionStamps, safeSpaces,
       lastDate: todayStr()
     });
   }, [mood, dailyProgress, points, streak, journalEntries, moodHistory,
@@ -13514,7 +14146,9 @@ export default function HealingKidsApp() {
       chameleonLogs, shredderLogs, spotterLogs, oneMinLogs, forecastJournal,
       compassionLetters, moodRingChecks, spyMissions, freezeDanceLogs, growthRings,
       elevatorLogs, rebootLogs, complimentCatches, worryWeights, colorBreathLogs,
-      decodedStrengths, dashboardReadings, firstAidLogs, treasureHunts, memoryPlaylists, hydrated]);
+      decodedStrengths, dashboardReadings, firstAidLogs, treasureHunts, memoryPlaylists,
+      emotionPuzzles, worryTimerLogs, subtitleEntries, calmJarLogs, kindVoiceLogs,
+      comfortScanLogs, weatherVaneLogs, victoryVault, emotionStamps, safeSpaces, hydrated]);
 
   const completeActivity = useCallback((activityId) => {
     setDailyProgress(prev => {
@@ -14522,6 +15156,56 @@ export default function HealingKidsApp() {
         {currentPage === 'memoryplaylist' && (
           <MemoryPlaylistPage playlists={memoryPlaylists}
             onSave={p => { setMemoryPlaylists(prev => [...prev.slice(-20), p]); setPoints(p2 => p2 + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'emotionpuzzle' && (
+          <EmotionPuzzlePage puzzles={emotionPuzzles}
+            onSave={p => { setEmotionPuzzles(prev => [...prev.slice(-30), p]); setPoints(pts => pts + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'worrytimer' && (
+          <WorryTimerPage logs={worryTimerLogs}
+            onSave={l => { setWorryTimerLogs(prev => [...prev.slice(-30), l]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'emotionsubtitles' && (
+          <EmotionSubtitlesPage entries={subtitleEntries}
+            onSave={e => { setSubtitleEntries(prev => [...prev.slice(-30), e]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'calmjar' && (
+          <CalmJarTimerPage logs={calmJarLogs}
+            onSave={l => { setCalmJarLogs(prev => [...prev.slice(-50), l]); setPoints(p => p + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'kindinnervoice' && (
+          <KindInnerVoicePage logs={kindVoiceLogs}
+            onSave={l => { setKindVoiceLogs(prev => [...prev.slice(-30), l]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'bodycomfortscan' && (
+          <BodyComfortScanPage logs={comfortScanLogs}
+            onSave={l => { setComfortScanLogs(prev => [...prev.slice(-30), l]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'weathervane' && (
+          <EmotionWeatherVanePage logs={weatherVaneLogs}
+            onSave={l => { setWeatherVaneLogs(prev => [...prev.slice(-30), l]); setPoints(p => p + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'victoryvault' && (
+          <VictoryVaultPage victories={victoryVault}
+            onAdd={v => { setVictoryVault(prev => [...prev.slice(-50), v]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'emotionstamps' && (
+          <EmotionStampsPage stamps={emotionStamps}
+            onStamp={s => { setEmotionStamps(prev => [...prev.slice(-50), s]); setPoints(p => p + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'safespacevisualizer' && (
+          <SafeSpaceVisualizerPage spaces={safeSpaces}
+            onSave={s => { setSafeSpaces(prev => [...prev.slice(-10), s]); setPoints(p => p + 15); }}
             onBack={goTools} />
         )}
 
