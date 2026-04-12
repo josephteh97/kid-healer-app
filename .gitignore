@@ -11,10 +11,16 @@ builds/
 # Claude Code
 .claude/
 
+# Expo
+.expo/
+
 # Capacitor
 android/
 ios/
 .capacitor/
+
+# Old nested project
+kid-healer-app/
 
 # IDE
 .vscode/
