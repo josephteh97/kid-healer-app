@@ -1017,7 +1017,6 @@ const TOOL_PAGES = [
   { id: 'thoughtscientist', emoji: '🧪', title: '小小思维科学家', color: 'from-violet-100 to-purple-100', desc: '检验负面想法' },
   { id: 'microjoy', emoji: '🌱', title: '微幸福捕手', color: 'from-lime-100 to-green-100', desc: '捕捉小美好' },
   { id: 'connectionritual', emoji: '🔗', title: '联结仪式', color: 'from-rose-100 to-pink-100', desc: '每天一个联结' },
-  // Batch 24
   { id: 'externalizer', emoji: '🦹', title: '问题驯服师', color: 'from-red-100 to-orange-100', desc: '给烦恼起名字' },
   { id: 'permadiary', emoji: '⭐', title: '幸福五维日记', color: 'from-yellow-100 to-green-100', desc: 'PERMA幸福感' },
   { id: 'ambivalence', emoji: '🌀', title: '心里的两个声音', color: 'from-blue-100 to-purple-100', desc: '探索内心纠结' },
@@ -14685,10 +14684,13 @@ function LeafStreamPage({ logs, onSave, onBack }) {
   const [phase, setPhase] = useState('write');
   const [thought, setThought] = useState('');
   const [reflection, setReflection] = useState('');
+  const timerRef = useRef(null);
+
+  useEffect(() => () => clearTimeout(timerRef.current), []);
 
   const startFloat = () => {
     setPhase('float');
-    setTimeout(() => setPhase('reflect'), 3000);
+    timerRef.current = setTimeout(() => setPhase('reflect'), 3000);
   };
 
   const reset = () => { setPhase('write'); setThought(''); setReflection(''); };
@@ -14878,7 +14880,7 @@ function WiseMindPage({ logs, onSave, onBack }) {
         <PageHeader emoji="🧠" title="智慧思维" subtitle="你找到了你的智慧脑答案！" />
         <div className="space-y-3">
           {WISE_MIND_STEPS.map((s, i) => (
-            <div key={i} className={`rounded-xl p-4 shadow-sm ${i === 3 ? 'bg-indigo-50 border-2 border-indigo-200' : 'bg-white'}`}>
+            <div key={i} className={`rounded-xl p-4 shadow-sm ${i === WISE_MIND_STEPS.length - 1 ? 'bg-indigo-50 border-2 border-indigo-200' : 'bg-white'}`}>
               <div className="text-sm font-semibold text-indigo-600 mb-1">{s.label}</div>
               <div className="text-gray-700">{data[WISE_MIND_KEYS[i]]}</div>
             </div>
@@ -15035,10 +15037,10 @@ function CoreBeliefLabPage({ logs, onSave, onBack }) {
   const [evidence, setEvidence] = useState('');
   const [activeBelief, setActiveBelief] = useState('');
 
-  const byBelief = logs.reduce((acc, l) => {
+  const byBelief = useMemo(() => logs.reduce((acc, l) => {
     (acc[l.belief] = acc[l.belief] || []).push(l);
     return acc;
-  }, {});
+  }, {}), [logs]);
 
   if (activeBelief) {
     return (
