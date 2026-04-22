@@ -1006,7 +1006,17 @@ const TOOL_PAGES = [
   { id: 'weathervane', emoji: '🌬️', title: '情绪风向标', color: 'from-blue-100 to-cyan-100', desc: '顺风而行' },
   { id: 'victoryvault', emoji: '🏆', title: '胜利金库', color: 'from-yellow-100 to-amber-100', desc: '最伟大时刻' },
   { id: 'emotionstamps', emoji: '📕', title: '情绪护照', color: 'from-indigo-100 to-purple-100', desc: '收集印章' },
-  { id: 'safespacevisualizer', emoji: '🏠', title: '安全空间想象', color: 'from-blue-100 to-purple-100', desc: '四感建造' }
+  { id: 'safespacevisualizer', emoji: '🏠', title: '安全空间想象', color: 'from-blue-100 to-purple-100', desc: '四感建造' },
+  { id: 'emotionsurf', emoji: '🌊', title: '情绪冲浪', color: 'from-blue-100 to-cyan-100', desc: '观察情绪消退' },
+  { id: 'futureselfletter', emoji: '📮', title: '未来自己的信', color: 'from-purple-100 to-pink-100', desc: '穿越时间写信' },
+  { id: 'resilienceblueprint', emoji: '🏗️', title: '韧性蓝图', color: 'from-amber-100 to-yellow-100', desc: '你的弹回配方' },
+  { id: 'emotiontheater', emoji: '🎭', title: '情绪使命剧场', color: 'from-orange-100 to-yellow-100', desc: '每种情绪有工作' },
+  { id: 'energymood', emoji: '⚡', title: '能量心情追踪', color: 'from-yellow-100 to-blue-100', desc: '能量与心情关系' },
+  { id: 'kindmirror', emoji: '🪞', title: '善良镜子', color: 'from-pink-100 to-rose-100', desc: '温柔看见自己' },
+  { id: 'valuesaction', emoji: '🎯', title: '价值观小行动', color: 'from-emerald-100 to-green-100', desc: '活出重要的事' },
+  { id: 'thoughtscientist', emoji: '🧪', title: '小小思维科学家', color: 'from-violet-100 to-purple-100', desc: '检验负面想法' },
+  { id: 'microjoy', emoji: '🌱', title: '微幸福捕手', color: 'from-lime-100 to-green-100', desc: '捕捉小美好' },
+  { id: 'connectionritual', emoji: '🔗', title: '联结仪式', color: 'from-rose-100 to-pink-100', desc: '每天一个联结' }
 ];
 
 // ─── Social Skills Role-Play ────────────────────────────────────────────────
@@ -13696,6 +13706,615 @@ function SafeSpaceVisualizerPage({ spaces, onSave, onBack }) {
   );
 }
 
+// ─── Batch 23 Constants ──────────────────────────────────────────────────────
+
+const WAVE_STAGES_B23 = [
+  { label: '平静', pct: 8 }, { label: '察觉', pct: 28 }, { label: '上升', pct: 60 },
+  { label: '顶峰', pct: 90 }, { label: '下降', pct: 58 }, { label: '平息', pct: 22 }, { label: '消散', pct: 5 }
+];
+
+const FUTURE_SELF_STEPS = [
+  { label: '对现在的我说', placeholder: '亲爱的现在的我，关于这段时光，我想告诉你...' },
+  { label: '这段时光教会了我', placeholder: '经历了这些，我学到了...' },
+  { label: '请记得这一点', placeholder: '无论什么时候，都请记得...' },
+  { label: '给今天的你一份希望', placeholder: '今天，希望你...' },
+];
+
+const RESILIENCE_QS = [
+  { q: '我曾经度过的一次困难是...', emoji: '🌊' },
+  { q: '帮我度过那段时光的方法是...', emoji: '🛶' },
+  { q: '当时支持我的人或事物是...', emoji: '🤝' },
+  { q: '这件事证明我其实是一个很...的人', emoji: '💪' },
+];
+
+const EMOTION_JOBS = [
+  { emotion: '悲伤', emoji: '😢', role: '雨水清洁师', job: '帮我们清洗内心，为重新开始做准备', color: 'from-blue-100 to-blue-200' },
+  { emotion: '愤怒', emoji: '😡', role: '烟雾警报器', job: '告诉我们有事不公平，需要改变', color: 'from-red-100 to-orange-200' },
+  { emotion: '焦虑', emoji: '😰', role: '安全守护者', job: '担心关心我们，提醒我们注意', color: 'from-purple-100 to-purple-200' },
+  { emotion: '孤独', emoji: '😔', role: '联结向导', job: '提醒我们：关系和归属对我们很重要', color: 'from-indigo-100 to-blue-200' },
+  { emotion: '嫉妒', emoji: '😤', role: '梦想指南针', job: '指向我们内心真正渴望的东西', color: 'from-yellow-100 to-orange-100' },
+  { emotion: '无聊', emoji: '😑', role: '创意催化剂', job: '推动我们去创造和发现新意义', color: 'from-gray-100 to-gray-200' },
+];
+
+const VALUES_B23 = [
+  { v: '家庭', e: '🏡' }, { v: '友谊', e: '🤝' }, { v: '创意', e: '🎨' }, { v: '学习', e: '📚' },
+  { v: '诚实', e: '💎' }, { v: '勇气', e: '🦁' }, { v: '善良', e: '💝' }, { v: '健康', e: '💪' },
+  { v: '快乐', e: '😊' }, { v: '冒险', e: '🌍' }, { v: '自由', e: '🦋' }, { v: '和平', e: '☮️' },
+];
+
+const THOUGHT_SCI_STEPS = [
+  { label: '负面的想法', emoji: '💭', placeholder: '我脑子里出现了这个想法：...' },
+  { label: '支持它的证据', emoji: '✅', placeholder: '让我感觉这个想法是真的，有哪些事？...' },
+  { label: '反对它的证据', emoji: '❌', placeholder: '哪些事情说明这个想法不完全是真的？...' },
+  { label: '更平衡的想法', emoji: '⚖️', placeholder: '考虑了所有证据后，更平衡的看法是：...' },
+];
+
+const MICRO_JOY_CATS = [
+  { cat: '感官美好', emoji: '✨', hint: '温暖阳光、好闻气味、柔软的感觉' },
+  { cat: '小小成功', emoji: '🎯', hint: '做好一件小事、解决了一个小问题' },
+  { cat: '美好联结', emoji: '🌸', hint: '被人微笑、动物路过、别人的友善' },
+  { cat: '自然瞬间', emoji: '🌿', hint: '云朵形状、风的感觉、树叶颜色' },
+];
+
+const CONNECTION_RITUALS_B23 = [
+  { title: '今日笑容', emoji: '😊', action: '给你在意的人发一个微笑或表情包', time: '1分钟', pts: 5 },
+  { title: '感恩留言', emoji: '💌', action: '给帮助过你的人写一句感谢', time: '2分钟', pts: 8 },
+  { title: '安静陪伴', emoji: '🤝', action: '和家人静静坐在一起，不说话也好', time: '5分钟', pts: 10 },
+  { title: '真心询问', emoji: '❓', action: '问一个你在乎的人：你今天还好吗？', time: '2分钟', pts: 8 },
+  { title: '分享发现', emoji: '🔍', action: '把今天觉得有趣的事告诉一个人', time: '3分钟', pts: 8 },
+  { title: '回忆微光', emoji: '💫', action: '和某人聊一个共同的美好回忆', time: '5分钟', pts: 10 },
+];
+
+const KIND_MIRROR_PROMPTS = [
+  '今天，我注意到自己做了一件好事：',
+  '今天，我对别人展示了一种力量或善意：',
+  '今天，我对自己友好或勇敢的地方是：',
+];
+
+// ─── Emotion Wave Surfing ────────────────────────────────────────────────────
+function EmotionSurfPage({ logs, onSave, onBack }) {
+  const [phase, setPhase] = useState('intro');
+  const [emotion, setEmotion] = useState('');
+  const [waveIdx, setWaveIdx] = useState(0);
+  const [secs, setSecs] = useState(0);
+  const [insight, setInsight] = useState('');
+  const SURF_EMOTS = ['悲伤', '焦虑', '愤怒', '孤独', '失望', '担心', '烦躁', '无助'];
+
+  useEffect(() => {
+    if (phase !== 'surf') return;
+    const iv = setInterval(() => {
+      setSecs(s => {
+        const n = s + 1;
+        if (n < 12) setWaveIdx(1);
+        else if (n < 25) setWaveIdx(2);
+        else if (n < 40) setWaveIdx(3);
+        else if (n < 55) setWaveIdx(4);
+        else if (n < 68) setWaveIdx(5);
+        else { setWaveIdx(6); setPhase('done'); }
+        return n;
+      });
+    }, 1000);
+    return () => clearInterval(iv);
+  }, [phase]);
+
+  const ws = WAVE_STAGES_B23[waveIdx] || WAVE_STAGES_B23[0];
+
+  if (phase === 'intro') return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🌊" title="情绪冲浪" subtitle="观察情绪，让它自然消退" />
+      <div className="bg-gradient-to-br from-blue-50 to-cyan-100 rounded-2xl p-5 space-y-3">
+        <p className="font-bold text-blue-800">🏄 冲浪者知道的秘密</p>
+        <p className="text-sm text-gray-700">就像海浪，每种<b>情绪都会升起然后自然消退</b>，只要我们不与它战斗。我们可以像冲浪者，骑上这个浪，直到它平息。</p>
+        <div className="flex justify-around text-center text-xs py-2">
+          <div><div className="text-3xl">🌊</div><p className="mt-1 font-semibold text-gray-600">情绪出现</p></div>
+          <div className="text-gray-300 text-2xl self-center">→</div>
+          <div><div className="text-3xl">🏄</div><p className="mt-1 font-semibold text-gray-600">我来观察</p></div>
+          <div className="text-gray-300 text-2xl self-center">→</div>
+          <div><div className="text-3xl">🌅</div><p className="mt-1 font-semibold text-gray-600">它会消散</p></div>
+        </div>
+      </div>
+      <button onClick={() => setPhase('choose')} className="w-full py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-2xl font-bold text-lg shadow-lg">开始冲浪 🏄</button>
+      {logs.length > 0 && <div className="bg-white rounded-xl p-4 shadow">
+        <p className="font-bold text-sm text-gray-600 mb-2">已冲过 {logs.length} 次浪 🌊</p>
+        {logs.slice(-2).reverse().map((l, i) => <p key={i} className="text-xs text-gray-500">• {l.emotion} — {l.date}</p>)}
+      </div>}
+    </div>
+  );
+
+  if (phase === 'choose') return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={() => setPhase('intro')} />
+      <PageHeader emoji="🎯" title="选一个情绪" subtitle="现在感受到哪种情绪？" />
+      <div className="grid grid-cols-2 gap-3">
+        {SURF_EMOTS.map(e => (
+          <button key={e} onClick={() => { setEmotion(e); setPhase('surf'); setSecs(0); setWaveIdx(0); }}
+            className="py-4 bg-white border-2 border-blue-200 rounded-2xl font-bold text-lg hover:border-blue-500 hover:bg-blue-50 transition">{e}</button>
+        ))}
+      </div>
+    </div>
+  );
+
+  if (phase === 'surf') return (
+    <div className="p-6 space-y-4">
+      <PageHeader emoji="🌊" title={`冲浪：${emotion}`} subtitle="深呼吸，静静观察" />
+      <div className="rounded-3xl overflow-hidden relative" style={{ background: 'linear-gradient(to bottom, #bfdbfe, #2563eb)', minHeight: '200px' }}>
+        <div className="absolute bottom-0 left-0 right-0 transition-all duration-1000" style={{ height: `${ws.pct * 1.5}px`, background: 'rgba(255,255,255,0.25)', borderRadius: '50% 50% 0 0' }} />
+        <div className="relative p-6 text-white text-center space-y-2">
+          <div className="text-5xl">🏄</div>
+          <p className="font-bold text-xl">{ws.label}</p>
+          <div className="w-full bg-white/30 rounded-full h-3">
+            <div className="bg-white rounded-full h-3 transition-all duration-700" style={{ width: `${ws.pct}%` }} />
+          </div>
+          <p className="text-lg font-bold">{Math.max(0, 70 - secs)} 秒</p>
+        </div>
+      </div>
+      <div className="bg-blue-50 rounded-2xl p-4 text-center">
+        {waveIdx <= 1 && <p className="text-sm text-gray-700">📝 注意到这个情绪在这里。不抗拒，只观察。</p>}
+        {waveIdx === 2 && <p className="text-sm text-gray-700">📈 它在增强，这是正常的。你是观察者，不是它。</p>}
+        {waveIdx === 3 && <p className="text-sm text-gray-700">⛰️ 顶峰了。深呼吸。你正在骑上这个浪。</p>}
+        {waveIdx >= 4 && <p className="text-sm text-gray-700">📉 它在消退…就像所有的浪，它会过去的。</p>}
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="p-6 space-y-5">
+      <PageHeader emoji="🌅" title="你冲过了这个浪！" subtitle="情绪升起了，也消退了" />
+      <div className="bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-6 text-center space-y-3">
+        <div className="text-5xl">🏄✨</div>
+        <p className="font-bold text-green-800 text-lg">你证明了：情绪会过去</p>
+        <p className="text-sm text-gray-600">你没有逃跑，没有抗拒，你观察了它，它消退了。</p>
+      </div>
+      <div className="bg-white rounded-xl p-4 shadow space-y-2">
+        <p className="font-bold text-gray-700">你的感悟：</p>
+        <textarea value={insight} onChange={e => setInsight(e.target.value)} placeholder="这次冲浪，我发现..." className="w-full border rounded-lg px-3 py-2 text-sm resize-none" rows={2} />
+      </div>
+      <button onClick={() => { onSave({ emotion, insight, date: todayStr() }); setPhase('intro'); setWaveIdx(0); setInsight(''); setEmotion(''); }}
+        className="w-full py-3 bg-gradient-to-r from-blue-500 to-green-500 text-white rounded-xl font-bold">
+        记录冲浪经历 🌊
+      </button>
+    </div>
+  );
+}
+
+// ─── Future Self Letter ──────────────────────────────────────────────────────
+function FutureSelfLetterPage({ letters, onSave, onBack }) {
+  const [step, setStep] = useState(0);
+  const [answers, setAnswers] = useState({});
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="📮" title="未来自己的信" subtitle="穿越时间给现在的你写信" />
+      <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-4">
+        <p className="text-sm text-gray-700">想象5年后，那个已经渡过困难、更强大更快乐的你，回头看现在的你，会说什么？</p>
+      </div>
+      <div className="bg-white rounded-2xl p-5 shadow space-y-3">
+        <div className="flex gap-1 mb-1">
+          {FUTURE_SELF_STEPS.map((_, i) => <div key={i} className={`flex-1 h-1.5 rounded-full ${i <= step ? 'bg-purple-500' : 'bg-gray-200'}`} />)}
+        </div>
+        <p className="font-bold text-gray-800 text-sm">{step + 1}/{FUTURE_SELF_STEPS.length}：{FUTURE_SELF_STEPS[step].label}</p>
+        <textarea value={answers[step] || ''} onChange={e => setAnswers(prev => ({ ...prev, [step]: e.target.value }))}
+          placeholder={FUTURE_SELF_STEPS[step].placeholder} className="w-full border rounded-lg px-3 py-2 text-sm resize-none" rows={4} />
+        <div className="flex gap-2">
+          {step > 0 && <button onClick={() => setStep(s => s - 1)} className="flex-1 py-2 border rounded-xl text-gray-600 text-sm">← 上一步</button>}
+          {step < FUTURE_SELF_STEPS.length - 1 ? (
+            <button onClick={() => setStep(s => s + 1)} disabled={!answers[step]?.trim()}
+              className="flex-1 py-2 bg-purple-500 text-white rounded-xl font-bold text-sm disabled:opacity-40">下一步 →</button>
+          ) : (
+            <button onClick={() => { onSave({ answers: { ...answers }, date: todayStr() }); setAnswers({}); setStep(0); }}
+              disabled={!answers[step]?.trim()}
+              className="flex-1 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl font-bold text-sm disabled:opacity-40">
+              保存这封信 💌</button>
+          )}
+        </div>
+      </div>
+      {letters.length > 0 && <div className="bg-purple-50 rounded-xl p-4">
+        <p className="font-bold text-purple-700 mb-2">写过的信 ({letters.length}封) 💌</p>
+        {letters.slice(-2).reverse().map((l, i) => (
+          <p key={i} className="text-xs text-gray-600 py-1 border-b last:border-0">📮 {l.date} — {String(Object.values(l.answers)[0]).slice(0, 40)}…</p>
+        ))}
+      </div>}
+    </div>
+  );
+}
+
+// ─── Resilience Blueprint ────────────────────────────────────────────────────
+function ResilienceBlueprintPage({ blueprints, onSave, onBack }) {
+  const [answers, setAnswers] = useState({});
+  const allFilled = RESILIENCE_QS.every((_, i) => answers[i]?.trim());
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🏗️" title="我的韧性蓝图" subtitle="你比自己以为的更坚强" />
+      <div className="bg-gradient-to-br from-amber-50 to-yellow-100 rounded-2xl p-4">
+        <p className="text-sm text-amber-800 font-bold">🔑 什么是韧性？</p>
+        <p className="text-sm text-gray-700 mt-1">韧性是从困难中弹回来的能力。你已经有它了——每次你熬过了艰难的一天，就是在证明它。</p>
+      </div>
+      <div className="space-y-3">
+        {RESILIENCE_QS.map((q, i) => (
+          <div key={i} className="bg-white rounded-xl p-4 shadow space-y-2">
+            <p className="font-bold text-gray-700">{q.emoji} {q.q}</p>
+            <textarea value={answers[i] || ''} onChange={e => setAnswers(prev => ({ ...prev, [i]: e.target.value }))}
+              placeholder="写下你的答案..." className="w-full border rounded-lg px-3 py-2 text-sm resize-none" rows={2} />
+          </div>
+        ))}
+      </div>
+      {allFilled && <button onClick={() => { onSave({ answers: { ...answers }, date: todayStr() }); setAnswers({}); }}
+        className="w-full py-3 bg-gradient-to-r from-amber-500 to-yellow-500 text-white rounded-xl font-bold">
+        保存我的韧性蓝图 🏗️</button>}
+      {blueprints.length > 0 && <div className="bg-amber-50 rounded-xl p-4">
+        <p className="font-bold text-amber-700 mb-2">蓝图收藏 ({blueprints.length}份)</p>
+        {blueprints.slice(-1).map((b, i) => (
+          <div key={i} className="space-y-1">
+            {RESILIENCE_QS.map((q, j) => <p key={j} className="text-xs text-gray-600">{q.emoji} {b.answers[j]}</p>)}
+          </div>
+        ))}
+      </div>}
+    </div>
+  );
+}
+
+// ─── Emotion Purpose Theater ─────────────────────────────────────────────────
+function EmotionTheaterPage({ logs, onSave, onBack }) {
+  const [selected, setSelected] = useState(null);
+  const [reflection, setReflection] = useState('');
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🎭" title="情绪使命剧场" subtitle="每种情绪都有它的工作" />
+      <div className="bg-gradient-to-br from-orange-50 to-yellow-50 rounded-2xl p-4">
+        <p className="text-sm text-gray-700">我们常想摆脱某些情绪，但<b>每种情绪都是有原因的</b>。它们是内心的保护者和向导。</p>
+      </div>
+      <div className="grid grid-cols-2 gap-3">
+        {EMOTION_JOBS.map(ej => (
+          <button key={ej.emotion} onClick={() => { setSelected(selected?.emotion === ej.emotion ? null : ej); setReflection(''); }}
+            className={`p-3 rounded-2xl text-left border-2 transition bg-gradient-to-br ${ej.color} ${selected?.emotion === ej.emotion ? 'border-orange-400 scale-105 shadow-lg' : 'border-transparent'}`}>
+            <div className="text-2xl">{ej.emoji}</div>
+            <p className="font-bold text-sm text-gray-800">{ej.emotion}</p>
+            <p className="text-xs text-orange-700 font-semibold">{ej.role}</p>
+          </button>
+        ))}
+      </div>
+      {selected && (
+        <div className="bg-white rounded-2xl p-5 shadow-lg border-2 border-orange-200 space-y-3">
+          <div className="text-center">
+            <span className="text-4xl">{selected.emoji}</span>
+            <p className="font-bold text-orange-700 mt-1">{selected.emotion} = {selected.role}</p>
+          </div>
+          <div className="bg-orange-50 rounded-xl p-3">
+            <p className="text-sm text-gray-700">🎯 <b>它的使命：</b>{selected.job}</p>
+          </div>
+          <div className="space-y-1">
+            <p className="font-semibold text-sm text-gray-700">你的{selected.emotion}正在告诉你什么？</p>
+            <input value={reflection} onChange={e => setReflection(e.target.value)}
+              placeholder="它在说..." className="w-full border rounded-lg px-3 py-2 text-sm" />
+          </div>
+          {reflection.trim() && <button onClick={() => { onSave({ emotion: selected.emotion, role: selected.role, reflection, date: todayStr() }); setReflection(''); setSelected(null); }}
+            className="w-full py-2 bg-gradient-to-r from-orange-400 to-yellow-400 text-white rounded-xl font-bold">理解了！🎭</button>}
+        </div>
+      )}
+      {logs.length > 0 && <div className="bg-orange-50 rounded-xl p-3 text-center">
+        <p className="text-xs font-bold text-orange-700">已理解 {[...new Set(logs.map(l => l.emotion))].length} 种情绪的使命 🎭</p>
+      </div>}
+    </div>
+  );
+}
+
+// ─── Energy-Mood Tracker ─────────────────────────────────────────────────────
+function EnergyMoodPage({ logs, onSave, onBack }) {
+  const [energy, setEnergy] = useState(3);
+  const [moodScore, setMoodScore] = useState(3);
+  const [activity, setActivity] = useState('');
+  const avg = arr => arr.length ? (arr.reduce((a, b) => a + b, 0) / arr.length).toFixed(1) : '-';
+  const recent = logs.slice(-7);
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="⚡" title="能量心情追踪" subtitle="了解能量与心情的关系" />
+      {logs.length >= 3 && (
+        <div className="grid grid-cols-2 gap-3">
+          <div className="bg-yellow-50 rounded-xl p-3 text-center">
+            <p className="text-2xl font-bold text-yellow-600">{avg(recent.map(l => l.energy))}</p>
+            <p className="text-xs text-gray-500">近7天平均能量</p>
+          </div>
+          <div className="bg-blue-50 rounded-xl p-3 text-center">
+            <p className="text-2xl font-bold text-blue-600">{avg(recent.map(l => l.mood))}</p>
+            <p className="text-xs text-gray-500">近7天平均心情</p>
+          </div>
+        </div>
+      )}
+      <div className="bg-white rounded-2xl p-5 shadow space-y-4">
+        <div className="space-y-2">
+          <p className="font-bold text-gray-700">⚡ 现在的能量水平</p>
+          <div className="flex gap-2">
+            {[1,2,3,4,5].map(n => (
+              <button key={n} onClick={() => setEnergy(n)} className={`flex-1 py-3 rounded-xl font-bold text-base transition ${energy === n ? 'bg-yellow-400 text-white scale-105' : 'bg-gray-100 text-gray-600'}`}>
+                {['😴','😔','😐','😊','🔥'][n-1]}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="space-y-2">
+          <p className="font-bold text-gray-700">💙 现在的心情</p>
+          <div className="flex gap-2">
+            {[1,2,3,4,5].map(n => (
+              <button key={n} onClick={() => setMoodScore(n)} className={`flex-1 py-3 rounded-xl font-bold text-base transition ${moodScore === n ? 'bg-blue-400 text-white scale-105' : 'bg-gray-100 text-gray-600'}`}>
+                {['😭','😢','😐','🙂','😄'][n-1]}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="space-y-1">
+          <p className="text-sm font-semibold text-gray-600">今天主要做了什么？（可选）</p>
+          <input value={activity} onChange={e => setActivity(e.target.value)} placeholder="例如：上学、运动、在家..." className="w-full border rounded-lg px-3 py-2 text-sm" />
+        </div>
+        <button onClick={() => { onSave({ energy, mood: moodScore, activity, date: todayStr() }); setActivity(''); }}
+          className="w-full py-3 bg-gradient-to-r from-yellow-400 to-blue-400 text-white rounded-xl font-bold">
+          记录今天 ⚡💙
+        </button>
+      </div>
+      {logs.length > 0 && <div className="bg-white rounded-xl p-4 shadow">
+        <p className="font-bold text-gray-700 mb-2">最近记录</p>
+        <div className="space-y-1">
+          {logs.slice(-5).reverse().map((l, i) => (
+            <div key={i} className="flex items-center gap-3 text-sm">
+              <span className="text-gray-400 text-xs">{l.date}</span>
+              <span>⚡{l.energy}</span>
+              <span>💙{l.mood}</span>
+              {l.activity && <span className="text-gray-500 text-xs">{l.activity}</span>}
+            </div>
+          ))}
+        </div>
+      </div>}
+    </div>
+  );
+}
+
+// ─── Kind Mirror ─────────────────────────────────────────────────────────────
+function KindMirrorPage({ logs, onSave, onBack }) {
+  const [answers, setAnswers] = useState({ 0: '', 1: '', 2: '' });
+  const hasAll = Object.values(answers).every(v => v.trim());
+  const todayDone = logs.some(l => l.date === todayStr());
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🪞" title="善良镜子" subtitle="今天，温柔地看看自己" />
+      <div className="bg-gradient-to-br from-pink-50 to-rose-100 rounded-2xl p-4 text-center space-y-2">
+        <div className="text-4xl">🪞</div>
+        <p className="text-sm text-gray-700">抑郁会让我们只看到自己不好的部分。善良镜子帮我们<b>看见真实的自己</b>——包括好的部分。</p>
+      </div>
+      {todayDone ? (
+        <div className="bg-green-50 rounded-2xl p-5 text-center space-y-2">
+          <div className="text-4xl">✅</div>
+          <p className="font-bold text-green-700">今天的善良镜子已经照过了！</p>
+          <p className="text-sm text-gray-500">明天再来 🌅</p>
+        </div>
+      ) : (
+        <div className="bg-white rounded-2xl p-5 shadow space-y-4">
+          {KIND_MIRROR_PROMPTS.map((prompt, i) => (
+            <div key={i} className="space-y-1">
+              <p className="font-semibold text-sm text-gray-700">{prompt}</p>
+              <input value={answers[i]} onChange={e => setAnswers(prev => ({ ...prev, [i]: e.target.value }))}
+                placeholder="写下来..." className="w-full border rounded-lg px-3 py-2 text-sm" />
+            </div>
+          ))}
+          {hasAll && <button onClick={() => { onSave({ answers: { ...answers }, date: todayStr() }); setAnswers({ 0: '', 1: '', 2: '' }); }}
+            className="w-full py-3 bg-gradient-to-r from-pink-400 to-rose-400 text-white rounded-xl font-bold">
+            照完镜子了 🪞✨</button>}
+        </div>
+      )}
+      {logs.length > 0 && <div className="bg-pink-50 rounded-xl p-4">
+        <p className="font-bold text-pink-700 mb-2">已照了 {logs.length} 天善良镜子 🪞</p>
+        {logs.slice(-2).reverse().map((l, i) => <p key={i} className="text-xs text-gray-500 py-0.5">{l.date}: {l.answers?.[0]}</p>)}
+      </div>}
+    </div>
+  );
+}
+
+// ─── Values Action Compass ───────────────────────────────────────────────────
+function ValuesActionPage({ logs, onSave, onBack }) {
+  const [selected, setSelected] = useState([]);
+  const [action, setAction] = useState('');
+  const [committed, setCommitted] = useState(false);
+  const toggle = v => setSelected(prev => prev.includes(v) ? prev.filter(x => x !== v) : prev.length < 3 ? [...prev, v] : prev);
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🎯" title="价值观小行动" subtitle="即使困难时，也活出自己在乎的事" />
+      <div className="bg-gradient-to-br from-emerald-50 to-green-100 rounded-2xl p-4">
+        <p className="text-sm text-gray-700">当我们按照<b>真正在乎的价值</b>行动，即使很小，也能感到更有意义、更有力量。</p>
+      </div>
+      {!committed ? (
+        <>
+          <div className="space-y-2">
+            <p className="font-bold text-gray-700">选出最重要的 3 个价值 ({selected.length}/3)：</p>
+            <div className="grid grid-cols-4 gap-2">
+              {VALUES_B23.map(({ v, e }) => (
+                <button key={v} onClick={() => toggle(v)}
+                  className={`py-2 px-1 rounded-xl text-center text-xs font-semibold border-2 transition ${selected.includes(v) ? 'bg-emerald-500 text-white border-emerald-500' : 'bg-white border-gray-200 text-gray-700'}`}>
+                  <div className="text-lg">{e}</div>{v}
+                </button>
+              ))}
+            </div>
+          </div>
+          {selected.length === 3 && (
+            <div className="bg-white rounded-xl p-4 shadow space-y-2">
+              <p className="font-bold text-gray-700">今天为这些价值做一件小事：</p>
+              <p className="text-xs text-gray-400">({selected.join('、')})</p>
+              <input value={action} onChange={e => setAction(e.target.value)} placeholder="例如：告诉妈妈我爱她、画10分钟..." className="w-full border rounded-lg px-3 py-2 text-sm" />
+              {action.trim() && <button onClick={() => setCommitted(true)} className="w-full py-2 bg-emerald-500 text-white rounded-xl font-bold">我承诺今天做这件事 💚</button>}
+            </div>
+          )}
+        </>
+      ) : (
+        <div className="bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-6 text-center space-y-3">
+          <div className="text-4xl">🎯✨</div>
+          <p className="font-bold text-emerald-800">你的承诺：</p>
+          <p className="text-gray-700 font-semibold text-lg">{action}</p>
+          <p className="text-sm text-gray-500">为了你在乎的：{selected.join('、')}</p>
+          <div className="flex gap-2">
+            <button onClick={() => { onSave({ values: [...selected], action, done: false, date: todayStr() }); setCommitted(false); setSelected([]); setAction(''); }}
+              className="flex-1 py-2 bg-emerald-500 text-white rounded-xl font-bold text-sm">记录承诺 📌</button>
+            <button onClick={() => { onSave({ values: [...selected], action, done: true, date: todayStr() }); setCommitted(false); setSelected([]); setAction(''); }}
+              className="flex-1 py-2 bg-yellow-400 text-white rounded-xl font-bold text-sm">已完成！🏆</button>
+          </div>
+        </div>
+      )}
+      {logs.length > 0 && <div className="bg-emerald-50 rounded-xl p-4">
+        <p className="font-bold text-emerald-700 mb-2">价值观行动 ({logs.filter(l => l.done).length}个已完成)</p>
+        {logs.slice(-3).reverse().map((l, i) => (
+          <p key={i} className="text-xs text-gray-600 py-0.5">{l.done ? '✅' : '📌'} {l.action}</p>
+        ))}
+      </div>}
+    </div>
+  );
+}
+
+// ─── Thought Scientist ───────────────────────────────────────────────────────
+function ThoughtScientistPage({ logs, onSave, onBack }) {
+  const [step, setStep] = useState(0);
+  const [data, setData] = useState({ thought: '', evidence_for: '', evidence_against: '', balanced: '' });
+  const fields = ['thought', 'evidence_for', 'evidence_against', 'balanced'];
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🧪" title="小小思维科学家" subtitle="用科学方法检验你的想法" />
+      <div className="bg-gradient-to-br from-violet-50 to-purple-100 rounded-2xl p-4">
+        <p className="text-sm text-gray-700">科学家不相信没有<b>证据</b>的事。用同样的方法，我们可以检验让我们难受的负面想法。</p>
+      </div>
+      <div className="flex gap-1">
+        {THOUGHT_SCI_STEPS.map((_, i) => <div key={i} className={`flex-1 h-2 rounded-full transition-all ${i <= step ? 'bg-violet-500' : 'bg-gray-200'}`} />)}
+      </div>
+      <div className="bg-white rounded-2xl p-5 shadow space-y-3">
+        <div className="flex items-center gap-2">
+          <span className="text-2xl">{THOUGHT_SCI_STEPS[step].emoji}</span>
+          <p className="font-bold text-gray-800">{THOUGHT_SCI_STEPS[step].label}</p>
+        </div>
+        <textarea value={data[fields[step]]} onChange={e => setData(prev => ({ ...prev, [fields[step]]: e.target.value }))}
+          placeholder={THOUGHT_SCI_STEPS[step].placeholder} className="w-full border rounded-lg px-3 py-2 text-sm resize-none" rows={3} />
+        <div className="flex gap-2">
+          {step > 0 && <button onClick={() => setStep(s => s - 1)} className="flex-1 py-2 border rounded-xl text-gray-600 text-sm">← 返回</button>}
+          {step < 3 ? (
+            <button onClick={() => setStep(s => s + 1)} disabled={!data[fields[step]]?.trim()}
+              className="flex-1 py-2 bg-violet-500 text-white rounded-xl font-bold text-sm disabled:opacity-40">下一步 →</button>
+          ) : (
+            <button onClick={() => { onSave({ ...data, date: todayStr() }); setData({ thought: '', evidence_for: '', evidence_against: '', balanced: '' }); setStep(0); }}
+              disabled={!data.balanced?.trim()}
+              className="flex-1 py-2 bg-gradient-to-r from-violet-500 to-purple-500 text-white rounded-xl font-bold text-sm disabled:opacity-40">
+              完成实验 🧪</button>
+          )}
+        </div>
+      </div>
+      {step === 3 && data.balanced && (
+        <div className="bg-violet-50 rounded-xl p-4 space-y-2">
+          <p className="font-bold text-violet-700">📊 实验结论</p>
+          <p className="text-xs text-gray-500"><b>原来的想法：</b>{data.thought}</p>
+          <p className="text-sm text-green-700"><b>更平衡的看法：</b>{data.balanced}</p>
+        </div>
+      )}
+      {logs.length > 0 && <div className="bg-violet-50 rounded-xl p-3 text-center">
+        <p className="text-xs font-bold text-violet-700">已完成 {logs.length} 次思维实验 🧪</p>
+      </div>}
+    </div>
+  );
+}
+
+// ─── Micro Joy Finder ────────────────────────────────────────────────────────
+function MicroJoyPage({ logs, onSave, onBack }) {
+  const [cat, setCat] = useState(null);
+  const [joy, setJoy] = useState('');
+  const todayCount = logs.filter(l => l.date === todayStr()).length;
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🌱" title="微幸福捕手" subtitle="幸福藏在每一个小瞬间里" />
+      <div className="bg-gradient-to-br from-lime-50 to-green-100 rounded-2xl p-4 text-center">
+        <div className="text-3xl mb-1">🌱</div>
+        <p className="text-sm text-gray-700">大快乐可遇不可求，但<b>微小美好随处可见</b>。练习捕捉它们，你会发现越来越多。</p>
+        {todayCount > 0 && <p className="mt-2 font-bold text-green-700">今天已捕捉 {todayCount} 个微幸福 ✨</p>}
+      </div>
+      <div className="grid grid-cols-2 gap-3">
+        {MICRO_JOY_CATS.map(mc => (
+          <button key={mc.cat} onClick={() => { setCat(cat?.cat === mc.cat ? null : mc); setJoy(''); }}
+            className={`p-3 rounded-2xl text-left border-2 transition ${cat?.cat === mc.cat ? 'border-green-500 bg-green-50 shadow' : 'border-gray-200 bg-white'}`}>
+            <div className="text-2xl">{mc.emoji}</div>
+            <p className="font-bold text-sm text-gray-800">{mc.cat}</p>
+            <p className="text-xs text-gray-500">{mc.hint}</p>
+          </button>
+        ))}
+      </div>
+      {cat && (
+        <div className="bg-white rounded-2xl p-5 shadow space-y-3">
+          <p className="font-bold text-gray-700">{cat.emoji} 你捕捉到了什么？</p>
+          <input value={joy} onChange={e => setJoy(e.target.value)} placeholder="描述这个微小美好..." className="w-full border rounded-lg px-3 py-2 text-sm" />
+          {joy.trim() && <button onClick={() => { onSave({ category: cat.cat, joy, date: todayStr() }); setJoy(''); setCat(null); }}
+            className="w-full py-2 bg-gradient-to-r from-lime-400 to-green-400 text-white rounded-xl font-bold">捕捉到了！🌱</button>}
+        </div>
+      )}
+      {logs.length > 0 && <div className="bg-green-50 rounded-xl p-4">
+        <p className="font-bold text-green-700 mb-2">总共捕捉了 {logs.length} 个微幸福 ✨</p>
+        {logs.slice(-4).reverse().map((l, i) => (
+          <p key={i} className="text-xs text-gray-600 py-0.5">{MICRO_JOY_CATS.find(c => c.cat === l.category)?.emoji || '✨'} {l.joy}</p>
+        ))}
+      </div>}
+    </div>
+  );
+}
+
+// ─── Connection Ritual ───────────────────────────────────────────────────────
+function ConnectionRitualPage({ logs, onSave, onBack }) {
+  const [doneToday, setDoneToday] = useState({});
+  const [notes, setNotes] = useState({});
+  const todayLogs = logs.filter(l => l.date === todayStr());
+
+  return (
+    <div className="p-6 space-y-5">
+      <BackButton onClick={onBack} />
+      <PageHeader emoji="🔗" title="联结仪式" subtitle="每天一个小联结，不再孤单" />
+      <div className="bg-gradient-to-br from-rose-50 to-pink-100 rounded-2xl p-4">
+        <p className="text-sm text-gray-700">孤独是抑郁的好朋友。<b>小小的联结行动</b>能打破这个循环，即使很微小，也有真实力量。</p>
+        {todayLogs.length > 0 && <p className="mt-2 font-bold text-pink-700">今天完成了 {todayLogs.length} 个联结仪式 💞</p>}
+      </div>
+      <div className="space-y-3">
+        {CONNECTION_RITUALS_B23.map((r, i) => {
+          const isDone = doneToday[i] || todayLogs.some(l => l.ritual === r.title);
+          return (
+            <div key={i} className={`bg-white rounded-2xl p-4 shadow transition ${isDone ? 'opacity-60' : ''}`}>
+              <div className="flex items-start gap-3">
+                <span className="text-2xl">{r.emoji}</span>
+                <div className="flex-1">
+                  <p className="font-bold text-gray-800">{r.title}</p>
+                  <p className="text-sm text-gray-600">{r.action}</p>
+                  <p className="text-xs text-gray-400 mt-0.5">⏱ {r.time} · +{r.pts}分</p>
+                </div>
+                {isDone && <span className="text-green-500 text-xl">✅</span>}
+              </div>
+              {!isDone && (
+                <div className="mt-3 space-y-2">
+                  <input value={notes[i] || ''} onChange={e => setNotes(prev => ({ ...prev, [i]: e.target.value }))}
+                    placeholder="完成后写下感受（可选）..." className="w-full border rounded-lg px-3 py-1.5 text-xs" />
+                  <button onClick={() => { setDoneToday(prev => ({ ...prev, [i]: true })); onSave({ ritual: r.title, note: notes[i] || '', pts: r.pts, date: todayStr() }); }}
+                    className="w-full py-2 bg-gradient-to-r from-rose-400 to-pink-400 text-white rounded-xl font-bold text-sm">
+                    完成这个仪式 💞</button>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 // ─── Main App ────────────────────────────────────────────────────────────────
 
 export default function HealingKidsApp() {
@@ -13889,6 +14508,17 @@ export default function HealingKidsApp() {
   const [victoryVault, setVictoryVault] = useState([]);
   const [emotionStamps, setEmotionStamps] = useState([]);
   const [safeSpaces, setSafeSpaces] = useState([]);
+  // Batch 23 state
+  const [emotionSurfLogs, setEmotionSurfLogs] = useState([]);
+  const [futureSelfLetters, setFutureSelfLetters] = useState([]);
+  const [resilienceBlueprints, setResilienceBlueprints] = useState([]);
+  const [emotionTheaterLogs, setEmotionTheaterLogs] = useState([]);
+  const [energyMoodLogs, setEnergyMoodLogs] = useState([]);
+  const [kindMirrorLogs, setKindMirrorLogs] = useState([]);
+  const [valuesActionLogs, setValuesActionLogs] = useState([]);
+  const [thoughtScientistLogs, setThoughtScientistLogs] = useState([]);
+  const [microJoyLogs, setMicroJoyLogs] = useState([]);
+  const [connectionRitualLogs, setConnectionRitualLogs] = useState([]);
 
   useEffect(() => {
     const saved = loadState();
@@ -14072,6 +14702,16 @@ export default function HealingKidsApp() {
       setVictoryVault(saved.victoryVault || []);
       setEmotionStamps(saved.emotionStamps || []);
       setSafeSpaces(saved.safeSpaces || []);
+      setEmotionSurfLogs(saved.emotionSurfLogs || []);
+      setFutureSelfLetters(saved.futureSelfLetters || []);
+      setResilienceBlueprints(saved.resilienceBlueprints || []);
+      setEmotionTheaterLogs(saved.emotionTheaterLogs || []);
+      setEnergyMoodLogs(saved.energyMoodLogs || []);
+      setKindMirrorLogs(saved.kindMirrorLogs || []);
+      setValuesActionLogs(saved.valuesActionLogs || []);
+      setThoughtScientistLogs(saved.thoughtScientistLogs || []);
+      setMicroJoyLogs(saved.microJoyLogs || []);
+      setConnectionRitualLogs(saved.connectionRitualLogs || []);
     }
     setHydrated(true);
   }, []);
@@ -14113,6 +14753,9 @@ export default function HealingKidsApp() {
       decodedStrengths, dashboardReadings, firstAidLogs, treasureHunts, memoryPlaylists,
       emotionPuzzles, worryTimerLogs, subtitleEntries, calmJarLogs, kindVoiceLogs,
       comfortScanLogs, weatherVaneLogs, victoryVault, emotionStamps, safeSpaces,
+      emotionSurfLogs, futureSelfLetters, resilienceBlueprints, emotionTheaterLogs,
+      energyMoodLogs, kindMirrorLogs, valuesActionLogs, thoughtScientistLogs,
+      microJoyLogs, connectionRitualLogs,
       lastDate: todayStr()
     });
   }, [mood, dailyProgress, points, streak, journalEntries, moodHistory,
@@ -14148,7 +14791,10 @@ export default function HealingKidsApp() {
       elevatorLogs, rebootLogs, complimentCatches, worryWeights, colorBreathLogs,
       decodedStrengths, dashboardReadings, firstAidLogs, treasureHunts, memoryPlaylists,
       emotionPuzzles, worryTimerLogs, subtitleEntries, calmJarLogs, kindVoiceLogs,
-      comfortScanLogs, weatherVaneLogs, victoryVault, emotionStamps, safeSpaces, hydrated]);
+      comfortScanLogs, weatherVaneLogs, victoryVault, emotionStamps, safeSpaces,
+      emotionSurfLogs, futureSelfLetters, resilienceBlueprints, emotionTheaterLogs,
+      energyMoodLogs, kindMirrorLogs, valuesActionLogs, thoughtScientistLogs,
+      microJoyLogs, connectionRitualLogs, hydrated]);
 
   const completeActivity = useCallback((activityId) => {
     setDailyProgress(prev => {
@@ -15206,6 +15852,56 @@ export default function HealingKidsApp() {
         {currentPage === 'safespacevisualizer' && (
           <SafeSpaceVisualizerPage spaces={safeSpaces}
             onSave={s => { setSafeSpaces(prev => [...prev.slice(-10), s]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'emotionsurf' && (
+          <EmotionSurfPage logs={emotionSurfLogs}
+            onSave={l => { setEmotionSurfLogs(prev => [...prev.slice(-50), l]); setPoints(p => p + 20); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'futureselfletter' && (
+          <FutureSelfLetterPage letters={futureSelfLetters}
+            onSave={l => { setFutureSelfLetters(prev => [...prev.slice(-20), l]); setPoints(p => p + 20); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'resilienceblueprint' && (
+          <ResilienceBlueprintPage blueprints={resilienceBlueprints}
+            onSave={b => { setResilienceBlueprints(prev => [...prev.slice(-20), b]); setPoints(p => p + 20); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'emotiontheater' && (
+          <EmotionTheaterPage logs={emotionTheaterLogs}
+            onSave={l => { setEmotionTheaterLogs(prev => [...prev.slice(-50), l]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'energymood' && (
+          <EnergyMoodPage logs={energyMoodLogs}
+            onSave={l => { setEnergyMoodLogs(prev => [...prev.slice(-90), l]); setPoints(p => p + 10); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'kindmirror' && (
+          <KindMirrorPage logs={kindMirrorLogs}
+            onSave={l => { setKindMirrorLogs(prev => [...prev.slice(-60), l]); setPoints(p => p + 15); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'valuesaction' && (
+          <ValuesActionPage logs={valuesActionLogs}
+            onSave={l => { setValuesActionLogs(prev => [...prev.slice(-50), l]); setPoints(p => p + (l.done ? 20 : 10)); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'thoughtscientist' && (
+          <ThoughtScientistPage logs={thoughtScientistLogs}
+            onSave={l => { setThoughtScientistLogs(prev => [...prev.slice(-30), l]); setPoints(p => p + 20); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'microjoy' && (
+          <MicroJoyPage logs={microJoyLogs}
+            onSave={l => { setMicroJoyLogs(prev => [...prev.slice(-100), l]); setPoints(p => p + 5); }}
+            onBack={goTools} />
+        )}
+        {currentPage === 'connectionritual' && (
+          <ConnectionRitualPage logs={connectionRitualLogs}
+            onSave={l => { setConnectionRitualLogs(prev => [...prev.slice(-100), l]); setPoints(p => p + l.pts); }}
             onBack={goTools} />
         )}
 
