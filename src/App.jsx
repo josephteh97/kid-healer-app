@@ -13743,10 +13743,10 @@ const VALUES_B23 = [
 ];
 
 const THOUGHT_SCI_STEPS = [
-  { label: '负面的想法', emoji: '💭', placeholder: '我脑子里出现了这个想法：...' },
-  { label: '支持它的证据', emoji: '✅', placeholder: '让我感觉这个想法是真的，有哪些事？...' },
-  { label: '反对它的证据', emoji: '❌', placeholder: '哪些事情说明这个想法不完全是真的？...' },
-  { label: '更平衡的想法', emoji: '⚖️', placeholder: '考虑了所有证据后，更平衡的看法是：...' },
+  { field: 'thought',           label: '负面的想法',   emoji: '💭', placeholder: '我脑子里出现了这个想法：...' },
+  { field: 'evidence_for',      label: '支持它的证据', emoji: '✅', placeholder: '让我感觉这个想法是真的，有哪些事？...' },
+  { field: 'evidence_against',  label: '反对它的证据', emoji: '❌', placeholder: '哪些事情说明这个想法不完全是真的？...' },
+  { field: 'balanced',          label: '更平衡的想法', emoji: '⚖️', placeholder: '考虑了所有证据后，更平衡的看法是：...' },
 ];
 
 const MICRO_JOY_CATS = [
@@ -13771,33 +13771,31 @@ const KIND_MIRROR_PROMPTS = [
   '今天，我对自己友好或勇敢的地方是：',
 ];
 
+const SURF_EMOTS = ['悲伤', '焦虑', '愤怒', '孤独', '失望', '担心', '烦躁', '无助'];
+
+const avgArr = arr => arr.length ? (arr.reduce((a, b) => a + b, 0) / arr.length).toFixed(1) : '-';
+
 // ─── Emotion Wave Surfing ────────────────────────────────────────────────────
+const getWaveIdx = s => s === 0 ? 0 : s < 12 ? 1 : s < 25 ? 2 : s < 40 ? 3 : s < 55 ? 4 : s < 68 ? 5 : 6;
+
 function EmotionSurfPage({ logs, onSave, onBack }) {
   const [phase, setPhase] = useState('intro');
   const [emotion, setEmotion] = useState('');
-  const [waveIdx, setWaveIdx] = useState(0);
   const [secs, setSecs] = useState(0);
   const [insight, setInsight] = useState('');
-  const SURF_EMOTS = ['悲伤', '焦虑', '愤怒', '孤独', '失望', '担心', '烦躁', '无助'];
 
   useEffect(() => {
     if (phase !== 'surf') return;
-    const iv = setInterval(() => {
-      setSecs(s => {
-        const n = s + 1;
-        if (n < 12) setWaveIdx(1);
-        else if (n < 25) setWaveIdx(2);
-        else if (n < 40) setWaveIdx(3);
-        else if (n < 55) setWaveIdx(4);
-        else if (n < 68) setWaveIdx(5);
-        else { setWaveIdx(6); setPhase('done'); }
-        return n;
-      });
-    }, 1000);
+    const iv = setInterval(() => setSecs(s => s + 1), 1000);
     return () => clearInterval(iv);
   }, [phase]);
 
-  const ws = WAVE_STAGES_B23[waveIdx] || WAVE_STAGES_B23[0];
+  useEffect(() => {
+    if (phase === 'surf' && secs >= 68) setPhase('done');
+  }, [secs, phase]);
+
+  const waveIdx = getWaveIdx(secs);
+  const ws = WAVE_STAGES_B23[waveIdx];
 
   if (phase === 'intro') return (
     <div className="p-6 space-y-5">
@@ -13828,7 +13826,7 @@ function EmotionSurfPage({ logs, onSave, onBack }) {
       <PageHeader emoji="🎯" title="选一个情绪" subtitle="现在感受到哪种情绪？" />
       <div className="grid grid-cols-2 gap-3">
         {SURF_EMOTS.map(e => (
-          <button key={e} onClick={() => { setEmotion(e); setPhase('surf'); setSecs(0); setWaveIdx(0); }}
+          <button key={e} onClick={() => { setEmotion(e); setPhase('surf'); setSecs(0); }}
             className="py-4 bg-white border-2 border-blue-200 rounded-2xl font-bold text-lg hover:border-blue-500 hover:bg-blue-50 transition">{e}</button>
         ))}
       </div>
@@ -13870,7 +13868,7 @@ function EmotionSurfPage({ logs, onSave, onBack }) {
         <p className="font-bold text-gray-700">你的感悟：</p>
         <textarea value={insight} onChange={e => setInsight(e.target.value)} placeholder="这次冲浪，我发现..." className="w-full border rounded-lg px-3 py-2 text-sm resize-none" rows={2} />
       </div>
-      <button onClick={() => { onSave({ emotion, insight, date: todayStr() }); setPhase('intro'); setWaveIdx(0); setInsight(''); setEmotion(''); }}
+      <button onClick={() => { onSave({ emotion, insight, date: todayStr() }); setPhase('intro'); setSecs(0); setInsight(''); setEmotion(''); }}
         className="w-full py-3 bg-gradient-to-r from-blue-500 to-green-500 text-white rounded-xl font-bold">
         记录冲浪经历 🌊
       </button>
@@ -13881,7 +13879,7 @@ function EmotionSurfPage({ logs, onSave, onBack }) {
 // ─── Future Self Letter ──────────────────────────────────────────────────────
 function FutureSelfLetterPage({ letters, onSave, onBack }) {
   const [step, setStep] = useState(0);
-  const [answers, setAnswers] = useState({});
+  const [answers, setAnswers] = useState(Array(FUTURE_SELF_STEPS.length).fill(''));
 
   return (
     <div className="p-6 space-y-5">
@@ -13895,16 +13893,16 @@ function FutureSelfLetterPage({ letters, onSave, onBack }) {
           {FUTURE_SELF_STEPS.map((_, i) => <div key={i} className={`flex-1 h-1.5 rounded-full ${i <= step ? 'bg-purple-500' : 'bg-gray-200'}`} />)}
         </div>
         <p className="font-bold text-gray-800 text-sm">{step + 1}/{FUTURE_SELF_STEPS.length}：{FUTURE_SELF_STEPS[step].label}</p>
-        <textarea value={answers[step] || ''} onChange={e => setAnswers(prev => ({ ...prev, [step]: e.target.value }))}
+        <textarea value={answers[step]} onChange={e => setAnswers(prev => { const next = [...prev]; next[step] = e.target.value; return next; })}
           placeholder={FUTURE_SELF_STEPS[step].placeholder} className="w-full border rounded-lg px-3 py-2 text-sm resize-none" rows={4} />
         <div className="flex gap-2">
           {step > 0 && <button onClick={() => setStep(s => s - 1)} className="flex-1 py-2 border rounded-xl text-gray-600 text-sm">← 上一步</button>}
           {step < FUTURE_SELF_STEPS.length - 1 ? (
-            <button onClick={() => setStep(s => s + 1)} disabled={!answers[step]?.trim()}
+            <button onClick={() => setStep(s => s + 1)} disabled={!answers[step].trim()}
               className="flex-1 py-2 bg-purple-500 text-white rounded-xl font-bold text-sm disabled:opacity-40">下一步 →</button>
           ) : (
-            <button onClick={() => { onSave({ answers: { ...answers }, date: todayStr() }); setAnswers({}); setStep(0); }}
-              disabled={!answers[step]?.trim()}
+            <button onClick={() => { onSave({ answers: [...answers], date: todayStr() }); setAnswers(Array(FUTURE_SELF_STEPS.length).fill('')); setStep(0); }}
+              disabled={!answers[step].trim()}
               className="flex-1 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl font-bold text-sm disabled:opacity-40">
               保存这封信 💌</button>
           )}
@@ -13913,7 +13911,7 @@ function FutureSelfLetterPage({ letters, onSave, onBack }) {
       {letters.length > 0 && <div className="bg-purple-50 rounded-xl p-4">
         <p className="font-bold text-purple-700 mb-2">写过的信 ({letters.length}封) 💌</p>
         {letters.slice(-2).reverse().map((l, i) => (
-          <p key={i} className="text-xs text-gray-600 py-1 border-b last:border-0">📮 {l.date} — {String(Object.values(l.answers)[0]).slice(0, 40)}…</p>
+          <p key={i} className="text-xs text-gray-600 py-1 border-b last:border-0">📮 {l.date} — {String(l.answers[0]).slice(0, 40)}…</p>
         ))}
       </div>}
     </div>
@@ -14009,7 +14007,6 @@ function EnergyMoodPage({ logs, onSave, onBack }) {
   const [energy, setEnergy] = useState(3);
   const [moodScore, setMoodScore] = useState(3);
   const [activity, setActivity] = useState('');
-  const avg = arr => arr.length ? (arr.reduce((a, b) => a + b, 0) / arr.length).toFixed(1) : '-';
   const recent = logs.slice(-7);
 
   return (
@@ -14019,11 +14016,11 @@ function EnergyMoodPage({ logs, onSave, onBack }) {
       {logs.length >= 3 && (
         <div className="grid grid-cols-2 gap-3">
           <div className="bg-yellow-50 rounded-xl p-3 text-center">
-            <p className="text-2xl font-bold text-yellow-600">{avg(recent.map(l => l.energy))}</p>
+            <p className="text-2xl font-bold text-yellow-600">{avgArr(recent.map(l => l.energy))}</p>
             <p className="text-xs text-gray-500">近7天平均能量</p>
           </div>
           <div className="bg-blue-50 rounded-xl p-3 text-center">
-            <p className="text-2xl font-bold text-blue-600">{avg(recent.map(l => l.mood))}</p>
+            <p className="text-2xl font-bold text-blue-600">{avgArr(recent.map(l => l.mood))}</p>
             <p className="text-xs text-gray-500">近7天平均心情</p>
           </div>
         </div>
@@ -14076,9 +14073,11 @@ function EnergyMoodPage({ logs, onSave, onBack }) {
 }
 
 // ─── Kind Mirror ─────────────────────────────────────────────────────────────
+const EMPTY_MIRROR = ['', '', ''];
+
 function KindMirrorPage({ logs, onSave, onBack }) {
-  const [answers, setAnswers] = useState({ 0: '', 1: '', 2: '' });
-  const hasAll = Object.values(answers).every(v => v.trim());
+  const [answers, setAnswers] = useState([...EMPTY_MIRROR]);
+  const hasAll = answers.every(v => v.trim());
   const todayDone = logs.some(l => l.date === todayStr());
 
   return (
@@ -14100,18 +14099,18 @@ function KindMirrorPage({ logs, onSave, onBack }) {
           {KIND_MIRROR_PROMPTS.map((prompt, i) => (
             <div key={i} className="space-y-1">
               <p className="font-semibold text-sm text-gray-700">{prompt}</p>
-              <input value={answers[i]} onChange={e => setAnswers(prev => ({ ...prev, [i]: e.target.value }))}
+              <input value={answers[i]} onChange={e => setAnswers(prev => { const next = [...prev]; next[i] = e.target.value; return next; })}
                 placeholder="写下来..." className="w-full border rounded-lg px-3 py-2 text-sm" />
             </div>
           ))}
-          {hasAll && <button onClick={() => { onSave({ answers: { ...answers }, date: todayStr() }); setAnswers({ 0: '', 1: '', 2: '' }); }}
+          {hasAll && <button onClick={() => { onSave({ answers: [...answers], date: todayStr() }); setAnswers([...EMPTY_MIRROR]); }}
             className="w-full py-3 bg-gradient-to-r from-pink-400 to-rose-400 text-white rounded-xl font-bold">
             照完镜子了 🪞✨</button>}
         </div>
       )}
       {logs.length > 0 && <div className="bg-pink-50 rounded-xl p-4">
         <p className="font-bold text-pink-700 mb-2">已照了 {logs.length} 天善良镜子 🪞</p>
-        {logs.slice(-2).reverse().map((l, i) => <p key={i} className="text-xs text-gray-500 py-0.5">{l.date}: {l.answers?.[0]}</p>)}
+        {logs.slice(-2).reverse().map((l, i) => <p key={i} className="text-xs text-gray-500 py-0.5">{l.date}: {Array.isArray(l.answers) ? l.answers[0] : l.answers?.[0]}</p>)}
       </div>}
     </div>
   );
@@ -14123,6 +14122,7 @@ function ValuesActionPage({ logs, onSave, onBack }) {
   const [action, setAction] = useState('');
   const [committed, setCommitted] = useState(false);
   const toggle = v => setSelected(prev => prev.includes(v) ? prev.filter(x => x !== v) : prev.length < 3 ? [...prev, v] : prev);
+  const handleSave = done => { onSave({ values: [...selected], action, done, date: todayStr() }); setCommitted(false); setSelected([]); setAction(''); };
 
   return (
     <div className="p-6 space-y-5">
@@ -14160,10 +14160,8 @@ function ValuesActionPage({ logs, onSave, onBack }) {
           <p className="text-gray-700 font-semibold text-lg">{action}</p>
           <p className="text-sm text-gray-500">为了你在乎的：{selected.join('、')}</p>
           <div className="flex gap-2">
-            <button onClick={() => { onSave({ values: [...selected], action, done: false, date: todayStr() }); setCommitted(false); setSelected([]); setAction(''); }}
-              className="flex-1 py-2 bg-emerald-500 text-white rounded-xl font-bold text-sm">记录承诺 📌</button>
-            <button onClick={() => { onSave({ values: [...selected], action, done: true, date: todayStr() }); setCommitted(false); setSelected([]); setAction(''); }}
-              className="flex-1 py-2 bg-yellow-400 text-white rounded-xl font-bold text-sm">已完成！🏆</button>
+            <button onClick={() => handleSave(false)} className="flex-1 py-2 bg-emerald-500 text-white rounded-xl font-bold text-sm">记录承诺 📌</button>
+            <button onClick={() => handleSave(true)}  className="flex-1 py-2 bg-yellow-400 text-white rounded-xl font-bold text-sm">已完成！🏆</button>
           </div>
         </div>
       )}
@@ -14178,10 +14176,11 @@ function ValuesActionPage({ logs, onSave, onBack }) {
 }
 
 // ─── Thought Scientist ───────────────────────────────────────────────────────
+const THOUGHT_SCI_EMPTY = { thought: '', evidence_for: '', evidence_against: '', balanced: '' };
+
 function ThoughtScientistPage({ logs, onSave, onBack }) {
   const [step, setStep] = useState(0);
-  const [data, setData] = useState({ thought: '', evidence_for: '', evidence_against: '', balanced: '' });
-  const fields = ['thought', 'evidence_for', 'evidence_against', 'balanced'];
+  const [data, setData] = useState({ ...THOUGHT_SCI_EMPTY });
 
   return (
     <div className="p-6 space-y-5">
@@ -14198,15 +14197,15 @@ function ThoughtScientistPage({ logs, onSave, onBack }) {
           <span className="text-2xl">{THOUGHT_SCI_STEPS[step].emoji}</span>
           <p className="font-bold text-gray-800">{THOUGHT_SCI_STEPS[step].label}</p>
         </div>
-        <textarea value={data[fields[step]]} onChange={e => setData(prev => ({ ...prev, [fields[step]]: e.target.value }))}
+        <textarea value={data[THOUGHT_SCI_STEPS[step].field]} onChange={e => setData(prev => ({ ...prev, [THOUGHT_SCI_STEPS[step].field]: e.target.value }))}
           placeholder={THOUGHT_SCI_STEPS[step].placeholder} className="w-full border rounded-lg px-3 py-2 text-sm resize-none" rows={3} />
         <div className="flex gap-2">
           {step > 0 && <button onClick={() => setStep(s => s - 1)} className="flex-1 py-2 border rounded-xl text-gray-600 text-sm">← 返回</button>}
           {step < 3 ? (
-            <button onClick={() => setStep(s => s + 1)} disabled={!data[fields[step]]?.trim()}
+            <button onClick={() => setStep(s => s + 1)} disabled={!data[THOUGHT_SCI_STEPS[step].field]?.trim()}
               className="flex-1 py-2 bg-violet-500 text-white rounded-xl font-bold text-sm disabled:opacity-40">下一步 →</button>
           ) : (
-            <button onClick={() => { onSave({ ...data, date: todayStr() }); setData({ thought: '', evidence_for: '', evidence_against: '', balanced: '' }); setStep(0); }}
+            <button onClick={() => { onSave({ ...data, date: todayStr() }); setData({ ...THOUGHT_SCI_EMPTY }); setStep(0); }}
               disabled={!data.balanced?.trim()}
               className="flex-1 py-2 bg-gradient-to-r from-violet-500 to-purple-500 text-white rounded-xl font-bold text-sm disabled:opacity-40">
               完成实验 🧪</button>
@@ -14272,7 +14271,6 @@ function MicroJoyPage({ logs, onSave, onBack }) {
 
 // ─── Connection Ritual ───────────────────────────────────────────────────────
 function ConnectionRitualPage({ logs, onSave, onBack }) {
-  const [doneToday, setDoneToday] = useState({});
   const [notes, setNotes] = useState({});
   const todayLogs = logs.filter(l => l.date === todayStr());
 
@@ -14286,7 +14284,7 @@ function ConnectionRitualPage({ logs, onSave, onBack }) {
       </div>
       <div className="space-y-3">
         {CONNECTION_RITUALS_B23.map((r, i) => {
-          const isDone = doneToday[i] || todayLogs.some(l => l.ritual === r.title);
+          const isDone = todayLogs.some(l => l.ritual === r.title);
           return (
             <div key={i} className={`bg-white rounded-2xl p-4 shadow transition ${isDone ? 'opacity-60' : ''}`}>
               <div className="flex items-start gap-3">
@@ -14302,7 +14300,7 @@ function ConnectionRitualPage({ logs, onSave, onBack }) {
                 <div className="mt-3 space-y-2">
                   <input value={notes[i] || ''} onChange={e => setNotes(prev => ({ ...prev, [i]: e.target.value }))}
                     placeholder="完成后写下感受（可选）..." className="w-full border rounded-lg px-3 py-1.5 text-xs" />
-                  <button onClick={() => { setDoneToday(prev => ({ ...prev, [i]: true })); onSave({ ritual: r.title, note: notes[i] || '', pts: r.pts, date: todayStr() }); }}
+                  <button onClick={() => onSave({ ritual: r.title, note: notes[i] || '', pts: r.pts, date: todayStr() })}
                     className="w-full py-2 bg-gradient-to-r from-rose-400 to-pink-400 text-white rounded-xl font-bold text-sm">
                     完成这个仪式 💞</button>
                 </div>
