@@ -15724,7 +15724,7 @@ function CompassionFriendPage({ logs, onSave, onBack }) {
         <PageHeader emoji="🫂" title="好友信箱" subtitle="你学会了用友善对待自己 💝" />
         <div className="space-y-3">
           {steps.map((s, i) => (
-            <div key={i} className={`rounded-xl p-4 shadow-sm ${i === 3 ? 'bg-purple-50 border-2 border-purple-200' : 'bg-white'}`}>
+            <div key={i} className={`rounded-xl p-4 shadow-sm ${i === steps.length - 1 ? 'bg-purple-50 border-2 border-purple-200' : 'bg-white'}`}>
               <div className="text-sm font-semibold text-purple-600 mb-1">{s.label}</div>
               <div className="text-gray-700">{s.value}</div>
             </div>
@@ -15777,7 +15777,12 @@ function CompassionFriendPage({ logs, onSave, onBack }) {
 // ─── Expressive Writing (Pennebaker) ─────────────────────────────────────────
 function ExpressiveWritePage({ logs, onSave, onBack }) {
   const [text, setText] = useState('');
-  const sessionsDone = new Set(logs.map(l => l.session));
+  // Slice to only sessions after the last cycle-reset marker (session === 0)
+  const activeLogs = useMemo(() => {
+    const resetIdx = logs.reduce((acc, l, i) => l.session === 0 ? i : acc, -1);
+    return resetIdx === -1 ? logs : logs.slice(resetIdx + 1);
+  }, [logs]);
+  const sessionsDone = useMemo(() => new Set(activeLogs.map(l => l.session)), [activeLogs]);
   const nextSession = [1, 2, 3].find(n => !sessionsDone.has(n)) || null;
   const cur = nextSession ? EXPRESSIVE_SESSIONS[nextSession - 1] : null;
 
@@ -15790,14 +15795,14 @@ function ExpressiveWritePage({ logs, onSave, onBack }) {
           🌱 研究显示，完成这3次写作练习通常能帮助人们在几周内感觉更好。你很勇敢！
         </div>
         <div className="space-y-3">
-          {logs.map((l, i) => (
+          {activeLogs.map((l, i) => (
             <div key={i} className="bg-white rounded-xl p-4 shadow-sm">
               <div className="font-semibold text-gray-700 text-sm">第 {l.session} 次 · {l.date}</div>
               <div className="text-gray-600 text-sm mt-1">{String(l.text).slice(0, 80)}...</div>
             </div>
           ))}
         </div>
-        <button onClick={() => { onSave({ session: 4, text: '重新开始', date: todayStr() }); }}
+        <button onClick={() => onSave({ session: 0, text: '重新开始', date: todayStr() })}
           className="w-full bg-gradient-to-r from-slate-400 to-blue-400 text-white py-3 rounded-xl font-bold">
           开始新的一轮练习
         </button>
@@ -16059,8 +16064,8 @@ function PosEmoGardenPage({ logs, onSave, onBack }) {
   const [selected, setSelected] = useState(null);
   const [note, setNote] = useState('');
 
-  const todayWatered = new Set(logs.filter(l => l.date === todayStr()).map(l => l.key));
-  const allWatered = new Set(logs.map(l => l.key));
+  const todayWatered = useMemo(() => new Set(logs.filter(l => l.date === todayStr()).map(l => l.key)), [logs]);
+  const allWatered = useMemo(() => new Set(logs.map(l => l.key)), [logs]);
   const em = POS_EMOTIONS.find(e => e.key === selected);
 
   if (selected) {
